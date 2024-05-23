@@ -1,2 +1,3 @@
-# quaker-ece
-This is a websbook for quantum computing
+# My Great Book
+
+Visit <https://pretextbook.org/documentation.html> to learn more.
