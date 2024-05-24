@@ -100,4 +100,4 @@ codechat_config.yaml
 
 # Distribution and Packaging
 DOCS/
-*.md
+*_group.txt
