@@ -6,9 +6,19 @@
 <frontmatter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="frontmatter">
   <titlepage>
     <author>
-      <personname>You</personname>
-      <department>Your department</department>
+      <personname>Goldberg, Levi</personname>
+      <department>Mathematics Department</department>
+      <institution>Earlham College</institution>
+    </author>
+    <author>
+      <personname>Shun Suzuki</personname>
+      <department>Computer Science Deparment</department>
       <institution>Your institution</institution>
+    </author>
+    <author>
+      <personname>Javier Orduz</personname>
+      <department>Mathematics, Computer Science, and Physics Deparments</department>
+      <institution>Earlham College</institution>
     </author>
     <date>
       <today />
@@ -16,17 +26,80 @@
   </titlepage>
 
   <colophon>
-
     <website>
-      <url href="https://pretextbook.org">My Website</url>
+        <name>
+        <c>www.jaorduz.org</c>
+        </name>
+        <address>https://jaorduz.github.io</address>
     </website>
-
     <copyright>
-      <year>2020<ndash />2023</year>
-      <holder>You</holder>
-      <shortlicense> This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit <url href="http://creativecommons.org/licenses/by-sa/4.0/" visual="creativecommons.org/licenses/by-sa/4.0"> CreativeCommons.org</url>
-      </shortlicense>
+        <year>2024</year>
+        <holder>LG, SS and JO</holder>
+        <shortlicense> 
+        This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit <url href="http://creativecommons.org/licenses/by-sa/4.0/" visual="creativecommons.org/licenses/by-sa/4.0"> CreativeCommons.org</url>
+        </shortlicense>
     </copyright>
-  </colophon>
+</colophon>
+
+
+<biography xml:id="author-bio-TWJ">
+  <p>Dr. Javier Orduz holds the distinguished position of 
+    Visiting Assistant Professor at Earlham College and 
+    also serves as an Instructor at Baylor University. 
+    In his academic course, he embodies an all-rounder 
+    that rests on technological expertise with an edge 
+    of ambition. Displays of such versatility are 
+    echoed in his research, publishing works, teaching 
+    style, and foray into deeper areas carried out among 
+    friends who share similar interests. A Research Scholar 
+    and instructor of Computer Science, he first began his 
+    journey at Baylor University in Texas. He moved on from 
+    these deep roots to spend more than five years as a 
+    postdoctoral scholar and assistant professor of computer 
+    science and applied math at the 
+    Universidad Nacional Autónoma de México (UNAM). 
+  </p>
+  <p>
+    The impact of Dr. Orduz does not stop in the walls 
+    academia And his commitment to the massive potential 
+    of quantum computing in Latin America is evident by being 
+    at the frontend as the coordinator at 
+    <url href="https://qmexico.org/" visual="QMexico." target ="_blank"/>
+    He has been 
+    unstoppable in driving forward the efforts to bring 
+    quantum computing education and research into this 
+    vibrant educational ecosystem. As a Research Scientist 
+    he tackles forays into quantum machine learning and 
+    prepares the future of this 
+    field with creative algorithmic solutions. With his 
+    mentorship, Dr. Orduz is also dedicated to the 
+    <url href="https://www.latinxinai.org/" visual="LatinX AI" target ="_blank"/>
+    community by mentoring and fostering 
+    (in multiple ways) the representation of underrepresented 
+    cohorts in AI.
+  </p>
+</biography>
+
+<dedication xml:id="dedication">
+  <p>
+      <line>My family in Colombia, Mexico, and USA.</line>
+      <line>To people who loves Science.</line>
+  </p>
+  <p>To all of you.</p>
+  <p>This is a greate opportunity to encourage to study and learn sciences. In general any field in STEM areas is beatiful! 
+</p>
+</dedication>   
+<acknowledgement xml:id="acknowledgement">
+
+  <p>I would like to acknowledge the following people for their comments and suggestions.<ul>
+      <li><p>Professors, Different Institutions, Col., Mex. USA</p></li>
+  </ul></p>
+
+  <p>I would also like to thank everyone.</p>
+
+  <!-- Added NSF support statement.  TWJ 8/9/2012 -->
+  <!-- <p></em>The open source version of this book has received support from the National Science Foundation (Award #DUE-1020957).</p> -->
+
+</acknowledgement>
 </frontmatter>
 

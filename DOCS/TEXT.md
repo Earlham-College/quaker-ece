@@ -24,3 +24,12 @@ pretext init --refresh
 
 Or
 You should change the requirements.txt file.
+
+
+2) Mac: IOSX Apple.
+
+Commands
+Kill a port:
+a) lsof -i tcp:XXXX
+b) kill -9 PID-XXXX
+
