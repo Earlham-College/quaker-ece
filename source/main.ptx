@@ -5,14 +5,21 @@
   <xi:include href="./docinfo.ptx" />
 
   <book xml:id="my-great-book">
-    <title>My Great Book</title>
-    <subtitle>An example to get you started</subtitle>
+    <title>Quantum Computing</title>
+    <subtitle>A gentle introduction for Liberal Arts Institutions</subtitle>
 
     <!-- Include frontmatter -->
     <xi:include href="./frontmatter.ptx" />
 
+
+
     <!-- Include chapters -->
-    <xi:include href="./ch-chapter-title.ptx" />
+
+    <xi:include href="./chap1-chapter.ptx" />
+
+    <xi:include href="./chap2-chapter.ptx" />
+
+
 
 
     <!-- Include backmatter -->
