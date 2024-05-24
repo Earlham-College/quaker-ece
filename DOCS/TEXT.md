@@ -33,3 +33,12 @@ Kill a port:
 a) lsof -i tcp:XXXX
 b) kill -9 PID-XXXX
 
+to push a change from local to remote repository:
+git init
+git add .
+git commit -m "[MESSAGE GOES HERE]"
+git push
+
+to to pull a change from remote repository to local:
+git init
+git pull
