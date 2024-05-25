@@ -28,10 +28,16 @@
   <colophon>
     <website>
         <name>
-        <c>www.jaorduz.org</c>
+        <c>https://quaker-ece.cs.earlham.edu/</c>
         </name>
-        <address>https://jaorduz.github.io</address>
+        <address>https://quaker-ece.cs.earlham.edu/</address>
     </website>
+    <website>
+      <name>
+      <c>https://jaorduz.org</c>
+      </name>
+      <address>https://jaorduz.github.io</address>
+  </website>
     <copyright>
         <year>2024</year>
         <holder>LG, SS and JO</holder>
