@@ -91,12 +91,13 @@
 </dedication>   
 <acknowledgement xml:id="acknowledgement">
 
-  <p>I would like to acknowledge the following people for their comments and suggestions.<ul>
-      <li><p>Professors, Different Institutions, Col., Mex. USA</p></li>
-  </ul></p>
+<p>
+  This project was supported by the Summer Collaborative Research at Earlhma College.
+</p>
 
-  <p>I would also like to thank everyone.</p>
-
+<p>JO would like to acknowledge the following 
+  people for their comments and suggestions.
+</p>
   <!-- Added NSF support statement.  TWJ 8/9/2012 -->
   <!-- <p></em>The open source version of this book has received support from the National Science Foundation (Award #DUE-1020957).</p> -->
 
