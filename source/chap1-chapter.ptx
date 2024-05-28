@@ -2,6 +2,9 @@
 
 <chapter xml:id="chap1-chapter" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Chapter Title</title>
+  
+  <xi:include href="chap1-intro.ptx" />
+ 
 
   <introduction>
     <p> Text before the first section. </p>

@@ -24,13 +24,7 @@
       <today />
     </date>
 
-    <head> 
-      <title>Embedding an Image</title> 
-  </head> 
-  <body> 
-      <h1>Embedding an Image</h1> 
-      <img src="source/JO.png" alt="Description of the image"> 
-  </body> 
+
 
   </titlepage>
 
@@ -117,5 +111,6 @@
   <!-- <p></em>The open source version of this book has received support from the National Science Foundation (Award #DUE-1020957).</p> -->
 
 </acknowledgement>
+<xi:include href="frontmatter-intro.ptx" />
 </frontmatter>
 

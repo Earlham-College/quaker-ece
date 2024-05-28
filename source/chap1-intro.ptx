@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="chap1-intro" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Introduction</title>
+  <p>
+    In this chapter, we shall discuss physics and its role in quantum computing.
+It will be particularly relevant for people who think the study of physics and mathematics is nothing more than a list of equations to memorize for any undergraduate student enrolled in sciences. This is untrue. Science evolves every day and the job of a scientist is to synthesize their knowledge to face problems and find solutions. Since physics is relevant to many different domains in science, it is a multifaceted subject that is highly important to study.
+  </p>
+  <p>
+    Physics is about motion, atoms, nuclei, elementary particles, heat, Thermodynamics, Electrodynamics, and Statistics, among other areas. These many different fields can be classified by their mathematical concepts, their chronological development, or even in terms of theoretical 
+and experimental scientific points of view. 
+  </p>
+  <p>
+    One of the most important branches of Physics studies interaction at tiny scale: Quantum Mechanics. This branch was revolutionized by Max Planck in the early 1900s, although many other scientists contributed to its development. The phenomena that Planck and other scientists observed at this tiny scale were at odds with the scientific "rules" established by Classical Physics. To resolve this issue, the field of Quantum Mechanics was born to provide an explanation for subatomic phenomena. Quantum Mechanics established non-conventional concepts that have quickly spread throughout other realms of science. In the coming chapters we will discuss the mathematical foundations of Quantum Mechanics.
+  </p>
+</section>
