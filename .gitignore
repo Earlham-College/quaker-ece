@@ -99,5 +99,5 @@ GitHub.sublime-settings
 codechat_config.yaml
 
 # Distribution and Packaging
-DOCS/
-*_group.txt
+#DOCS/
+#*_group.txt
