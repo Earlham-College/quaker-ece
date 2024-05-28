@@ -13,7 +13,7 @@
     <author>
       <personname>Suzuki, Shun</personname>
       <department>Computer Science Deparment</department>
-      <institution>Your institution</institution>
+      <institution>Earlham College</institution>
     </author>
     <author>
       <personname>Orduz, Javier</personname>
@@ -23,6 +23,15 @@
     <date>
       <today />
     </date>
+
+    <head> 
+      <title>Embedding an Image</title> 
+  </head> 
+  <body> 
+      <h1>Embedding an Image</h1> 
+      <img src="source/JO.png" alt="Description of the image"> 
+  </body> 
+
   </titlepage>
 
   <colophon>
