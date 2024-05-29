@@ -1,16 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <chapter xml:id="chap1-chapter" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Chapter Title</title>
+  <title>Basic Concepts of Quantum Mechanics</title>
   
   <xi:include href="chap1-intro.ptx" />
  
 
-  <introduction>
-    <p> Text before the first section. </p>
-  </introduction>
+  <section>
+    <title> Classical Physics </title>
+    <p> Classical physics, a cornerstone of scientific understanding, encompasses several branches that describe the physical phenomena of the universe, laying the groundwork for modern science.  Optics, electromagnetism, nuclear physics, astrophysics, and thermodynamics are pivotal fields that have evolved through centuries of inquiry and discovery. Optics, the study of light and its interactions with matter, dates back to ancient civilizations. The Greeks, particularly Euclid and Ptolemy, made early contributions with theories on reflection and refraction.  </p>
+    <p> In the 17th century, Johannes Kepler elucidated the principles of lenses and vision, while Galileo's telescopic observations expanded our understanding of the cosmos. Isaac Newton's corpuscular theory of light and Christian Huygens' wave theory were significant milestones, reconciled in the 19th century by experiments demonstrating the wave nature of light. </p>
+    <p> Electromagnetism, dealing with electric and magnetic fields and their interactions, began in the 18th century with static electricity and magnetism as separate phenomena. Benjamin Franklin's experiments with lightning and Luigi Galvani's work on bioelectricity were early milestones. The unification of electricity and magnetism into a single theory was achieved by James Clerk Maxwell in the mid-19th century, whose equations predicted the existence of electromagnetic waves, leading to Heinrich Hertz's discovery of radio waves. </p>
+    <p> Nuclear physics, focusing on atomic nuclei, emerged in the early 20th century, building on classical foundations. The discovery of radioactivity by Henri Becquerel and the subsequent work of Marie and Pierre Curie opened new frontiers. Ernest Rutherford's gold foil experiment, which revealed the nucleus of an atom, was pivotal. Early developments in nuclear decay laws and the identification of radiation types owe much to classical methodologies. </p>
+    <p> Astrophysics, applying physics to celestial objects and phenomena, has ancient origins in observational astronomy. Early contributions by Hipparchus and Ptolemy laid the groundwork, but the Copernican Revolution in the 16th century and Johannes Kepler's laws of planetary motion advanced the field. Newton's law of universal gravitation unified terrestrial and celestial mechanics under a single theory, revealing that the force that moved the stars was the same one that held us to the ground: gravity. </p>
+    <p> Thermodynamics, the study of heat, work, and energy, emerged from the Industrial Revolution's practical needs. Sadi Carnot's work on steam engines laid the foundation for the field. The first and second laws of thermodynamics, formulated by Rudolf Clausius and William Thomson (Lord Kelvin), established principles governing energy conservation and entropy, profoundly influencing scientific thought and engineering practice. </p>
+    <p> Classical physics is crucial academically as it forms the foundational bedrock upon which modern physics and other scientific disciplines are built. It introduces students to fundamental concepts such as Newtonian mechanics, thermodynamics, and electromagnetism, cultivating critical thinking and problem-solving skills. Mastery of classical physics fosters an appreciation for the scientific method and the historical context of discoveries, illustrating the interplay of theoretical advances and experimental validations. Serving as an indispensable educational foundation, classical physics equips students with the knowledge and skills necessary for careers in science, engineering, and technology, continuing to inspire future innovations and discoveries. </p>
+</section>
 
-  <!-- include sections -->
-  <xi:include href="sec1-chap1.ptx" />
+<section>
+  <title> Newtonian Mechanics</title>
+  <p> Many of the concepts behind Classical Physics are motivated by Newtonian Mechanics, which is derived from Newton’s three laws of motion. These laws provide a framework for determining how an object will move when acted upon (or not acted upon) by external forces. Newton’s three laws were first described in his <i>Philosophiæ Naturalis Principia Mathematica</i>, which is widely considered to be one of the most important works in the history of physics \cite{newton1850newton}.  </p>
+  <p> Newton’s first law, put simply, is that in the absence of external forces, an object at rest will stay at rest and an object in motion will stay in motion. Furthermore, without outside interference, an object in motion will travel at a constant speed in a straight line. In <i>Principia</i>, Newton defines inertia as the property of matter to preserve its current state and resist attempts to change it \cite{newton1850newton}. Thus, the first law of motion establishes that all objects have the property of inertia and resist changes to their state of rest or motion. </p>
+  <p> The second law of motion is often abbreviated by the equation <m> \sum \vec{F} = m\vec{a}. </m> This equation tells us that the acceleration (<m>\vec{a}</m>) of an object is directly proportional to the net force (<m>\sum \vec{F}</m>) acting upon it and is inversely proportional to the mass (<m>m</m>) of the object. Mass can be thought of as a numerical measure of inertia, so the second law relates to the first law in that objects with a lot of mass, i.e. objects with a lot of inertia, require greater forces to accelerate. Furthermore, if we look at the case where there are no forces acting upon an object, i.e. <m>\sum \vec{F}=0</m>, we know that <m>m\vec{a}=0</m> as well. Since the mass of an object can never be <m>0</m>, when there are no forces acting upon an object, it must have an acceleration of <m>0</m>. In the absence of acceleration, an object at rest will stay at rest and an object in motion will continue to travel at a constant speed. </p>
+  <p> Newton’s third law states that when two objects interact, the force exerted by the first object on the second is equal in magnitude and opposite in direction to the force exerted by the second object on the first. Simply put, every action has an equal and opposite reaction.  </p>
+  <p> The three laws of motion can be seen in the example of a rocket launching into space. As the thrusters begin to fire, the rocket does not immediately begin to move. Since the rocket begins at rest, its inertial properties resist changing to a state of motion, which showcases the first law. Once the rocket begins to lift off the ground, it appears to be moving upwards slowly. Since the rocket is very heavy, it has a lot of mass, and since acceleration is inversely proportional to mass by Newton’s second law, it thus accelerates slowly. The third law of motion can be seen in the fact that the rocket engines are pushing down, which causes the equal and opposite reaction of the rocket to move upwards.  </p>
+  <activity>
+    <video xml:id="yt-list-vars" youtube="fhYMh6KTJMQ" width="65%" margins="35%" />
+  </activity>
+</section>
+
 
 </chapter>
