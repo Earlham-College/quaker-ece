@@ -38,14 +38,18 @@
 
   <section xml:id="Vectors-and-Vector-Spaces">
     <title> Vectors and Vector Spaces</title>
+    <subsection xml:id="Vectors">
+      <title>Introduction to Vectors</title>
     <p>
-      A vector is an ordered list of numbers that is used to describe quantities with both magnitude and direction. One example of a vector is force, which has both a magnitude (how strong the force is) and a direction (the angle at which the force is being applied). Each vector has a dimension, which is the number of components that comprise it. It is customary to signify that something is a vector by either drawing an arrow on top of it or bolding it. If we have a vector <m>x</m>, we would write <m>\vec{x}</m> or <m>\boldsymbol{x}</m>. The number <m>x_{n}</m> is called the <m>n</m>-th component of <m>\vec{x}</m>. </p> <p>The most typical use of a vector with <m>n</m> components is to describe a point in <m>n</m> dimensional space in reference to some starting point. For example, if you have a square piece of paper and label the bottom left corner with the starting point (0,0), then a vector with components (1,1) would represent moving one unit of measurement along the bottom of the paper and one unit of measurement along the side of the paper to reach a new point. This vector would have a direction of <m>45^{\circ}</m> and a magnitude of <m>\sqrt{2}</m> units (by the pythagorean theorem). 
+      A vector is an ordered list of numbers that is used to describe quantities with both magnitude and direction. One example of a vector is force, which has both a magnitude (how strong the force is) and a direction (the angle at which the force is being applied). Each vector has a dimension, which is the number of components that comprise it. It is customary to signify that something is a vector by either drawing an arrow on top of it or bolding it. If we have a vector called <m>x</m>, we would write <m>\vec{x}</m> or <m>\boldsymbol{x}</m>. The number <m>x_{n}</m> is called the <m>n</m>-th component of <m>\vec{x}</m>. </p> <p>The most typical use of a vector with <m>n</m> components is to describe a point in <m>n</m> dimensional space in reference to some starting point. For example, if you have a square piece of paper and label the bottom left corner with the starting point (0,0), then a vector with components (1,1) would represent moving one unit of measurement along the bottom of the paper and one unit of measurement along the side of the paper to reach a new point. This vector would have a direction of <m>45^{\circ}</m> and a magnitude of <m>\sqrt{2}</m> units (by the pythagorean theorem). 
       </p>
       <image source="VectorExample.png">
         <shortdescription>An example of a vector</shortdescription>
       </image>
-    <p>
-   Every vector exists within a <term>vector space</term><idx><h>Vector</h><h>Vector Space</h></idx>, which are sets that satisfy certain mathematical properties. The most common vector spaces we will deal with are <m>\mathbb{R}^n</m>, the set of all <m>n</m> dimensional vectors with real components, and <m>\mathbb{C}^n</m>, the set of all <m>n</m> dimensional vectors with complex components. Notice <m>\mathbb{R}^n \subseteq \mathbb{C}^n</m>, so we will usually work with <m>\mathbb{C}^n</m> for generality. All vector spaces have the same properties regardless of dimension. Here are the properties for an <m>n</m>-dimensional vector space:   
+    </subsection>
+    <subsection xml:id="Vector-Spaces">
+      <title>Vector Spaces</title>
+  <p> Every vector exists within a <term>vector space</term><idx><h>Vector</h><h>Vector Space</h></idx>, which are sets that satisfy certain mathematical properties. The most common vector spaces we will deal with are <m>\mathbb{R}^n</m>, the set of all <m>n</m> dimensional vectors with real components, and <m>\mathbb{C}^n</m>, the set of all <m>n</m> dimensional vectors with complex components. Notice <m>\mathbb{R}^n \subseteq \mathbb{C}^n</m>, so we will usually work with <m>\mathbb{C}^n</m> for generality. All vector spaces have the same properties regardless of dimension. Here are the properties for an <m>n</m>-dimensional vector space:   
     </p>
     <p>1. Vector equality: <m>\vec{x}=\vec{y}</m> means <m>x_{i}=y_{i}, i \in n. </m> </p>
       <p>2. Vector addition: <m>\vec{x}+\vec{y}=\vec{z}</m> means <m>x_{i}+y_{i}=z_{i}, i \in n. </m> </p>
@@ -57,7 +61,9 @@
 <p>2. Addition of vectors is associative: <m>(\vec{x}+\vec{y})+\vec{z}=\vec{x}+(\vec{y}+\vec{z}). </m></p>
 <p>3. Scalar multiplication is distributive: <m>a(\vec{x}+\vec{y})=a \vec{x}+a \vec{y},</m> and <m>(a+b) \vec{x}=a \vec{x}+b \vec{x}</m></p>
 <p>4. Scalar multiplication is associative: <m>(a b) \vec{x}=a(b \vec{x}).</m> </p>
-
+</subsection>
+<subsection xml:id="Bases">
+  <title>Bases</title>
   <p> For any vector space, one can find a subset of vectors which can be used to generate any other vector in the space through linear combinations (scalar multiplication and vector addition). The smallest set of vectors that fulfills this property is called the <term>basis</term><idx><h>Vector</h><h>basis</h></idx>. In <m>\mathbb{R}^{2}</m>, we only need two vectors to produce the rest through linear combination. The standard basis, <m>\mathcal{B},</m> is:  </p>
   <me>
     {\mathcal{B}}=\bigg\{ \{\widehat{\mathbf{x}}, \widehat{\mathbf{y}}\}= \begin{pmatrix} 1 \\ 0 \end{pmatrix}, \begin{pmatrix} 0 \\ 1 \end{pmatrix} \bigg\}
@@ -66,8 +72,53 @@
 
 <p> Bases have two properties: </p>
 <p> <alert>Linear Independence: </alert> A set of vectors is <term>linearly independent</term><idx><h>Vector</h><h>Linearly Independent</h></idx> if we cannot express any one of them as a linear combination of the others. If we can express one as a linear combination of the others, then it is called a <term>linearly dependent</term><idx><h>Vector</h><h>Linearly Dependent</h></idx> set. A basis must be linearly independent. </p>
-<p> <alert>Completeness: </alert> A set of vectors is complete if it <term>spans</term><idx><h>Vector</h><h>Span</h></idx> , which in turn means that any vector in the space can be expressed as a linear combination of vectors in that set. A basis for a vector space must span the space. </p>
+<p> <alert>Completeness: </alert> A set of vectors is complete if it <term>spans</term><idx><h>Vector</h><h>Span</h></idx> its vector space, which in turn means that any vector in the space can be expressed as a linear combination of the vectors in that set. A basis for a vector space must span the space. </p>
+</subsection>
+<example>
+  <title>(A Counterexample)</title>
+<p>Let <m>{\mathcal{B}}</m> be the set,</p>
+<me> {\mathcal{B}} = \Bigg\{ \begin{pmatrix} 1\\ 0\\ 0\\ \end{pmatrix}, \begin{pmatrix} 0\\ 1\\ 0\\ \end{pmatrix} \Bigg\} </me>
+  <p> And let <m>\vec{v}</m> be the vector, </p>
+  <me> \vec{v}= \begin{pmatrix} 2\\ -3\\ 1\\ \end{pmatrix} </me>
+  <p> Since we are unable to express <m>\vec{v}</m> as a linear combination of the elements of <m>\mathcal{B}</m>, then we say <m>{\mathcal{B}}</m> is not complete. </p>
+</example>
+<example>
+  <p>Let <m>{\mathcal{B}}</m> be the set,</p>
+  <me> {\mathcal{B}} = \Bigg\{ \begin{pmatrix} 1\\ 0\\  \end{pmatrix}, \begin{pmatrix} 0\\ 1\\ \end{pmatrix} \Bigg\} </me>
+  <p> And let <m>\vec{x}</m> be the vector, </p>
+  <me> \vec{x} = \begin{pmatrix} 5\\ -7\\ \end{pmatrix} </me>
+  We can express <m>\vec{x}</m> as:
+  <me> \vec{x} = 5 \cdot \begin{pmatrix} 1\\ 0\\ \end{pmatrix} + (-7) \cdot \begin{pmatrix} 0\\ 1\\ \end{pmatrix} = \begin{pmatrix}5\\0\\ \end{pmatrix} + \begin{pmatrix}0\\ -7\\ \end{pmatrix} = \begin{pmatrix} 5\\ -7\\ \end{pmatrix} </me>
+  <p> Since we can express <m>\vec{x}</m> as a linear combination of the elements of <m>\mathcal{B}</m> and it is easy to show that we could construct any other vector in <m>\mathbb{R}^2</m> from these same elements, we say that <m>\mathcal{B}</m> spans <m>\mathbb{R}^2</m> and is complete. </p>
+</example>
+<theorem xml:id="thm-1"><statement><p><alert> Dimension of a basis. </alert> The number of basis elements for a vector space is the same as that spaces dimension.  </p></statement></theorem>
 
+<subsection xml:id="linear-algebra">
+  <title>Linear Algebra</title>
+  <p>Linear algebra is the study of vectors and transformations. In this subsection we will describe some other pieces of linear algebra that will be important to quantum computation.</p>
+  <p><alert>Matrices:</alert> Whereas a vector is a single column of elements, a <term>matrix</term><idx><h>Matrix</h></idx> is a table of elements organized in rows and columns. Technically speaking, a vector can be thought of a matrix with only one column. The dimension of a matrix is described by first listing the number of rows and then listing the number of columns. Thus, a <m>2 \times 3</m> matrix (read "two by three") would have two rows and three columns. A <term>square matrix</term><idx><h>Matrix</h><h>Square Matrix</h></idx> is any matrix with the same number of rows and columns. One of the most important matrices is the <term>identity matrix</term><idx><h>Matrix</h><h>Identity Matrix</h></idx>, a square matrixin which all of the entries along the diagonal are <m>1</m> and all other entries are <m>0</m>. Examples of the <m>2\times2</m> and <m>5\times5</m> identity matrices are shown below, which can be generalized to any <m>n \times n</m> matrix.</p>
+  <me> I_{2\times2} = \begin{pmatrix} 1 &amp; 0 \\ 0 &amp; 1 \end{pmatrix}, I_{5\times5} = \begin{pmatrix} 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1   \end{pmatrix}</me>
+  <p> A matrix can be multiplied by a scalar in the same way that a vector can, by multiplying each entry in the matrix by the scalar, as shown below. </p>
+    <me> c \times \begin{pmatrix} a_1 &amp; a_2 &amp; a_3 \\ a_4 &amp; a_5 &amp; a_6 \\ a_7 &amp; a_8 &amp; a_9 \end{pmatrix} = \begin{pmatrix} c \times a_1 &amp; c \times a_2 &amp; c \times a_3 \\ c \times a_4 &amp; c \times a_5 &amp; c \times a_6 \\ c \times a_7 &amp; c \times a_8 &amp; c \times a_9 \end{pmatrix} </me>
+  <p><alert>Matrix Addition:</alert> Two matrices can be added together only if they each have the same number of rows and columns. The sum of two matrices is found by adding together the corresponding entries of each matrix, as shown below with an example of two <m>3\times3</m> matrices. </p>
+  <me> \begin{pmatrix} a_1 &amp; a_2 &amp; a_3 \\ a_4 &amp; a_5 &amp; a_6 \\ a_7 &amp; a_8 &amp; a_9 \end{pmatrix} + \begin{pmatrix} b_1 &amp; b_2 &amp; b_3 \\ b_4 &amp; b_5 &amp; b_6 \\ b_7 &amp; b_8 &amp; b_9 \end{pmatrix} = \begin{pmatrix} a_1 + b_1 &amp; a_2 + b_2 &amp; a_3 + b_3 \\ a_4 + b_4 &amp; a_5 + b_5 &amp; a_6 + b_6 \\ a_7 + b_7 &amp; a_8 + b_8 &amp; a_9 + b_9 \end{pmatrix} </me>
+  <exercise>
+  <statement>
+    <p> Compute the following sum: </p>
+    <me> \begin{pmatrix} 4 &amp; 7 &amp; 9 \\ 1 &amp; 0 &amp; 6 \\ 2 &amp; 5 &amp; 3 \end{pmatrix} + \begin{pmatrix} 0 &amp; 4 &amp; 6 \\ 2 &amp; 2 &amp; 2 \\ 5 &amp; 3 &amp; 8 \end{pmatrix}</me>
+  </statement>  
+  <solution>
+    <me> = \begin{pmatrix} 4 &amp; 11 &amp; 15 \\ 3 &amp; 2 &amp; 8 \\ 7 &amp; 8 &amp; 11 \end{pmatrix} </me>
+  </solution>
+  </exercise>
+<p><alert>Matrix Multiplication:</alert> Two matrices can be multiplied together only if the number of columns of the left matrix is equal to the number of rows of the right matrix. The resulting product will be a matrix with the same number of rows as the left matrix and the same number of columns as the right. Thus an <m>m /times n</m> matrix multiplied by a <m> n \times q</m> matrix would produce an <m>m \times q</m> matrix. Notably, matrix multiplication is non-commutative, which means for two matrices <m>A</m> and <m>B</m>, <m>AB \neq BA</m>. The entries of a product matrix are determined by taking the dot product between the corresponding row of the left matrix and the corresponding column of the right matrix, as shown below with an example of multiplication between a <m>3\times3</m> and a <m>3\times2</m> matrix. </p>
+<me> \begin{pmatrix} a_1 &amp; a_2 &amp; a_3 \\ a_4 &amp; a_5 &amp; a_6 \\ a_7 &amp; a_8 &amp; a_9 \end{pmatrix} \times \begin{pmatrix} b_1 &amp; b_2 \\ b_3 &amp; b_4 \\ b_5 &amp; b_6 \end{pmatrix} = \begin{pmatrix} a_1b_1 + a_2b_3+a_3b_5 &amp; a_1b_2 + a_2b_4 + a_3b_6 \\ a_4b_1 + a_5b_3 + a_6b_5 &amp; a_4b_2 + a_5b_4 + a_6b_6 \\ a_7b_1 + a_8b_3 + a_9b_5 &amp; a_7b_2 + a_8b_4 + a_9b_6 \end{pmatrix} </me>
+<p> Now that we know matrix multiplication, we can redefine the dot product / inner product as the transpose of a vector multiplied by the vector. Since vectors are <m>n \times 1</m> dimensional, the transpose will be <m>1 \times n</m> dimensional, so the dot product / inner product will produce a <m>1 \times 1</m> matrix, which is functionally the same as a scalar. </p>
+<exercise>
+  <statement> <p> Compute the following product: </p> <me> \begin{pmatrix} 2 &amp; 4 \\ 3 &amp; 0 \end{pmatrix} \times \begin{pmatrix} 5 &amp; 1 &amp; 2 \\ 0 &amp; 7 &amp; 2 \end{pmatrix} </me> </statement>
+    <hint> <p> The resulting matrix should be <m>2 \times 3</m> </p></hint>
+    <solution> <me> = \begin{pmatrix} 2 \times 5 + 4 \times 0 &amp; 2 \times 1 + 4 \times 7 &amp; 2 \times 2 + 4 \times 2 \\ 3 \times 5 + 0 \times 0 &amp; 3 \times 1 + 0 \times 7 &amp; 3 \times 2 + 0 \times 2 \end{pmatrix} = \begin{pmatrix} 10 &amp; 30 &amp; 12 \\ 15 &amp; 3 &amp; 6 \end{pmatrix} </me> </solution> </exercise>
+</subsection>
 </section>
 
 

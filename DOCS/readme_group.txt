@@ -99,7 +99,10 @@ c) sudo kill -9 $(sudo lsof -t -i:8000)
 
 to to pull a change from remote repository to local:
 - git init
+- git add .
+- git commit -m "[MESSAGE GOES HERE]"
 - git pull
+- git push (if you made changes)
 
 -----------------------
 

@@ -1,14 +1,14 @@
-INFO    : PreTeXt project found in `/eccs/users/ssuzuki23/MySummRese/quaker-ece`.
-INFO    : Now preparing local server to preview directory `/eccs/users/ssuzuki23/MySummRese/quaker-ece/output/web`.
+INFO    : PreTeXt project found in `/eccs/users/lsgoldb22/SummerResearch/quaker-ece`.
+INFO    : Now preparing local server to preview directory `/eccs/users/lsgoldb22/SummerResearch/quaker-ece/output/web`.
 INFO    :   (Reminder: use `pretext deploy` to deploy your built project to a public
 INFO    :   GitHub Pages site that can be shared with readers who cannot access your
 INFO    :   personal computer.)
 INFO    : 
 WARNING : Port 8000 could not be used.
-WARNING : Trying port 60167 instead.
+WARNING : Trying port 49720 instead.
 
 INFO    : Success! The most recent build of your project can be viewed in a web browser at the following url:
-INFO    :     http://localhost:60167
+INFO    :     http://localhost:49720
 INFO    : This page should open in a new tab automatically.
 INFO    : Use [Ctrl]+[C] to halt the server.
 
