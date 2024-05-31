@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec2-chap2" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Gates</title>
+
+  
+  <subsection xml:id="subsec1-chap2" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Hadamard gate</title>
+    <p> 
+      Hadamard gate is one of the most popular gates in quantum computing.
+      The Hadamard operator on one qubit can be written as
+    </p>
+    
+    <me>
+      H =\frac{1}{\sqrt{2}}
+\bigg(
+\Big(\ket{0}+\ket{1}\Big)\bra{0}
++
+\Big(\ket{0}-\ket{1}\Big)\bra{1}
+\bigg)
+=
+\frac{1}{\sqrt{2}}
+\bigg(
+\ket{0}\bra{0}+\ket{1}\bra{0}
++
+\ket{0}\bra{1}-\ket{1}\bra{1}
+\bigg)
+    </me>
+    
+    <p>
+      which is the Hadamard gate in Dirac notation. Hadamard operation is a rotation of the Block sphere about y axis by <m>\frac{\pi}{2}</m>, followed by a rotation about <m>x</m> axis by <m>pi</m>.
+    </p>
+    <p>
+      Exercise 1 <em>Obtain</em>
+      <ul>
+        <li><me>H\ket{0}</me></li>
+        <li><me>H\ket{1}</me></li>
+      </ul> 
+    </p>
+
+    
+  </subsection>
+
+ 
+      
+  
+  
+  <subsection xml:id="subsec2-chap2" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>X gate</title>
+    <p> 
+     explain X gate
+    </p>
+  
+  </subsection>
+  
+</section>
