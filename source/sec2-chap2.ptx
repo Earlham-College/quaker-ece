@@ -3,54 +3,246 @@
 <section xml:id="sec2-chap2" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Gates</title>
 
+
+
+  <!--Hadamard gate-->
   
   <subsection xml:id="subsec1-chap2" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Hadamard gate</title>
     <p> 
       Hadamard gate is one of the most popular gates in quantum computing.
+      
+    </p>
+
+    <figure xml:id="fig-HgateSimple_1">
+      <caption>Hadamard gate representation in a circuit.</caption>
+      <image source="HadamardGate.png" width="40%"> </image>
+    </figure>
+    
+    <mdn>
+      <mrow xml:id="eqhgate">
+        H=\frac{1}{\sqrt{2}}
+        \begin{pmatrix}
+        1&amp;1\\
+        1&amp;-1
+        \end{pmatrix}
+      </mrow>
+  </mdn>
+
+
+   
+    <p>
       The Hadamard operator on one qubit can be written as
     </p>
-    
-    <me>
-      H =\frac{1}{\sqrt{2}}
-\bigg(
-\Big(\ket{0}+\ket{1}\Big)\bra{0}
-+
-\Big(\ket{0}-\ket{1}\Big)\bra{1}
-\bigg)
-=
-\frac{1}{\sqrt{2}}
-\bigg(
-\ket{0}\bra{0}+\ket{1}\bra{0}
-+
-\ket{0}\bra{1}-\ket{1}\bra{1}
-\bigg)
-    </me>
+
+    <mdn>
+      <mrow xml:id="eqHadamardgate" >
+        H =\frac{1}{\sqrt{2}}
+        \bigg(
+        \Big(\ket{0}+\ket{1}\Big)\bra{0}
+        +
+        \Big(\ket{0}-\ket{1}\Big)\bra{1}
+        \bigg)
+        =
+        \frac{1}{\sqrt{2}}
+        \bigg(
+        \ket{0}\bra{0}+\ket{1}\bra{0}
+        +
+        \ket{0}\bra{1}-\ket{1}\bra{1}
+        \bigg)
+      </mrow>
+  </mdn>
+  
+   
     
     <p>
-      which is the Hadamard gate in Dirac notation. Hadamard operation is a rotation of the Block sphere about y axis by <m>\frac{\pi}{2}</m>, followed by a rotation about <m>x</m> axis by <m>pi</m>.
+      which is the Hadamard gate in Dirac notation. 
+      Hadamard operation is a rotation of the Block 
+      sphere about y axis by <m>\frac{\pi}{2}</m>, 
+      followed by a rotation about <m>x</m> axis by <m>pi</m>.
     </p>
-    <p>
-      Exercise 1 <em>Obtain</em>
-      <ul>
-        <li><me>H\ket{0}</me></li>
-        <li><me>H\ket{1}</me></li>
-      </ul> 
-    </p>
+  
+    
+
+
+    <exercise xml:id="exe-HGapllicationQbits">
+      <statement>
+      <p>
+      Calculate 
+        <ul>
+          <li><me>H\ket{0}</me></li>
+          <li><me>H\ket{1}</me></li>        
+        </ul>
+      </p>
+    </statement>
+      <hint>
+        <p>put a hint</p>
+      </hint>
+      <solution>
+        <p>
+          this is a solution
+        </p>
+      </solution>
+      </exercise>
+
 
     
   </subsection>
 
  
       
-  
+  <!--X gate-->
   
   <subsection xml:id="subsec2-chap2" xmlns:xi="http://www.w3.org/2001/XInclude">
-    <title>X gate</title>
+    <title>Pauli X</title>
     <p> 
-     explain X gate
+      This is also labeled as <m>\sigma_1</m>, <m>\sigma_x</m> or <m>X</m>
+      
     </p>
-  
+
+
+    <figure xml:id="fig-XgateSimple_1">
+      <caption>X gate representation in a circuit.</caption>
+      <image source="Xgate.png" width="40%"> </image>
+    </figure>
+
+    <mdn>
+      <mrow xml:id="eqXgate">
+        X= \text{NOT}=
+        \begin{pmatrix}
+0&amp;1\\
+1&amp;0
+\end{pmatrix}
+
+      </mrow>
+  </mdn>
+
+    <exercise xml:id="exe-XGapllicationQbits">
+      <statement>
+      <p>
+      Calculate 
+        <ul>
+          <li><me>X\ket{0}</me></li>
+          <li><me>X\ket{1}</me></li>  
+          <li><me>X(X\ket{0})</me></li>
+          <li><me>X(X\ket{1})</me></li>       
+        </ul>
+      </p>
+    </statement>
+      <hint>
+        <p>put a hint</p>
+      </hint>
+      <solution>
+        <p>
+          this is a solution
+        </p>
+      </solution>
+      </exercise>
+
+
+    
   </subsection>
   
+  <!--Y gate-->
+
+  <subsection xml:id="subsec3-chap2" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Pauli Y</title>
+    <p> 
+      This is also labeled as <m>\sigma_2</m>, <m>\sigma_y</m> or <m>Y</m>
+      
+    </p>
+
+
+    <figure xml:id="fig-ygateSimple_1">
+      <caption>X gate representation in a circuit.</caption>
+      <image source="ygate.png" width="40%"> </image>
+    </figure>
+
+    <mdn>
+      <mrow xml:id="eqYgate">
+        Y=\begin{pmatrix}
+0&amp;-i\\
+i&amp;0
+\end{pmatrix}
+
+
+      </mrow>
+  </mdn>
+
+    <exercise xml:id="exe-YGapllicationQbits">
+      <statement>
+      <p>
+      Calculate 
+        <ul>
+          <li><me>Y\ket{0}</me></li>
+          <li><me>Y\ket{1}</me></li>  
+          <li><me>Y(Y\ket{0})</me></li>
+          <li><me>Y(Y\ket{1})</me></li>       
+        </ul>
+      </p>
+    </statement>
+      <hint>
+        <p>put a hint</p>
+      </hint>
+      <solution>
+        <p>
+          this is a solution
+        </p>
+      </solution>
+      </exercise>
+  </subsection>
+
+  
+<!--Z gate-->
+
+<subsection xml:id="subsec4-chap2" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Pauli Z</title>
+  <p> 
+    This is also labeled as <m>\sigma_3</m>, <m>\sigma_z</m> or <m>Z</m>
+    
+  </p>
+
+
+  <figure xml:id="fig-zgateSimple_1">
+    <caption>X gate representation in a circuit.</caption>
+    <image source="zgate.png" width="40%"> </image>
+  </figure>
+
+  <mdn>
+    <mrow xml:id="eqzgate">
+      Z=\begin{pmatrix}
+1&amp;0\\
+0&amp;-1
+\end{pmatrix}
+
+
+    </mrow>
+</mdn>
+
+  <exercise xml:id="exe-ZGapllicationQbits">
+    <statement>
+    <p>
+    Calculate 
+      <ul>
+        <li><me>Z\ket{0}</me></li>
+        <li><me>Z\ket{1}</me></li>  
+        <li><me>Z(Z\ket{0})</me></li>
+        <li><me>Z(Z\ket{1})</me></li>       
+      </ul>
+    </p>
+  </statement>
+    <hint>
+      <p>put a hint</p>
+    </hint>
+    <solution>
+      <p>
+        this is a solution
+      </p>
+    </solution>
+    </exercise>
+
+
+  
+</subsection>
+
 </section>

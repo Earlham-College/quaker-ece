@@ -5,11 +5,18 @@ to introduce a term in the index:
 <term>Word-in-document</term><idx><h>Parent-Word-in-index</h><h>son-word-in-index</h></idx> 
 
 2) put enumerated equations in a row
- <mdn>
-    <mrow xml:id="labelforequation" >
-    Equation-in-Latex-Mode
-    </mrow>
-</mdn>
+   <mdn>
+      <mrow xml:id="yourid">
+        H=\frac{1}{\sqrt{2}}
+        \begin{pmatrix}
+        1&amp;1\\
+        1&amp;-1
+        \end{pmatrix}
+      </mrow>
+  </mdn>
+
+
+
 3) put non-enumerated equations in a row
 <me>
   Equation-in-Latex-Mode
@@ -43,6 +50,27 @@ Reference: https://www.youtube.com/watch?v=Z-BfcnZ8Sm8
   LG: Possible solution for including images:
   <image source="[put file name here]"> </image>
   For some reason, when trying to find the file pretext looks in the /output/web/external folder and I can't get it to look at a different path, so we might need to just put image files in this folder
+
+7) Checkpoint
+<exercise xml:id="exe-HGapllicationQbits">
+      <statement>
+      <p>
+      Calculate 
+        <ul>
+          <li><me>H\ket{0}</me></li>
+          <li><me>H\ket{1}</me></li>        
+        </ul>
+      </p>
+    </statement>
+      <hint>
+        <p>put a hint</p>
+      </hint>
+      <solution>
+        <p>
+          this is a solution
+        </p>
+      </solution>
+      </exercise>
 
 
 -----------------------
