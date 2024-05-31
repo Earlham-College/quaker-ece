@@ -96,7 +96,7 @@
   <subsection xml:id="subsec2-chap2" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Pauli X</title>
     <p> 
-      This is also labeled as <m>\sigma_1</m>, <m>\sigma_x</m> or <m>X</m>
+      This is also labeled as <m>\sigma_1</m>, <m>\sigma_x</m> or <em>X</em>
       
     </p>
 
@@ -148,13 +148,13 @@
   <subsection xml:id="subsec3-chap2" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Pauli Y</title>
     <p> 
-      This is also labeled as <m>\sigma_2</m>, <m>\sigma_y</m> or <m>Y</m>
+      This is also labeled as <m>\sigma_2</m>, <m>\sigma_y</m> or <em>Y</em>
       
     </p>
 
 
     <figure xml:id="fig-ygateSimple_1">
-      <caption>X gate representation in a circuit.</caption>
+      <caption>Y gate representation in a circuit.</caption>
       <image source="ygate.png" width="40%"> </image>
     </figure>
 
@@ -198,13 +198,13 @@ i&amp;0
 <subsection xml:id="subsec4-chap2" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Pauli Z</title>
   <p> 
-    This is also labeled as <m>\sigma_3</m>, <m>\sigma_z</m> or <m>Z</m>
+    This is also labeled as <m>\sigma_3</m>, <m>\sigma_z</m> or <em>Z</em>
     
   </p>
 
 
   <figure xml:id="fig-zgateSimple_1">
-    <caption>X gate representation in a circuit.</caption>
+    <caption>Z gate representation in a circuit.</caption>
     <image source="zgate.png" width="40%"> </image>
   </figure>
 
@@ -244,5 +244,468 @@ i&amp;0
 
   
 </subsection>
+
+<!--I gate-->
+
+<subsection xml:id="subsec5-chap2" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Pauli Z</title>
+  <p> 
+    This is also labeled as <m>\sigma_0</m> or <em>I</em>
+    
+  </p>
+
+
+  <figure xml:id="fig-IgateSimple_1">
+    <caption>I gate representation in a circuit.</caption>
+    <image source="Igate.png" width="40%"> </image>
+  </figure>
+
+  <mdn>
+    <mrow xml:id="eqIgate">
+      I=\begin{pmatrix}
+1&amp;0\\
+0&amp;1
+\end{pmatrix}
+
+
+    </mrow>
+</mdn>
+
+  <exercise xml:id="exe-IGapllicationQbits">
+    <statement>
+    <p>
+    Calculate 
+      <ul>
+        <li><me>sigma_0\ket{0}</me></li>
+        <li><me>sigma_0\ket{1}</me></li>  
+        <li><me>sigma_0sigma_1sigma_2sigma_3</me></li>
+              
+      </ul>
+    </p>
+  </statement>
+    <hint>
+      <p>put a hint</p>
+    </hint>
+    <solution>
+      <p>
+        this is a solution
+      </p>
+    </solution>
+    </exercise>
+
+
+  
+</subsection>
+
+<!--<Phase> gate-->
+
+<subsection xml:id="subsec6-chap2" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Phase</title>
+  <p> 
+    This gate is written as S. 
+    
+  </p>
+
+
+  <figure xml:id="fig-SgateSimple_1">
+    <caption>Phase gate representation in a circuit.</caption>
+    <image source="Sgate.png" width="40%"> </image>
+  </figure>
+
+  <mdn>
+    <mrow xml:id="eqSgate">
+      S=\begin{pmatrix}
+1&amp;0\\
+0&amp;i
+\end{pmatrix}
+
+
+    </mrow>
+</mdn>
+
+  <exercise xml:id="exe-SGapllicationQbits">
+    <statement>
+    <p>
+    Calculate 
+      <ul>
+        <li><me>S\ket{0}</me></li>
+        <li><me>S\ket{1}</me></li>  
+        <li><me>S(S\ket{0})</me></li>
+        <li><me>S(S\ket{1})</me></li>  
+              
+      </ul>
+    </p>
+  </statement>
+    <hint>
+      <p>put a hint</p>
+    </hint>
+    <solution>
+      <p>
+        this is a solution
+      </p>
+    </solution>
+    </exercise>
+
+
+  
+</subsection>
+
+<!--pi/8 gate-->
+
+<subsection xml:id="subsec7-chap2" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title><m>\pi</m>/8</title>
+  <p> 
+    This gate is written as T. 
+    
+  </p>
+
+
+  <figure xml:id="fig-TgateSimple_1">
+    <caption><m>\pi</m>/8 gate representation in a circuit.</caption>
+    <image source="Tgate.png" width="40%"> </image>
+  </figure>
+
+  <mdn>
+    <mrow xml:id="eqTgate">
+      T=\begin{pmatrix}
+1&amp;0\\
+0&amp;e^{i\frac{\pi}{4}}
+\end{pmatrix}
+
+
+    </mrow>
+</mdn>
+
+  <exercise xml:id="exe-TGapllicationQbits">
+    <statement>
+    <p>
+    Calculate 
+      <ul>
+        <li><me>T\ket{0}</me></li>
+        <li><me>T\ket{1}</me></li>  
+        <li><me>T(T\ket{0})</me></li>
+        <li><me>T(T\ket{1})</me></li>  
+              
+      </ul>
+    </p>
+  </statement>
+    <hint>
+      <p>put a hint</p>
+    </hint>
+    <solution>
+      <p>
+        this is a solution
+      </p>
+    </solution>
+    </exercise>
+<p>
+  Previous gates aplly on single qubit. The following subsections show the multiqubit gates.
+</p>
+
+  
+</subsection>
+
+  
+
+
+<!--Cnot gate-->
+
+<subsection xml:id="subsec8-chap2" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Controled-NOT</title>
+  
+  <p>
+    CNOT gate in the quantum context has two input qubits:
+      <ul>
+        <li>Control qbit<m>\bullet</m></li>
+        <li>target qbit<m>\oplus</m></li>        
+      </ul>
+    This gate acts as following
+    </p>
+  <!--bullet point, oplus-->
+
+
+  <figure xml:id="fig-CNOTgateSimple_1">
+    <caption>CNOT gate representation in a circuit.</caption>
+    <image source="CNOT.png" width="30%"> </image>
+  </figure>
+
+  <mdn>
+    <mrow xml:id="eqCNOTgate">
+      \label{eq:CTQbitCNOT}
+\ket{c}\ket{t}\to \ket{c}\ket{t\oplus c}
+
+
+    </mrow>
+</mdn>
+<p>
+  Check the XOR and notice this gate is for two qubits.
+</p>
+
+  <exercise xml:id="exe-CNOTGapllicationQbits1">
+    <statement>
+    <p>
+    Obtain the Dirac notation
+      <ul>
+        <li><me>c\to0 and t\to0. \ket{00}=\ket{0,0}</me></li>
+        <li><me>c\to0 and t\to1</me></li>  
+        <li><me>c\to1 and t\to0</me></li>
+        <li><me>c\to1 and t\to1</me></li>  
+              
+      </ul>
+    </p>
+  </statement>
+    <hint>
+      <p>put a hint</p>
+    </hint>
+    <solution>
+      <p>
+        this is a solution
+      </p>
+    </solution>
+    </exercise>
+<p>
+  The gate and matrix representation are,
+</p>
+
+<figure xml:id="fig-CNOTgateSimple_2">
+  <caption>CNOT gate representation in a circuit.</caption>
+  <image source="CNOT2.png" width="40%"> </image>
+</figure>
+
+<mdn>
+  <mrow xml:id="CNOTgate2">
+    CNOT=\neg X=
+\begin{pmatrix}
+1 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 1 \\
+0 &amp; 0 &amp; 1 &amp; 0
+\end{pmatrix}
+
+
+  </mrow>
+</mdn>
+<p>
+  Since
+</p>
+
+<mdn>
+  <mrow xml:id="CNOTgate3">
+    \begin{pmatrix}
+\ket{00}\bra{00} &amp; \ket{00}\bra{01} &amp; \ket{00}\bra{10} &amp; \ket{00}\bra{11} \\
+\ket{01}\bra{00} &amp; \ket{01}\bra{01} &amp; \ket{01}\bra{10} &amp; \ket{01}\bra{11} \\
+\ket{10}\bra{00} &amp; \ket{10}\bra{01} &amp; \ket{10}\bra{10} &amp; \ket{10}\bra{11} \\
+\ket{11}\bra{00} &amp; \ket{11}\bra{01} &amp; \ket{11}\bra{10} &amp; \ket{11}\bra{11}
+\end{pmatrix}
+
+  </mrow>
+</mdn>
+
+<p>
+  and using CNOT matrix we can cancel out some terms and reduce others to 1, such as
+</p>
+
+<mdn>
+  <mrow xml:id="CNOTgate4">
+    \begin{pmatrix}
+\cancelto{1}{\ket{00}\bra{00}} &amp; \ket{00}\bra{01} &amp; \ket{00}\bra{10} &amp; \ket{00}\bra{11} \\
+\ket{01}\bra{00} &amp; \cancelto{1}{\ket{01}\bra{01}} &amp; \ket{01}\bra{10} &amp; \ket{01}\bra{11} \\
+\ket{10}\bra{00} &amp; \ket{10}\bra{01} &amp; \ket{10}\bra{10} &amp; \cancelto{1}{\ket{10}\bra{11}} \\
+\ket{11}\bra{00} &amp; \ket{11}\bra{01} &amp; \cancelto{1}{\ket{11}\bra{10}} &amp; \ket{11}\bra{11}
+\end{pmatrix}
+
+  </mrow>
+</mdn>
+
+<p>
+  and we have
+</p>
+
+<mdn>
+  <mrow xml:id="CNOTgate5">
+    CX = 
+\ket{00}\bra{00}
++\ket{01}\bra{01}
++\ket{10}\bra{11}
++\ket{11}\bra{10}.
+
+  </mrow>
+</mdn>
+
+<p>
+  which is the Dirac representation for the CNOT gate.
+</p>
+
+<exercise xml:id="exe-CNOTGapllicationQbits2">
+  <statement>
+  <p>
+  Consider <m>\ket{c}=\ket{1}</m>, what is going to happen? Build the truth table.
+    
+  </p>
+</statement>
+  <hint>
+    <p>put a hint</p>
+  </hint>
+  <solution>
+    <p>
+      this is a solution
+    </p>
+  </solution>
+  </exercise>
+
+  <exercise xml:id="exe-CNOTGapllicationQbits3">
+    <statement>
+    <p>
+    Use Dirac notation to show <m>\ket{a,b}\to\ket{b,a}</m>
+      
+    </p>
+  </statement>
+    <hint>
+      <p>put a hint</p>
+    </hint>
+    <solution>
+      <p>
+        this is a solution
+      </p>
+    </solution>
+    </exercise>
+
+    <figure xml:id="fig-CNOTgateSimple_3">
+    <caption>CNOT gate representation in a circuit.</caption>
+    <image source="CNOT3.png" width="70%"> </image>
+  </figure>
+
+  <exercise xml:id="exe-CNOTGapllicationQbits4">
+    <statement>
+    <p>
+    Apply CNOT to the state <m>\alpha\ket{10}+\beta\ket{11}</m>
+      
+    </p>
+  </statement>
+    <hint>
+      <p>put a hint</p>
+    </hint>
+    <solution>
+      <p>
+        this is a solution
+      </p>
+    </solution>
+    </exercise>
+</subsection>
+
+
+
+<!--CU gate-->
+
+<subsection xml:id="subsec9-chap2" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Contorolled-U</title>
+  <p> 
+    Let U be a two qbit operation with a control and target qbit. This operation sets the control qbit in order U is applied to the target qbit, otherwise the target qbit is left alone.
+    
+  </p>
+  <mdn>
+    <mrow xml:id="CUgate1">
+      \ket{c}\ket{t}\to \ket{c}U^{c}\ket{t\oplus c}
+    </mrow>
+  </mdn>
+  <p>
+    This operation is called controlled-U operation represented by
+  </p>
+
+
+  <figure xml:id="fig-CUgateSimple_1">
+    <caption>CU representation in a circuit</caption>
+    <image source="CU1.png" width="40%"> </image>
+  </figure>
+
+  <p>
+    CU operator as Dirac notation
+  </p>
+
+  <mdn>
+    <mrow xml:id="eqCUgate">
+      CU\ket{\psi} = \bigg(\ket{0}\bra{0}\otimes I + \ket{1}\bra{1} \otimes U\bigg)
+\ket{\psi}
+    </mrow>
+</mdn>
+
+  <exercise xml:id="exe-CUGapllicationQbits">
+    <statement>
+    <p>
+    Build the truth table for the (2.2.14).
+    </p>
+  </statement>
+    <hint>
+      <p>put a hint</p>
+    </hint>
+    <solution>
+      <p>
+        this is a solution
+      </p>
+    </solution>
+    </exercise>
+
+</subsection>
+
+
+
+<!--CZ gate-->
+
+<subsection xml:id="subsec10-chap2" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Contorolled-Z</title>
+  <p> 
+    The unitary matrix in the computational basis is,
+    
+  </p>
+  
+  <figure xml:id="fig-CZgateSimple_1">
+    <caption>CZ representation in a circuit</caption>
+    <image source="CZ.png" width="40%"> </image>
+  </figure>
+  
+  <mdn>
+    <mrow xml:id="CZgate1">
+      \text{CZ}=
+\begin{pmatrix}
+1 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; -1
+\end{pmatrix}
+    </mrow>
+  </mdn>
+
+
+  <exercise xml:id="exe-CZGapllicationQbits">
+    <statement>
+    <p>
+    Obtain
+    </p>
+
+    <ul>
+    <li><me>CZ\ket{00}</me></li>
+    <li><me>CZ\ket{01}</me></li>  
+    <li><me>CZ\ket{10}</me></li>
+    <li><me>CZ\ket{11}</me></li>
+    <li><me>CZ\sup{2}\ket{00}</me></li>
+    <li><me>CZ\sup{2}\ket{01}</me></li>  
+    <li><me>CZ\sup{2}\ket{10}</me></li>
+    <li><me>CZ\sup{2}\ket{11}</me></li>         
+  </ul>
+
+  </statement>
+    <hint>
+      <p>put a hint</p>
+    </hint>
+    <solution>
+      <p>
+        this is a solution
+      </p>
+    </solution>
+    </exercise>
+
+</subsection>
+
+<!--check grammer, notation, and include hint and answer-->
 
 </section>
