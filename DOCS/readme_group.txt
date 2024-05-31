@@ -40,6 +40,10 @@ Reference: https://www.youtube.com/watch?v=Z-BfcnZ8Sm8
   <image source="JO.png" width="40%"> </image> 
   </figure>
 
+  LG: Possible solution for including images:
+  <image source="[put file name here]"> </image>
+  For some reason, when trying to find the file pretext looks in the /output/web/external folder and I can't get it to look at a different path, so we might need to just put image files in this folder
+
 
 -----------------------
 Latex packages:
@@ -98,3 +102,7 @@ to to pull a change from remote repository to local:
 - git pull
 
 -----------------------
+
+Here are the hex color codes for our pretext website
+Dark Red: #671d12
+Blue: #3572A0

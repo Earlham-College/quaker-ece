@@ -6,17 +6,17 @@
 <frontmatter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="frontmatter">
   <titlepage>
     <author>
-      <personname>Goldberg, Levi</personname>
+      <personname>Levi Goldberg</personname>
       <department>Mathematics Department</department>
       <institution>Earlham College</institution>
     </author>
     <author>
-      <personname>Suzuki, Shun</personname>
+      <personname>Shun Suzuki</personname>
       <department>Computer Science Deparment</department>
       <institution>Earlham College</institution>
     </author>
     <author>
-      <personname>Orduz, Javier</personname>
+      <personname>Javier Orduz</personname>
       <department>Mathematics, Computer Science, and Physics Deparments</department>
       <institution>Earlham College</institution>
     </author>
