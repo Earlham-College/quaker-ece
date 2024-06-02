@@ -96,11 +96,20 @@
 <subsection xml:id="linear-algebra">
   <title>Linear Algebra</title>
   <p>Linear algebra is the study of vectors and transformations. In this subsection we will describe some other pieces of linear algebra that will be important to quantum computation.</p>
+ <p><alert>Vector Transpose:</alert> The <term>transpose</term><idx><h>Vector</h><h>Transpose</h></idx> is an operation that turns a standard column vector into a row vector, or vice versa. This means an <m>n</m> dimensional vector changes from having <m>n</m> rows and <m>1</m> column to having <m>1</m> row and <m>n</m> columns. The transpose is represented with a superscript <m>T</m> and the operation is shown below. </<p>
+<me> \begin{pmatrix} a_1 \\ a_2 \\ \vdots \\ a_n \end{pmatrix}^{T} = \begin{pmatrix} a_1 &amp; a_2 &amp; \ldots &amp; a_n \end{pmatrix} </me>
+<p><alert>Dot Product / Inner Product:</alert> The dot product (more generally known as the <term>inner product</term><idx><h>Vector</h><h>Inner Product</h></idx> in the context of quantum computation) is an operation between two vectors of the same dimension that produces a scalar. This product is typically referred to with a <m>\cdot</m>, but has an alternate notation in quantum computation that we will see in the next section. In <m>\mathbb{R}}</m> and In <m>\mathbb{C}^n</m> this operation is performed by taking the sum of the products of the corresponding entries in each vector, as shown below.  </p>
+<me> \begin{pmatrix} a_1 \\ a_2 \\ \vdots \\ a_n \end{pmatrix} \cdot \begin{pmatrix} b_1 \\ b_2 \\ \vdots \\ b_n \end{pmatrix} = a_1 \cdot b_1 + a_2 \cdot b_2 + \ldots + a_n \cdot b_n </me>
+<p><alert>Orthogonality:</alert> <term>Orthogonality</term><idx><h>Orthogonality</h></idx> is the generalization of the concept of perpendicularity. In two and three dimensional space, two vectors are orthogonal if the angle between them is a right angle. Two vectors are orthogonal if their inner product is equal to <m>0</m>.</p>
+<p><alert>Normality:</alert> A vector is <term>normal</term><idx><h>Vector</h><h>Normal Vector</h></idx> if it has a length of <m>1</m>. The length (sometimes also referred to as the norm) of a vector can be found be taking the square root of the sum of the squares of its entries, as shown below. A non-normal vector can be normalized by dividing each of its components by the vectors length. A set of vectors is <term>orthonormal</term><idx><h>Vector</h><h>Orthonormal Vectors</h></idx> if each of the vectors are normal and each of the vectors are orthogonal to the rest. </p>
+<me> \text{Length} (\begin{pmatrix} a_1 \\ a_2 \\ \vdots \\ a_n \end{pmatrix}) = \sqrt{a_{1}^2 + a_{2}^2 + \ldots + a_{n}^2} </me>
   <p><alert>Matrices:</alert> Whereas a vector is a single column of elements, a <term>matrix</term><idx><h>Matrix</h></idx> is a table of elements organized in rows and columns. Technically speaking, a vector can be thought of a matrix with only one column. The dimension of a matrix is described by first listing the number of rows and then listing the number of columns. Thus, a <m>2 \times 3</m> matrix (read "two by three") would have two rows and three columns. A <term>square matrix</term><idx><h>Matrix</h><h>Square Matrix</h></idx> is any matrix with the same number of rows and columns. One of the most important matrices is the <term>identity matrix</term><idx><h>Matrix</h><h>Identity Matrix</h></idx>, a square matrixin which all of the entries along the diagonal are <m>1</m> and all other entries are <m>0</m>. Examples of the <m>2\times2</m> and <m>5\times5</m> identity matrices are shown below, which can be generalized to any <m>n \times n</m> matrix.</p>
   <me> I_{2\times2} = \begin{pmatrix} 1 &amp; 0 \\ 0 &amp; 1 \end{pmatrix}, I_{5\times5} = \begin{pmatrix} 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1   \end{pmatrix}</me>
   <p> A matrix can be multiplied by a scalar in the same way that a vector can, by multiplying each entry in the matrix by the scalar, as shown below. </p>
     <me> c \times \begin{pmatrix} a_1 &amp; a_2 &amp; a_3 \\ a_4 &amp; a_5 &amp; a_6 \\ a_7 &amp; a_8 &amp; a_9 \end{pmatrix} = \begin{pmatrix} c \times a_1 &amp; c \times a_2 &amp; c \times a_3 \\ c \times a_4 &amp; c \times a_5 &amp; c \times a_6 \\ c \times a_7 &amp; c \times a_8 &amp; c \times a_9 \end{pmatrix} </me>
-  <p><alert>Matrix Addition:</alert> Two matrices can be added together only if they each have the same number of rows and columns. The sum of two matrices is found by adding together the corresponding entries of each matrix, as shown below with an example of two <m>3\times3</m> matrices. </p>
+ <p> The concept of a transpose can be extended from vectors to matrices as well. A matrix's transpose is found by turning each of its rows into a column, or, equivalently, by turning each of its columns into a row. This means the transpose of an <m>m \times n</m> matrix is an <m>n \times m</m> matrix. The matrix transpose is also represented by a superscript <m>T</m>. An example of transposing a <m>3 \times 3</m> matrix is shown below. </p>
+ <me> \begin{pmatrix} a_1 &amp; a_2 &amp; a_3 \\ a_4 &amp; a_5 &amp; a_6 \\ a_7 &amp; a_8 &amp; a_9 \end{pmatrix} ^{T} = \begin{pmatrix} a_1 &amp; a_4 &amp; a_7 \\ a_2 &amp; a_5 &amp; a_8 \\ a_3 &amp; a_6 &amp; a_9 \end{pmatrix} </me>
+    <p><alert>Matrix Addition:</alert> Two matrices can be added together only if they each have the same number of rows and columns. The sum of two matrices is found by adding together the corresponding entries of each matrix, as shown below with an example of two <m>3\times3</m> matrices. </p>
   <me> \begin{pmatrix} a_1 &amp; a_2 &amp; a_3 \\ a_4 &amp; a_5 &amp; a_6 \\ a_7 &amp; a_8 &amp; a_9 \end{pmatrix} + \begin{pmatrix} b_1 &amp; b_2 &amp; b_3 \\ b_4 &amp; b_5 &amp; b_6 \\ b_7 &amp; b_8 &amp; b_9 \end{pmatrix} = \begin{pmatrix} a_1 + b_1 &amp; a_2 + b_2 &amp; a_3 + b_3 \\ a_4 + b_4 &amp; a_5 + b_5 &amp; a_6 + b_6 \\ a_7 + b_7 &amp; a_8 + b_8 &amp; a_9 + b_9 \end{pmatrix} </me>
   <exercise>
   <statement>
@@ -113,7 +122,7 @@
   </exercise>
 <p><alert>Matrix Multiplication:</alert> Two matrices can be multiplied together only if the number of columns of the left matrix is equal to the number of rows of the right matrix. The resulting product will be a matrix with the same number of rows as the left matrix and the same number of columns as the right. Thus an <m>m /times n</m> matrix multiplied by a <m> n \times q</m> matrix would produce an <m>m \times q</m> matrix. Notably, matrix multiplication is non-commutative, which means for two matrices <m>A</m> and <m>B</m>, <m>AB \neq BA</m>. The entries of a product matrix are determined by taking the dot product between the corresponding row of the left matrix and the corresponding column of the right matrix, as shown below with an example of multiplication between a <m>3\times3</m> and a <m>3\times2</m> matrix. </p>
 <me> \begin{pmatrix} a_1 &amp; a_2 &amp; a_3 \\ a_4 &amp; a_5 &amp; a_6 \\ a_7 &amp; a_8 &amp; a_9 \end{pmatrix} \times \begin{pmatrix} b_1 &amp; b_2 \\ b_3 &amp; b_4 \\ b_5 &amp; b_6 \end{pmatrix} = \begin{pmatrix} a_1b_1 + a_2b_3+a_3b_5 &amp; a_1b_2 + a_2b_4 + a_3b_6 \\ a_4b_1 + a_5b_3 + a_6b_5 &amp; a_4b_2 + a_5b_4 + a_6b_6 \\ a_7b_1 + a_8b_3 + a_9b_5 &amp; a_7b_2 + a_8b_4 + a_9b_6 \end{pmatrix} </me>
-<p> Now that we know matrix multiplication, we can redefine the dot product / inner product as the transpose of a vector multiplied by the vector. Since vectors are <m>n \times 1</m> dimensional, the transpose will be <m>1 \times n</m> dimensional, so the dot product / inner product will produce a <m>1 \times 1</m> matrix, which is functionally the same as a scalar. </p>
+<p> Now that we know matrix multiplication, we can redefine the dot product / inner product as the transpose of a vector multiplied by the original vector. Since vectors are <m>n \times 1</m> dimensional, the transpose will be <m>1 \times n</m> dimensional, so multiplying the transpose on the left and the original on the right will produce a <m>1 \times 1</m> matrix, which is functionally the same as a scalar. </p>
 <exercise>
   <statement> <p> Compute the following product: </p> <me> \begin{pmatrix} 2 &amp; 4 \\ 3 &amp; 0 \end{pmatrix} \times \begin{pmatrix} 5 &amp; 1 &amp; 2 \\ 0 &amp; 7 &amp; 2 \end{pmatrix} </me> </statement>
     <hint> <p> The resulting matrix should be <m>2 \times 3</m> </p></hint>
@@ -121,6 +130,36 @@
 </subsection>
 </section>
 
+<section xml:id="Linear-Algebra-in-Quantum-Computation>">
+  <title>Linear Algebra in Quantum Computation</title>
+ <p> As mentioned in the section on <xref ref="Classical-computing"/>, qubits can be in the state <m>\ket{0}</m> or <m>\ket{1}</m>. What's more, these states can be represented with vectors. </<p>
+  <me> \ket{0} = \begin{pmatrix} 1 \\ 0 \end{pmatrix} </me>
+  <p> and </p>
+  <me> \ket{1} = \begin{pmatrix} 0 \\ 1 \end{pmatrix} </me>
+  <p> This notation was first introduced by mathematician Paul Dirac and is known as "Dirac Notation" or "Bra-Ket Notation." At a glance, it can be seen that the vectors <m>\ket{0}</m> and <m>\ket(1)</m> are each normal and are orthogonal to each other. Additionally, any point in two dimensional space could be described with a linear combination of these two vectors, meaning they form a basis (we will discuss exactly which space they form a basis for in the following section). Put together, this means <m>\ket{0}</m> and <m>\ket{1}</m> form an orthonormal basis. </p>
+  <p> Systems with multiple qubits are described by vectors in higher dimensions, which will be discussed later. </p>
+</section>
 
+<section xml:id="Qubit-States">
+  <title>Qubit States</title>
+  <subsection xml:id="subsec-Qubit">
+    <title>Qubits</title>
+ <p> As a reminder, a qubit exists in a superposition between the states <m>\ket{0}</m> and <m>\ket{1}</m>, which means that they can be expressed as a linear combination of the vectors <m>\begin{pmatrix} 1 \\ 0 \end{pmatrix}</m> and <m> \begin{pmatrix} 0 \\ 1 \end{pmatrix} </m>. This means a qubit <m> \psi </m> can be expressed <aside> </p>
+ <me> \ket{psi} = \alpha \ket{0} + \beta \ket{1} </me>
+ <p> Where <m> \aplha </m> and <m> \beta </m> are complex coefficiants that relate to the probability that a qubit is in the states <m> \ket{0}</m> and <m> \ket{1} </m> respectively. This means that qubits exist within a complex vector space. The exact space that qubits exist within is known as a <term>hilbert Space</term><idx><h>Hilbert Space</h></idx>.
+ </subsection>
+<subsection xml:id="subsec-Hilbert-Space">
+  <title>Hilbert Space</title>
+  A hilbert space is a complex vector space in which the inner product is defined as an operation. A single qubit exists within the hilbert space <m>\mathbb{C}^2</m>, which is the set of all two dimensional vectors with complex entries. 
+ </subsection>
+ <subsection xml:id="subsec-Qubit-Measurements">
+  <title>Qubit Measurements</title>
+  Here I will describe the probabilities of measuring a qubit
+ </subsection>
+</section>
 
+<section xml:id="sec-Systems-of-Multiple-Qubits">
+  <title>Systems of Multiple Qubits</title>
+  <p> Here I will define the tensor product and then describe the vector representations of multi-qubit systems </p>
+</section>
 </chapter>
