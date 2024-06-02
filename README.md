@@ -17,11 +17,13 @@
 [myXprofileBDG]: https://img.shields.io/static/v1?label=Follow&message=jaorduc&color=2ea44f&style=plastic&logo=X&logoColor=black
 [myXprofile]:https://twitter.com/jaorduc
 
+[wordpressBDG]:https://img.shields.io/badge/WordPress-%23117AC9.svg?style=plastic&logo=WordPress&logoColor=white
 [wordpress]: https://quaker-ece.cs.earlham.edu/home/
+
 [webbooklink]: https://earlham-college.github.io/quaker-ece/
 [qmexicoweb]: https://qmexico.org/
 
-[![website - jaorduz.github.io][mywebsiteBDG]][mywebsite]
+[![website - jaorduz.github.io][mywebsiteBDG]][mywebsite]{:target="_blank" rel="noopener"}
 [![Github][mygithubBDG-jaorduz]][mygithub-jaorduz]
 [![Github][mygithubBDG-jaorduc]][mygithub-jaorduc]
 [![Follow @jaorduc][myXprofileBDG]][myXprofile]
@@ -29,7 +31,7 @@
 
 This repository contains the information for creating the webbook.
 Check the website: 
-1. Group info: [website][wordpress]
+1. Group info: [![website][wordpressBDG]][wordpress]
 1. WebBook link: [QC. A gentle introduction for LAI][webbooklink]
 1. QMexico: [QMexico][qmexicoweb]
 
