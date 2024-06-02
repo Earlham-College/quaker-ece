@@ -23,7 +23,7 @@
 [webbooklink]: https://earlham-college.github.io/quaker-ece/
 [qmexicoweb]: https://qmexico.org/
 
-[![website - jaorduz.github.io][mywebsiteBDG]][mywebsite]{:target="_blank" rel="noopener"}
+[![website - jaorduz.github.io][mywebsiteBDG]][mywebsite]
 [![Github][mygithubBDG-jaorduz]][mygithub-jaorduz]
 [![Github][mygithubBDG-jaorduc]][mygithub-jaorduc]
 [![Follow @jaorduc][myXprofileBDG]][myXprofile]
