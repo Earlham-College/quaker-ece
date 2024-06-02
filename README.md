@@ -29,9 +29,9 @@
 
 This repository contains the information for creating the webbook.
 Check the website: 
-1. Group info: [![wordpress]][website]
-1. WebBook link: [![webbooklink]][QC. A gentle introduction for LAI]
-1. QMexico: [![qmexicoweb]][QMexico]
+1. Group info: [![wordpress][website]]
+1. WebBook link: [![webbooklink][QC. A gentle introduction for LAI]]
+1. QMexico: [![qmexicoweb]][QMexico]]
 
 
 ## Contents
