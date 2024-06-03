@@ -547,7 +547,52 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "2.3",
   "title": "Circuits",
-  "body": " Circuits  Text of section is  "
+  "body": " Circuits    NOT gate  This model is inspired by the classical gates with their truth table.   NOT logicall classical gate representation         AND gate  AND logical classical gate and corresponding truth table.   AND logicall classical gate logicall classical gate representation         Reversible and Nonreversible gate  Since QC is related to a theory of reversible computing, we note that the NOT gate is reversible while the AND gate is not.   Non-reversible AND gate representation     With the circuit in the fig. 2.3.3, we can simulate a non-reversible gate, besides, we keep a copy of the inputs and add of the operation, after it adds previous result to . We fix and obtain a non-reversible AND gate. Where represents the logical exclusive-OR operation, which it is the same addition modulo two. Then, we can obtain a reversible version of the circuit if we replace the irreversible parts with their reversible counterparts.    Consider the gate proposed in the section of Controlled-NOT, the corresponding circuit is given by   put a hint   this is a solution    Controlled-NOT gate representation     "
+},
+{
+  "id": "fig-NOTcgategateSimple_1",
+  "level": "2",
+  "url": "sec3-chap2.html#fig-NOTcgategateSimple_1",
+  "type": "Figure",
+  "number": "2.3.1",
+  "title": "",
+  "body": " NOT logicall classical gate representation    "
+},
+{
+  "id": "fig-ANDcgatecgategateSimple_1",
+  "level": "2",
+  "url": "sec3-chap2.html#fig-ANDcgatecgategateSimple_1",
+  "type": "Figure",
+  "number": "2.3.2",
+  "title": "",
+  "body": " AND logicall classical gate logicall classical gate representation    "
+},
+{
+  "id": "fig-NonrANDgategateSimple_1",
+  "level": "2",
+  "url": "sec3-chap2.html#fig-NonrANDgategateSimple_1",
+  "type": "Figure",
+  "number": "2.3.3",
+  "title": "",
+  "body": " Non-reversible AND gate representation    "
+},
+{
+  "id": "exe-CNOTapllicationQbits",
+  "level": "2",
+  "url": "sec3-chap2.html#exe-CNOTapllicationQbits",
+  "type": "Checkpoint",
+  "number": "2.3.4",
+  "title": "",
+  "body": " Consider the gate proposed in the section of Controlled-NOT, the corresponding circuit is given by   put a hint   this is a solution  "
+},
+{
+  "id": "fig-CCNOTcgategateSimple_1",
+  "level": "2",
+  "url": "sec3-chap2.html#fig-CCNOTcgategateSimple_1",
+  "type": "Figure",
+  "number": "2.3.5",
+  "title": "",
+  "body": " Controlled-NOT gate representation    "
 },
 {
   "id": "chap3-chapter",

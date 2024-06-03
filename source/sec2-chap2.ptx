@@ -687,10 +687,10 @@ i&amp;0
     <li><me>CZ\ket{01}</me></li>  
     <li><me>CZ\ket{10}</me></li>
     <li><me>CZ\ket{11}</me></li>
-    <li><me>CZ\sup{2}\ket{00}</me></li>
-    <li><me>CZ\sup{2}\ket{01}</me></li>  
-    <li><me>CZ\sup{2}\ket{10}</me></li>
-    <li><me>CZ\sup{2}\ket{11}</me></li>         
+    <li><me>CZ^{\otimes 2}\ket{00}</me></li>
+    <li><me>CZ^{\otimes 2}\ket{01}</me></li>  
+    <li><me>CZ^{\otimes 2}\ket{10}</me></li>
+    <li><me>CZ^{\otimes 2}\ket{11}</me></li>         
   </ul>
 
   </statement>
