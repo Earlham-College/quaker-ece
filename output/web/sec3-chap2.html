@@ -279,7 +279,14 @@ window.MathJax = {
 <li><div class="toc-item"><a href="sec2-chap2.html#subsec10-chap2" class="internal"><span class="codenumber">2.2.10</span> <span class="title">Contorolled-Z</span></a></div></li>
 </ul>
 </li>
-<li class="active"><div class="toc-item"><a href="sec3-chap2.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Circuits</span></a></div></li>
+<li class="active">
+<div class="toc-item"><a href="sec3-chap2.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Circuits</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec3-chap2.html#subsec1-chap2" class="internal"><span class="codenumber">2.3.1</span> <span class="title">NOT gate</span></a></div></li>
+<li><div class="toc-item"><a href="sec3-chap2.html#subsec2-chap2" class="internal"><span class="codenumber">2.3.2</span> <span class="title">AND gate</span></a></div></li>
+<li><div class="toc-item"><a href="sec3-chap2.html#subsec3-chap2" class="internal"><span class="codenumber">2.3.3</span> <span class="title">Reversible and Nonreversible gate</span></a></div></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><div class="toc-item"><a href="chap3-chapter.html" class="internal"><span class="codenumber">3</span> <span class="title">Chapter 3</span></a></div></li>
@@ -294,7 +301,57 @@ window.MathJax = {
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec3-chap2"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">2.3</span> <span class="title">Circuits</span>
 </h2>
+<<<<<<< HEAD
 <div class="para" id="p-159">Text of section is</div></section></div>
+=======
+<<<<<<< HEAD
+<section class="subsection" id="subsec1-chap2"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.3.1</span> <span class="title">NOT gate</span>
+</h3>
+<div class="para" id="p-154">This model is inspired by the classical gates with their truth table.</div>
+<figure class="figure figure-like" id="fig-NOTcgategateSimple_1"><div class="image-box" style="width: 45%; margin-left: 27.5%; margin-right: 27.5%;"><img src="external/NOTcgate.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.3.1<span class="period">.</span></span><span class="space"> </span>NOT logicall classical gate representation</figcaption></figure><div class="displaymath process-math" id="mdn-17">
+\begin{align}
+\begin{array}{c|c}
+x &amp;  y \\
+\hline 
+0 &amp; 1 \\
+1 &amp; 0
+\end{array}\tag{2.3.1}
+\end{align}
+</div></section><section class="subsection" id="subsec2-chap2"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.3.2</span> <span class="title">AND gate</span>
+</h3>
+<div class="para" id="p-155">AND logical classical gate and corresponding truth table.</div>
+<figure class="figure figure-like" id="fig-ANDcgatecgategateSimple_1"><div class="image-box" style="width: 45%; margin-left: 27.5%; margin-right: 27.5%;"><img src="external/ANDcgate.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.3.2<span class="period">.</span></span><span class="space"> </span>AND logicall classical gate logicall classical gate representation</figcaption></figure><div class="displaymath process-math" id="mdn-18">
+\begin{align}
+\begin{array}{cc|c}
+x &amp; y &amp; x \wedge y \\
+\hline 0 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 0 \\
+1 &amp; 0 &amp; 0 \\
+1 &amp; 1 &amp; 1
+\end{array}\tag{2.3.2}
+\end{align}
+</div></section><section class="subsection" id="subsec3-chap2"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.3.3</span> <span class="title">Reversible and Nonreversible gate</span>
+</h3>
+<div class="para" id="p-156">Since QC is related to a theory of reversible computing, we note that the NOT gate is reversible while the AND gate is not.</div>
+<figure class="figure figure-like" id="fig-NonrANDgategateSimple_1"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/NonrAND.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.3.3<span class="period">.</span></span><span class="space"> </span>Non-reversible AND gate representation</figcaption></figure><div class="para" id="p-157">With the circuit in the fig. 2.3.3, we can simulate a non-reversible gate, besides, we keep a copy of the inputs and add of the <span class="process-math">\(x_0∧x_1\)</span> operation, after it adds previous result to <span class="process-math">\(x_2\text{.}\)</span> We fix <span class="process-math">\(x_2 = 0\)</span> and obtain a non-reversible AND gate. Where <span class="process-math">\(\oplus\)</span> represents the logical exclusive-OR operation, which it is the same addition modulo two. Then, we can obtain a reversible version of the circuit if we replace the irreversible parts with their reversible counterparts.</div></section><article class="exercise exercise-like" id="exe-CNOTapllicationQbits"><a href="" data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exe-CNOTapllicationQbits"><h3 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.3.4</span><span class="period">.</span>
+</h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-exe-CNOTapllicationQbits"><article class="exercise exercise-like"><div class="para" id="p-158">Consider the gate proposed in the section of Controlled-NOT, the corresponding circuit is given by</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-15" id="hint-15"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-15"><div class="hint solution-like"><div class="para" id="p-159">put a hint</div></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-22" id="solution-22"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-22"><div class="solution solution-like"><div class="para" id="p-160">this is a solution</div></div></div>
+</div></article></div>
+<figure class="figure figure-like" id="fig-CCNOTcgategateSimple_1"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/CCNOT.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.3.5<span class="period">.</span></span><span class="space"> </span>Controlled-NOT gate representation</figcaption></figure></section></div>
+=======
+<div class="para" id="p-158">Text of section is</div></section></div>
+>>>>>>> d3ed0b1c1c7180d6fb476b9f999713e7c338e6ca
+>>>>>>> 7279dee4a371b4199a62e87046e473039d26f606
 <div class="ptx-content-footer">
 <a class="previous-button button" href="sec2-chap2.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="chap3-chapter.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>
 </div></main>

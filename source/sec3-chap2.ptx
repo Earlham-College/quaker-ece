@@ -3,6 +3,113 @@
 <section xml:id="sec3-chap2" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Circuits</title>
 
-  <p> Text of section is </p>
+  <!--NOTgate-->
+  <subsection xml:id="subsec1-chap2" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>NOT gate</title>
+
+  <p> 
+    This model is inspired by the 
+classical gates with their truth table.
+    
+  </p>
+
+  <figure xml:id="fig-NOTcgategateSimple_1">
+    <caption>NOT logicall classical gate representation</caption>
+    <image source="NOTcgate.png" width="45%"> </image>
+  </figure>
+
+  <mdn>
+    <mrow xml:id="truthtable1">
+      
+\begin{array}{c|c}
+x &amp;  y \\
+\hline 
+0 &amp; 1 \\
+1 &amp; 0
+\end{array}
+    </mrow>
+  </mdn>
+</subsection>
+
+<!--ANDgate-->
+<subsection xml:id="subsec2-chap2" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>AND gate</title>
+
+
+  <p> 
+    AND logical classical gate and corresponding truth table.
+  </p>
+
+  <figure xml:id="fig-ANDcgatecgategateSimple_1">
+    <caption>AND logicall classical gate logicall classical gate representation</caption>
+    <image source="ANDcgate.png" width="45%"> </image>
+  </figure>
+
+  
+
+  <mdn>
+    <mrow xml:id="truthtable2">
+     
+      \begin{array}{cc|c}
+      x &amp; y &amp; x \wedge y \\
+      \hline 0 &amp; 0 &amp; 0 \\
+      0 &amp; 1 &amp; 0 \\
+      1 &amp; 0 &amp; 0 \\
+      1 &amp; 1 &amp; 1
+      \end{array}
+    </mrow>
+  </mdn>
+
+</subsection>
+
+<!--NonreversibleNDgate-->
+<subsection xml:id="subsec3-chap2" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Reversible and Nonreversible gate</title>
+
+  <p>
+    Since QC is related to a theory of reversible computing, we note that the NOT gate is reversible while the AND gate is not.
+
+  </p>
+
+
+
+  <figure xml:id="fig-NonrANDgategateSimple_1">
+    <caption>Non-reversible AND gate representation</caption>
+    <image source="NonrAND.png" width="50%"> </image>
+  </figure>
+
+  <p>
+    With the circuit in the fig. 2.3.3, we can simulate a non-reversible gate, besides, we keep a copy of the
+inputs and add of the <m>x_0∧x_1</m> operation, after it adds previous result to <m>x_2</m>. We fix <m>x_2 = 0</m> and obtain a
+non-reversible AND gate. Where <m>\oplus</m> represents the logical exclusive-OR operation, which it is the same
+addition modulo two.
+Then, we can obtain a reversible version of the circuit if we replace the irreversible parts with their
+reversible counterparts.
+  </p>
+
+</subsection>
+
+  <exercise xml:id="exe-CNOTapllicationQbits">
+    <statement>
+    <p>
+      Consider the gate proposed in the section of Controlled-NOT, the corresponding circuit is given by
+    </p>
+
+  </statement>
+    <hint>
+      <p>put a hint</p>
+    </hint>
+    <solution>
+      <p>
+        this is a solution
+      </p>
+    </solution>
+    </exercise>
+
+  <figure xml:id="fig-CCNOTcgategateSimple_1">
+    <caption>Controlled-NOT gate representation</caption>
+    <image source="CCNOT.png" width="50%"> </image>
+  </figure>
+
 
 </section>

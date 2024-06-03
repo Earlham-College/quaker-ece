@@ -197,9 +197,10 @@ i&amp;0
 
 <subsection xml:id="subsec4-chap2" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Pauli Z</title>
+   
   <p> 
-    This is also labeled as <m>\sigma_3</m>, <m>\sigma_z</m> or <em>Z</em>
-    
+    This is also labeled as 
+    <!-- <m>\sigma_3</m>, <m>\sigma_z</m> or <em>Z</em> -->
   </p>
 
 
@@ -214,8 +215,6 @@ i&amp;0
 1&amp;0\\
 0&amp;-1
 \end{pmatrix}
-
-
     </mrow>
 </mdn>
 
@@ -446,10 +445,10 @@ i&amp;0
     <p>
     Obtain the Dirac notation
       <ul>
-        <li><me>c\to0 and t\to0. \ket{00}=\ket{0,0}</me></li>
-        <li><me>c\to0 and t\to1</me></li>  
-        <li><me>c\to1 and t\to0</me></li>
-        <li><me>c\to1 and t\to1</me></li>  
+        <li><me>c\to0</me> and <me>t\to0. \ket{00}=\ket{0,0}</me></li>
+        <li><me>c\to0</me> and <me>t\to1</me></li>  
+        <li><me>c\to1</me> and <me>t\to0</me></li>
+        <li><me>c\to1</me> and <me>t\to1</me></li>  
               
       </ul>
     </p>
@@ -687,10 +686,10 @@ i&amp;0
     <li><me>CZ\ket{01}</me></li>  
     <li><me>CZ\ket{10}</me></li>
     <li><me>CZ\ket{11}</me></li>
-    <li><me>CZ\sup{2}\ket{00}</me></li>
-    <li><me>CZ\sup{2}\ket{01}</me></li>  
-    <li><me>CZ\sup{2}\ket{10}</me></li>
-    <li><me>CZ\sup{2}\ket{11}</me></li>         
+    <li><me>CZ^{\otimes 2}\ket{00}</me></li>
+    <li><me>CZ^{\otimes 2}\ket{01}</me></li>  
+    <li><me>CZ^{\otimes 2}\ket{10}</me></li>
+    <li><me>CZ^{\otimes 2}\ket{11}</me></li>         
   </ul>
 
   </statement>
