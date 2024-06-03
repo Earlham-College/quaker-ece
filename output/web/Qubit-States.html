@@ -312,7 +312,7 @@ window.MathJax = {
 \ket{\psi}^{\dagger} = (\alpha \ket{0} + \beta \ket{1})^{\dagger} = (\alpha \begin{pmatrix} 1 \\ 0 \end{pmatrix} + \beta \begin{pmatrix} 0 \\ 1 \end{pmatrix})^{\dagger} = \alpha^{*} \begin{pmatrix} 1 &amp; 0 \end{pmatrix} + \beta^{*} \begin{pmatrix} 0 &amp; 1 \end{pmatrix} = \bra{\psi} 
 \end{equation*}
 </div>
-<div class="para" id="p-83">Bra vectors allow us to use a new notation for the inner product. We write the inner product between two vectors, <span class="process-math">\(\ket{\psi}\)</span> and <span class="process-math">\(\ket{\phi}\text{,}\)</span> as <span class="process-math">\(\braket{\psi | \phi}\)</span> and perform the calculation as matrix multiplication, adescribed in <a href="Vectors-and-Vector-Spaces.html#linear-algebra" class="internal" title="Subsection 1.5.4: Linear Algebra">Subsection 1.5.4</a>
+<div class="para" id="p-83">Bra vectors allow us to use a new notation for the inner product. We write the inner product between two vectors, <span class="process-math">\(\ket{\psi}\)</span> and <span class="process-math">\(\ket{\phi}\text{,}\)</span> as <span class="process-math">\(\braket{\psi | \phi}\)</span> and perform the calculation as matrix multiplication, as described in <a href="Vectors-and-Vector-Spaces.html#linear-algebra" class="internal" title="Subsection 1.5.4: Linear Algebra">Subsection 1.5.4</a>
 </div>
 <article class="exercise exercise-like" id="exercise-7"><a href="" data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exercise-7"><h4 class="heading">
 <span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">1.7.1</span><span class="period">.</span>
@@ -354,8 +354,35 @@ window.MathJax = {
 \end{equation*}
 </div>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-8" id="solution-8"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-8"><div class="solution solution-like"><div class="para" id="p-88">The probability that <span class="process-math">\(\ket{\psi}\)</span> will be in the state <span class="process-math">\(\ket{0}\)</span> after measurement is 25% because <span class="process-math">\(\frac{1}{2}^2 = 1/4 = 0.25\text{.}\)</span> The probability that <span class="process-math">\(\ket{\psi}\)</span> will be in the state <span class="process-math">\(\ket{1}\)</span> after measurement is 75% because <span class="process-math">\(\frac{\sqrt{3}}{2}^2 = 3/4 = 0.75\text{.}\)</span>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-8" id="solution-8"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-8"><div class="solution solution-like"><div class="para" id="p-88">The probability that <span class="process-math">\(\ket{\psi}\)</span> will be in the state <span class="process-math">\(\ket{0}\)</span> after measurement is 25% because <span class="process-math">\((\frac{1}{2})^2 = 1/4 = 0.25\text{.}\)</span> The probability that <span class="process-math">\(\ket{\psi}\)</span> will be in the state <span class="process-math">\(\ket{1}\)</span> after measurement is 75% because <span class="process-math">\((\frac{\sqrt{3}}{2})^2 = 3/4 = 0.75\text{.}\)</span>
 </div></div></div>
+</div></article></div>
+<div class="para" id="p-89">Another way to find the probability that a qubit is in any given state is to take the square of the inner product of the outcome state and the qubit. For a qubit <span class="process-math">\(\ket{\psi}\text{,}\)</span> the probability that it is in the state <span class="process-math">\(\ket{0}\)</span> after measurement would be <span class="process-math">\((\braket{0|\psi})^2\)</span> and the probability that it is in the state <span class="process-math">\(\ket{1}\)</span> would be <span class="process-math">\((\braket{1|\psi})^2\text{.}\)</span>
+</div>
+<article class="exercise exercise-like" id="exercise-9"><a href="" data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exercise-9"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">1.7.3</span><span class="period">.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-9"><article class="exercise exercise-like"><div class="para" id="p-90">Using an inner product, calculate the probability that the following system is in the state <span class="process-math">\(\ket{0}\)</span> and <span class="process-math">\(\ket{1}\text{.}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\ket{psi} = \frac{\sqrt{7}}{\sqrt{8}} \ket{0} + \frac{\sqrt{1}}{\sqrt{8}} \ket{1} = \begin{pmatrix} \frac{\sqrt{7}}{\sqrt{8}} \\ \frac{\sqrt{1}}{\sqrt{8}} \end{pmatrix} 
+\end{equation*}
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-9" id="solution-9"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-9"><div class="solution solution-like">
+<div class="displaymath process-math">
+\begin{equation*}
+P(0) = (\braket{0|\psi})^2 = (\begin{pmatrix} 1 &amp; 0 \end{pmatrix} \begin{pmatrix} \frac{\sqrt{7}}{\sqrt{8}} \\ \frac{\sqrt{1}}{\sqrt{8}} \end{pmatrix})^2 = (\frac{\sqrt{7}}{\sqrt{8}})^2 = 7/8 = 0.875 
+\end{equation*}
+</div>
+<div class="para" id="p-91">The probability that <span class="process-math">\(\ket{\psi}\)</span> will collapse into the state <span class="process-math">\(\ket{0}\)</span> is 87.5%.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+P(1) = (\braket{1|\psi})^2 = (\begin{pmatrix} 0 &amp; 1 \end{pmatrix} \begin{pmatrix} \frac{\sqrt{7}}{\sqrt{8}} \\ \frac{\sqrt{1}}{\sqrt{8}} \end{pmatrix})^2 = (\frac{\sqrt{1}}{\sqrt{8}})^2 = 1/8 = 0.125 
+\end{equation*}
+</div>
+<div class="para" id="p-92">The probability that <span class="process-math">\(\ket{\psi}\)</span> will collapse into the state <span class="process-math">\(\ket{1}\)</span> is 12.5%.</div>
+</div></div>
 </div></article></div></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="Linear-Algebra-in-Quantum-Computation.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="sec-Systems-of-Multiple-Qubits.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>
