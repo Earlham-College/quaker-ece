@@ -1,5 +1,5 @@
-INFO    : PreTeXt project found in `/Users/JO/github/quaker-ece`.
-INFO    : Now preparing local server to preview directory `/Users/JO/github/quaker-ece/output/web`.
+INFO    : PreTeXt project found in `/eccs/users/lsgoldb22/SummerResearch/quaker-ece`.
+INFO    : Now preparing local server to preview directory `/eccs/users/lsgoldb22/SummerResearch/quaker-ece/output/web`.
 INFO    :   (Reminder: use `pretext deploy` to deploy your built project to a public
 INFO    :   GitHub Pages site that can be shared with readers who cannot access your
 INFO    :   personal computer.)

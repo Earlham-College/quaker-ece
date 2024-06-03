@@ -96,7 +96,7 @@
 <subsection xml:id="linear-algebra">
   <title>Linear Algebra</title>
   <p>Linear algebra is the study of vectors and transformations. In this subsection we will describe some other pieces of linear algebra that will be important to quantum computation.</p>
- <p><alert>Vector Transpose:</alert> The <term>transpose</term><idx><h>Vector</h><h>Transpose</h></idx> is an operation that turns a standard column vector into a row vector, or vice versa. This means an <m>n</m> dimensional vector changes from having <m>n</m> rows and <m>1</m> column to having <m>1</m> row and <m>n</m> columns. The transpose is represented with a superscript <m>T</m> and the operation is shown below. </<p>
+ <p><alert>Vector Transpose:</alert> The <term>transpose</term><idx><h>Vector</h><h>Transpose</h></idx> is an operation that turns a standard column vector into a row vector, or vice versa. This means an <m>n</m> dimensional vector changes from having <m>n</m> rows and <m>1</m> column to having <m>1</m> row and <m>n</m> columns. The transpose is represented with a superscript <m>T</m> and the operation is shown below. </p>
 <me> \begin{pmatrix} a_1 \\ a_2 \\ \vdots \\ a_n \end{pmatrix}^{T} = \begin{pmatrix} a_1 &amp; a_2 &amp; \ldots &amp; a_n \end{pmatrix} </me>
 <p><alert>Dot Product / Inner Product:</alert> The dot product (more generally known as the <term>inner product</term><idx><h>Vector</h><h>Inner Product</h></idx> in the context of quantum computation) is an operation between two vectors of the same dimension that produces a scalar. This product is typically referred to with a <m>\cdot</m>, but has an alternate notation in quantum computation that we will see in the next section. In <m>\mathbb{R}}</m> and In <m>\mathbb{C}^n</m> this operation is performed by taking the sum of the products of the corresponding entries in each vector, as shown below.  </p>
 <me> \begin{pmatrix} a_1 \\ a_2 \\ \vdots \\ a_n \end{pmatrix} \cdot \begin{pmatrix} b_1 \\ b_2 \\ \vdots \\ b_n \end{pmatrix} = a_1 \cdot b_1 + a_2 \cdot b_2 + \ldots + a_n \cdot b_n </me>
@@ -111,7 +111,7 @@
  <me> \begin{pmatrix} a_1 &amp; a_2 &amp; a_3 \\ a_4 &amp; a_5 &amp; a_6 \\ a_7 &amp; a_8 &amp; a_9 \end{pmatrix} ^{T} = \begin{pmatrix} a_1 &amp; a_4 &amp; a_7 \\ a_2 &amp; a_5 &amp; a_8 \\ a_3 &amp; a_6 &amp; a_9 \end{pmatrix} </me>
     <p><alert>Matrix Addition:</alert> Two matrices can be added together only if they each have the same number of rows and columns. The sum of two matrices is found by adding together the corresponding entries of each matrix, as shown below with an example of two <m>3\times3</m> matrices. </p>
   <me> \begin{pmatrix} a_1 &amp; a_2 &amp; a_3 \\ a_4 &amp; a_5 &amp; a_6 \\ a_7 &amp; a_8 &amp; a_9 \end{pmatrix} + \begin{pmatrix} b_1 &amp; b_2 &amp; b_3 \\ b_4 &amp; b_5 &amp; b_6 \\ b_7 &amp; b_8 &amp; b_9 \end{pmatrix} = \begin{pmatrix} a_1 + b_1 &amp; a_2 + b_2 &amp; a_3 + b_3 \\ a_4 + b_4 &amp; a_5 + b_5 &amp; a_6 + b_6 \\ a_7 + b_7 &amp; a_8 + b_8 &amp; a_9 + b_9 \end{pmatrix} </me>
-  <exercise>
+  <exercise> 
   <statement>
     <p> Compute the following sum: </p>
     <me> \begin{pmatrix} 4 &amp; 7 &amp; 9 \\ 1 &amp; 0 &amp; 6 \\ 2 &amp; 5 &amp; 3 \end{pmatrix} + \begin{pmatrix} 0 &amp; 4 &amp; 6 \\ 2 &amp; 2 &amp; 2 \\ 5 &amp; 3 &amp; 8 \end{pmatrix}</me>
@@ -130,9 +130,9 @@
 </subsection>
 </section>
 
-<section xml:id="Linear-Algebra-in-Quantum-Computation>">
+<section xml:id="Linear-Algebra-in-Quantum-Computation">
   <title>Linear Algebra in Quantum Computation</title>
- <p> As mentioned in the section on <xref ref="Classical-computing"/>, qubits can be in the state <m>\ket{0}</m> or <m>\ket{1}</m>. What's more, these states can be represented with vectors. </<p>
+ <p> As mentioned in the section on Classical Computing (INSERT LINK LATER), qubits can be in the state <m>\ket{0}</m> or <m>\ket{1}</m>. What's more, these states can be represented with vectors. </p>
   <me> \ket{0} = \begin{pmatrix} 1 \\ 0 \end{pmatrix} </me>
   <p> and </p>
   <me> \ket{1} = \begin{pmatrix} 0 \\ 1 \end{pmatrix} </me>
@@ -144,9 +144,9 @@
   <title>Qubit States</title>
   <subsection xml:id="subsec-Qubit">
     <title>Qubits</title>
- <p> As a reminder, a qubit exists in a superposition between the states <m>\ket{0}</m> and <m>\ket{1}</m>, which means that they can be expressed as a linear combination of the vectors <m>\begin{pmatrix} 1 \\ 0 \end{pmatrix}</m> and <m> \begin{pmatrix} 0 \\ 1 \end{pmatrix} </m>. This means a qubit <m> \psi </m> can be expressed <aside> </p>
+ <p> As a reminder, a qubit exists in a superposition between the states <m>\ket{0}</m> and <m>\ket{1}</m>, which means that they can be expressed as a linear combination of the vectors <m>\begin{pmatrix} 1 \\ 0 \end{pmatrix}</m> and <m> \begin{pmatrix} 0 \\ 1 \end{pmatrix} </m>. This means a qubit <m> \psi </m> can be expressed </p>
  <me> \ket{psi} = \alpha \ket{0} + \beta \ket{1} </me>
- <p> Where <m> \aplha </m> and <m> \beta </m> are complex coefficiants that relate to the probability that a qubit is in the states <m> \ket{0}</m> and <m> \ket{1} </m> respectively. This means that qubits exist within a complex vector space. The exact space that qubits exist within is known as a <term>hilbert Space</term><idx><h>Hilbert Space</h></idx>.
+ <p> Where <m> \aplha </m> and <m> \beta </m> are complex coefficiants that relate to the probability that a qubit is in the states <m> \ket{0}</m> and <m> \ket{1} </m> respectively. This means that qubits exist within a complex vector space. The exact space that qubits exist within is known as a <term>hilbert Space</term><idx><h>Hilbert Space</h></idx>. </p>
  </subsection>
 <subsection xml:id="subsec-Hilbert-Space">
   <title>Hilbert Space</title>
