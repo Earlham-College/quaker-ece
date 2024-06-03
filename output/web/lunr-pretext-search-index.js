@@ -124,7 +124,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.5",
   "title": "Vectors and Vector Spaces",
-  "body": " Vectors and Vector Spaces   Introduction to Vectors  A vector is an ordered list of numbers that is used to describe quantities with both magnitude and direction. One example of a vector is force, which has both a magnitude (how strong the force is) and a direction (the angle at which the force is being applied). Each vector has a dimension, which is the number of components that comprise it. It is customary to signify that something is a vector by either drawing an arrow on top of it or bolding it. If we have a vector called , we would write or . The number is called the -th component of .  The most typical use of a vector with components is to describe a point in dimensional space in reference to some starting point. For example, if you have a square piece of paper and label the bottom left corner with the starting point (0,0), then a vector with components (1,1) would represent moving one unit of measurement along the bottom of the paper and one unit of measurement along the side of the paper to reach a new point. This vector would have a direction of and a magnitude of units (by the pythagorean theorem).   An example of a vector     Vector Spaces  Every vector exists within a vector space Vector Vector Space , which are sets that satisfy certain mathematical properties. The most common vector spaces we will deal with are , the set of all dimensional vectors with real components, and , the set of all dimensional vectors with complex components. Notice , so we will usually work with for generality. All vector spaces have the same properties regardless of dimension. Here are the properties for an -dimensional vector space:  1. Vector equality: means   2. Vector addition: means   3. Scalar multiplication:   4. Negative of a vector:   5. Null vector: There exists a null vector   If our vector components are all real numbers (i.e. the vector space exists in instead of ), then the following properties also hold:  1. Addition of vectors is commutative:  2. Addition of vectors is associative:  3. Scalar multiplication is distributive: and  4. Scalar multiplication is associative:     Bases  For any vector space, one can find a subset of vectors which can be used to generate any other vector in the space through linear combinations (scalar multiplication and vector addition). The smallest set of vectors that fulfills this property is called the basis Vector basis . In , we only need two vectors to produce the rest through linear combination. The standard basis, is:   The ^ symbol is used to denote that a vector is normal Vector Normal , which means that it has a length of 1. The vector is referred to as \" hat.\" This property is extremely important to quantum mechanics and will be discussed more later.  Bases have two properties:   Linear Independence: A set of vectors is linearly independent Vector Linearly Independent if we cannot express any one of them as a linear combination of the others. If we can express one as a linear combination of the others, then it is called a linearly dependent Vector Linearly Dependent set. A basis must be linearly independent.   Completeness: A set of vectors is complete if it spans Vector Span its vector space, which in turn means that any vector in the space can be expressed as a linear combination of the vectors in that set. A basis for a vector space must span the space.    (A Counterexample)  Let be the set,   And let be the vector,   Since we are unable to express as a linear combination of the elements of , then we say is not complete.    Let be the set,   And let be the vector,  We can express as:  Since we can express as a linear combination of the elements of and it is easy to show that we could construct any other vector in from these same elements, we say that spans and is complete.   Dimension of a basis. The number of basis elements for a vector space is the same as that spaces dimension.   Linear Algebra  Linear algebra is the study of vectors and transformations. In this subsection we will describe some other pieces of linear algebra that will be important to quantum computation.  Vector Transpose: The transpose Vector Transpose is an operation that turns a standard column vector into a row vector, or vice versa. This means an dimensional vector changes from having rows and column to having row and columns. The transpose is represented with a superscript and the operation is shown below.   Dot Product \/ Inner Product: The dot product (more generally known as the inner product Vector Inner Product in the context of quantum computation) is an operation between two vectors of the same dimension that produces a scalar. This product is typically referred to with a , but has an alternate notation in quantum computation that we will see in the next section. In and In this operation is performed by taking the sum of the products of the corresponding entries in each vector, as shown below.   Orthogonality:  Orthogonality Orthogonality is the generalization of the concept of perpendicularity. In two and three dimensional space, two vectors are orthogonal if the angle between them is a right angle. Two vectors are orthogonal if their inner product is equal to .  Normality: A vector is normal Vector Normal Vector if it has a length of . The length (sometimes also referred to as the norm) of a vector can be found be taking the square root of the sum of the squares of its entries, as shown below. A non-normal vector can be normalized by dividing each of its components by the vectors length. A set of vectors is orthonormal Vector Orthonormal Vectors if each of the vectors are normal and each of the vectors are orthogonal to the rest.   Matrices: Whereas a vector is a single column of elements, a matrix Matrix is a table of elements organized in rows and columns. Technically speaking, a vector can be thought of a matrix with only one column. The dimension of a matrix is described by first listing the number of rows and then listing the number of columns. Thus, a matrix (read \"two by three\") would have two rows and three columns. A square matrix Matrix Square Matrix is any matrix with the same number of rows and columns. One of the most important matrices is the identity matrix Matrix Identity Matrix , a square matrixin which all of the entries along the diagonal are and all other entries are . Examples of the and identity matrices are shown below, which can be generalized to any matrix.   A matrix can be multiplied by a scalar in the same way that a vector can, by multiplying each entry in the matrix by the scalar, as shown below.   The concept of a transpose can be extended from vectors to matrices as well. A matrix's transpose is found by turning each of its rows into a column, or, equivalently, by turning each of its columns into a row. This means the transpose of an matrix is an matrix. The matrix transpose is also represented by a superscript . An example of transposing a matrix is shown below.   Matrix Addition: Two matrices can be added together only if they each have the same number of rows and columns. The sum of two matrices is found by adding together the corresponding entries of each matrix, as shown below with an example of two matrices.    Compute the following sum:      Matrix Multiplication: Two matrices can be multiplied together only if the number of columns of the left matrix is equal to the number of rows of the right matrix. The resulting product will be a matrix with the same number of rows as the left matrix and the same number of columns as the right. Thus an matrix multiplied by a matrix would produce an matrix. Notably, matrix multiplication is non-commutative, which means for two matrices and , . The entries of a product matrix are determined by taking the dot product between the corresponding row of the left matrix and the corresponding column of the right matrix, as shown below with an example of multiplication between a and a matrix.   Now that we know matrix multiplication, we can redefine the dot product \/ inner product as the transpose of a vector multiplied by the original vector. Since vectors are dimensional, the transpose will be dimensional, so multiplying the transpose on the left and the original on the right will produce a matrix, which is functionally the same as a scalar.   Compute the following product:    The resulting matrix should be      "
+  "body": " Vectors and Vector Spaces   Introduction to Vectors  A vector is an ordered list of numbers that is used to describe quantities with both magnitude and direction. One example of a vector is force, which has both a magnitude (how strong the force is) and a direction (the angle at which the force is being applied). Each vector has a dimension, which is the number of components that comprise it. It is customary to signify that something is a vector by either drawing an arrow on top of it or bolding it. If we have a vector called , we would write or . The number is called the -th component of .  The most typical use of a vector with components is to describe a point in dimensional space in reference to some starting point. For example, if you have a square piece of paper and label the bottom left corner with the starting point (0,0), then a vector with components (1,1) would represent moving one unit of measurement along the bottom of the paper and one unit of measurement along the side of the paper to reach a new point. This vector would have a direction of and a magnitude of units (by the pythagorean theorem).   An example of a vector     Vector Spaces  Every vector exists within a vector space Vector Vector Space , which are sets that satisfy certain mathematical properties. The most common vector spaces we will deal with are , the set of all dimensional vectors with real components, and , the set of all dimensional vectors with complex components. Notice , so we will usually work with for generality. All vector spaces have the same properties regardless of dimension. Here are the properties for an -dimensional vector space:  1. Vector equality: means   2. Vector addition: means   3. Scalar multiplication:   4. Negative of a vector:   5. Null vector: There exists a null vector   If our vector components are all real numbers (i.e. the vector space exists in instead of ), then the following properties also hold:  1. Addition of vectors is commutative:  2. Addition of vectors is associative:  3. Scalar multiplication is distributive: and  4. Scalar multiplication is associative:     Bases  For any vector space, one can find a subset of vectors which can be used to generate any other vector in the space through linear combinations (scalar multiplication and vector addition). The smallest set of vectors that fulfills this property is called the basis Vector basis . In , we only need two vectors to produce the rest through linear combination. The standard basis, is:   The ^ symbol is used to denote that a vector is normal Vector Normal , which means that it has a length of 1. The vector is referred to as \" hat.\" This property is extremely important to quantum mechanics and will be discussed more later.  Bases have two properties:   Linear Independence: A set of vectors is linearly independent Vector Linearly Independent if we cannot express any one of them as a linear combination of the others. If we can express one as a linear combination of the others, then it is called a linearly dependent Vector Linearly Dependent set. A basis must be linearly independent.   Completeness: A set of vectors is complete if it spans Vector Span its vector space, which in turn means that any vector in the space can be expressed as a linear combination of the vectors in that set. A basis for a vector space must span the space.    (A Counterexample)  Let be the set,   And let be the vector,   Since we are unable to express as a linear combination of the elements of , then we say is not complete.    Let be the set,   And let be the vector,  We can express as:  Since we can express as a linear combination of the elements of and it is easy to show that we could construct any other vector in from these same elements, we say that spans and is complete.   Dimension of a basis. The number of basis elements for a vector space is the same as that spaces dimension.   Linear Algebra  Linear algebra is the study of vectors and transformations. In this subsection we will describe some other pieces of linear algebra that will be important to quantum computation.  Vector Transpose: The transpose Vector Transpose is an operation that turns a standard column vector into a row vector, or vice versa. This means an dimensional vector changes from having rows and column to having row and columns. The transpose is represented with a superscript and the operation is shown below.   Dot Product \/ Inner Product: The dot product (more generally known as the inner product Vector Inner Product in the context of quantum computation) is an operation between two vectors of the same dimension that produces a scalar. This product is typically referred to with a , but has an alternate notation in quantum computation that we will see in the next section. In and In this operation is performed by taking the sum of the products of the corresponding entries in each vector, as shown below.      Find the inner product     Orthogonality:  Orthogonality Orthogonality is the generalization of the concept of perpendicularity. In two and three dimensional space, two vectors are orthogonal if the angle between them is a right angle. Two vectors are orthogonal if their inner product is equal to .  Are the following vectors orthogonal?  Yes, Since the inner product between the two vectors is 0, they are orthogonal  Normality: A vector is normal Vector Normal Vector if it has a length of . The length (sometimes also referred to as the norm) of a vector can be found be taking the square root of the sum of the squares of its entries, as shown below. A non-normal vector can be normalized by dividing each of its components by the vectors length. A normalized vector has the same direction as the original vector, but has a length of . A set of vectors is orthonormal Vector Orthonormal Vectors if each of the vectors are normal and each of the vectors are orthogonal to the rest.   What is the length of the following vector?    Normalize the following vector In the previous exercise, we found that this vector has a length of . To normalize the vector, we will divide each of its components by its length.   Matrices: Whereas a vector is a single column of elements, a matrix Matrix is a table of elements organized in rows and columns. Technically speaking, a vector can be thought of a matrix with only one column. The dimension of a matrix is described by first listing the number of rows and then listing the number of columns. Thus, a matrix (read \"two by three\") would have two rows and three columns. A square matrix Matrix Square Matrix is any matrix with the same number of rows and columns. One of the most important matrices is the identity matrix Matrix Identity Matrix , a square matrixin which all of the entries along the diagonal are and all other entries are . Examples of the and identity matrices are shown below, which can be generalized to any matrix.   A matrix can be multiplied by a scalar in the same way that a vector can, by multiplying each entry in the matrix by the scalar, as shown below.   The concept of a transpose can be extended from vectors to matrices as well. A matrix's transpose is found by turning each of its rows into a column, or, equivalently, by turning each of its columns into a row. This means the transpose of an matrix is an matrix. The matrix transpose is also represented by a superscript . An example of transposing a matrix is shown below.   Matrix Addition: Two matrices can be added together only if they each have the same number of rows and columns. The sum of two matrices is found by adding together the corresponding entries of each matrix, as shown below with an example of two matrices.    Compute the following sum:      Matrix Multiplication: Two matrices can be multiplied together only if the number of columns of the left matrix is equal to the number of rows of the right matrix. The resulting product will be a matrix with the same number of rows as the left matrix and the same number of columns as the right. Thus an matrix multiplied by a matrix would produce an matrix. Notably, matrix multiplication is non-commutative, which means for two matrices and , . The entries of a product matrix are determined by taking the dot product between the corresponding row of the left matrix and the corresponding column of the right matrix, as shown below with an example of multiplication between a and a matrix.   Now that we know matrix multiplication, we can redefine the dot product \/ inner product as the transpose of a vector multiplied by the original vector. Since vectors are dimensional, the transpose will be dimensional, so multiplying the transpose on the left and the original on the right will produce a matrix, which is functionally the same as a scalar.   Compute the following product:    The resulting matrix should be      "
 },
 {
   "id": "p-31",
@@ -217,13 +217,22 @@ var ptx_lunr_docs = [
   "body": "inner product "
 },
 {
-  "id": "p-57",
+  "id": "example-3",
   "level": "2",
-  "url": "Vectors-and-Vector-Spaces.html#p-57",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
+  "url": "Vectors-and-Vector-Spaces.html#example-3",
+  "type": "Example",
+  "number": "1.5.4",
   "title": "",
-  "body": "Orthogonality "
+  "body": "  "
+},
+{
+  "id": "exercise-1",
+  "level": "2",
+  "url": "Vectors-and-Vector-Spaces.html#exercise-1",
+  "type": "Checkpoint",
+  "number": "1.5.5",
+  "title": "",
+  "body": "Find the inner product    "
 },
 {
   "id": "p-58",
@@ -232,32 +241,68 @@ var ptx_lunr_docs = [
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
-  "body": "normal orthonormal "
-},
-{
-  "id": "p-59",
-  "level": "2",
-  "url": "Vectors-and-Vector-Spaces.html#p-59",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "matrix square matrix identity matrix "
-},
-{
-  "id": "exercise-1",
-  "level": "2",
-  "url": "Vectors-and-Vector-Spaces.html#exercise-1",
-  "type": "Checkpoint",
-  "number": "1.5.4",
-  "title": "",
-  "body": " Compute the following sum:     "
+  "body": "Orthogonality "
 },
 {
   "id": "exercise-2",
   "level": "2",
   "url": "Vectors-and-Vector-Spaces.html#exercise-2",
   "type": "Checkpoint",
-  "number": "1.5.5",
+  "number": "1.5.6",
+  "title": "",
+  "body": "Are the following vectors orthogonal?  Yes, Since the inner product between the two vectors is 0, they are orthogonal "
+},
+{
+  "id": "p-62",
+  "level": "2",
+  "url": "Vectors-and-Vector-Spaces.html#p-62",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "normal orthonormal "
+},
+{
+  "id": "exercise-3",
+  "level": "2",
+  "url": "Vectors-and-Vector-Spaces.html#exercise-3",
+  "type": "Checkpoint",
+  "number": "1.5.7",
+  "title": "",
+  "body": "What is the length of the following vector?   "
+},
+{
+  "id": "exercise-4",
+  "level": "2",
+  "url": "Vectors-and-Vector-Spaces.html#exercise-4",
+  "type": "Checkpoint",
+  "number": "1.5.8",
+  "title": "",
+  "body": "Normalize the following vector In the previous exercise, we found that this vector has a length of . To normalize the vector, we will divide each of its components by its length.  "
+},
+{
+  "id": "p-66",
+  "level": "2",
+  "url": "Vectors-and-Vector-Spaces.html#p-66",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "matrix square matrix identity matrix "
+},
+{
+  "id": "exercise-5",
+  "level": "2",
+  "url": "Vectors-and-Vector-Spaces.html#exercise-5",
+  "type": "Checkpoint",
+  "number": "1.5.9",
+  "title": "",
+  "body": " Compute the following sum:     "
+},
+{
+  "id": "exercise-6",
+  "level": "2",
+  "url": "Vectors-and-Vector-Spaces.html#exercise-6",
+  "type": "Checkpoint",
+  "number": "1.5.10",
   "title": "",
   "body": " Compute the following product:    The resulting matrix should be    "
 },
@@ -268,7 +313,16 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.6",
   "title": "Linear Algebra in Quantum Computation",
-  "body": " Linear Algebra in Quantum Computation  As mentioned in the section on Classical Computing (INSERT LINK LATER), qubits can be in the state or . What's more, these states can be represented with vectors.   and   This notation was first introduced by mathematician Paul Dirac and is known as \"Dirac Notation\" or \"Bra-Ket Notation.\" At a glance, it can be seen that the vectors and are each normal and are orthogonal to each other. Additionally, any point in two dimensional space could be described with a linear combination of these two vectors, meaning they form a basis (we will discuss exactly which space they form a basis for in the following section). Put together, this means and form an orthonormal basis.  Systems with multiple qubits are described by vectors in higher dimensions, which will be discussed later.  "
+  "body": " Linear Algebra in Quantum Computation  As mentioned in the section on Classical Computing , qubits can be in the state or . What's more, these states can be represented with vectors.   and   This notation was first introduced by mathematician Paul Dirac and is known as \"Dirac Notation\" or \" Bra-Ket Notation Bra-Ket Notation .\" In this notation, the symbol represents a qubit state and is referred to as a \" ket Bra-Ket Notation Ket .\" At a glance, it can be seen that the vectors and are each normal and are orthogonal to each other. Additionally, any point in two dimensional space could be described with a linear combination of these two vectors, meaning they form a basis (we will discuss exactly which space they form a basis for in the following section). Put together, this means and form an orthonormal basis. All qubits must be normalized in order to be expressed properly.  Systems with multiple qubits are described by vectors in higher dimensions, which will be discussed later.  "
+},
+{
+  "id": "p-77",
+  "level": "2",
+  "url": "Linear-Algebra-in-Quantum-Computation.html#p-77",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Bra-Ket Notation ket "
 },
 {
   "id": "Qubit-States",
@@ -277,16 +331,43 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.7",
   "title": "Qubit States",
-  "body": " Qubit States   Qubits  As a reminder, a qubit exists in a superposition between the states and , which means that they can be expressed as a linear combination of the vectors and . This means a qubit can be expressed   Where and are complex coefficiants that relate to the probability that a qubit is in the states and respectively. This means that qubits exist within a complex vector space. The exact space that qubits exist within is known as a hilbert Space Hilbert Space .    Hilbert Space  A hilbert space is a complex vector space in which the inner product is defined as an operation. A single qubit exists within the hilbert space , which is the set of all two dimensional vectors with complex entries.    Qubit Measurements Here I will describe the probabilities of measuring a qubit  "
+  "body": " Qubit States   Qubits  As a reminder, a qubit exists in a superposition between the states and , which means that they can be expressed as a linear combination of the vectors and . This means a qubit can be expressed   Where and are complex coefficiants that relate to the probability that a qubit is in the states and respectively. This means that qubits exist within a complex vector space. The exact space that qubits exist within is known as a hilbert Space Hilbert Space .    Hilbert Space  A hilbert space is a complex vector space in which the inner product is defined as an operation. A single qubit exists within the hilbert space , which is the set of all two dimensional vectors with complex entries.    Bra Vectors and the Inner Product for Quantum Computation  We now introduce the bra in Bra-Ket Notation. Each vector representation of a qubit has a corresponding bra Bra-Ket Notation Bra vector (sometimes also referred to as the \"Dual Vector\") that is equal to the complex conjugate of the transpose of the ket. This operation of taking the transpose and complex conjugating is known as the adjoint Adjoint and is represented by the symbol. Bra vectors are represented by the symbol . An example of finding the bra vector for the ket is shown below (where the symbol represents complex conjugating).   Bra vectors allow us to use a new notation for the inner product. We write the inner product between two vectors, and , as and perform the calculation as matrix multiplication, adescribed in   Find the inner product between the following two qubits.       Qubit Measurements  When a qubit is measured, it collapses from being a superposition of the states and to being in one state or the other. The probability that the qubit will be in either state is related to the coefficient on that state. For a qubit ,   Since all qubits are normalized, has a length of , so , which means . Since the combined probability that the qubit will be in the state or is equal to , we use the normal property of qubits as a method to determine the probability that the qubit will be in either state. For the qubit the probability that it will be in the state after it is measured is and the probability that it will be in the state is .  For the following qubit, find the probability that it will be in the state and the probability that it will be in the state after measurement  The probability that will be in the state after measurement is 25% because . The probability that will be in the state after measurement is 75% because .   "
 },
 {
-  "id": "p-73",
+  "id": "p-80",
   "level": "2",
-  "url": "Qubit-States.html#p-73",
+  "url": "Qubit-States.html#p-80",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "hilbert Space "
+},
+{
+  "id": "p-82",
+  "level": "2",
+  "url": "Qubit-States.html#p-82",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "bra adjoint "
+},
+{
+  "id": "exercise-7",
+  "level": "2",
+  "url": "Qubit-States.html#exercise-7",
+  "type": "Checkpoint",
+  "number": "1.7.1",
+  "title": "",
+  "body": "Find the inner product between the following two qubits.    "
+},
+{
+  "id": "exercise-8",
+  "level": "2",
+  "url": "Qubit-States.html#exercise-8",
+  "type": "Checkpoint",
+  "number": "1.7.2",
+  "title": "",
+  "body": "For the following qubit, find the probability that it will be in the state and the probability that it will be in the state after measurement  The probability that will be in the state after measurement is 25% because . The probability that will be in the state after measurement is 75% because . "
 },
 {
   "id": "sec-Systems-of-Multiple-Qubits",
