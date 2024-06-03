@@ -98,7 +98,7 @@
   <p>Linear algebra is the study of vectors and transformations. In this subsection we will describe some other pieces of linear algebra that will be important to quantum computation.</p>
  <p><alert>Vector Transpose:</alert> The <term>transpose</term><idx><h>Vector</h><h>Transpose</h></idx> is an operation that turns a standard column vector into a row vector, or vice versa. This means an <m>n</m> dimensional vector changes from having <m>n</m> rows and <m>1</m> column to having <m>1</m> row and <m>n</m> columns. The transpose is represented with a superscript <m>T</m> and the operation is shown below. </p>
 <me> \begin{pmatrix} a_1 \\ a_2 \\ \vdots \\ a_n \end{pmatrix}^{T} = \begin{pmatrix} a_1 &amp; a_2 &amp; \ldots &amp; a_n \end{pmatrix} </me>
-<p><alert>Dot Product / Inner Product:</alert> The dot product (more generally known as the <term>inner product</term><idx><h>Vector</h><h>Inner Product</h></idx> in the context of quantum computation) is an operation between two vectors of the same dimension that produces a scalar. This product is typically referred to with a <m>\cdot</m>, but has an alternate notation in quantum computation that we will see in the next section. In <m>\mathbb{R}}</m> and In <m>\mathbb{C}^n</m> this operation is performed by taking the sum of the products of the corresponding entries in each vector, as shown below.  </p>
+<p><alert>Dot Product / Inner Product:</alert> The dot product (more generally known as the <term>inner product</term><idx><h>Vector</h><h>Inner Product</h></idx> in the context of quantum computation) is an operation between two vectors of the same dimension that produces a scalar. This product is typically referred to with a <m>\cdot</m>, but has an alternate notation in quantum computation that we will see in the next section. In <m>\mathbb{R}^n</m> and In <m>\mathbb{C}^n</m> this operation is performed by taking the sum of the products of the corresponding entries in each vector, as shown below.  </p>
 <me> \begin{pmatrix} a_1 \\ a_2 \\ \vdots \\ a_n \end{pmatrix} \cdot \begin{pmatrix} b_1 \\ b_2 \\ \vdots \\ b_n \end{pmatrix} = a_1 \cdot b_1 + a_2 \cdot b_2 + \ldots + a_n \cdot b_n </me>
 <p><alert>Orthogonality:</alert> <term>Orthogonality</term><idx><h>Orthogonality</h></idx> is the generalization of the concept of perpendicularity. In two and three dimensional space, two vectors are orthogonal if the angle between them is a right angle. Two vectors are orthogonal if their inner product is equal to <m>0</m>.</p>
 <p><alert>Normality:</alert> A vector is <term>normal</term><idx><h>Vector</h><h>Normal Vector</h></idx> if it has a length of <m>1</m>. The length (sometimes also referred to as the norm) of a vector can be found be taking the square root of the sum of the squares of its entries, as shown below. A non-normal vector can be normalized by dividing each of its components by the vectors length. A set of vectors is <term>orthonormal</term><idx><h>Vector</h><h>Orthonormal Vectors</h></idx> if each of the vectors are normal and each of the vectors are orthogonal to the rest. </p>
@@ -136,7 +136,7 @@
   <me> \ket{0} = \begin{pmatrix} 1 \\ 0 \end{pmatrix} </me>
   <p> and </p>
   <me> \ket{1} = \begin{pmatrix} 0 \\ 1 \end{pmatrix} </me>
-  <p> This notation was first introduced by mathematician Paul Dirac and is known as "Dirac Notation" or "Bra-Ket Notation." At a glance, it can be seen that the vectors <m>\ket{0}</m> and <m>\ket(1)</m> are each normal and are orthogonal to each other. Additionally, any point in two dimensional space could be described with a linear combination of these two vectors, meaning they form a basis (we will discuss exactly which space they form a basis for in the following section). Put together, this means <m>\ket{0}</m> and <m>\ket{1}</m> form an orthonormal basis. </p>
+  <p> This notation was first introduced by mathematician Paul Dirac and is known as "Dirac Notation" or "Bra-Ket Notation." At a glance, it can be seen that the vectors <m>\ket{0}</m> and <m>\ket{1}</m> are each normal and are orthogonal to each other. Additionally, any point in two dimensional space could be described with a linear combination of these two vectors, meaning they form a basis (we will discuss exactly which space they form a basis for in the following section). Put together, this means <m>\ket{0}</m> and <m>\ket{1}</m> form an orthonormal basis. All qubits must be normalized in order to be expressed properly. </p>
   <p> Systems with multiple qubits are described by vectors in higher dimensions, which will be discussed later. </p>
 </section>
 
@@ -145,16 +145,16 @@
   <subsection xml:id="subsec-Qubit">
     <title>Qubits</title>
  <p> As a reminder, a qubit exists in a superposition between the states <m>\ket{0}</m> and <m>\ket{1}</m>, which means that they can be expressed as a linear combination of the vectors <m>\begin{pmatrix} 1 \\ 0 \end{pmatrix}</m> and <m> \begin{pmatrix} 0 \\ 1 \end{pmatrix} </m>. This means a qubit <m> \psi </m> can be expressed </p>
- <me> \ket{psi} = \alpha \ket{0} + \beta \ket{1} </me>
- <p> Where <m> \aplha </m> and <m> \beta </m> are complex coefficiants that relate to the probability that a qubit is in the states <m> \ket{0}</m> and <m> \ket{1} </m> respectively. This means that qubits exist within a complex vector space. The exact space that qubits exist within is known as a <term>hilbert Space</term><idx><h>Hilbert Space</h></idx>. </p>
+ <me> \ket{\psi} = \alpha \ket{0} + \beta \ket{1} </me>
+ <p> Where <m> \alpha </m> and <m> \beta </m> are complex coefficiants that relate to the probability that a qubit is in the states <m> \ket{0}</m> and <m> \ket{1} </m> respectively. This means that qubits exist within a complex vector space. The exact space that qubits exist within is known as a <term>hilbert Space</term><idx><h>Hilbert Space</h></idx>. </p>
  </subsection>
 <subsection xml:id="subsec-Hilbert-Space">
   <title>Hilbert Space</title>
-  A hilbert space is a complex vector space in which the inner product is defined as an operation. A single qubit exists within the hilbert space <m>\mathbb{C}^2</m>, which is the set of all two dimensional vectors with complex entries. 
+  <p> A hilbert space is a complex vector space in which the inner product is defined as an operation. A single qubit exists within the hilbert space <m>\mathbb{C}^2</m>, which is the set of all two dimensional vectors with complex entries. </p>
  </subsection>
  <subsection xml:id="subsec-Qubit-Measurements">
   <title>Qubit Measurements</title>
-  Here I will describe the probabilities of measuring a qubit
+  <p> When a qubit is measured, it collapses from being a superposition of the states <m>\ket{0}</m> and <m>\ket{1}</m> to being in one state or the other. The probability that the qubit will be in either state </p>
  </subsection>
 </section>
 

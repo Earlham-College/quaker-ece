@@ -277,7 +277,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.7",
   "title": "Qubit States",
-  "body": " Qubit States   Qubits  As a reminder, a qubit exists in a superposition between the states and , which means that they can be expressed as a linear combination of the vectors and . This means a qubit can be expressed   Where and are complex coefficiants that relate to the probability that a qubit is in the states and respectively. This means that qubits exist within a complex vector space. The exact space that qubits exist within is known as a hilbert Space Hilbert Space .    Hilbert Space A hilbert space is a complex vector space in which the inner product is defined as an operation. A single qubit exists within the hilbert space , which is the set of all two dimensional vectors with complex entries.   Qubit Measurements Here I will describe the probabilities of measuring a qubit  "
+  "body": " Qubit States   Qubits  As a reminder, a qubit exists in a superposition between the states and , which means that they can be expressed as a linear combination of the vectors and . This means a qubit can be expressed   Where and are complex coefficiants that relate to the probability that a qubit is in the states and respectively. This means that qubits exist within a complex vector space. The exact space that qubits exist within is known as a hilbert Space Hilbert Space .    Hilbert Space  A hilbert space is a complex vector space in which the inner product is defined as an operation. A single qubit exists within the hilbert space , which is the set of all two dimensional vectors with complex entries.    Qubit Measurements Here I will describe the probabilities of measuring a qubit  "
 },
 {
   "id": "p-73",
