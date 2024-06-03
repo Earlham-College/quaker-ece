@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <chapter xml:id="chap1-chapter" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Basic Concepts of Quantum Mechanics</title>
+  <title>Basic Concepts of Quantum Computation</title>
   
   <xi:include href="chap1-intro.ptx" />
  
@@ -98,12 +98,34 @@
   <p>Linear algebra is the study of vectors and transformations. In this subsection we will describe some other pieces of linear algebra that will be important to quantum computation.</p>
  <p><alert>Vector Transpose:</alert> The <term>transpose</term><idx><h>Vector</h><h>Transpose</h></idx> is an operation that turns a standard column vector into a row vector, or vice versa. This means an <m>n</m> dimensional vector changes from having <m>n</m> rows and <m>1</m> column to having <m>1</m> row and <m>n</m> columns. The transpose is represented with a superscript <m>T</m> and the operation is shown below. </p>
 <me> \begin{pmatrix} a_1 \\ a_2 \\ \vdots \\ a_n \end{pmatrix}^{T} = \begin{pmatrix} a_1 &amp; a_2 &amp; \ldots &amp; a_n \end{pmatrix} </me>
-<p><alert>Dot Product / Inner Product:</alert> The dot product (more generally known as the <term>inner product</term><idx><h>Vector</h><h>Inner Product</h></idx> in the context of quantum computation) is an operation between two vectors of the same dimension that produces a scalar. This product is typically referred to with a <m>\cdot</m>, but has an alternate notation in quantum computation that we will see in the next section. In <m>\mathbb{R}}</m> and In <m>\mathbb{C}^n</m> this operation is performed by taking the sum of the products of the corresponding entries in each vector, as shown below.  </p>
+<p><alert>Dot Product / Inner Product:</alert> The dot product (more generally known as the <term>inner product</term><idx><h>Vector</h><h>Inner Product</h></idx> in the context of quantum computation) is an operation between two vectors of the same dimension that produces a scalar. This product is typically referred to with a <m>\cdot</m>, but has an alternate notation in quantum computation that we will see in the next section. In <m>\mathbb{R}^n</m> and In <m>\mathbb{C}^n</m> this operation is performed by taking the sum of the products of the corresponding entries in each vector, as shown below.  </p>
 <me> \begin{pmatrix} a_1 \\ a_2 \\ \vdots \\ a_n \end{pmatrix} \cdot \begin{pmatrix} b_1 \\ b_2 \\ \vdots \\ b_n \end{pmatrix} = a_1 \cdot b_1 + a_2 \cdot b_2 + \ldots + a_n \cdot b_n </me>
+<example>
+  <me> \begin{pmatrix} 5 \\ 3 \\ 7\\ 2 \end{pmatrix} \cdot \begin{pmatrix} 6 \\ 0 \\ 5 \\ 1 \end{pmatrix} = 5 \cdot 6 + 3 \cdot 0 + 7 \cdot 5 + 2 \cdot 1 = 67 </me>
+</example>
+<exercise>
+  <statement><p> Find the inner product <m>\vec{v_1} \cdot \vec{v_2} </m> </p>
+    <me>\vec{v_1} = \begin{pmatrix} 8 \\ -4 \\ 5 \end{pmatrix}, \text{  } \vec{v_2} = \begin{pmatrix} 3 \\ 5 \\ -2 \end{pmatrix} </me> </statement> 
+    <solution><me> \begin{pmatrix} 8 \\ -4 \\ 5 \end{pmatrix} \cdot \begin{pmatrix} 3 \\ 5 \\ -2 \end{pmatrix} = 8 \cdot 3 + -4 \cdot 5 + 5\cdot -2 = -6 </me></solution>
+</exercise>
 <p><alert>Orthogonality:</alert> <term>Orthogonality</term><idx><h>Orthogonality</h></idx> is the generalization of the concept of perpendicularity. In two and three dimensional space, two vectors are orthogonal if the angle between them is a right angle. Two vectors are orthogonal if their inner product is equal to <m>0</m>.</p>
-<p><alert>Normality:</alert> A vector is <term>normal</term><idx><h>Vector</h><h>Normal Vector</h></idx> if it has a length of <m>1</m>. The length (sometimes also referred to as the norm) of a vector can be found be taking the square root of the sum of the squares of its entries, as shown below. A non-normal vector can be normalized by dividing each of its components by the vectors length. A set of vectors is <term>orthonormal</term><idx><h>Vector</h><h>Orthonormal Vectors</h></idx> if each of the vectors are normal and each of the vectors are orthogonal to the rest. </p>
+<exercise>
+  <statement><p> Are the following vectors orthogonal? </p>
+  <me>\begin{pmatrix} 4 \\ 3 \\ -2 \end{pmatrix}, \begin{pmatrix} 1 \\ 2 \\ 5 \end{pmatrix}</me></statement>
+  <solution><p>Yes,</p><me> \begin{pmatrix} 4 \\ 3 \\ -2 \end{pmatrix} \cdot \begin{pmatrix} 1 \\ 2 \\ 5 \end{pmatrix} = 4 \cdot 1 + 3 \cdot 2 + -2 \cdot 5 = 0</me><p>Since the inner product between the two vectors is 0, they are orthogonal</p></solution> 
+</exercise>
+<p><alert>Normality:</alert> A vector is <term>normal</term><idx><h>Vector</h><h>Normal Vector</h></idx> if it has a length of <m>1</m>. The length (sometimes also referred to as the norm) of a vector can be found be taking the square root of the sum of the squares of its entries, as shown below. A non-normal vector can be normalized by dividing each of its components by the vectors length. A normalized vector has the same direction as the original vector, but has a length of <m>1</m>. A set of vectors is <term>orthonormal</term><idx><h>Vector</h><h>Orthonormal Vectors</h></idx> if each of the vectors are normal and each of the vectors are orthogonal to the rest. </p>
 <me> \text{Length} (\begin{pmatrix} a_1 \\ a_2 \\ \vdots \\ a_n \end{pmatrix}) = \sqrt{a_{1}^2 + a_{2}^2 + \ldots + a_{n}^2} </me>
-  <p><alert>Matrices:</alert> Whereas a vector is a single column of elements, a <term>matrix</term><idx><h>Matrix</h></idx> is a table of elements organized in rows and columns. Technically speaking, a vector can be thought of a matrix with only one column. The dimension of a matrix is described by first listing the number of rows and then listing the number of columns. Thus, a <m>2 \times 3</m> matrix (read "two by three") would have two rows and three columns. A <term>square matrix</term><idx><h>Matrix</h><h>Square Matrix</h></idx> is any matrix with the same number of rows and columns. One of the most important matrices is the <term>identity matrix</term><idx><h>Matrix</h><h>Identity Matrix</h></idx>, a square matrixin which all of the entries along the diagonal are <m>1</m> and all other entries are <m>0</m>. Examples of the <m>2\times2</m> and <m>5\times5</m> identity matrices are shown below, which can be generalized to any <m>n \times n</m> matrix.</p>
+<exercise>
+  <statement><p>What is the length of the following vector?</p><me>\begin{pmatrix} 7 \\ 2 \\ 3 \end{pmatrix}</me></statement> 
+  <solution> <me> \sqrt{7^2 + 2^2 + 3^2} = \sqrt{62} \approx 7.874 </me> </solution> 
+</exercise>  
+<exercise>
+  <statement><p>Normalize the following vector</p><me>\begin{pmatrix} 7 \\ 2 \\ 3 \end{pmatrix}</me></statement>
+  <solution><p>In the previous exercise, we found that this vector has a length of <m>\sqrt{62}\approx7.874</m>. To normalize the vector, we will divide each of its components by its length.</p>
+    <me> \begin{pmatrix} \frac{7}{\sqrt{62}} \\ \frac{2}{\sqrt{62}} \\ \frac{3}{\sqrt{62}} \end{pmatrix} \approx \begin{pmatrix} 0.889 \\ 0.254 \\ 0.381 \end{pmatrix}</me></solution>
+</exercise>
+<p><alert>Matrices:</alert> Whereas a vector is a single column of elements, a <term>matrix</term><idx><h>Matrix</h></idx> is a table of elements organized in rows and columns. Technically speaking, a vector can be thought of a matrix with only one column. The dimension of a matrix is described by first listing the number of rows and then listing the number of columns. Thus, a <m>2 \times 3</m> matrix (read "two by three") would have two rows and three columns. A <term>square matrix</term><idx><h>Matrix</h><h>Square Matrix</h></idx> is any matrix with the same number of rows and columns. One of the most important matrices is the <term>identity matrix</term><idx><h>Matrix</h><h>Identity Matrix</h></idx>, a square matrixin which all of the entries along the diagonal are <m>1</m> and all other entries are <m>0</m>. Examples of the <m>2\times2</m> and <m>5\times5</m> identity matrices are shown below, which can be generalized to any <m>n \times n</m> matrix.</p>
   <me> I_{2\times2} = \begin{pmatrix} 1 &amp; 0 \\ 0 &amp; 1 \end{pmatrix}, I_{5\times5} = \begin{pmatrix} 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1   \end{pmatrix}</me>
   <p> A matrix can be multiplied by a scalar in the same way that a vector can, by multiplying each entry in the matrix by the scalar, as shown below. </p>
     <me> c \times \begin{pmatrix} a_1 &amp; a_2 &amp; a_3 \\ a_4 &amp; a_5 &amp; a_6 \\ a_7 &amp; a_8 &amp; a_9 \end{pmatrix} = \begin{pmatrix} c \times a_1 &amp; c \times a_2 &amp; c \times a_3 \\ c \times a_4 &amp; c \times a_5 &amp; c \times a_6 \\ c \times a_7 &amp; c \times a_8 &amp; c \times a_9 \end{pmatrix} </me>
@@ -132,11 +154,11 @@
 
 <section xml:id="Linear-Algebra-in-Quantum-Computation">
   <title>Linear Algebra in Quantum Computation</title>
- <p> As mentioned in the section on Classical Computing (INSERT LINK LATER), qubits can be in the state <m>\ket{0}</m> or <m>\ket{1}</m>. What's more, these states can be represented with vectors. </p>
+ <p> As mentioned in the section on Classical Computing <xref ref="Classical-Computing"/>, qubits can be in the state <m>\ket{0}</m> or <m>\ket{1}</m>. What's more, these states can be represented with vectors. </p>
   <me> \ket{0} = \begin{pmatrix} 1 \\ 0 \end{pmatrix} </me>
   <p> and </p>
   <me> \ket{1} = \begin{pmatrix} 0 \\ 1 \end{pmatrix} </me>
-  <p> This notation was first introduced by mathematician Paul Dirac and is known as "Dirac Notation" or "Bra-Ket Notation." At a glance, it can be seen that the vectors <m>\ket{0}</m> and <m>\ket(1)</m> are each normal and are orthogonal to each other. Additionally, any point in two dimensional space could be described with a linear combination of these two vectors, meaning they form a basis (we will discuss exactly which space they form a basis for in the following section). Put together, this means <m>\ket{0}</m> and <m>\ket{1}</m> form an orthonormal basis. </p>
+  <p> This notation was first introduced by mathematician Paul Dirac and is known as "Dirac Notation" or "<term>Bra-Ket Notation</term><idx><h>Bra-Ket Notation</h></idx>." In this notation, the <m>\ket{}</m> symbol represents a qubit state and is referred to as a "<term>ket</term><idx><h>Bra-Ket Notation</h><h>Ket</h></idx>." At a glance, it can be seen that the vectors <m>\ket{0}</m> and <m>\ket{1}</m> are each normal and are orthogonal to each other. Additionally, any point in two dimensional space could be described with a linear combination of these two vectors, meaning they form a basis (we will discuss exactly which space they form a basis for in the following section). Put together, this means <m>\ket{0}</m> and <m>\ket{1}</m> form an orthonormal basis. All qubits must be normalized in order to be expressed properly. </p>
   <p> Systems with multiple qubits are described by vectors in higher dimensions, which will be discussed later. </p>
 </section>
 
@@ -145,17 +167,38 @@
   <subsection xml:id="subsec-Qubit">
     <title>Qubits</title>
  <p> As a reminder, a qubit exists in a superposition between the states <m>\ket{0}</m> and <m>\ket{1}</m>, which means that they can be expressed as a linear combination of the vectors <m>\begin{pmatrix} 1 \\ 0 \end{pmatrix}</m> and <m> \begin{pmatrix} 0 \\ 1 \end{pmatrix} </m>. This means a qubit <m> \psi </m> can be expressed </p>
- <me> \ket{psi} = \alpha \ket{0} + \beta \ket{1} </me>
- <p> Where <m> \aplha </m> and <m> \beta </m> are complex coefficiants that relate to the probability that a qubit is in the states <m> \ket{0}</m> and <m> \ket{1} </m> respectively. This means that qubits exist within a complex vector space. The exact space that qubits exist within is known as a <term>hilbert Space</term><idx><h>Hilbert Space</h></idx>. </p>
+ <me> \ket{\psi} = \alpha \ket{0} + \beta \ket{1} </me>
+ <p> Where <m> \alpha </m> and <m> \beta </m> are complex coefficiants that relate to the probability that a qubit is in the states <m> \ket{0}</m> and <m> \ket{1} </m> respectively. This means that qubits exist within a complex vector space. The exact space that qubits exist within is known as a <term>hilbert Space</term><idx><h>Hilbert Space</h></idx>. </p>
  </subsection>
 <subsection xml:id="subsec-Hilbert-Space">
   <title>Hilbert Space</title>
-  A hilbert space is a complex vector space in which the inner product is defined as an operation. A single qubit exists within the hilbert space <m>\mathbb{C}^2</m>, which is the set of all two dimensional vectors with complex entries. 
+  <p> A hilbert space is a complex vector space in which the inner product is defined as an operation. A single qubit exists within the hilbert space <m>\mathbb{C}^2</m>, which is the set of all two dimensional vectors with complex entries. </p>
  </subsection>
+ <subsection xml:id="subsec-Bra-Vectors-and-the-Inner-Product">
+  <title>Bra Vectors and the Inner Product for Quantum Computation</title>
+  <p> We now introduce the bra in Bra-Ket Notation. Each vector representation of a qubit has a corresponding <term>bra</term><idx><h>Bra-Ket Notation</h><h>Bra</h></idx> vector (sometimes also referred to as the "Dual Vector") that is equal to the complex conjugate of the transpose of the ket. This operation of taking the transpose and complex conjugating is known as the <term>adjoint</term><idx><h>Adjoint</h></idx> and is represented by the <m>\dagger</m> symbol. Bra vectors are represented by the symbol <m>\bra{}</m>. An example of finding the bra vector for the ket <m>\psi</m> is shown below (where the <m>*</m> symbol represents complex conjugating).</p>
+<me> \ket{\psi}^{\dagger} = (\alpha \ket{0} + \beta \ket{1})^{\dagger} = (\alpha \begin{pmatrix} 1 \\ 0 \end{pmatrix} + \beta \begin{pmatrix} 0 \\ 1 \end{pmatrix})^{\dagger} = \alpha^{*} \begin{pmatrix} 1 &amp; 0 \end{pmatrix} + \beta^{*} \begin{pmatrix} 0 &amp; 1 \end{pmatrix} = \bra{\psi} </me>
+<p> Bra vectors allow us to use a new notation for the inner product. We write the inner product between two vectors, <m>\ket{\psi}</m> and <m>\ket{\phi}</m>, as <m>\braket{\psi | \phi}</m> and perform the calculation as matrix multiplication, adescribed in <xref ref="linear-algebra"/> </p>
+<exercise>
+  <statement><p>Find the inner product between the following two qubits.</p>
+  <me> \ket{\psi} = \frac{1}{2} \ket{0} + \frac{\sqrt{3}}{2} \ket{1} = \begin{pmatrix} \frac{1}{2} \\ \frac{\sqrt{3}}{2} \end{pmatrix} </me>
+  <me> \ket{\phi} = \frac{1}{\sqrt{2}} \ket{0} + \frac{1}{\sqrt2} \ket{1} = \begin{pmatrix} \frac{1}{\sqrt{2}} \\ \frac{1}{\sqrt{2}} \end{pmatrix} </me></statement>
+<solution>
+<me> \ket{\psi} \cdot \ket{\phi} = \braket{\psi|\phi} = \begin{pmatrix} \frac{1}{2} &amp; \frac{\sqrt{3}}{2} \end{pmatrix} \begin{pmatrix} \frac{1}{\sqrt{2}} \\ \frac{1}{\sqrt{2}} \end{pmatrix} = \frac{1}{2} \cdot \frac{1}{\sqrt{2}} + \frac{\sqrt{3}}{2} \cdot \frac{1}{\sqrt{2}} = \frac{1 + \sqrt3}{2\sqrt{2}}</me></solution>
+</exercise>
+</subsection>
  <subsection xml:id="subsec-Qubit-Measurements">
   <title>Qubit Measurements</title>
-  Here I will describe the probabilities of measuring a qubit
- </subsection>
+  <p> When a qubit is measured, it collapses from being a superposition of the states <m>\ket{0}</m> and <m>\ket{1}</m> to being in one state or the other. The probability that the qubit will be in either state is related to the coefficient on that state. For a qubit <m> \psi </m>, </p>
+<me> \ket{\psi} = \alpha \ket{0} + \beta \ket{1} = \alpha \begin{pmatrix} 1 \\ 0 \end{pmatrix} + \beta \begin{pmatrix} 0 \\ 1 \end{pmatrix} = \begin{pmatrix} \alpha \\ \beta \end{pmatrix} </me> 
+<p>Since all qubits are normalized, <m>\psi</m> has a length of <m>1</m>, so <m>\sqrt{\alpha^2 + \beta^2}=1</m>, which means <m>\alpha^2 + \beta^2=1</m>.  Since the combined probability that the qubit will be in the state <m>\ket{0}</m> or <m>\ket{1}</m> is equal to <m>1</m>, we use the normal property of qubits as a method to determine the probability that the qubit will be in either state. For the qubit <m>\psi</m> the probability that it will be in the state <m>\ket{0}</m> after it is measured is <m>\alpha^2</m> and the probability that it will be in the state <m>\ket{1}</m> is <m>\beta^2</m>. </p>
+<exercise>
+  <statement><p>For the following qubit, find the probability that it will be in the state <m>\ket{0}</m> and the probability that it will be in the state <m>\ket{1}</m> after measurement</p>
+  <me> \ket{\psi} = \frac{1}{2} \ket{0} + \frac{\sqrt{3}}{2} \ket{1} </me></statement>
+<solution><p> The probability that <m>\ket{\psi}</m> will be in the state <m>\ket{0}</m> after measurement is 25% because <m>(\frac{1}{2})^2 = 1/4 = 0.25</m>. The probability that <m>\ket{\psi}</m> will be in the state <m>\ket{1}</m> after measurement is 75% because <m>(\frac{\sqrt{3}}{2})^2 = 3/4 = 0.75</m>. </p></solution>
+</exercise>
+<p> Another way to find the probability that a qubit is in any given state is to take the inner product of 
+</subsection>
 </section>
 
 <section xml:id="sec-Systems-of-Multiple-Qubits">

@@ -232,7 +232,7 @@ window.MathJax = {
 </ul>
 </li>
 <li>
-<div class="toc-item"><a href="chap1-chapter.html" class="internal"><span class="codenumber">1</span> <span class="title">Basic Concepts of Quantum Mechanics</span></a></div>
+<div class="toc-item"><a href="chap1-chapter.html" class="internal"><span class="codenumber">1</span> <span class="title">Basic Concepts of Quantum Computation</span></a></div>
 <ul class="structural">
 <li><div class="toc-item"><a href="chap1-intro.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Introduction</span></a></div></li>
 <li><div class="toc-item"><a href="Classical-Physics.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Classical Physics</span></a></div></li>
@@ -253,7 +253,8 @@ window.MathJax = {
 <ul class="structural">
 <li><div class="toc-item"><a href="Qubit-States.html#subsec-Qubit" class="internal"><span class="codenumber">1.7.1</span> <span class="title">Qubits</span></a></div></li>
 <li><div class="toc-item"><a href="Qubit-States.html#subsec-Hilbert-Space" class="internal"><span class="codenumber">1.7.2</span> <span class="title">Hilbert Space</span></a></div></li>
-<li><div class="toc-item"><a href="Qubit-States.html#subsec-Qubit-Measurements" class="internal"><span class="codenumber">1.7.3</span> <span class="title">Qubit Measurements</span></a></div></li>
+<li><div class="toc-item"><a href="Qubit-States.html#subsec-Bra-Vectors-and-the-Inner-Product" class="internal"><span class="codenumber">1.7.3</span> <span class="title">Bra Vectors and the Inner Product for Quantum Computation</span></a></div></li>
+<li><div class="toc-item"><a href="Qubit-States.html#subsec-Qubit-Measurements" class="internal"><span class="codenumber">1.7.4</span> <span class="title">Qubit Measurements</span></a></div></li>
 </ul>
 </li>
 <li><div class="toc-item"><a href="sec-Systems-of-Multiple-Qubits.html" class="internal"><span class="codenumber">1.8</span> <span class="title">Systems of Multiple Qubits</span></a></div></li>
@@ -300,17 +301,27 @@ window.MathJax = {
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="index" id="index-1"><h2 class="heading hide-type">
 <span class="type">Index</span> <span class="codenumber"></span> <span class="title">Index</span>
 </h2>
-<div class="indexletter" id="indexletter-h"><div class="indexitem">Hilbert Space<span class="indexknowl">, <a href="" class="xref" data-knowl="./knowl/p-73.html" title="Paragraph">Paragraph</a></span>
+<div class="indexletter" id="indexletter-a"><div class="indexitem">Adjoint<span class="indexknowl">, <a href="" class="xref" data-knowl="./knowl/p-82.html" title="Paragraph">Paragraph</a></span>
+</div></div>
+<div class="indexletter" id="indexletter-b">
+<div class="indexitem">Bra-Ket Notation<span class="indexknowl">, <a href="" class="xref" data-knowl="./knowl/p-77.html" title="Paragraph">Paragraph</a></span>
+</div>
+<div class="subindexitem">Bra<span class="indexknowl">, <a href="" class="xref" data-knowl="./knowl/p-82.html" title="Paragraph">Paragraph</a></span>
+</div>
+<div class="subindexitem">Ket<span class="indexknowl">, <a href="" class="xref" data-knowl="./knowl/p-77.html" title="Paragraph">Paragraph</a></span>
+</div>
+</div>
+<div class="indexletter" id="indexletter-h"><div class="indexitem">Hilbert Space<span class="indexknowl">, <a href="" class="xref" data-knowl="./knowl/p-80.html" title="Paragraph">Paragraph</a></span>
 </div></div>
 <div class="indexletter" id="indexletter-m">
-<div class="indexitem">Matrix<span class="indexknowl">, <a href="" class="xref" data-knowl="./knowl/p-59.html" title="Paragraph">Paragraph</a></span>
+<div class="indexitem">Matrix<span class="indexknowl">, <a href="" class="xref" data-knowl="./knowl/p-66.html" title="Paragraph">Paragraph</a></span>
 </div>
-<div class="subindexitem">Identity Matrix<span class="indexknowl">, <a href="" class="xref" data-knowl="./knowl/p-59.html" title="Paragraph">Paragraph</a></span>
+<div class="subindexitem">Identity Matrix<span class="indexknowl">, <a href="" class="xref" data-knowl="./knowl/p-66.html" title="Paragraph">Paragraph</a></span>
 </div>
-<div class="subindexitem">Square Matrix<span class="indexknowl">, <a href="" class="xref" data-knowl="./knowl/p-59.html" title="Paragraph">Paragraph</a></span>
+<div class="subindexitem">Square Matrix<span class="indexknowl">, <a href="" class="xref" data-knowl="./knowl/p-66.html" title="Paragraph">Paragraph</a></span>
 </div>
 </div>
-<div class="indexletter" id="indexletter-o"><div class="indexitem">Orthogonality<span class="indexknowl">, <a href="" class="xref" data-knowl="./knowl/p-57.html" title="Paragraph">Paragraph</a></span>
+<div class="indexletter" id="indexletter-o"><div class="indexitem">Orthogonality<span class="indexknowl">, <a href="" class="xref" data-knowl="./knowl/p-58.html" title="Paragraph">Paragraph</a></span>
 </div></div>
 <div class="indexletter" id="indexletter-q">
 <div class="indexitem">Quantum</div>
@@ -331,9 +342,9 @@ window.MathJax = {
 </div>
 <div class="subindexitem">Normal<span class="indexknowl">, <a href="" class="xref" data-knowl="./knowl/p-43.html" title="Paragraph">Paragraph</a></span>
 </div>
-<div class="subindexitem">Normal Vector<span class="indexknowl">, <a href="" class="xref" data-knowl="./knowl/p-58.html" title="Paragraph">Paragraph</a></span>
+<div class="subindexitem">Normal Vector<span class="indexknowl">, <a href="" class="xref" data-knowl="./knowl/p-62.html" title="Paragraph">Paragraph</a></span>
 </div>
-<div class="subindexitem">Orthonormal Vectors<span class="indexknowl">, <a href="" class="xref" data-knowl="./knowl/p-58.html" title="Paragraph">Paragraph</a></span>
+<div class="subindexitem">Orthonormal Vectors<span class="indexknowl">, <a href="" class="xref" data-knowl="./knowl/p-62.html" title="Paragraph">Paragraph</a></span>
 </div>
 <div class="subindexitem">Span<span class="indexknowl">, <a href="" class="xref" data-knowl="./knowl/p-46.html" title="Paragraph">Paragraph</a></span>
 </div>
