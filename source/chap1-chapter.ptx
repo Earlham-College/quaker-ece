@@ -204,7 +204,7 @@
   <me> \ket{\psi} = \frac{1}{2} \ket{0} + \frac{\sqrt{3}}{2} \ket{1} </me></statement>
 <solution><p> The probability that <m>\ket{\psi}</m> will be in the state <m>\ket{0}</m> after measurement is 25% because <m>(\frac{1}{2})^2 = 1/4 = 0.25</m>. The probability that <m>\ket{\psi}</m> will be in the state <m>\ket{1}</m> after measurement is 75% because <m>(\frac{\sqrt{3}}{2})^2 = 3/4 = 0.75</m>. </p></solution>
 </exercise>
-<p> Another way to find the probability that a qubit is in any given state is to take the square of the inner product of the outcome state and the qubit. For a qubit <m>\ket{\psi}</m>, the probability that it is in the state <m>\ket{0}</m> after measurement would be <m>(\braket{0|\psi})^2</m> and the probability that it is in the state <m>\ket{1}</m> would be <m>(\braket{1|\psi})^2</m>.</p>
+<p> Another way to find the probability that a qubit is in any given state is to take the square of the inner product of the outcome state and the qubit. For a qubit <m>\ket{\psi}</m>, the probability that it is in the state <m>\ket{0}</m> after measurement would be <m>(\braket{0|\psi})^2</m>, the probability that it is in the state <m>\ket{1}</m> would be <m>(\braket{1|\psi})^2</m>, and the probability that it is in some mixed state <m>\ket{x}</m> would be <m>(\braket{x|\psi})^2</m>.</p>
 <exercise>
   <statement><p> Using an inner product, calculate the probability that the following system is in the state <m>\ket{0}</m> and <m>\ket{1}</m>.</p>
   <me> \ket{\psi} = \frac{\sqrt{7}}{\sqrt{8}} \ket{0} + \frac{1}{\sqrt{8}} \ket{1} = \begin{pmatrix} \frac{\sqrt{7}}{\sqrt{8}} \\ \frac{1}{\sqrt{8}} \end{pmatrix} </me></statement>
@@ -214,18 +214,63 @@
 </section>
 
 <section xml:id="Computational-Bases">
-  <title>Computational Bases and the Block Sphere</title>
-  <p> So far, the only basis we have looked at for measuring a qubit is <m>(\ket{0},\ket{1})</m>, but this is not the only one. </p>
+  <title>Computational Bases and the Bloch Sphere</title>
+  <p> So far, the only basis we have looked at for measuring a qubit is <m>(\ket{0},\ket{1})</m>, but this is not the only one. In quantum computation, we define three orthogonal basis states. For now, we will call these the X-measurement, Y-measurement, and Z-measurement, which will make sense shortly.  </p>
+  <p><alert>X-Measurement</alert></p>
+<p> <m>\{\ket{+},\ket{-}\}</m> are eigenstates of the Pauli X Matrix, <m>\sigma_x</m> (which is <m>\begin{pmatrix} 0 &amp; 1 \\ 1 &amp; 0 \end{pmatrix}</m>, as we will see in <xref ref="subsec2-chap2"/>). These are called the Hadamard (transversal) basis states </p>
+<me> \Big\{\ket{+}:=\frac{1}{\sqrt{2}}\Big(\ket{0}+\ket{1}\Big), \ket{-}:=\frac{1}{\sqrt{2}}\Big(\ket{0}-\ket{1}\Big) \Big\} </me>
+<p><alert>Y-Measurement</alert></p>
+  <p><m>\{\ket{+i},\ket{-i}\}</m> are eigenstates of the Pauli Y Matrix, <m>\sigma_y</m> (which is <m>\begin{pmatrix} 0 &amp; -i \\ i &amp; 0 \end{pmatrix}</m>, as we will see in <xref ref="subsec3-chap2"/>).These are called the Longitudinal (Left-Right) basis states</p>
+<me> \Big\{\ket{+i}:=\frac{1}{\sqrt{2}}\Big(\ket{0}+i\ket{1}\Big), \ket{-i}:=\frac{1}{\sqrt{2}}\Big(\ket{0}-i\ket{1}\Big) \Big\} </me>
+<p><alert>Z-Measurement</alert></p> 
+<p> <m>\{\ket{0},\ket{1}\}</m> are eigenstates of the Pauli Z Matrix, <m>\sigma_z</m> (which is <m>\begin{pmatrix} 1 &amp; 0 \\ 0 &amp; -1 \end{pmatrix}</m>, as we will see in <xref ref="subsec4-chap2"/>). These are called the Computational basis states </p> 
+<me> \Big\{\ket{0}:=\begin{pmatrix}1\\0\end{pmatrix},\ket{1}:=\begin{pmatrix}0\\1\end{pmatrix},\Big\} </me>
+<exercise>
+  <title>A state in the Hadamard basis</title>
+    <statement><p> <m>\ket{\psi}=\frac{1}{\sqrt{2}}\Big(\ket{0}-\ket{1}\Big)</m> is measured in the basis <m>\{\ket{+},\ket{-}\}.</m> Calculate <m>P(+)</m> and <m>P(-).</m> </p></statement>
+    <solution> <me> P(+) = (\braket{+|\psi})^2 = (\frac{1}{\sqrt{2}}(\bra{0} + \bra{1}) \cdot \frac{1}{\sqrt{2}}(\ket{0}-\ket{1}))^2 = (\frac{1}{2}(\braket{0|0} - \braket{0|1} + \braket{1|0} - \braket{1|1}))^2 = (\frac{1}{2}(1 - 0 + 0 - 1))^2 = 0 </me>
+    <me> P(-) = (\braket{-|\psi})^2 = (\frac{1}{\sqrt{2}}(\bra{0} - \bra{1}) \cdot \frac{1}{\sqrt{2}}(\ket{0}-\ket{1}))^2 = (\frac{1}{2}(\braket{0|0} - \braket{0|1} - \braket{1|0} + \braket{1|1}))^2 = (\frac{1}{2}(1 - 0 - 0 + 1))^2 = 1 </me> </solution>
+  </exercise>
+<exercise>
+<title>A state in the Computational basis</title>
+  <statement><p> <m>\ket{\psi}=\frac{1}{\sqrt{3}}\Big(\ket{0} +\sqrt{2}\ket{1}\Big)</m> is measured in the basis <m>\{\ket{0},\ket{1}\}.</m> Calculate <m>P(0)</m> and <m>P(1)</m>. </p></statement>
+  <solution> <me> P(0) = (\braket{0|\psi})^2 = (\bra{0} \cdot \frac{1}{\sqrt{3}} (\ket{0} + \sqrt{2}\ket{1}))^2 = (\frac{1}{\sqrt{3}} \braket{0|0} + \frac{\sqrt{2}}{\sqrt{3}} \braket{0|1})^2 = (\frac{1}{\sqrt{3}} + 0)^2 = \frac{1}{3} </me>
+  <me> P(1) = (\braket{1|\psi})^2 = (\bra{1} \cdot \frac{1}{\sqrt{3}} (\ket{0} + \sqrt{2}\ket{1}))^2 = (\frac{1}{\sqrt{3}} \braket{1|0} + \frac{\sqrt{2}}{\sqrt{3}} \braket{1|1})^2 = (0 + \frac{\sqrt{2}}{\sqrt{3}})^2 = \frac{2}{3} </me> </solution>
+</exercise>
 
-
-
-
-
+<subsection xml:id="subsec-Bloch-Sphere">
+  <title>The Bloch Sphere</title>
+  <p> Recall that any qubit can be written as <m> \ket{\psi} = \alpha \ket{0} + \beta \ket{1} </m> and <m> \alpha^2 + \beta^2 = 1 </m>. Because of this bounding property, we can say there exist some real numbers <m>\gamma, \theta, \text{ and } \phi</m> such that </p>
+<me> \ket{\psi} = e^{i\gamma}(\cos(\frac{\theta}{2})\ket{0} + e^{i\phi}\sin(\frac{\theta}{2})\ket{1}) </me>
+<p> Since the <m>e^{i\gamma}</m> is simply a scalar applied to the entire system, it will have no observable effect on the state of the system. This means we can ignore that term, leaving us with </p>
+<me> \ket{\psi} = \cos(\frac{\theta}{2})\ket{0} + e^{i\phi}\sin(\frac{\theta}{2})\ket{1} </me>
+<p> The numbers <m>\theta</m> and <m>\phi</m> define a point on the three-dimensional unit sphere, which we will here call the <term>Bloch sphere</term><idx><h>Bloch Sphere</h></idx>. The Bloch sphere exists within a Hilbert Space, <m>\mathcal{H}</m>, and provides an intuitive method for depicting qubits as vectors and visualizing the operations we can perform on them.</p>
   <figure xml:id="fig-Bloch-Sphere">
-    <caption>The Bloch Sphere and the representation of a <m>\ket{\psi}</m>
-      state vector with angle <m>\phi</m> along the horizontal plane and angle <m>\theta</m> along the vertical plane, as well as the computational basis vectors. </caption>
+    <caption>The Bloch sphere and the representation of a qubit <m>\ket{\psi}</m> with angle <m>\phi</m> along the horizontal plane and angle <m>\theta</m> along the vertical axis, as well as the computational basis vectors.  </caption>
   <image source="BlochSphere.png" width="60%"> </image> 
   </figure>
+<p> One quirk of the Bloch sphere is that any two orthogonal state vectors (qubits) are represented on the sphere not as perpendicular, but as two vectors along the same line pointing in opposite directions. Thus the x-axis is defined by <m>\ket{+}</m> in the positive direction and <m>\ket{i}</m> in the negative direction, the y-axis is defined by <m>\ket{+i}</m> in the positive and <m>\ket{-i}</m> in the negative, and the z-axis is defined by <m>\ket{0}</m> in the positive and <m>\ket{1}</m> in the negative, hence the reason for the names of these states. </p>
+<p> Those familiar with multivariate calculus will know that any point on the surface of the unit sphere can be described with the vector </p>
+<me> \vec{r} = \begin{pmatrix} \sin \theta \cos \phi \\ \sin \theta \sin \phi \\ \cos \theta \end{pmatrix} </me>
+<p> If we choose <m>\theta = 0</m>, we obtain </p>
+  <me> \vec{r} = \begin{pmatrix}0\\0\\1\end{pmatrix} </me>
+<p> which corresponds to <m>\ket{0}</m> on the Block sphere.</p>
+<p> If we choose <m>\theta=\pi</m>. we obtain </p>
+<me> \vec{r} = \begin{pmatrix}0\\0\\-1\end{pmatrix} </me>
+<p> which corresponds to <m>\ket{1}</m> on the Block sphere. This is our reason for choosing to use <m>\frac{\theta}{2}</m> as an angle in our definition of the block instead of just using <m>\theta</m>. When <m>\theta=0</m>,</p>
+<me> \ket{\psi} = \cos(0)\ket{0} + e^{i\phi}\sin(0)\ket{1} = \ket{0}</me>
+<p> and when <m>\theta = \pi</m> and <m>\phi = 0</m>, </p>
+  <me> \ket{\psi} = \cos(\frac{\pi}{2})\ket{0} + e^{0}\sin(\frac{\pi}{2})\ket{1} = \ket{1}</me>
+<exercise>
+  <statement>
+    <p> Using the vector equation for points on the surface of the unit sphere, consider the following values: </p>
+  <p>1. <m>\theta = \frac{\pi}{2}</m> and <m>\phi =0.</m> Obtain <m> \vec{r}.</m></p>
+<p>2. <m>\theta = \frac{\pi}{2}</m> and <m>\phi =\pi.</m> Obtain <m> \vec{r}.</m></p>
+ <p>3. <m>\theta = \frac{\pi}{2}</m> and <m>\phi =\frac{\pi}{2}.</m> Obtain <m>\vec{r}.</m> </p>
+<p>4. <m>\theta = \frac{\pi}{2}</m> and <m>\phi =\frac{3\pi}{2}.</m> Obtain <m>\vec{r}.</m> </p> </statement>
+</exercise>
+<p>The Bloch sphere is called a projective sphere because the states of our quantum system are rays in the Hilbert space<m>\mathcal{H}</m>, and we would prefer to visualize vectors as points, not rays. Going back to the underlying <m>\mathbb{C}^{n}</m> we collapse the ray that represents a quantum state onto the surface of an <m>n</m>-dimensional sphere. We are projecting all those representatives onto a single point on the complex n-sphere. Notice that each point on that sphere still has infinitely many representations impossible to picture due to the potential scalar factor <m>e^{i \gamma}</m>, that we left out of our equation. </p>
+</subsection>
 </section>
 
 <section xml:id="Linear-Operators">
