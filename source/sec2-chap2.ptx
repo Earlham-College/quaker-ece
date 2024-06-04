@@ -10,8 +10,10 @@
   <subsection xml:id="subsec1-chap2" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Hadamard gate</title>
     <p> 
-      Hadamard gate is one of the most popular gates in quantum computing.
-      
+      <term>Hadamard gate</term><idx><h>Gate</h><h>Hadamard</h></idx> 
+
+       is one of the most popular gates in quantum computing.
+
     </p>
 
     <figure xml:id="fig-HgateSimple_1">
@@ -94,9 +96,10 @@
   <!--X gate-->
   
   <subsection xml:id="subsec2-chap2" xmlns:xi="http://www.w3.org/2001/XInclude">
-    <title>Pauli X</title>
+    <title>Pauli X gate</title>
     <p> 
-      This is also labeled as <m>\sigma_1</m>, <m>\sigma_x</m> or <em>X</em>
+      <term>Pauli X gate</term><idx><h>Gate</h><h>Pauli</h><h>X</h></idx> 
+      is also labeled as <m>\sigma_1</m>, <m>\sigma_x</m> or <em>X</em>
       
     </p>
 
@@ -146,9 +149,11 @@
   <!--Y gate-->
 
   <subsection xml:id="subsec3-chap2" xmlns:xi="http://www.w3.org/2001/XInclude">
-    <title>Pauli Y</title>
+    <title>Pauli Y gate</title>
     <p> 
-      This is also labeled as <m>\sigma_2</m>, <m>\sigma_y</m> or <em>Y</em>
+      <term>Pauli Y gate</term><idx><h>Gate</h><h>Pauli</h><h>Y</h></idx> 
+
+      is also labeled as <m>\sigma_2</m>, <m>\sigma_y</m> or <em>Y</em>
       
     </p>
 
@@ -199,8 +204,8 @@ i&amp;0
   <title>Pauli Z</title>
    
   <p> 
-    This is also labeled as 
-    <!-- <m>\sigma_3</m>, <m>\sigma_z</m> or <em>Z</em> -->
+    <term>Pauli Z gate</term><idx><h>Gate</h><h>Pauli</h><h>Z</h></idx> 
+    is also labeled as <m>\sigma_3</m>, <m>\sigma_z</m> or <em>Z</em>
   </p>
 
 
@@ -247,9 +252,10 @@ i&amp;0
 <!--I gate-->
 
 <subsection xml:id="subsec5-chap2" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Pauli Z</title>
+  <title>Pauli I gate</title>
   <p> 
-    This is also labeled as <m>\sigma_0</m> or <em>I</em>
+    <term>Pauli I gate</term><idx><h>Gate</h><h>Pauli</h><h>I</h></idx> 
+    is also labeled as <m>\sigma_0</m> or <em>I</em>
     
   </p>
 
@@ -299,9 +305,10 @@ i&amp;0
 <!--<Phase> gate-->
 
 <subsection xml:id="subsec6-chap2" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Phase</title>
+  <title>Phase gate</title>
   <p> 
-    This gate is written as S. 
+    <term>Phase gate</term><idx><h>Gate</h><h>Phase</h></idx> 
+    is written as S. 
     
   </p>
 
@@ -352,9 +359,10 @@ i&amp;0
 <!--pi/8 gate-->
 
 <subsection xml:id="subsec7-chap2" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title><m>\pi</m>/8</title>
+  <title><m>\pi</m>/8 gate</title>
   <p> 
-    This gate is written as T. 
+    <term><m>\pi</m>/8 gate</term><idx><h>Gate</h><h><m>\pi</m>/8</h></idx> 
+    is written as T. 
     
   </p>
 
@@ -413,6 +421,7 @@ i&amp;0
   <title>Controled-NOT</title>
   
   <p>
+    
     CNOT gate in the quantum context has two input qubits:
       <ul>
         <li>Control qbit<m>\bullet</m></li>
@@ -445,12 +454,13 @@ i&amp;0
     <p>
     Obtain the Dirac notation
       <ul>
-        <li><me>c\to0</me> and <me>t\to0. \ket{00}=\ket{0,0}</me></li>
-        <li><me>c\to0</me> and <me>t\to1</me></li>  
-        <li><me>c\to1</me> and <me>t\to0</me></li>
-        <li><me>c\to1</me> and <me>t\to1</me></li>  
+        <li><m>c\to0</m> and <m>t\to0</m> </li>
+        <li><m>c\to0</m> and <m>t\to1</m></li>  
+        <li><m>c\to1</m> and <m>t\to0</m></li>
+        <li><m>c\to1</m> and <m>t\to1</m></li>  
               
       </ul>
+      (<m>\ket{00}</m> can be written as <m>\ket{0,0}</m>)
     </p>
   </statement>
     <hint>
