@@ -125,7 +125,7 @@
   <solution><p>In the previous exercise, we found that this vector has a length of <m>\sqrt{62}\approx7.874</m>. To normalize the vector, we will divide each of its components by its length.</p>
     <me> \begin{pmatrix} \frac{7}{\sqrt{62}} \\ \frac{2}{\sqrt{62}} \\ \frac{3}{\sqrt{62}} \end{pmatrix} \approx \begin{pmatrix} 0.889 \\ 0.254 \\ 0.381 \end{pmatrix}</me></solution>
 </exercise>
-<p><alert>Matrices:</alert> Whereas a vector is a single column of elements, a <term>matrix</term><idx><h>Matrix</h></idx> is a table of elements organized in rows and columns. Technically speaking, a vector can be thought of a matrix with only one column. The dimension of a matrix is described by first listing the number of rows and then listing the number of columns. Thus, a <m>2 \times 3</m> matrix (read "two by three") would have two rows and three columns. A <term>square matrix</term><idx><h>Matrix</h><h>Square Matrix</h></idx> is any matrix with the same number of rows and columns. One of the most important matrices is the <term>identity matrix</term><idx><h>Matrix</h><h>Identity Matrix</h></idx>, a square matrixin which all of the entries along the diagonal are <m>1</m> and all other entries are <m>0</m>. Examples of the <m>2\times2</m> and <m>5\times5</m> identity matrices are shown below, which can be generalized to any <m>n \times n</m> matrix.</p>
+<p><alert>Matrices:</alert> Whereas a vector is a single column of elements, a <term>matrix</term><idx><h>Matrix</h></idx> is a table of elements organized in rows and columns. Technically speaking, a vector can be thought of a matrix with only one column. The dimension of a matrix is described by first listing the number of rows and then listing the number of columns. Thus, a <m>2 \times 3</m> matrix (read "two by three") would have two rows and three columns. A <term>square matrix</term><idx><h>Matrix</h><h>Square Matrix</h></idx> is any matrix with the same number of rows and columns. One of the most important matrices is the <term>identity matrix</term><idx><h>Matrix</h><h>Identity Matrix</h></idx>, a square matrix in which all of the entries along the diagonal are <m>1</m> and all other entries are <m>0</m>. Examples of the <m>2\times2</m> and <m>5\times5</m> identity matrices are shown below, which can be generalized to any <m>n \times n</m> matrix.</p>
   <me> I_{2\times2} = \begin{pmatrix} 1 &amp; 0 \\ 0 &amp; 1 \end{pmatrix}, I_{5\times5} = \begin{pmatrix} 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1   \end{pmatrix}</me>
   <p> A matrix can be multiplied by a scalar in the same way that a vector can, by multiplying each entry in the matrix by the scalar, as shown below. </p>
     <me> c \times \begin{pmatrix} a_1 &amp; a_2 &amp; a_3 \\ a_4 &amp; a_5 &amp; a_6 \\ a_7 &amp; a_8 &amp; a_9 \end{pmatrix} = \begin{pmatrix} c \times a_1 &amp; c \times a_2 &amp; c \times a_3 \\ c \times a_4 &amp; c \times a_5 &amp; c \times a_6 \\ c \times a_7 &amp; c \times a_8 &amp; c \times a_9 \end{pmatrix} </me>
@@ -273,9 +273,62 @@
 </subsection>
 </section>
 
-<section xml:id="Linear-Operators">
-  <title>Linear Operators</title>
-  
+<section xml:id="Operators">
+  <title>Operators</title>
+  <p>In physics, things we are able to measure are called <term>observables</term><idx><h>Observables</h></idx>. Examples of observables are things like position, momentum, and energy, among many others. Any observables that relate to the quantum state of a particle have a corresponding <term>operator</term><idx><h>Operator</h></idx>. In quantum computation, operators act on kets from the left side and on bras from the right side. For a ket <m>\psi</m> and a bra <m>\phi</m>, an operator <m>A</m> would act on them as follows</p>
+<me> A \cdot \ket{\psi} = A\ket{\psi}, \bra{\phi} \cdot A = \bra{\phi}A </me> 
+<p> Consider that <m>A</m> is not a scalar, but rather an operator that exists in a Hilbert space, which means that these equations do not just represent basic multiplication. In quantum theory, operators can be represented by matrices, and tools like matrix multiplication and matrix addition (see <xref ref="linear-algebra"/>) can be used to perform operations on qubits. </p> 
+<subsection xml:id="subsec-Hermitian-Operators">
+  <title>Hermitian Operators</title>
+  <p> Recall from <xref ref="subsec-Bra-Vectors-and-the-Inner-Product"/> that the adjoint operation represented by the <m>\dagger</m> symbol consisted of transposing and complex conjugating a vector. This same operation can be performed on an operator (note that operations and operators are two different things). An operator <m>X</m> is <term>Hermitian</term><idx><h>Operator</h><h>Hermitian Operator</h></idx> (also referred to as adjoin) if it satisfies the following property: </p> 
+  <me> X = X^{\dagger} </me>
+<p>Other properties of Hermitian operators are </p>
+<p><alert> Noncommutative </alert></p>
+<me> XY \neq YX </me>
+<p><alert> Associative (multiplicative) </alert></p>
+<me> XYZ = (XY)Z = X(YZ) </me>
+<p><alert> Hermitian Product </alert></p>
+<me> (XY)^{\dagger} = Y^{\dagger}X^{\dagger} </me>
+<p><alert> Linear </alert>  An operator <m>L</m> takes a vector <m>\vec{v}</m> and transforms it into a new vector <m>L\vec{v}</m>. If <m>L</m> is a linear operator, then </p>
+<me> L(\alpha \vec{v} + \beta \vec{w}) = \alpha L \vec{v} + \beta L \vec{w} </me>
+<p> where <m>\alpha, \beta \in \mathbb{C}</m> and <m>\vec{v},\vec{w} \in \mathcal{H}</m> </p> 
+<exercise>
+  <statement>
+    <p>Which of the following operators are Hermitian?</p>
+    <me>1. \ \begin{pmatrix} 1 &amp; 1 \\ 1 &amp; 1 \end{pmatrix} </me>
+    <me>2. \ \begin{pmatrix} 0 &amp; -i \\ i &amp; 0 \end{pmatrix} </me>
+    <me>3. \ \begin{pmatrix} -i &amp; 0 \\ 0 &amp; i \end{pmatrix} </me>
+    <me>4. \ \begin{pmatrix} 1 &amp; 1+i \\ 1-i &amp; 1 \end{pmatrix} </me>
+  </statement>
+  <solution>
+    <p>1.</p> 
+    <me> \begin{pmatrix} 1 &amp; 1 \\ 1 &amp; 1 \end{pmatrix}^{\dagger} = \begin{pmatrix} 1 &amp; 1 \\ 1 &amp; 1 \end{pmatrix} </me> 
+    <p> Since this matrix equals its adjoint, it is Hermitian </p>
+    <p>2.</p> 
+    <me> \begin{pmatrix} 0 &amp; -i \\ i &amp; 0 \end{pmatrix}^{\dagger} = \begin{pmatrix} 0 &amp; -i \\ i &amp; 0 \end{pmatrix} </me> 
+    <p> Since this matrix equals its adjoint, it is Hermitian </p>
+    <p>3.</p> 
+    <me> \begin{pmatrix} -i &amp; 0 \\ 0 &amp; i \end{pmatrix}^{\dagger} = \begin{pmatrix} i &amp; 0 \\ 0 &amp; -i \end{pmatrix} </me> 
+    <p> Since this matrix does not equal its adjoint, it is not Hermitian </p>
+    <p>4.</p> 
+    <me> \begin{pmatrix} 1 &amp; 1+i \\ 1-i &amp; 1 \end{pmatrix}^{\dagger} = \begin{pmatrix} 1 &amp; 1+i \\ 1-i &amp; 1 \end{pmatrix} </me> 
+    <p> Since this matrix equals its adjoint, it is Hermitian </p>
+  </solution>
+</exercise>
+</subsection>
+<subsection xml:id="subsec-Unitary-Operators">
+  <title>Unitary Operators</title>
+<p> Recall that for a qubit </p><me>\ket{\psi}=\alpha \ket{0} + \beta \ket{1}</me><p> the property <m>\alpha^2 + \beta^2 = 1</m> must hold. After an operator <m>U</m> is applied to this qubit, we get a new state defined by </p>
+<me> U\ket{\psi} = \ket{\psi'} = \alpha'\ket{0} + \beta'\ket{1} </me>
+<p> If the property that <m>\alpha'^2 + \beta'^2 = 1</m> still holds, then the operator <m>U</m> is <term>unitary</term><idx><h>Operator</h><h>Unitary Operator</h></idx>. A defining property of unitary operators is </p>
+<me> U U^{\dagger} = U^{\dagger} U = I </me>
+<p> where <m>I</m> is the identity matrix. </p>
+<p> Unitary operations performed on a qubit are reversible. This means that for an operator <m>U</m> that acts on a qubit <m>\ket{\psi}</m> such that <m>U\ket{\psi} = \ket{\psi'}</m>, there exists some operator <m>U^{-1}</m> such that <m>U^{-1}\ket{\psi'} = \ket{\psi}</m>. </p>
+
+
+
+<p> Below is pictured a circuit diagram (which we will delve deeper into in <xref ref="sec3-chap2"/>) representing the action on a single Qbit of the 1-Qbit gate <m>U</m>. Initially the Qbit is described by the input state <m>\ket{\psi}</m> on the left of the line. The line (wire) represents the subsequent operation on the Qbit. After emerging from the box representing the operator <m>U</m>, the Qbit is described by the final state <m>U \ket{\psi}.</m></p>
+</subsection>
 </section>
 
 <section xml:id="sec-Systems-of-Multiple-Qubits">

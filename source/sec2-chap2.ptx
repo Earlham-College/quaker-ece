@@ -10,8 +10,10 @@
   <subsection xml:id="subsec1-chap2" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Hadamard gate</title>
     <p> 
-      Hadamard gate is one of the most popular gates in quantum computing.
-      
+      <term>Hadamard gate</term><idx><h>Gate</h><h>Hadamard</h></idx> 
+
+       is one of the most popular gates in quantum computing.
+
     </p>
 
     <figure xml:id="fig-HgateSimple_1">
@@ -75,12 +77,18 @@
         </ul>
       </p>
     </statement>
-      <hint>
-        <p>put a hint</p>
-      </hint>
+      
       <solution>
         <p>
-          this is a solution
+          <ul>
+            <li><me>H\ket{0} =\frac{1}{\sqrt{2}}
+            
+              \Big(\ket{0}+\ket{1}\Big)</me></li>
+            <li><me> H\ket{1} =\frac{1}{\sqrt{2}}
+            
+              \Big(\ket{0}-\ket{1}\Big)</me></li>        
+          </ul>
+          
         </p>
       </solution>
       </exercise>
@@ -94,9 +102,10 @@
   <!--X gate-->
   
   <subsection xml:id="subsec2-chap2" xmlns:xi="http://www.w3.org/2001/XInclude">
-    <title>Pauli X</title>
+    <title>Pauli X gate</title>
     <p> 
-      This is also labeled as <m>\sigma_1</m>, <m>\sigma_x</m> or <em>X</em>
+      <term>Pauli X gate</term><idx><h>Gate</h><h>Pauli</h><h>X</h></idx> 
+      is also labeled as <m>\sigma_1</m>, <m>\sigma_x</m> or <em>X</em>
       
     </p>
 
@@ -129,12 +138,15 @@
         </ul>
       </p>
     </statement>
-      <hint>
-        <p>put a hint</p>
-      </hint>
+      
       <solution>
         <p>
-          this is a solution
+          <ul>
+            <li><me>X\ket{0}=\ket{1}</me></li>
+            <li><me>X\ket{1}=\ket{0}</me></li>  
+            <li><me>X(X\ket{0})=\ket{0}</me></li>
+            <li><me>X(X\ket{1})=\ket{1}</me></li>       
+          </ul>
         </p>
       </solution>
       </exercise>
@@ -146,9 +158,11 @@
   <!--Y gate-->
 
   <subsection xml:id="subsec3-chap2" xmlns:xi="http://www.w3.org/2001/XInclude">
-    <title>Pauli Y</title>
+    <title>Pauli Y gate</title>
     <p> 
-      This is also labeled as <m>\sigma_2</m>, <m>\sigma_y</m> or <em>Y</em>
+      <term>Pauli Y gate</term><idx><h>Gate</h><h>Pauli</h><h>Y</h></idx> 
+
+      is also labeled as <m>\sigma_2</m>, <m>\sigma_y</m> or <em>Y</em>
       
     </p>
 
@@ -181,12 +195,13 @@ i&amp;0
         </ul>
       </p>
     </statement>
-      <hint>
-        <p>put a hint</p>
-      </hint>
+      
       <solution>
         <p>
-          this is a solution
+          <li><me>Y\ket{0}=i\ket{1}</me></li>
+          <li><me>Y\ket{1}=-i\ket{0}</me></li>  
+          <li><me>Y(Y\ket{0})=\ket{0}</me></li>
+          <li><me>Y(Y\ket{1})=\ket{1}</me></li> 
         </p>
       </solution>
       </exercise>
@@ -199,8 +214,8 @@ i&amp;0
   <title>Pauli Z</title>
    
   <p> 
-    This is also labeled as 
-    <!-- <m>\sigma_3</m>, <m>\sigma_z</m> or <em>Z</em> -->
+    <term>Pauli Z gate</term><idx><h>Gate</h><h>Pauli</h><h>Z</h></idx> 
+    is also labeled as <m>\sigma_3</m>, <m>\sigma_z</m> or <em>Z</em>
   </p>
 
 
@@ -230,12 +245,15 @@ i&amp;0
       </ul>
     </p>
   </statement>
-    <hint>
-      <p>put a hint</p>
-    </hint>
+    
     <solution>
       <p>
-        this is a solution
+        <ul>
+          <li><me>Z\ket{0}=\ket{0}</me></li>
+          <li><me>Z\ket{1}=-\ket{1}</me></li>  
+          <li><me>Z(Z\ket{0})=\ket{0}</me></li>
+          <li><me>Z(Z\ket{1})=\ket{1}</me></li>       
+        </ul>
       </p>
     </solution>
     </exercise>
@@ -247,9 +265,10 @@ i&amp;0
 <!--I gate-->
 
 <subsection xml:id="subsec5-chap2" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Pauli Z</title>
+  <title>Pauli I gate</title>
   <p> 
-    This is also labeled as <m>\sigma_0</m> or <em>I</em>
+    <term>Pauli I gate</term><idx><h>Gate</h><h>Pauli</h><h>I</h></idx> 
+    is also labeled as <m>\sigma_0</m> or <em>I</em>
     
   </p>
 
@@ -275,19 +294,21 @@ i&amp;0
     <p>
     Calculate 
       <ul>
-        <li><me>sigma_0\ket{0}</me></li>
-        <li><me>sigma_0\ket{1}</me></li>  
-        <li><me>sigma_0sigma_1sigma_2sigma_3</me></li>
+        <li><me>\sigma_0\ket{0}</me></li>
+        <li><me>\sigma_0\ket{1}</me></li>  
+        
               
       </ul>
     </p>
   </statement>
-    <hint>
-      <p>put a hint</p>
-    </hint>
+    
     <solution>
       <p>
-        this is a solution
+        <ul>
+          <li><me>\sigma_0\ket{0}=\ket{0}</me></li>
+          <li><me>\sigma_0\ket{1}=\ket{1}</me></li>  
+       
+        </ul>
       </p>
     </solution>
     </exercise>
@@ -299,9 +320,10 @@ i&amp;0
 <!--<Phase> gate-->
 
 <subsection xml:id="subsec6-chap2" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Phase</title>
+  <title>Phase gate</title>
   <p> 
-    This gate is written as S. 
+    <term>Phase gate</term><idx><h>Gate</h><h>Phase</h></idx> 
+    is written as S. 
     
   </p>
 
@@ -335,12 +357,16 @@ i&amp;0
       </ul>
     </p>
   </statement>
-    <hint>
-      <p>put a hint</p>
-    </hint>
+  
     <solution>
       <p>
-        this is a solution
+        <ul>
+          <li><me>S\ket{0}=i\ket{1}</me></li>
+          <li><me>S\ket{1}=-i\ket{0}</me></li>  
+          <li><me>S(S\ket{0})=\ket{0}</me></li>
+          <li><me>S(S\ket{1})=-\ket{0}</me></li>  
+                
+        </ul>                    
       </p>
     </solution>
     </exercise>
@@ -352,9 +378,10 @@ i&amp;0
 <!--pi/8 gate-->
 
 <subsection xml:id="subsec7-chap2" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title><m>\pi</m>/8</title>
+  <title><m>\pi</m>/8 gate</title>
   <p> 
-    This gate is written as T. 
+    <term><m>\pi</m>/8 gate</term><idx><h>Gate</h><h><m>\pi</m>/8</h></idx> 
+    is written as T. 
     
   </p>
 
@@ -382,18 +409,20 @@ i&amp;0
       <ul>
         <li><me>T\ket{0}</me></li>
         <li><me>T\ket{1}</me></li>  
-        <li><me>T(T\ket{0})</me></li>
-        <li><me>T(T\ket{1})</me></li>  
+      
               
       </ul>
     </p>
   </statement>
-    <hint>
-      <p>put a hint</p>
-    </hint>
+    
     <solution>
       <p>
-        this is a solution
+        <ul>
+          <li><me>T\ket{0}=e^{i\frac{\pi}{8}}\ket{0}</me></li>
+          <li><me>T\ket{1}=e^{i\frac{\pi}{8}}\ket{1}</me></li>  
+         
+                
+        </ul>
       </p>
     </solution>
     </exercise>
@@ -413,6 +442,7 @@ i&amp;0
   <title>Controled-NOT</title>
   
   <p>
+    
     CNOT gate in the quantum context has two input qubits:
       <ul>
         <li>Control qbit<m>\bullet</m></li>
@@ -443,25 +473,30 @@ i&amp;0
   <exercise xml:id="exe-CNOTGapllicationQbits1">
     <statement>
     <p>
-    Obtain the Dirac notation
+    Obtain the Dirac notation 
       <ul>
-        <li><me>c\to0</me> and <me>t\to0. \ket{00}=\ket{0,0}</me></li>
-        <li><me>c\to0</me> and <me>t\to1</me></li>  
-        <li><me>c\to1</me> and <me>t\to0</me></li>
-        <li><me>c\to1</me> and <me>t\to1</me></li>  
+        <li><m>c\to0</m> and <m>t\to0</m> </li>
+        <li><m>c\to0</m> and <m>t\to1</m></li>  
+        <li><m>c\to1</m> and <m>t\to0</m></li>
+        <li><m>c\to1</m> and <m>t\to1</m></li>  
               
       </ul>
+      (<m>\ket{00}</m> can be written as <m>\ket{0,0}</m>)
     </p>
   </statement>
-    <hint>
-      <p>put a hint</p>
-    </hint>
+   
     <solution>
       <p>
-        this is a solution
-      </p>
+        <ul>
+        <li><m>\ket{00}\bra{00}</m> </li>
+        <li><m>\ket{01}\bra{01}</m></li>  
+        <li><m>\ket{10}\bra{11}</m></li>
+        <li><m>\ket{11}\bra{11}</m></li>  
+                
+        </ul>
+      </p> 
     </solution>
-    </exercise>
+  </exercise>
 <p>
   The gate and matrix representation are,
 </p>
@@ -535,39 +570,7 @@ i&amp;0
   which is the Dirac representation for the CNOT gate.
 </p>
 
-<exercise xml:id="exe-CNOTGapllicationQbits2">
-  <statement>
-  <p>
-  Consider <m>\ket{c}=\ket{1}</m>, what is going to happen? Build the truth table.
-    
-  </p>
-</statement>
-  <hint>
-    <p>put a hint</p>
-  </hint>
-  <solution>
-    <p>
-      this is a solution
-    </p>
-  </solution>
-  </exercise>
 
-  <exercise xml:id="exe-CNOTGapllicationQbits3">
-    <statement>
-    <p>
-    Use Dirac notation to show <m>\ket{a,b}\to\ket{b,a}</m>
-      
-    </p>
-  </statement>
-    <hint>
-      <p>put a hint</p>
-    </hint>
-    <solution>
-      <p>
-        this is a solution
-      </p>
-    </solution>
-    </exercise>
 
     <figure xml:id="fig-CNOTgateSimple_3">
     <caption>CNOT gate representation in a circuit.</caption>
@@ -581,12 +584,10 @@ i&amp;0
       
     </p>
   </statement>
-    <hint>
-      <p>put a hint</p>
-    </hint>
+   
     <solution>
       <p>
-        this is a solution
+        <m>(\alpha+\beta)\ket{11}</m>
       </p>
     </solution>
     </exercise>
@@ -628,21 +629,7 @@ i&amp;0
     </mrow>
 </mdn>
 
-  <exercise xml:id="exe-CUGapllicationQbits">
-    <statement>
-    <p>
-    Build the truth table for the (2.2.14).
-    </p>
-  </statement>
-    <hint>
-      <p>put a hint</p>
-    </hint>
-    <solution>
-      <p>
-        this is a solution
-      </p>
-    </solution>
-    </exercise>
+
 
 </subsection>
 
@@ -686,19 +673,21 @@ i&amp;0
     <li><me>CZ\ket{01}</me></li>  
     <li><me>CZ\ket{10}</me></li>
     <li><me>CZ\ket{11}</me></li>
-    <li><me>CZ^{\otimes 2}\ket{00}</me></li>
-    <li><me>CZ^{\otimes 2}\ket{01}</me></li>  
-    <li><me>CZ^{\otimes 2}\ket{10}</me></li>
-    <li><me>CZ^{\otimes 2}\ket{11}</me></li>         
+          
   </ul>
 
   </statement>
-    <hint>
-      <p>put a hint</p>
-    </hint>
+    
     <solution>
       <p>
-        this is a solution
+       
+    <ul>
+      <li><me>CZ\ket{00}=\ket{00}</me></li>
+      <li><me>CZ\ket{01}=\ket{01}</me></li>  
+      <li><me>CZ\ket{10}=\ket{11}</me></li>
+      <li><me>CZ\ket{11}=\ket{11}</me></li>
+            
+    </ul>
       </p>
     </solution>
     </exercise>

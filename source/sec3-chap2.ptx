@@ -89,22 +89,7 @@ reversible counterparts.
 
 </subsection>
 
-  <exercise xml:id="exe-CNOTapllicationQbits">
-    <statement>
-    <p>
-      Consider the gate proposed in the section of Controlled-NOT, the corresponding circuit is given by
-    </p>
 
-  </statement>
-    <hint>
-      <p>put a hint</p>
-    </hint>
-    <solution>
-      <p>
-        this is a solution
-      </p>
-    </solution>
-    </exercise>
 
   <figure xml:id="fig-CCNOTcgategateSimple_1">
     <caption>Controlled-NOT gate representation</caption>

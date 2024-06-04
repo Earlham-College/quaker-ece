@@ -259,7 +259,13 @@ window.MathJax = {
 <div class="toc-item"><a href="Computational-Bases.html" class="internal"><span class="codenumber">1.8</span> <span class="title">Computational Bases and the Bloch Sphere</span></a></div>
 <ul class="structural"><li><div class="toc-item"><a href="Computational-Bases.html#subsec-Bloch-Sphere" class="internal"><span class="codenumber">1.8.1</span> <span class="title">The Bloch Sphere</span></a></div></li></ul>
 </li>
-<li><div class="toc-item"><a href="Linear-Operators.html" class="internal"><span class="codenumber">1.9</span> <span class="title">Linear Operators</span></a></div></li>
+<li>
+<div class="toc-item"><a href="Operators.html" class="internal"><span class="codenumber">1.9</span> <span class="title">Operators</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="Operators.html#subsec-Hermitian-Operators" class="internal"><span class="codenumber">1.9.1</span> <span class="title">Hermitian Operators</span></a></div></li>
+<li><div class="toc-item"><a href="Operators.html#subsec-Unitary-Operators" class="internal"><span class="codenumber">1.9.2</span> <span class="title">Unitary Operators</span></a></div></li>
+</ul>
+</li>
 <li><div class="toc-item"><a href="sec-Systems-of-Multiple-Qubits.html" class="internal"><span class="codenumber">1.10</span> <span class="title">Systems of Multiple Qubits</span></a></div></li>
 </ul>
 </li>
@@ -271,12 +277,12 @@ window.MathJax = {
 <div class="toc-item"><a href="sec2-chap2.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Gates</span></a></div>
 <ul class="structural">
 <li><div class="toc-item"><a href="sec2-chap2.html#subsec1-chap2" class="internal"><span class="codenumber">2.2.1</span> <span class="title">Hadamard gate</span></a></div></li>
-<li><div class="toc-item"><a href="sec2-chap2.html#subsec2-chap2" class="internal"><span class="codenumber">2.2.2</span> <span class="title">Pauli X</span></a></div></li>
-<li><div class="toc-item"><a href="sec2-chap2.html#subsec3-chap2" class="internal"><span class="codenumber">2.2.3</span> <span class="title">Pauli Y</span></a></div></li>
+<li><div class="toc-item"><a href="sec2-chap2.html#subsec2-chap2" class="internal"><span class="codenumber">2.2.2</span> <span class="title">Pauli X gate</span></a></div></li>
+<li><div class="toc-item"><a href="sec2-chap2.html#subsec3-chap2" class="internal"><span class="codenumber">2.2.3</span> <span class="title">Pauli Y gate</span></a></div></li>
 <li><div class="toc-item"><a href="sec2-chap2.html#subsec4-chap2" class="internal"><span class="codenumber">2.2.4</span> <span class="title">Pauli Z</span></a></div></li>
-<li><div class="toc-item"><a href="sec2-chap2.html#subsec5-chap2" class="internal"><span class="codenumber">2.2.5</span> <span class="title">Pauli Z</span></a></div></li>
-<li><div class="toc-item"><a href="sec2-chap2.html#subsec6-chap2" class="internal"><span class="codenumber">2.2.6</span> <span class="title">Phase</span></a></div></li>
-<li><div class="toc-item"><a href="sec2-chap2.html#subsec7-chap2" class="internal"><span class="codenumber">2.2.7</span> <span class="title"><span class="process-math">\(\pi\)</span>/8</span></a></div></li>
+<li><div class="toc-item"><a href="sec2-chap2.html#subsec5-chap2" class="internal"><span class="codenumber">2.2.5</span> <span class="title">Pauli I gate</span></a></div></li>
+<li><div class="toc-item"><a href="sec2-chap2.html#subsec6-chap2" class="internal"><span class="codenumber">2.2.6</span> <span class="title">Phase gate</span></a></div></li>
+<li><div class="toc-item"><a href="sec2-chap2.html#subsec7-chap2" class="internal"><span class="codenumber">2.2.7</span> <span class="title"><span class="process-math">\(\pi\)</span>/8 gate</span></a></div></li>
 <li><div class="toc-item"><a href="sec2-chap2.html#subsec8-chap2" class="internal"><span class="codenumber">2.2.8</span> <span class="title">Controled-NOT</span></a></div></li>
 <li><div class="toc-item"><a href="sec2-chap2.html#subsec9-chap2" class="internal"><span class="codenumber">2.2.9</span> <span class="title">Contorolled-U</span></a></div></li>
 <li><div class="toc-item"><a href="sec2-chap2.html#subsec10-chap2" class="internal"><span class="codenumber">2.2.10</span> <span class="title">Contorolled-Z</span></a></div></li>
@@ -307,7 +313,8 @@ window.MathJax = {
 <section class="subsection" id="subsec1-chap2"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.2.1</span> <span class="title">Hadamard gate</span>
 </h3>
-<div class="para" id="p-123">Hadamard gate is one of the most popular gates in quantum computing.</div>
+<div class="para" id="p-147">
+<dfn class="terminology">Hadamard gate</dfn> is one of the most popular gates in quantum computing.</div>
 <figure class="figure figure-like" id="fig-HgateSimple_1"><div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="external/HadamardGate.png" class="contained"></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.2.1<span class="period">.</span></span><span class="space"> </span>Hadamard gate representation in a circuit.</figcaption></figure><div class="displaymath process-math" id="mdn-1">
 \begin{align}
@@ -318,7 +325,7 @@ H=\frac{1}{\sqrt{2}}
 \end{pmatrix}\tag{2.2.1}
 \end{align}
 </div>
-<div class="para" id="p-124">The Hadamard operator on one qubit can be written as</div>
+<div class="para" id="p-148">The Hadamard operator on one qubit can be written as</div>
 <div class="displaymath process-math" id="mdn-2">
 \begin{gather}
 H =\frac{1}{\sqrt{2}}
@@ -336,11 +343,11 @@ H =\frac{1}{\sqrt{2}}
 \bigg)\tag{2.2.2}
 \end{gather}
 </div>
-<div class="para" id="p-125">which is the Hadamard gate in Dirac notation. Hadamard operation is a rotation of the Block sphere about y axis by <span class="process-math">\(\frac{\pi}{2}\text{,}\)</span> followed by a rotation about <span class="process-math">\(x\)</span> axis by <span class="process-math">\(pi\text{.}\)</span>
+<div class="para" id="p-149">which is the Hadamard gate in Dirac notation. Hadamard operation is a rotation of the Block sphere about y axis by <span class="process-math">\(\frac{\pi}{2}\text{,}\)</span> followed by a rotation about <span class="process-math">\(x\)</span> axis by <span class="process-math">\(pi\text{.}\)</span>
 </div>
 <article class="exercise exercise-like" id="exe-HGapllicationQbits"><a href="" data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exe-HGapllicationQbits"><h4 class="heading">
 <span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.2.2</span><span class="period">.</span>
-</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-exe-HGapllicationQbits"><article class="exercise exercise-like"><div class="para logical" id="p-126">
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-exe-HGapllicationQbits"><article class="exercise exercise-like"><div class="para logical" id="p-150">
 <div class="para">Calculate</div>
 <ul class="disc">
 <li id="li-1"><div class="para" id="p-derived-li-1"><div class="displaymath process-math">
@@ -356,12 +363,25 @@ H\ket{1}
 </ul>
 </div>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-2" id="hint-2"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-2"><div class="hint solution-like"><div class="para" id="p-127">put a hint</div></div></div>
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-12" id="solution-12"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-12"><div class="solution solution-like"><div class="para" id="p-128">this is a solution</div></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-13" id="solution-13"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-13"><div class="solution solution-like"><div class="para logical" id="p-151"><ul class="disc">
+<li id="li-3"><div class="para" id="p-derived-li-3"><div class="displaymath process-math">
+\begin{equation*}
+H\ket{0} =\frac{1}{\sqrt{2}}
+\Big(\ket{0}+\ket{1}\Big)
+\end{equation*}
+</div></div></li>
+<li id="li-4"><div class="para" id="p-derived-li-4"><div class="displaymath process-math">
+\begin{equation*}
+H\ket{1} =\frac{1}{\sqrt{2}}
+\Big(\ket{0}-\ket{1}\Big)
+\end{equation*}
+</div></div></li>
+</ul></div></div></div>
 </div></article></div></section><section class="subsection" id="subsec2-chap2"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">2.2.2</span> <span class="title">Pauli X</span>
+<span class="type">Subsection</span> <span class="codenumber">2.2.2</span> <span class="title">Pauli X gate</span>
 </h3>
-<div class="para" id="p-129">This is also labeled as <span class="process-math">\(\sigma_1\text{,}\)</span> <span class="process-math">\(\sigma_x\)</span> or <em class="emphasis">X</em>
+<div class="para" id="p-152">
+<dfn class="terminology">Pauli X gate</dfn> is also labeled as <span class="process-math">\(\sigma_1\text{,}\)</span> <span class="process-math">\(\sigma_x\)</span> or <em class="emphasis">X</em>
 </div>
 <figure class="figure figure-like" id="fig-XgateSimple_1"><div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="external/Xgate.png" class="contained"></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.2.3<span class="period">.</span></span><span class="space"> </span>X gate representation in a circuit.</figcaption></figure><div class="displaymath process-math" id="mdn-3">
@@ -375,25 +395,25 @@ X= \text{NOT}=
 </div>
 <article class="exercise exercise-like" id="exe-XGapllicationQbits"><a href="" data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exe-XGapllicationQbits"><h4 class="heading">
 <span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.2.4</span><span class="period">.</span>
-</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-exe-XGapllicationQbits"><article class="exercise exercise-like"><div class="para logical" id="p-130">
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-exe-XGapllicationQbits"><article class="exercise exercise-like"><div class="para logical" id="p-153">
 <div class="para">Calculate</div>
 <ul class="disc">
-<li id="li-3"><div class="para" id="p-derived-li-3"><div class="displaymath process-math">
+<li id="li-5"><div class="para" id="p-derived-li-5"><div class="displaymath process-math">
 \begin{equation*}
 X\ket{0}
 \end{equation*}
 </div></div></li>
-<li id="li-4"><div class="para" id="p-derived-li-4"><div class="displaymath process-math">
+<li id="li-6"><div class="para" id="p-derived-li-6"><div class="displaymath process-math">
 \begin{equation*}
 X\ket{1}
 \end{equation*}
 </div></div></li>
-<li id="li-5"><div class="para" id="p-derived-li-5"><div class="displaymath process-math">
+<li id="li-7"><div class="para" id="p-derived-li-7"><div class="displaymath process-math">
 \begin{equation*}
 X(X\ket{0})
 \end{equation*}
 </div></div></li>
-<li id="li-6"><div class="para" id="p-derived-li-6"><div class="displaymath process-math">
+<li id="li-8"><div class="para" id="p-derived-li-8"><div class="displaymath process-math">
 \begin{equation*}
 X(X\ket{1})
 \end{equation*}
@@ -401,12 +421,33 @@ X(X\ket{1})
 </ul>
 </div>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-3" id="hint-3"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-3"><div class="hint solution-like"><div class="para" id="p-131">put a hint</div></div></div>
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-13" id="solution-13"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-13"><div class="solution solution-like"><div class="para" id="p-132">this is a solution</div></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-14" id="solution-14"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-14"><div class="solution solution-like"><div class="para logical" id="p-154"><ul class="disc">
+<li id="li-9"><div class="para" id="p-derived-li-9"><div class="displaymath process-math">
+\begin{equation*}
+X\ket{0}=\ket{1}
+\end{equation*}
+</div></div></li>
+<li id="li-10"><div class="para" id="p-derived-li-10"><div class="displaymath process-math">
+\begin{equation*}
+X\ket{1}=\ket{0}
+\end{equation*}
+</div></div></li>
+<li id="li-11"><div class="para" id="p-derived-li-11"><div class="displaymath process-math">
+\begin{equation*}
+X(X\ket{0})=\ket{0}
+\end{equation*}
+</div></div></li>
+<li id="li-12"><div class="para" id="p-derived-li-12"><div class="displaymath process-math">
+\begin{equation*}
+X(X\ket{1})=\ket{1}
+\end{equation*}
+</div></div></li>
+</ul></div></div></div>
 </div></article></div></section><section class="subsection" id="subsec3-chap2"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">2.2.3</span> <span class="title">Pauli Y</span>
+<span class="type">Subsection</span> <span class="codenumber">2.2.3</span> <span class="title">Pauli Y gate</span>
 </h3>
-<div class="para" id="p-133">This is also labeled as <span class="process-math">\(\sigma_2\text{,}\)</span> <span class="process-math">\(\sigma_y\)</span> or <em class="emphasis">Y</em>
+<div class="para" id="p-155">
+<dfn class="terminology">Pauli Y gate</dfn> is also labeled as <span class="process-math">\(\sigma_2\text{,}\)</span> <span class="process-math">\(\sigma_y\)</span> or <em class="emphasis">Y</em>
 </div>
 <figure class="figure figure-like" id="fig-ygateSimple_1"><div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="external/ygate.png" class="contained"></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.2.5<span class="period">.</span></span><span class="space"> </span>Y gate representation in a circuit.</figcaption></figure><div class="displaymath process-math" id="mdn-4">
@@ -419,25 +460,25 @@ i&amp;0
 </div>
 <article class="exercise exercise-like" id="exe-YGapllicationQbits"><a href="" data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exe-YGapllicationQbits"><h4 class="heading">
 <span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.2.6</span><span class="period">.</span>
-</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-exe-YGapllicationQbits"><article class="exercise exercise-like"><div class="para logical" id="p-134">
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-exe-YGapllicationQbits"><article class="exercise exercise-like"><div class="para logical" id="p-156">
 <div class="para">Calculate</div>
 <ul class="disc">
-<li id="li-7"><div class="para" id="p-derived-li-7"><div class="displaymath process-math">
+<li id="li-13"><div class="para" id="p-derived-li-13"><div class="displaymath process-math">
 \begin{equation*}
 Y\ket{0}
 \end{equation*}
 </div></div></li>
-<li id="li-8"><div class="para" id="p-derived-li-8"><div class="displaymath process-math">
+<li id="li-14"><div class="para" id="p-derived-li-14"><div class="displaymath process-math">
 \begin{equation*}
 Y\ket{1}
 \end{equation*}
 </div></div></li>
-<li id="li-9"><div class="para" id="p-derived-li-9"><div class="displaymath process-math">
+<li id="li-15"><div class="para" id="p-derived-li-15"><div class="displaymath process-math">
 \begin{equation*}
 Y(Y\ket{0})
 \end{equation*}
 </div></div></li>
-<li id="li-10"><div class="para" id="p-derived-li-10"><div class="displaymath process-math">
+<li id="li-16"><div class="para" id="p-derived-li-16"><div class="displaymath process-math">
 \begin{equation*}
 Y(Y\ket{1})
 \end{equation*}
@@ -445,12 +486,31 @@ Y(Y\ket{1})
 </ul>
 </div>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-4" id="hint-4"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-4"><div class="hint solution-like"><div class="para" id="p-135">put a hint</div></div></div>
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-14" id="solution-14"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-14"><div class="solution solution-like"><div class="para" id="p-136">this is a solution</div></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-15" id="solution-15"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-15"><div class="solution solution-like"><div class="para" id="p-157">
+<div class="displaymath process-math">
+\begin{equation*}
+Y\ket{0}=i\ket{1}
+\end{equation*}
+</div> <div class="displaymath process-math">
+\begin{equation*}
+Y\ket{1}=-i\ket{0}
+\end{equation*}
+</div> <div class="displaymath process-math">
+\begin{equation*}
+Y(Y\ket{0})=\ket{0}
+\end{equation*}
+</div> <div class="displaymath process-math">
+\begin{equation*}
+Y(Y\ket{1})=\ket{1}
+\end{equation*}
+</div>
+</div></div></div>
 </div></article></div></section><section class="subsection" id="subsec4-chap2"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.2.4</span> <span class="title">Pauli Z</span>
 </h3>
-<div class="para" id="p-137">This is also labeled as </div>
+<div class="para" id="p-158">
+<dfn class="terminology">Pauli Z gate</dfn> is also labeled as <span class="process-math">\(\sigma_3\text{,}\)</span> <span class="process-math">\(\sigma_z\)</span> or <em class="emphasis">Z</em>
+</div>
 <figure class="figure figure-like" id="fig-zgateSimple_1"><div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="external/zgate.png" class="contained"></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.2.7<span class="period">.</span></span><span class="space"> </span>Z gate representation in a circuit.</figcaption></figure><div class="displaymath process-math" id="mdn-5">
 \begin{align}
@@ -462,25 +522,25 @@ Z=\begin{pmatrix}
 </div>
 <article class="exercise exercise-like" id="exe-ZGapllicationQbits"><a href="" data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exe-ZGapllicationQbits"><h4 class="heading">
 <span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.2.8</span><span class="period">.</span>
-</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-exe-ZGapllicationQbits"><article class="exercise exercise-like"><div class="para logical" id="p-138">
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-exe-ZGapllicationQbits"><article class="exercise exercise-like"><div class="para logical" id="p-159">
 <div class="para">Calculate</div>
 <ul class="disc">
-<li id="li-11"><div class="para" id="p-derived-li-11"><div class="displaymath process-math">
+<li id="li-21"><div class="para" id="p-derived-li-21"><div class="displaymath process-math">
 \begin{equation*}
 Z\ket{0}
 \end{equation*}
 </div></div></li>
-<li id="li-12"><div class="para" id="p-derived-li-12"><div class="displaymath process-math">
+<li id="li-22"><div class="para" id="p-derived-li-22"><div class="displaymath process-math">
 \begin{equation*}
 Z\ket{1}
 \end{equation*}
 </div></div></li>
-<li id="li-13"><div class="para" id="p-derived-li-13"><div class="displaymath process-math">
+<li id="li-23"><div class="para" id="p-derived-li-23"><div class="displaymath process-math">
 \begin{equation*}
 Z(Z\ket{0})
 \end{equation*}
 </div></div></li>
-<li id="li-14"><div class="para" id="p-derived-li-14"><div class="displaymath process-math">
+<li id="li-24"><div class="para" id="p-derived-li-24"><div class="displaymath process-math">
 \begin{equation*}
 Z(Z\ket{1})
 \end{equation*}
@@ -488,12 +548,33 @@ Z(Z\ket{1})
 </ul>
 </div>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-5" id="hint-5"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-5"><div class="hint solution-like"><div class="para" id="p-139">put a hint</div></div></div>
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-15" id="solution-15"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-15"><div class="solution solution-like"><div class="para" id="p-140">this is a solution</div></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-16" id="solution-16"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-16"><div class="solution solution-like"><div class="para logical" id="p-160"><ul class="disc">
+<li id="li-25"><div class="para" id="p-derived-li-25"><div class="displaymath process-math">
+\begin{equation*}
+Z\ket{0}=\ket{0}
+\end{equation*}
+</div></div></li>
+<li id="li-26"><div class="para" id="p-derived-li-26"><div class="displaymath process-math">
+\begin{equation*}
+Z\ket{1}=-\ket{1}
+\end{equation*}
+</div></div></li>
+<li id="li-27"><div class="para" id="p-derived-li-27"><div class="displaymath process-math">
+\begin{equation*}
+Z(Z\ket{0})=\ket{0}
+\end{equation*}
+</div></div></li>
+<li id="li-28"><div class="para" id="p-derived-li-28"><div class="displaymath process-math">
+\begin{equation*}
+Z(Z\ket{1})=\ket{1}
+\end{equation*}
+</div></div></li>
+</ul></div></div></div>
 </div></article></div></section><section class="subsection" id="subsec5-chap2"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">2.2.5</span> <span class="title">Pauli Z</span>
+<span class="type">Subsection</span> <span class="codenumber">2.2.5</span> <span class="title">Pauli I gate</span>
 </h3>
-<div class="para" id="p-141">This is also labeled as <span class="process-math">\(\sigma_0\)</span> or <em class="emphasis">I</em>
+<div class="para" id="p-161">
+<dfn class="terminology">Pauli I gate</dfn> is also labeled as <span class="process-math">\(\sigma_0\)</span> or <em class="emphasis">I</em>
 </div>
 <figure class="figure figure-like" id="fig-IgateSimple_1"><div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="external/Igate.png" class="contained"></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.2.9<span class="period">.</span></span><span class="space"> </span>I gate representation in a circuit.</figcaption></figure><div class="displaymath process-math" id="mdn-6">
@@ -506,33 +587,39 @@ I=\begin{pmatrix}
 </div>
 <article class="exercise exercise-like" id="exe-IGapllicationQbits"><a href="" data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exe-IGapllicationQbits"><h4 class="heading">
 <span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.2.10</span><span class="period">.</span>
-</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-exe-IGapllicationQbits"><article class="exercise exercise-like"><div class="para logical" id="p-142">
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-exe-IGapllicationQbits"><article class="exercise exercise-like"><div class="para logical" id="p-162">
 <div class="para">Calculate</div>
 <ul class="disc">
-<li id="li-15"><div class="para" id="p-derived-li-15"><div class="displaymath process-math">
+<li id="li-29"><div class="para" id="p-derived-li-29"><div class="displaymath process-math">
 \begin{equation*}
-sigma_0\ket{0}
+\sigma_0\ket{0}
 \end{equation*}
 </div></div></li>
-<li id="li-16"><div class="para" id="p-derived-li-16"><div class="displaymath process-math">
+<li id="li-30"><div class="para" id="p-derived-li-30"><div class="displaymath process-math">
 \begin{equation*}
-sigma_0\ket{1}
-\end{equation*}
-</div></div></li>
-<li id="li-17"><div class="para" id="p-derived-li-17"><div class="displaymath process-math">
-\begin{equation*}
-sigma_0sigma_1sigma_2sigma_3
+\sigma_0\ket{1}
 \end{equation*}
 </div></div></li>
 </ul>
 </div>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-6" id="hint-6"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-6"><div class="hint solution-like"><div class="para" id="p-143">put a hint</div></div></div>
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-16" id="solution-16"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-16"><div class="solution solution-like"><div class="para" id="p-144">this is a solution</div></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-17" id="solution-17"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-17"><div class="solution solution-like"><div class="para logical" id="p-163"><ul class="disc">
+<li id="li-31"><div class="para" id="p-derived-li-31"><div class="displaymath process-math">
+\begin{equation*}
+\sigma_0\ket{0}=\ket{0}
+\end{equation*}
+</div></div></li>
+<li id="li-32"><div class="para" id="p-derived-li-32"><div class="displaymath process-math">
+\begin{equation*}
+\sigma_0\ket{1}=\ket{1}
+\end{equation*}
+</div></div></li>
+</ul></div></div></div>
 </div></article></div></section><section class="subsection" id="subsec6-chap2"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">2.2.6</span> <span class="title">Phase</span>
+<span class="type">Subsection</span> <span class="codenumber">2.2.6</span> <span class="title">Phase gate</span>
 </h3>
-<div class="para" id="p-145">This gate is written as S.</div>
+<div class="para" id="p-164">
+<dfn class="terminology">Phase gate</dfn> is written as S.</div>
 <figure class="figure figure-like" id="fig-SgateSimple_1"><div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="external/Sgate.png" class="contained"></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.2.11<span class="period">.</span></span><span class="space"> </span>Phase gate representation in a circuit.</figcaption></figure><div class="displaymath process-math" id="mdn-7">
 \begin{align}
@@ -544,25 +631,25 @@ S=\begin{pmatrix}
 </div>
 <article class="exercise exercise-like" id="exe-SGapllicationQbits"><a href="" data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exe-SGapllicationQbits"><h4 class="heading">
 <span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.2.12</span><span class="period">.</span>
-</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-exe-SGapllicationQbits"><article class="exercise exercise-like"><div class="para logical" id="p-146">
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-exe-SGapllicationQbits"><article class="exercise exercise-like"><div class="para logical" id="p-165">
 <div class="para">Calculate</div>
 <ul class="disc">
-<li id="li-18"><div class="para" id="p-derived-li-18"><div class="displaymath process-math">
+<li id="li-33"><div class="para" id="p-derived-li-33"><div class="displaymath process-math">
 \begin{equation*}
 S\ket{0}
 \end{equation*}
 </div></div></li>
-<li id="li-19"><div class="para" id="p-derived-li-19"><div class="displaymath process-math">
+<li id="li-34"><div class="para" id="p-derived-li-34"><div class="displaymath process-math">
 \begin{equation*}
 S\ket{1}
 \end{equation*}
 </div></div></li>
-<li id="li-20"><div class="para" id="p-derived-li-20"><div class="displaymath process-math">
+<li id="li-35"><div class="para" id="p-derived-li-35"><div class="displaymath process-math">
 \begin{equation*}
 S(S\ket{0})
 \end{equation*}
 </div></div></li>
-<li id="li-21"><div class="para" id="p-derived-li-21"><div class="displaymath process-math">
+<li id="li-36"><div class="para" id="p-derived-li-36"><div class="displaymath process-math">
 \begin{equation*}
 S(S\ket{1})
 \end{equation*}
@@ -570,12 +657,33 @@ S(S\ket{1})
 </ul>
 </div>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-7" id="hint-7"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-7"><div class="hint solution-like"><div class="para" id="p-147">put a hint</div></div></div>
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-17" id="solution-17"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-17"><div class="solution solution-like"><div class="para" id="p-148">this is a solution</div></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-18" id="solution-18"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-18"><div class="solution solution-like"><div class="para logical" id="p-166"><ul class="disc">
+<li id="li-37"><div class="para" id="p-derived-li-37"><div class="displaymath process-math">
+\begin{equation*}
+S\ket{0}=i\ket{1}
+\end{equation*}
+</div></div></li>
+<li id="li-38"><div class="para" id="p-derived-li-38"><div class="displaymath process-math">
+\begin{equation*}
+S\ket{1}=-i\ket{0}
+\end{equation*}
+</div></div></li>
+<li id="li-39"><div class="para" id="p-derived-li-39"><div class="displaymath process-math">
+\begin{equation*}
+S(S\ket{0})=\ket{0}
+\end{equation*}
+</div></div></li>
+<li id="li-40"><div class="para" id="p-derived-li-40"><div class="displaymath process-math">
+\begin{equation*}
+S(S\ket{1})=-\ket{0}
+\end{equation*}
+</div></div></li>
+</ul></div></div></div>
 </div></article></div></section><section class="subsection" id="subsec7-chap2"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">2.2.7</span> <span class="title"><span class="process-math">\(\pi\)</span>/8</span>
+<span class="type">Subsection</span> <span class="codenumber">2.2.7</span> <span class="title"><span class="process-math">\(\pi\)</span>/8 gate</span>
 </h3>
-<div class="para" id="p-149">This gate is written as T.</div>
+<div class="para" id="p-167">
+<dfn class="terminology"><span class="process-math">\(\pi\)</span>/8 gate</dfn> is written as T.</div>
 <figure class="figure figure-like" id="fig-TgateSimple_1"><div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="external/Tgate.png" class="contained"></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.2.13<span class="period">.</span></span><span class="space"> </span><span class="process-math">\(\pi\)</span>/8 gate representation in a circuit.</figcaption></figure><div class="displaymath process-math" id="mdn-8">
 \begin{align}
@@ -587,44 +695,44 @@ T=\begin{pmatrix}
 </div>
 <article class="exercise exercise-like" id="exe-TGapllicationQbits"><a href="" data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exe-TGapllicationQbits"><h4 class="heading">
 <span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.2.14</span><span class="period">.</span>
-</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-exe-TGapllicationQbits"><article class="exercise exercise-like"><div class="para logical" id="p-150">
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-exe-TGapllicationQbits"><article class="exercise exercise-like"><div class="para logical" id="p-168">
 <div class="para">Calculate</div>
 <ul class="disc">
-<li id="li-22"><div class="para" id="p-derived-li-22"><div class="displaymath process-math">
+<li id="li-41"><div class="para" id="p-derived-li-41"><div class="displaymath process-math">
 \begin{equation*}
 T\ket{0}
 \end{equation*}
 </div></div></li>
-<li id="li-23"><div class="para" id="p-derived-li-23"><div class="displaymath process-math">
+<li id="li-42"><div class="para" id="p-derived-li-42"><div class="displaymath process-math">
 \begin{equation*}
 T\ket{1}
-\end{equation*}
-</div></div></li>
-<li id="li-24"><div class="para" id="p-derived-li-24"><div class="displaymath process-math">
-\begin{equation*}
-T(T\ket{0})
-\end{equation*}
-</div></div></li>
-<li id="li-25"><div class="para" id="p-derived-li-25"><div class="displaymath process-math">
-\begin{equation*}
-T(T\ket{1})
 \end{equation*}
 </div></div></li>
 </ul>
 </div>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-8" id="hint-8"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-8"><div class="hint solution-like"><div class="para" id="p-151">put a hint</div></div></div>
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-18" id="solution-18"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-18"><div class="solution solution-like"><div class="para" id="p-152">this is a solution</div></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-19" id="solution-19"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-19"><div class="solution solution-like"><div class="para logical" id="p-169"><ul class="disc">
+<li id="li-43"><div class="para" id="p-derived-li-43"><div class="displaymath process-math">
+\begin{equation*}
+T\ket{0}=e^{i\frac{\pi}{8}}\ket{0}
+\end{equation*}
+</div></div></li>
+<li id="li-44"><div class="para" id="p-derived-li-44"><div class="displaymath process-math">
+\begin{equation*}
+T\ket{1}=e^{i\frac{\pi}{8}}\ket{1}
+\end{equation*}
+</div></div></li>
+</ul></div></div></div>
 </div></article></div>
-<div class="para" id="p-153">Previous gates aplly on single qubit. The following subsections show the multiqubit gates.</div></section><section class="subsection" id="subsec8-chap2"><h3 class="heading hide-type">
+<div class="para" id="p-170">Previous gates aplly on single qubit. The following subsections show the multiqubit gates.</div></section><section class="subsection" id="subsec8-chap2"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.2.8</span> <span class="title">Controled-NOT</span>
 </h3>
-<div class="para logical" id="p-154">
+<div class="para logical" id="p-171">
 <div class="para">CNOT gate in the quantum context has two input qubits:</div>
 <ul class="disc">
-<li id="li-26"><div class="para" id="p-derived-li-26">Control qbit<span class="process-math">\(\bullet\)</span>
+<li id="li-45"><div class="para" id="p-derived-li-45">Control qbit<span class="process-math">\(\bullet\)</span>
 </div></li>
-<li id="li-27"><div class="para" id="p-derived-li-27">target qbit<span class="process-math">\(\oplus\)</span>
+<li id="li-46"><div class="para" id="p-derived-li-46">target qbit<span class="process-math">\(\oplus\)</span>
 </div></li>
 </ul>
 <div class="para">This gate acts as following</div>
@@ -636,63 +744,36 @@ T(T\ket{1})
 \ket{c}\ket{t}\to \ket{c}\ket{t\oplus c}\tag{2.2.9}
 \end{gather}
 </div>
-<div class="para" id="p-155">Check the XOR and notice this gate is for two qubits.</div>
+<div class="para" id="p-172">Check the XOR and notice this gate is for two qubits.</div>
 <article class="exercise exercise-like" id="exe-CNOTGapllicationQbits1"><a href="" data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exe-CNOTGapllicationQbits1"><h4 class="heading">
 <span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.2.16</span><span class="period">.</span>
-</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-exe-CNOTGapllicationQbits1"><article class="exercise exercise-like"><div class="para logical" id="p-156">
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-exe-CNOTGapllicationQbits1"><article class="exercise exercise-like"><div class="para logical" id="p-173">
 <div class="para">Obtain the Dirac notation</div>
 <ul class="disc">
-<li id="li-28"><div class="para" id="p-derived-li-28">
-<div class="displaymath process-math">
-\begin{equation*}
-c\to0
-\end{equation*}
-</div>and<div class="displaymath process-math">
-\begin{equation*}
-t\to0. \ket{00}=\ket{0,0}
-\end{equation*}
-</div>
+<li id="li-47"><div class="para" id="p-derived-li-47">
+<span class="process-math">\(c\to0\)</span> and <span class="process-math">\(t\to0\)</span>
 </div></li>
-<li id="li-29"><div class="para" id="p-derived-li-29">
-<div class="displaymath process-math">
-\begin{equation*}
-c\to0
-\end{equation*}
-</div>and<div class="displaymath process-math">
-\begin{equation*}
-t\to1
-\end{equation*}
-</div>
+<li id="li-48"><div class="para" id="p-derived-li-48">
+<span class="process-math">\(c\to0\)</span> and <span class="process-math">\(t\to1\)</span>
 </div></li>
-<li id="li-30"><div class="para" id="p-derived-li-30">
-<div class="displaymath process-math">
-\begin{equation*}
-c\to1
-\end{equation*}
-</div>and<div class="displaymath process-math">
-\begin{equation*}
-t\to0
-\end{equation*}
-</div>
+<li id="li-49"><div class="para" id="p-derived-li-49">
+<span class="process-math">\(c\to1\)</span> and <span class="process-math">\(t\to0\)</span>
 </div></li>
-<li id="li-31"><div class="para" id="p-derived-li-31">
-<div class="displaymath process-math">
-\begin{equation*}
-c\to1
-\end{equation*}
-</div>and<div class="displaymath process-math">
-\begin{equation*}
-t\to1
-\end{equation*}
-</div>
+<li id="li-50"><div class="para" id="p-derived-li-50">
+<span class="process-math">\(c\to1\)</span> and <span class="process-math">\(t\to1\)</span>
 </div></li>
 </ul>
+<div class="para">(<span class="process-math">\(\ket{00}\)</span> can be written as <span class="process-math">\(\ket{0,0}\)</span>)</div>
 </div>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-9" id="hint-9"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-9"><div class="hint solution-like"><div class="para" id="p-157">put a hint</div></div></div>
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-19" id="solution-19"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-19"><div class="solution solution-like"><div class="para" id="p-158">this is a solution</div></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-20" id="solution-20"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-20"><div class="solution solution-like"><div class="para logical" id="p-174"><ul class="disc">
+<li id="li-51"><div class="para" id="p-derived-li-51"><span class="process-math">\(\displaystyle \ket{00}\bra{00}\)</span></div></li>
+<li id="li-52"><div class="para" id="p-derived-li-52"><span class="process-math">\(\displaystyle \ket{01}\bra{01}\)</span></div></li>
+<li id="li-53"><div class="para" id="p-derived-li-53"><span class="process-math">\(\displaystyle \ket{10}\bra{11}\)</span></div></li>
+<li id="li-54"><div class="para" id="p-derived-li-54"><span class="process-math">\(\displaystyle \ket{11}\bra{11}\)</span></div></li>
+</ul></div></div></div>
 </div></article></div>
-<div class="para" id="p-159">The gate and matrix representation are,</div>
+<div class="para" id="p-175">The gate and matrix representation are,</div>
 <figure class="figure figure-like" id="fig-CNOTgateSimple_2"><div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="external/CNOT2.png" class="contained"></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.2.17<span class="period">.</span></span><span class="space"> </span>CNOT gate representation in a circuit.</figcaption></figure><div class="displaymath process-math" id="mdn-10">
 \begin{align}
@@ -705,7 +786,7 @@ CNOT=\neg X=
 \end{pmatrix}\tag{2.2.10}
 \end{align}
 </div>
-<div class="para" id="p-160">Since</div>
+<div class="para" id="p-176">Since</div>
 <div class="displaymath process-math" id="mdn-11">
 \begin{align}
 \begin{pmatrix}
@@ -716,7 +797,7 @@ CNOT=\neg X=
 \end{pmatrix}\tag{2.2.11}
 \end{align}
 </div>
-<div class="para" id="p-161">and using CNOT matrix we can cancel out some terms and reduce others to 1, such as</div>
+<div class="para" id="p-177">and using CNOT matrix we can cancel out some terms and reduce others to 1, such as</div>
 <div class="displaymath process-math" id="mdn-12">
 \begin{align}
 \begin{pmatrix}
@@ -727,7 +808,7 @@ CNOT=\neg X=
 \end{pmatrix}\tag{2.2.12}
 \end{align}
 </div>
-<div class="para" id="p-162">and we have</div>
+<div class="para" id="p-178">and we have</div>
 <div class="displaymath process-math" id="mdn-13">
 \begin{gather}
 CX = 
@@ -737,60 +818,37 @@ CX =
 +\ket{11}\bra{10}.\tag{2.2.13}
 \end{gather}
 </div>
-<div class="para" id="p-163">which is the Dirac representation for the CNOT gate.</div>
-<article class="exercise exercise-like" id="exe-CNOTGapllicationQbits2"><a href="" data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exe-CNOTGapllicationQbits2"><h4 class="heading">
-<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.2.18</span><span class="period">.</span>
-</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-exe-CNOTGapllicationQbits2"><article class="exercise exercise-like"><div class="para" id="p-164">Consider <span class="process-math">\(\ket{c}=\ket{1}\text{,}\)</span> what is going to happen? Build the truth table.</div>
-<div class="solutions">
-<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-10" id="hint-10"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-10"><div class="hint solution-like"><div class="para" id="p-165">put a hint</div></div></div>
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-20" id="solution-20"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-20"><div class="solution solution-like"><div class="para" id="p-166">this is a solution</div></div></div>
-</div></article></div>
-<article class="exercise exercise-like" id="exe-CNOTGapllicationQbits3"><a href="" data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exe-CNOTGapllicationQbits3"><h4 class="heading">
-<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.2.19</span><span class="period">.</span>
-</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-exe-CNOTGapllicationQbits3"><article class="exercise exercise-like"><div class="para" id="p-167">Use Dirac notation to show <span class="process-math">\(\ket{a,b}\to\ket{b,a}\)</span>
-</div>
-<div class="solutions">
-<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-11" id="hint-11"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-11"><div class="hint solution-like"><div class="para" id="p-168">put a hint</div></div></div>
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-21" id="solution-21"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-21"><div class="solution solution-like"><div class="para" id="p-169">this is a solution</div></div></div>
-</div></article></div>
+<div class="para" id="p-179">which is the Dirac representation for the CNOT gate.</div>
 <figure class="figure figure-like" id="fig-CNOTgateSimple_3"><div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="external/CNOT3.png" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.2.20<span class="period">.</span></span><span class="space"> </span>CNOT gate representation in a circuit.</figcaption></figure><article class="exercise exercise-like" id="exe-CNOTGapllicationQbits4"><a href="" data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exe-CNOTGapllicationQbits4"><h4 class="heading">
-<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.2.21</span><span class="period">.</span>
-</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-exe-CNOTGapllicationQbits4"><article class="exercise exercise-like"><div class="para" id="p-170">Apply CNOT to the state <span class="process-math">\(\alpha\ket{10}+\beta\ket{11}\)</span>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.2.18<span class="period">.</span></span><span class="space"> </span>CNOT gate representation in a circuit.</figcaption></figure><article class="exercise exercise-like" id="exe-CNOTGapllicationQbits4"><a href="" data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exe-CNOTGapllicationQbits4"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.2.19</span><span class="period">.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-exe-CNOTGapllicationQbits4"><article class="exercise exercise-like"><div class="para" id="p-180">Apply CNOT to the state <span class="process-math">\(\alpha\ket{10}+\beta\ket{11}\)</span>
 </div>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-12" id="hint-12"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-12"><div class="hint solution-like"><div class="para" id="p-171">put a hint</div></div></div>
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-22" id="solution-22"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-22"><div class="solution solution-like"><div class="para" id="p-172">this is a solution</div></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-21" id="solution-21"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-21"><div class="solution solution-like"><div class="para" id="p-181"><span class="process-math">\((\alpha+\beta)\ket{11}\)</span></div></div></div>
 </div></article></div></section><section class="subsection" id="subsec9-chap2"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.2.9</span> <span class="title">Contorolled-U</span>
 </h3>
-<div class="para" id="p-173">Let U be a two qbit operation with a control and target qbit. This operation sets the control qbit in order U is applied to the target qbit, otherwise the target qbit is left alone.</div>
+<div class="para" id="p-182">Let U be a two qbit operation with a control and target qbit. This operation sets the control qbit in order U is applied to the target qbit, otherwise the target qbit is left alone.</div>
 <div class="displaymath process-math" id="mdn-14">
 \begin{gather}
 \ket{c}\ket{t}\to \ket{c}U^{c}\ket{t\oplus c}\tag{2.2.14}
 \end{gather}
 </div>
-<div class="para" id="p-174">This operation is called controlled-U operation represented by</div>
+<div class="para" id="p-183">This operation is called controlled-U operation represented by</div>
 <figure class="figure figure-like" id="fig-CUgateSimple_1"><div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="external/CU1.png" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.2.22<span class="period">.</span></span><span class="space"> </span>CU representation in a circuit</figcaption></figure><div class="para" id="p-175">CU operator as Dirac notation</div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.2.20<span class="period">.</span></span><span class="space"> </span>CU representation in a circuit</figcaption></figure><div class="para" id="p-184">CU operator as Dirac notation</div>
 <div class="displaymath process-math" id="mdn-15">
 \begin{gather}
 CU\ket{\psi} = \bigg(\ket{0}\bra{0}\otimes I + \ket{1}\bra{1} \otimes U\bigg)
 \ket{\psi}\tag{2.2.15}
 \end{gather}
-</div>
-<article class="exercise exercise-like" id="exe-CUGapllicationQbits"><a href="" data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exe-CUGapllicationQbits"><h4 class="heading">
-<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.2.23</span><span class="period">.</span>
-</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-exe-CUGapllicationQbits"><article class="exercise exercise-like"><div class="para" id="p-176">Build the truth table for the (2.2.14).</div>
-<div class="solutions">
-<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-13" id="hint-13"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-13"><div class="hint solution-like"><div class="para" id="p-177">put a hint</div></div></div>
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-23" id="solution-23"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-23"><div class="solution solution-like"><div class="para" id="p-178">this is a solution</div></div></div>
-</div></article></div></section><section class="subsection" id="subsec10-chap2"><h3 class="heading hide-type">
+</div></section><section class="subsection" id="subsec10-chap2"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.2.10</span> <span class="title">Contorolled-Z</span>
 </h3>
-<div class="para" id="p-179">The unitary matrix in the computational basis is,</div>
+<div class="para" id="p-185">The unitary matrix in the computational basis is,</div>
 <figure class="figure figure-like" id="fig-CZgateSimple_1"><div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="external/CZ.png" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.2.24<span class="period">.</span></span><span class="space"> </span>CZ representation in a circuit</figcaption></figure><div class="displaymath process-math" id="mdn-16">
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.2.21<span class="period">.</span></span><span class="space"> </span>CZ representation in a circuit</figcaption></figure><div class="displaymath process-math" id="mdn-16">
 \begin{align}
 \text{CZ}=
 \begin{pmatrix}
@@ -802,52 +860,52 @@ CU\ket{\psi} = \bigg(\ket{0}\bra{0}\otimes I + \ket{1}\bra{1} \otimes U\bigg)
 \end{align}
 </div>
 <article class="exercise exercise-like" id="exe-CZGapllicationQbits"><a href="" data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exe-CZGapllicationQbits"><h4 class="heading">
-<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.2.25</span><span class="period">.</span>
-</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-exe-CZGapllicationQbits"><article class="exercise exercise-like"><div class="para" id="p-180">Obtain</div> <ul class="disc">
-<li id="li-32"><div class="para" id="p-derived-li-32"><div class="displaymath process-math">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.2.22</span><span class="period">.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-exe-CZGapllicationQbits"><article class="exercise exercise-like"><div class="para" id="p-186">Obtain</div> <ul class="disc">
+<li id="li-55"><div class="para" id="p-derived-li-55"><div class="displaymath process-math">
 \begin{equation*}
 CZ\ket{00}
 \end{equation*}
 </div></div></li>
-<li id="li-33"><div class="para" id="p-derived-li-33"><div class="displaymath process-math">
+<li id="li-56"><div class="para" id="p-derived-li-56"><div class="displaymath process-math">
 \begin{equation*}
 CZ\ket{01}
 \end{equation*}
 </div></div></li>
-<li id="li-34"><div class="para" id="p-derived-li-34"><div class="displaymath process-math">
+<li id="li-57"><div class="para" id="p-derived-li-57"><div class="displaymath process-math">
 \begin{equation*}
 CZ\ket{10}
 \end{equation*}
 </div></div></li>
-<li id="li-35"><div class="para" id="p-derived-li-35"><div class="displaymath process-math">
+<li id="li-58"><div class="para" id="p-derived-li-58"><div class="displaymath process-math">
 \begin{equation*}
 CZ\ket{11}
 \end{equation*}
 </div></div></li>
-<li id="li-36"><div class="para" id="p-derived-li-36"><div class="displaymath process-math">
-\begin{equation*}
-CZ^{\otimes 2}\ket{00}
-\end{equation*}
-</div></div></li>
-<li id="li-37"><div class="para" id="p-derived-li-37"><div class="displaymath process-math">
-\begin{equation*}
-CZ^{\otimes 2}\ket{01}
-\end{equation*}
-</div></div></li>
-<li id="li-38"><div class="para" id="p-derived-li-38"><div class="displaymath process-math">
-\begin{equation*}
-CZ^{\otimes 2}\ket{10}
-\end{equation*}
-</div></div></li>
-<li id="li-39"><div class="para" id="p-derived-li-39"><div class="displaymath process-math">
-\begin{equation*}
-CZ^{\otimes 2}\ket{11}
-\end{equation*}
-</div></div></li>
 </ul>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-14" id="hint-14"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-14"><div class="hint solution-like"><div class="para" id="p-181">put a hint</div></div></div>
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-24" id="solution-24"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-24"><div class="solution solution-like"><div class="para" id="p-182">this is a solution</div></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-22" id="solution-22"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-22"><div class="solution solution-like"><div class="para logical" id="p-187"><ul class="disc">
+<li id="li-59"><div class="para" id="p-derived-li-59"><div class="displaymath process-math">
+\begin{equation*}
+CZ\ket{00}=\ket{00}
+\end{equation*}
+</div></div></li>
+<li id="li-60"><div class="para" id="p-derived-li-60"><div class="displaymath process-math">
+\begin{equation*}
+CZ\ket{01}=\ket{01}
+\end{equation*}
+</div></div></li>
+<li id="li-61"><div class="para" id="p-derived-li-61"><div class="displaymath process-math">
+\begin{equation*}
+CZ\ket{10}=\ket{11}
+\end{equation*}
+</div></div></li>
+<li id="li-62"><div class="para" id="p-derived-li-62"><div class="displaymath process-math">
+\begin{equation*}
+CZ\ket{11}=\ket{11}
+\end{equation*}
+</div></div></li>
+</ul></div></div></div>
 </div></article></div></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="sec1-chap2.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="sec3-chap2.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>
