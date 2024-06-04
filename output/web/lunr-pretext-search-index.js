@@ -124,7 +124,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.5",
   "title": "Vectors and Vector Spaces",
-  "body": " Vectors and Vector Spaces   Introduction to Vectors  A vector is an ordered list of numbers that is used to describe quantities with both magnitude and direction. One example of a vector is force, which has both a magnitude (how strong the force is) and a direction (the angle at which the force is being applied). Each vector has a dimension, which is the number of components that comprise it. It is customary to signify that something is a vector by either drawing an arrow on top of it or bolding it. If we have a vector called , we would write or . The number is called the -th component of .  The most typical use of a vector with components is to describe a point in dimensional space in reference to some starting point. For example, if you have a square piece of paper and label the bottom left corner with the starting point (0,0), then a vector with components (1,1) would represent moving one unit of measurement along the bottom of the paper and one unit of measurement along the side of the paper to reach a new point. This vector would have a direction of and a magnitude of units (by the pythagorean theorem).   An example of a vector     Vector Spaces  Every vector exists within a vector space Vector Vector Space , which are sets that satisfy certain mathematical properties. The most common vector spaces we will deal with are , the set of all dimensional vectors with real components, and , the set of all dimensional vectors with complex components. Notice , so we will usually work with for generality. All vector spaces have the same properties regardless of dimension. Here are the properties for an -dimensional vector space:  1. Vector equality: means   2. Vector addition: means   3. Scalar multiplication:   4. Negative of a vector:   5. Null vector: There exists a null vector   If our vector components are all real numbers (i.e. the vector space exists in instead of ), then the following properties also hold:  1. Addition of vectors is commutative:  2. Addition of vectors is associative:  3. Scalar multiplication is distributive: and  4. Scalar multiplication is associative:     Bases  For any vector space, one can find a subset of vectors which can be used to generate any other vector in the space through linear combinations (scalar multiplication and vector addition). The smallest set of vectors that fulfills this property is called the basis Vector basis . In , we only need two vectors to produce the rest through linear combination. The standard basis, is:   The ^ symbol is used to denote that a vector is normal Vector Normal , which means that it has a length of 1. The vector is referred to as \" hat.\" This property is extremely important to quantum mechanics and will be discussed more later.  Bases have two properties:   Linear Independence: A set of vectors is linearly independent Vector Linearly Independent if we cannot express any one of them as a linear combination of the others. If we can express one as a linear combination of the others, then it is called a linearly dependent Vector Linearly Dependent set. A basis must be linearly independent.   Completeness: A set of vectors is complete if it spans Vector Span its vector space, which in turn means that any vector in the space can be expressed as a linear combination of the vectors in that set. A basis for a vector space must span the space.    (A Counterexample)  Let be the set,   And let be the vector,   Since we are unable to express as a linear combination of the elements of , then we say is not complete.    Let be the set,   And let be the vector,  We can express as:  Since we can express as a linear combination of the elements of and it is easy to show that we could construct any other vector in from these same elements, we say that spans and is complete.   Dimension of a basis. The number of basis elements for a vector space is the same as that spaces dimension.   Linear Algebra  Linear algebra is the study of vectors and transformations. In this subsection we will describe some other pieces of linear algebra that will be important to quantum computation.  Vector Transpose: The transpose Vector Transpose is an operation that turns a standard column vector into a row vector, or vice versa. This means an dimensional vector changes from having rows and column to having row and columns. The transpose is represented with a superscript and the operation is shown below.   Dot Product \/ Inner Product: The dot product (more generally known as the inner product Vector Inner Product in the context of quantum computation) is an operation between two vectors of the same dimension that produces a scalar. This product is typically referred to with a , but has an alternate notation in quantum computation that we will see in the next section. In and In this operation is performed by taking the sum of the products of the corresponding entries in each vector, as shown below.      Find the inner product     Orthogonality:  Orthogonality Orthogonality is the generalization of the concept of perpendicularity. In two and three dimensional space, two vectors are orthogonal if the angle between them is a right angle. Two vectors are orthogonal if their inner product is equal to .  Are the following vectors orthogonal?  Yes, Since the inner product between the two vectors is 0, they are orthogonal  Normality: A vector is normal Vector Normal Vector if it has a length of . The length (sometimes also referred to as the norm) of a vector can be found be taking the square root of the sum of the squares of its entries, as shown below. A non-normal vector can be normalized by dividing each of its components by the vectors length. A normalized vector has the same direction as the original vector, but has a length of . A set of vectors is orthonormal Vector Orthonormal Vectors if each of the vectors are normal and each of the vectors are orthogonal to the rest.   What is the length of the following vector?    Normalize the following vector In the previous exercise, we found that this vector has a length of . To normalize the vector, we will divide each of its components by its length.   Matrices: Whereas a vector is a single column of elements, a matrix Matrix is a table of elements organized in rows and columns. Technically speaking, a vector can be thought of a matrix with only one column. The dimension of a matrix is described by first listing the number of rows and then listing the number of columns. Thus, a matrix (read \"two by three\") would have two rows and three columns. A square matrix Matrix Square Matrix is any matrix with the same number of rows and columns. One of the most important matrices is the identity matrix Matrix Identity Matrix , a square matrixin which all of the entries along the diagonal are and all other entries are . Examples of the and identity matrices are shown below, which can be generalized to any matrix.   A matrix can be multiplied by a scalar in the same way that a vector can, by multiplying each entry in the matrix by the scalar, as shown below.   The concept of a transpose can be extended from vectors to matrices as well. A matrix's transpose is found by turning each of its rows into a column, or, equivalently, by turning each of its columns into a row. This means the transpose of an matrix is an matrix. The matrix transpose is also represented by a superscript . An example of transposing a matrix is shown below.   Matrix Addition: Two matrices can be added together only if they each have the same number of rows and columns. The sum of two matrices is found by adding together the corresponding entries of each matrix, as shown below with an example of two matrices.    Compute the following sum:      Matrix Multiplication: Two matrices can be multiplied together only if the number of columns of the left matrix is equal to the number of rows of the right matrix. The resulting product will be a matrix with the same number of rows as the left matrix and the same number of columns as the right. Thus an matrix multiplied by a matrix would produce an matrix. Notably, matrix multiplication is non-commutative, which means for two matrices and , . The entries of a product matrix are determined by taking the dot product between the corresponding row of the left matrix and the corresponding column of the right matrix, as shown below with an example of multiplication between a and a matrix.   Now that we know matrix multiplication, we can redefine the dot product \/ inner product as the transpose of a vector multiplied by the original vector. Since vectors are dimensional, the transpose will be dimensional, so multiplying the transpose on the left and the original on the right will produce a matrix, which is functionally the same as a scalar.   Compute the following product:    The resulting matrix should be      "
+  "body": " Vectors and Vector Spaces   Introduction to Vectors  A vector is an ordered list of numbers that is used to describe quantities with both magnitude and direction. One example of a vector is force, which has both a magnitude (how strong the force is) and a direction (the angle at which the force is being applied). Each vector has a dimension, which is the number of components that comprise it. It is customary to signify that something is a vector by either drawing an arrow on top of it or bolding it. If we have a vector called , we would write or . The number is called the -th component of .  The most typical use of a vector with components is to describe a point in dimensional space in reference to some starting point. For example, if you have a square piece of paper and label the bottom left corner with the starting point (0,0), then a vector with components (1,1) would represent moving one unit of measurement along the bottom of the paper and one unit of measurement along the side of the paper to reach a new point. This vector would have a direction of and a magnitude of units (by the pythagorean theorem).   An example of a vector     Vector Spaces  Every vector exists within a vector space Vector Vector Space , which are sets that satisfy certain mathematical properties. The most common vector spaces we will deal with are , the set of all dimensional vectors with real components, and , the set of all dimensional vectors with complex components. Notice , so we will usually work with for generality. All vector spaces have the same properties regardless of dimension. Here are the properties for an -dimensional vector space:  1. Vector equality: means   2. Vector addition: means   3. Scalar multiplication:   4. Negative of a vector:   5. Null vector: There exists a null vector   If our vector components are all real numbers (i.e. the vector space exists in instead of ), then the following properties also hold:  1. Addition of vectors is commutative:  2. Addition of vectors is associative:  3. Scalar multiplication is distributive: and  4. Scalar multiplication is associative:     Bases  For any vector space, one can find a subset of vectors which can be used to generate any other vector in the space through linear combinations (scalar multiplication and vector addition). The smallest set of vectors that fulfills this property is called the basis Vector basis . In , we only need two vectors to produce the rest through linear combination. The standard basis, is:   The ^ symbol is used to denote that a vector is normal Vector Normal , which means that it has a length of 1. The vector is referred to as \" hat.\" This property is extremely important to quantum mechanics and will be discussed more later.  Bases have two properties:   Linear Independence: A set of vectors is linearly independent Vector Linearly Independent if we cannot express any one of them as a linear combination of the others. If we can express one as a linear combination of the others, then it is called a linearly dependent Vector Linearly Dependent set. A basis must be linearly independent.   Completeness: A set of vectors is complete if it spans Vector Span its vector space, which in turn means that any vector in the space can be expressed as a linear combination of the vectors in that set. A basis for a vector space must span the space.    (A Counterexample)  Let be the set,   And let be the vector,   Since we are unable to express as a linear combination of the elements of , then we say is not complete.    Let be the set,   And let be the vector,  We can express as:  Since we can express as a linear combination of the elements of and it is easy to show that we could construct any other vector in from these same elements, we say that spans and is complete.   Dimension of a basis. The number of basis elements for a vector space is the same as that spaces dimension.   Linear Algebra  Linear algebra is the study of vectors and transformations. In this subsection we will describe some other pieces of linear algebra that will be important to quantum computation.  Vector Transpose: The transpose Vector Transpose is an operation that turns a standard column vector into a row vector, or vice versa. This means an dimensional vector changes from having rows and column to having row and columns. The transpose is represented with a superscript and the operation is shown below.   Dot Product \/ Inner Product: The dot product (more generally known as the inner product Vector Inner Product in the context of quantum computation) is an operation between two vectors of the same dimension that produces a scalar. This product is typically referred to with a , but has an alternate notation in quantum computation that we will see in the next section. In and In this operation is performed by taking the sum of the products of the corresponding entries in each vector, as shown below.      Find the inner product     Orthogonality:  Orthogonality Orthogonality is the generalization of the concept of perpendicularity. In two and three dimensional space, two vectors are orthogonal if the angle between them is a right angle. Two vectors are orthogonal if their inner product is equal to .  Are the following vectors orthogonal?  Yes, Since the inner product between the two vectors is 0, they are orthogonal  Normality: A vector is normal Vector Normal Vector if it has a length of . The length (sometimes also referred to as the norm) of a vector can be found be taking the square root of the sum of the squares of its entries, as shown below. A non-normal vector can be normalized by dividing each of its components by the vectors length. A normalized vector has the same direction as the original vector, but has a length of . A set of vectors is orthonormal Vector Orthonormal Vectors if each of the vectors are normal and each of the vectors are orthogonal to the rest.   What is the length of the following vector?    Normalize the following vector In the previous exercise, we found that this vector has a length of . To normalize the vector, we will divide each of its components by its length.   Matrices: Whereas a vector is a single column of elements, a matrix Matrix is a table of elements organized in rows and columns. Technically speaking, a vector can be thought of a matrix with only one column. The dimension of a matrix is described by first listing the number of rows and then listing the number of columns. Thus, a matrix (read \"two by three\") would have two rows and three columns. A square matrix Matrix Square Matrix is any matrix with the same number of rows and columns. One of the most important matrices is the identity matrix Matrix Identity Matrix , a square matrixin which all of the entries along the diagonal are and all other entries are . Examples of the and identity matrices are shown below, which can be generalized to any matrix.   A matrix can be multiplied by a scalar in the same way that a vector can, by multiplying each entry in the matrix by the scalar, as shown below.   The concept of a transpose can be extended from vectors to matrices as well. A matrix's transpose is found by turning each of its rows into a column, or, equivalently, by turning each of its columns into a row. This means the transpose of an matrix is an matrix. The matrix transpose is also represented by a superscript . An example of transposing a matrix is shown below.   Matrix Addition: Two matrices can be added together only if they each have the same number of rows and columns. The sum of two matrices is found by adding together the corresponding entries of each matrix, as shown below with an example of two matrices.    Compute the following sum:      Matrix Multiplication: Two matrices can be multiplied together only if the number of columns of the left matrix is equal to the number of rows of the right matrix. The resulting product will be a matrix with the same number of rows as the left matrix and the same number of columns as the right. Thus an matrix multiplied by a matrix would produce an matrix. Notably, matrix multiplication is non-commutative, which means for two matrices and , . The entries of a product matrix are determined by taking the dot product between the corresponding row of the left matrix and the corresponding column of the right matrix, as shown below with an example of multiplication between a and a matrix.   Now that we know matrix multiplication, we can redefine the dot product \/ inner product as the transpose of a vector multiplied by the original vector. Since vectors are dimensional, the transpose will be dimensional, so multiplying the transpose on the left and the original on the right will produce a matrix, which is functionally the same as a scalar.   Compute the following product:    The resulting matrix should be     Determinant: The determinant Determinant is a scalar associated with a square matrix that can be used to find the eigenvalues (see ) of the matrix. For and matrices, their determinants are defined as follows:      Eigenvectors and Eigenvalues   "
 },
 {
   "id": "p-31",
@@ -307,6 +307,15 @@ var ptx_lunr_docs = [
   "body": " Compute the following product:    The resulting matrix should be    "
 },
 {
+  "id": "p-75",
+  "level": "2",
+  "url": "Vectors-and-Vector-Spaces.html#p-75",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "determinant "
+},
+{
   "id": "Linear-Algebra-in-Quantum-Computation",
   "level": "1",
   "url": "Linear-Algebra-in-Quantum-Computation.html",
@@ -316,9 +325,9 @@ var ptx_lunr_docs = [
   "body": " Linear Algebra in Quantum Computation  As mentioned in the section on Classical Computing , qubits can be in the state or . What's more, these states can be represented with vectors.   and   This notation was first introduced by mathematician Paul Dirac and is known as \"Dirac Notation\" or \" Bra-Ket Notation Bra-Ket Notation .\" In this notation, the symbol represents a qubit state and is referred to as a \" ket Bra-Ket Notation Ket .\" At a glance, it can be seen that the vectors and are each normal and are orthogonal to each other. Additionally, any point in two dimensional space could be described with a linear combination of these two vectors, meaning they form a basis (we will discuss exactly which space they form a basis for in the following section). Put together, this means and form an orthonormal basis. All qubits must be normalized in order to be expressed properly.  Systems with multiple qubits are described by vectors in higher dimensions, which will be discussed later.  "
 },
 {
-  "id": "p-77",
+  "id": "p-78",
   "level": "2",
-  "url": "Linear-Algebra-in-Quantum-Computation.html#p-77",
+  "url": "Linear-Algebra-in-Quantum-Computation.html#p-78",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -334,18 +343,18 @@ var ptx_lunr_docs = [
   "body": " Qubit States   Qubits  As a reminder, a qubit exists in a superposition between the states and , which means that they can be expressed as a linear combination of the vectors and . This means a qubit can be expressed   Where and are complex coefficiants that relate to the probability that a qubit is in the states and respectively. This means that qubits exist within a complex vector space. The exact space that qubits exist within is known as a hilbert Space Hilbert Space .    Hilbert Space  A hilbert space is a complex vector space in which the inner product is defined as an operation. A single qubit exists within the hilbert space , which is the set of all two dimensional vectors with complex entries.    Bra Vectors and the Inner Product for Quantum Computation  We now introduce the bra in Bra-Ket Notation. Each vector representation of a qubit has a corresponding bra Bra-Ket Notation Bra vector (sometimes also referred to as the \"Dual Vector\") that is equal to the complex conjugate of the transpose of the ket. This operation of taking the transpose and complex conjugating is known as the adjoint Adjoint and is represented by the symbol. Bra vectors are represented by the symbol . An example of finding the bra vector for the ket is shown below (where the symbol represents complex conjugating).   Bra vectors allow us to use a new notation for the inner product. We write the inner product between two vectors, and , as and perform the calculation as matrix multiplication, as described in   Find the inner product between the following two qubits.       Qubit Measurements  When a qubit is measured, it collapses from being a superposition of the states and to being in one state or the other. The probability that the qubit will be in either state is related to the coefficient on that state. For a qubit ,   Since all qubits are normalized, has a length of , so , which means . Since the combined probability that the qubit will be in the state or is equal to , we use the normal property of qubits as a method to determine the probability that the qubit will be in either state. For the qubit the probability that it will be in the state after it is measured is and the probability that it will be in the state is .  For the following qubit, find the probability that it will be in the state and the probability that it will be in the state after measurement  The probability that will be in the state after measurement is 25% because . The probability that will be in the state after measurement is 75% because .  Another way to find the probability that a qubit is in any given state is to take the square of the inner product of the outcome state and the qubit. For a qubit , the probability that it is in the state after measurement would be and the probability that it is in the state would be .  Using an inner product, calculate the probability that the following system is in the state and .    The probability that will collapse into the state is 87.5%.   The probability that will collapse into the state is 12.5%.    "
 },
 {
-  "id": "p-80",
+  "id": "p-81",
   "level": "2",
-  "url": "Qubit-States.html#p-80",
+  "url": "Qubit-States.html#p-81",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "hilbert Space "
 },
 {
-  "id": "p-82",
+  "id": "p-83",
   "level": "2",
-  "url": "Qubit-States.html#p-82",
+  "url": "Qubit-States.html#p-83",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -379,13 +388,40 @@ var ptx_lunr_docs = [
   "body": "Using an inner product, calculate the probability that the following system is in the state and .    The probability that will collapse into the state is 87.5%.   The probability that will collapse into the state is 12.5%.  "
 },
 {
+  "id": "Computational-Bases",
+  "level": "1",
+  "url": "Computational-Bases.html",
+  "type": "Section",
+  "number": "1.8",
+  "title": "Computational Bases and the Block Sphere",
+  "body": " Computational Bases and the Block Sphere  So far, the only basis we have looked at for measuring a qubit is , but this is not the only one.   The Bloch Sphere and the representation of a state vector with angle along the horizontal plane and angle along the vertical plane, as well as the computational basis vectors.     "
+},
+{
+  "id": "fig-Bloch-Sphere",
+  "level": "2",
+  "url": "Computational-Bases.html#fig-Bloch-Sphere",
+  "type": "Figure",
+  "number": "1.8.1",
+  "title": "",
+  "body": " The Bloch Sphere and the representation of a state vector with angle along the horizontal plane and angle along the vertical plane, as well as the computational basis vectors.    "
+},
+{
+  "id": "Linear-Operators",
+  "level": "1",
+  "url": "Linear-Operators.html",
+  "type": "Section",
+  "number": "1.9",
+  "title": "Linear Operators",
+  "body": " Linear Operators  "
+},
+{
   "id": "sec-Systems-of-Multiple-Qubits",
   "level": "1",
   "url": "sec-Systems-of-Multiple-Qubits.html",
   "type": "Section",
-  "number": "1.8",
+  "number": "1.10",
   "title": "Systems of Multiple Qubits",
-  "body": " Systems of Multiple Qubits  Here I will define the tensor product and then describe the vector representations of multi-qubit systems  "
+  "body": " Systems of Multiple Qubits  "
 },
 {
   "id": "sec1-chap2",
@@ -403,12 +439,12 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "2.2",
   "title": "Gates",
-  "body": " Gates    Hadamard gate   Hadamard gate Gate Hadamard is one of the most popular gates in quantum computing.   Hadamard gate representation in a circuit.      The Hadamard operator on one qubit can be written as   which is the Hadamard gate in Dirac notation. Hadamard operation is a rotation of the Block sphere about y axis by , followed by a rotation about axis by .   Calculate       put a hint   this is a solution      Pauli X  This is also labeled as , or X    X gate representation in a circuit.       Calculate         put a hint   this is a solution      Pauli Y  This is also labeled as , or Y    Y gate representation in a circuit.       Calculate         put a hint   this is a solution      Pauli Z  This is also labeled as , or Z    Z gate representation in a circuit.       Calculate         put a hint   this is a solution      Pauli Z  This is also labeled as or I    I gate representation in a circuit.       Calculate        put a hint   this is a solution      Phase  This gate is written as S.   Phase gate representation in a circuit.       Calculate         put a hint   this is a solution      \/8  This gate is written as T.   \/8 gate representation in a circuit.       Calculate         put a hint   this is a solution   Previous gates aplly on single qubit. The following subsections show the multiqubit gates.     Controled-NOT  CNOT gate in the quantum context has two input qubits:  Control qbit  target qbit  This gate acts as following    CNOT gate representation in a circuit.      Check the XOR and notice this gate is for two qubits.   Obtain the Dirac notation  and   and  and  and  ( can be written as )   put a hint   this is a solution   The gate and matrix representation are,   CNOT gate representation in a circuit.      Since   and using CNOT matrix we can cancel out some terms and reduce others to 1, such as   and we have   which is the Dirac representation for the CNOT gate.   Consider , what is going to happen? Build the truth table.   put a hint   this is a solution    Use Dirac notation to show    put a hint   this is a solution    CNOT gate representation in a circuit.      Apply CNOT to the state    put a hint   this is a solution      Contorolled-U  Let U be a two qbit operation with a control and target qbit. This operation sets the control qbit in order U is applied to the target qbit, otherwise the target qbit is left alone.   This operation is called controlled-U operation represented by   CU representation in a circuit     CU operator as Dirac notation    Build the truth table for the (2.2.14).   put a hint   this is a solution      Contorolled-Z  The unitary matrix in the computational basis is,   CZ representation in a circuit       Obtain             put a hint   this is a solution     "
+  "body": " Gates    Hadamard gate   Hadamard gate Gate Hadamard is one of the most popular gates in quantum computing.   Hadamard gate representation in a circuit.      The Hadamard operator on one qubit can be written as   which is the Hadamard gate in Dirac notation. Hadamard operation is a rotation of the Block sphere about y axis by , followed by a rotation about axis by .   Calculate                 Pauli X gate   Pauli X gate Gate Pauli X is also labeled as , or X    X gate representation in a circuit.       Calculate                     Pauli Y gate   Pauli Y gate Gate Pauli Y is also labeled as , or Y    Y gate representation in a circuit.       Calculate                   Pauli Z   Pauli Z gate Gate Pauli Z is also labeled as , or Z    Z gate representation in a circuit.       Calculate                     Pauli I gate   Pauli I gate Gate Pauli I is also labeled as or I    I gate representation in a circuit.       Calculate                 Phase gate   Phase gate Gate Phase is written as S.   Phase gate representation in a circuit.       Calculate                     \/8 gate   \/8 gate Gate \/8 is written as T.   \/8 gate representation in a circuit.       Calculate              Previous gates aplly on single qubit. The following subsections show the multiqubit gates.     Controled-NOT  CNOT gate in the quantum context has two input qubits:  Control qbit  target qbit  This gate acts as following    CNOT gate representation in a circuit.      Check the XOR and notice this gate is for two qubits.   Obtain the Dirac notation  and   and  and  and  ( can be written as )             The gate and matrix representation are,   CNOT gate representation in a circuit.      Since   and using CNOT matrix we can cancel out some terms and reduce others to 1, such as   and we have   which is the Dirac representation for the CNOT gate.   CNOT gate representation in a circuit.      Apply CNOT to the state           Contorolled-U  Let U be a two qbit operation with a control and target qbit. This operation sets the control qbit in order U is applied to the target qbit, otherwise the target qbit is left alone.   This operation is called controlled-U operation represented by   CU representation in a circuit     CU operator as Dirac notation      Contorolled-Z  The unitary matrix in the computational basis is,   CZ representation in a circuit       Obtain                    "
 },
 {
-  "id": "p-98",
+  "id": "p-99",
   "level": "2",
-  "url": "sec2-chap2.html#p-98",
+  "url": "sec2-chap2.html#p-99",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -430,7 +466,16 @@ var ptx_lunr_docs = [
   "type": "Checkpoint",
   "number": "2.2.2",
   "title": "",
-  "body": " Calculate       put a hint   this is a solution  "
+  "body": " Calculate             "
+},
+{
+  "id": "p-104",
+  "level": "2",
+  "url": "sec2-chap2.html#p-104",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Pauli X gate "
 },
 {
   "id": "fig-XgateSimple_1",
@@ -448,7 +493,16 @@ var ptx_lunr_docs = [
   "type": "Checkpoint",
   "number": "2.2.4",
   "title": "",
-  "body": " Calculate         put a hint   this is a solution  "
+  "body": " Calculate                 "
+},
+{
+  "id": "p-107",
+  "level": "2",
+  "url": "sec2-chap2.html#p-107",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Pauli Y gate "
 },
 {
   "id": "fig-ygateSimple_1",
@@ -466,7 +520,16 @@ var ptx_lunr_docs = [
   "type": "Checkpoint",
   "number": "2.2.6",
   "title": "",
-  "body": " Calculate         put a hint   this is a solution  "
+  "body": " Calculate               "
+},
+{
+  "id": "p-110",
+  "level": "2",
+  "url": "sec2-chap2.html#p-110",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Pauli Z gate "
 },
 {
   "id": "fig-zgateSimple_1",
@@ -484,7 +547,16 @@ var ptx_lunr_docs = [
   "type": "Checkpoint",
   "number": "2.2.8",
   "title": "",
-  "body": " Calculate         put a hint   this is a solution  "
+  "body": " Calculate                 "
+},
+{
+  "id": "p-113",
+  "level": "2",
+  "url": "sec2-chap2.html#p-113",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Pauli I gate "
 },
 {
   "id": "fig-IgateSimple_1",
@@ -502,7 +574,16 @@ var ptx_lunr_docs = [
   "type": "Checkpoint",
   "number": "2.2.10",
   "title": "",
-  "body": " Calculate        put a hint   this is a solution  "
+  "body": " Calculate             "
+},
+{
+  "id": "p-116",
+  "level": "2",
+  "url": "sec2-chap2.html#p-116",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Phase gate "
 },
 {
   "id": "fig-SgateSimple_1",
@@ -520,7 +601,16 @@ var ptx_lunr_docs = [
   "type": "Checkpoint",
   "number": "2.2.12",
   "title": "",
-  "body": " Calculate         put a hint   this is a solution  "
+  "body": " Calculate                 "
+},
+{
+  "id": "p-119",
+  "level": "2",
+  "url": "sec2-chap2.html#p-119",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "\/8 gate "
 },
 {
   "id": "fig-TgateSimple_1",
@@ -538,7 +628,7 @@ var ptx_lunr_docs = [
   "type": "Checkpoint",
   "number": "2.2.14",
   "title": "",
-  "body": " Calculate         put a hint   this is a solution  "
+  "body": " Calculate             "
 },
 {
   "id": "fig-CNOTgateSimple_1",
@@ -556,7 +646,7 @@ var ptx_lunr_docs = [
   "type": "Checkpoint",
   "number": "2.2.16",
   "title": "",
-  "body": " Obtain the Dirac notation  and   and  and  and  ( can be written as )   put a hint   this is a solution  "
+  "body": " Obtain the Dirac notation  and   and  and  and  ( can be written as )            "
 },
 {
   "id": "fig-CNOTgateSimple_2",
@@ -568,29 +658,11 @@ var ptx_lunr_docs = [
   "body": " CNOT gate representation in a circuit.    "
 },
 {
-  "id": "exe-CNOTGapllicationQbits2",
-  "level": "2",
-  "url": "sec2-chap2.html#exe-CNOTGapllicationQbits2",
-  "type": "Checkpoint",
-  "number": "2.2.18",
-  "title": "",
-  "body": " Consider , what is going to happen? Build the truth table.   put a hint   this is a solution  "
-},
-{
-  "id": "exe-CNOTGapllicationQbits3",
-  "level": "2",
-  "url": "sec2-chap2.html#exe-CNOTGapllicationQbits3",
-  "type": "Checkpoint",
-  "number": "2.2.19",
-  "title": "",
-  "body": " Use Dirac notation to show    put a hint   this is a solution  "
-},
-{
   "id": "fig-CNOTgateSimple_3",
   "level": "2",
   "url": "sec2-chap2.html#fig-CNOTgateSimple_3",
   "type": "Figure",
-  "number": "2.2.20",
+  "number": "2.2.18",
   "title": "",
   "body": " CNOT gate representation in a circuit.    "
 },
@@ -599,34 +671,25 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec2-chap2.html#exe-CNOTGapllicationQbits4",
   "type": "Checkpoint",
-  "number": "2.2.21",
+  "number": "2.2.19",
   "title": "",
-  "body": " Apply CNOT to the state    put a hint   this is a solution  "
+  "body": " Apply CNOT to the state       "
 },
 {
   "id": "fig-CUgateSimple_1",
   "level": "2",
   "url": "sec2-chap2.html#fig-CUgateSimple_1",
   "type": "Figure",
-  "number": "2.2.22",
+  "number": "2.2.20",
   "title": "",
   "body": " CU representation in a circuit    "
-},
-{
-  "id": "exe-CUGapllicationQbits",
-  "level": "2",
-  "url": "sec2-chap2.html#exe-CUGapllicationQbits",
-  "type": "Checkpoint",
-  "number": "2.2.23",
-  "title": "",
-  "body": " Build the truth table for the (2.2.14).   put a hint   this is a solution  "
 },
 {
   "id": "fig-CZgateSimple_1",
   "level": "2",
   "url": "sec2-chap2.html#fig-CZgateSimple_1",
   "type": "Figure",
-  "number": "2.2.24",
+  "number": "2.2.21",
   "title": "",
   "body": " CZ representation in a circuit    "
 },
@@ -635,9 +698,9 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec2-chap2.html#exe-CZGapllicationQbits",
   "type": "Checkpoint",
-  "number": "2.2.25",
+  "number": "2.2.22",
   "title": "",
-  "body": " Obtain             put a hint   this is a solution  "
+  "body": " Obtain                 "
 },
 {
   "id": "sec3-chap2",
@@ -646,7 +709,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "2.3",
   "title": "Circuits",
-  "body": " Circuits    NOT gate  This model is inspired by the classical gates with their truth table.   NOT logicall classical gate representation         AND gate  AND logical classical gate and corresponding truth table.   AND logicall classical gate logicall classical gate representation         Reversible and Nonreversible gate  Since QC is related to a theory of reversible computing, we note that the NOT gate is reversible while the AND gate is not.   Non-reversible AND gate representation     With the circuit in the fig. 2.3.3, we can simulate a non-reversible gate, besides, we keep a copy of the inputs and add of the operation, after it adds previous result to . We fix and obtain a non-reversible AND gate. Where represents the logical exclusive-OR operation, which it is the same addition modulo two. Then, we can obtain a reversible version of the circuit if we replace the irreversible parts with their reversible counterparts.    Consider the gate proposed in the section of Controlled-NOT, the corresponding circuit is given by   put a hint   this is a solution    Controlled-NOT gate representation     "
+  "body": " Circuits    NOT gate  This model is inspired by the classical gates with their truth table.   NOT logicall classical gate representation         AND gate  AND logical classical gate and corresponding truth table.   AND logicall classical gate logicall classical gate representation         Reversible and Nonreversible gate  Since QC is related to a theory of reversible computing, we note that the NOT gate is reversible while the AND gate is not.   Non-reversible AND gate representation     With the circuit in the fig. 2.3.3, we can simulate a non-reversible gate, besides, we keep a copy of the inputs and add of the operation, after it adds previous result to . We fix and obtain a non-reversible AND gate. Where represents the logical exclusive-OR operation, which it is the same addition modulo two. Then, we can obtain a reversible version of the circuit if we replace the irreversible parts with their reversible counterparts.    Controlled-NOT gate representation     "
 },
 {
   "id": "fig-NOTcgategateSimple_1",
@@ -676,20 +739,11 @@ var ptx_lunr_docs = [
   "body": " Non-reversible AND gate representation    "
 },
 {
-  "id": "exe-CNOTapllicationQbits",
-  "level": "2",
-  "url": "sec3-chap2.html#exe-CNOTapllicationQbits",
-  "type": "Checkpoint",
-  "number": "2.3.4",
-  "title": "",
-  "body": " Consider the gate proposed in the section of Controlled-NOT, the corresponding circuit is given by   put a hint   this is a solution  "
-},
-{
   "id": "fig-CCNOTcgategateSimple_1",
   "level": "2",
   "url": "sec3-chap2.html#fig-CCNOTcgategateSimple_1",
   "type": "Figure",
-  "number": "2.3.5",
+  "number": "2.3.4",
   "title": "",
   "body": " Controlled-NOT gate representation    "
 },

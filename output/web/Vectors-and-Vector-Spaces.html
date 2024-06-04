@@ -242,6 +242,7 @@ window.MathJax = {
 <li><div class="toc-item"><a href="Vectors-and-Vector-Spaces.html#Vector-Spaces" class="internal"><span class="codenumber">1.5.2</span> <span class="title">Vector Spaces</span></a></div></li>
 <li><div class="toc-item"><a href="Vectors-and-Vector-Spaces.html#Bases" class="internal"><span class="codenumber">1.5.3</span> <span class="title">Bases</span></a></div></li>
 <li><div class="toc-item"><a href="Vectors-and-Vector-Spaces.html#linear-algebra" class="internal"><span class="codenumber">1.5.4</span> <span class="title">Linear Algebra</span></a></div></li>
+<li><div class="toc-item"><a href="Vectors-and-Vector-Spaces.html#subsec-Eigenvectors-and-Eigenvalues" class="internal"><span class="codenumber">1.5.5</span> <span class="title">Eigenvectors and Eigenvalues</span></a></div></li>
 </ul>
 </li>
 <li><div class="toc-item"><a href="Linear-Algebra-in-Quantum-Computation.html" class="internal"><span class="codenumber">1.6</span> <span class="title">Linear Algebra in Quantum Computation</span></a></div></li>
@@ -254,7 +255,9 @@ window.MathJax = {
 <li><div class="toc-item"><a href="Qubit-States.html#subsec-Qubit-Measurements" class="internal"><span class="codenumber">1.7.4</span> <span class="title">Qubit Measurements</span></a></div></li>
 </ul>
 </li>
-<li><div class="toc-item"><a href="sec-Systems-of-Multiple-Qubits.html" class="internal"><span class="codenumber">1.8</span> <span class="title">Systems of Multiple Qubits</span></a></div></li>
+<li><div class="toc-item"><a href="Computational-Bases.html" class="internal"><span class="codenumber">1.8</span> <span class="title">Computational Bases and the Block Sphere</span></a></div></li>
+<li><div class="toc-item"><a href="Linear-Operators.html" class="internal"><span class="codenumber">1.9</span> <span class="title">Linear Operators</span></a></div></li>
+<li><div class="toc-item"><a href="sec-Systems-of-Multiple-Qubits.html" class="internal"><span class="codenumber">1.10</span> <span class="title">Systems of Multiple Qubits</span></a></div></li>
 </ul>
 </li>
 <li>
@@ -265,12 +268,12 @@ window.MathJax = {
 <div class="toc-item"><a href="sec2-chap2.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Gates</span></a></div>
 <ul class="structural">
 <li><div class="toc-item"><a href="sec2-chap2.html#subsec1-chap2" class="internal"><span class="codenumber">2.2.1</span> <span class="title">Hadamard gate</span></a></div></li>
-<li><div class="toc-item"><a href="sec2-chap2.html#subsec2-chap2" class="internal"><span class="codenumber">2.2.2</span> <span class="title">Pauli X</span></a></div></li>
-<li><div class="toc-item"><a href="sec2-chap2.html#subsec3-chap2" class="internal"><span class="codenumber">2.2.3</span> <span class="title">Pauli Y</span></a></div></li>
+<li><div class="toc-item"><a href="sec2-chap2.html#subsec2-chap2" class="internal"><span class="codenumber">2.2.2</span> <span class="title">Pauli X gate</span></a></div></li>
+<li><div class="toc-item"><a href="sec2-chap2.html#subsec3-chap2" class="internal"><span class="codenumber">2.2.3</span> <span class="title">Pauli Y gate</span></a></div></li>
 <li><div class="toc-item"><a href="sec2-chap2.html#subsec4-chap2" class="internal"><span class="codenumber">2.2.4</span> <span class="title">Pauli Z</span></a></div></li>
-<li><div class="toc-item"><a href="sec2-chap2.html#subsec5-chap2" class="internal"><span class="codenumber">2.2.5</span> <span class="title">Pauli Z</span></a></div></li>
-<li><div class="toc-item"><a href="sec2-chap2.html#subsec6-chap2" class="internal"><span class="codenumber">2.2.6</span> <span class="title">Phase</span></a></div></li>
-<li><div class="toc-item"><a href="sec2-chap2.html#subsec7-chap2" class="internal"><span class="codenumber">2.2.7</span> <span class="title"><span class="process-math">\(\pi\)</span>/8</span></a></div></li>
+<li><div class="toc-item"><a href="sec2-chap2.html#subsec5-chap2" class="internal"><span class="codenumber">2.2.5</span> <span class="title">Pauli I gate</span></a></div></li>
+<li><div class="toc-item"><a href="sec2-chap2.html#subsec6-chap2" class="internal"><span class="codenumber">2.2.6</span> <span class="title">Phase gate</span></a></div></li>
+<li><div class="toc-item"><a href="sec2-chap2.html#subsec7-chap2" class="internal"><span class="codenumber">2.2.7</span> <span class="title"><span class="process-math">\(\pi\)</span>/8 gate</span></a></div></li>
 <li><div class="toc-item"><a href="sec2-chap2.html#subsec8-chap2" class="internal"><span class="codenumber">2.2.8</span> <span class="title">Controled-NOT</span></a></div></li>
 <li><div class="toc-item"><a href="sec2-chap2.html#subsec9-chap2" class="internal"><span class="codenumber">2.2.9</span> <span class="title">Contorolled-U</span></a></div></li>
 <li><div class="toc-item"><a href="sec2-chap2.html#subsec10-chap2" class="internal"><span class="codenumber">2.2.10</span> <span class="title">Contorolled-Z</span></a></div></li>
@@ -384,14 +387,14 @@ window.MathJax = {
 <div class="para" id="p-54">Linear algebra is the study of vectors and transformations. In this subsection we will describe some other pieces of linear algebra that will be important to quantum computation.</div>
 <div class="para" id="p-55">
 <em class="alert">Vector Transpose:</em> The <dfn class="terminology">transpose</dfn> is an operation that turns a standard column vector into a row vector, or vice versa. This means an <span class="process-math">\(n\)</span> dimensional vector changes from having <span class="process-math">\(n\)</span> rows and <span class="process-math">\(1\)</span> column to having <span class="process-math">\(1\)</span> row and <span class="process-math">\(n\)</span> columns. The transpose is represented with a superscript <span class="process-math">\(T\)</span> and the operation is shown below.</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/subsec-Eigenvectors-and-Eigenvalues.html">
 \begin{equation*}
 \begin{pmatrix} a_1 \\ a_2 \\ \vdots \\ a_n \end{pmatrix}^{T} = \begin{pmatrix} a_1 &amp; a_2 &amp; \ldots &amp; a_n \end{pmatrix} 
 \end{equation*}
 </div>
 <div class="para" id="p-56">
 <em class="alert">Dot Product / Inner Product:</em> The dot product (more generally known as the <dfn class="terminology">inner product</dfn> in the context of quantum computation) is an operation between two vectors of the same dimension that produces a scalar. This product is typically referred to with a <span class="process-math">\(\cdot\text{,}\)</span> but has an alternate notation in quantum computation that we will see in the next section. In <span class="process-math">\(\mathbb{R}^n\)</span> and In <span class="process-math">\(\mathbb{C}^n\)</span> this operation is performed by taking the sum of the products of the corresponding entries in each vector, as shown below.</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/subsec-Eigenvectors-and-Eigenvalues.html">
 \begin{equation*}
 \begin{pmatrix} a_1 \\ a_2 \\ \vdots \\ a_n \end{pmatrix} \cdot \begin{pmatrix} b_1 \\ b_2 \\ \vdots \\ b_n \end{pmatrix} = a_1 \cdot b_1 + a_2 \cdot b_2 + \ldots + a_n \cdot b_n 
 \end{equation*}
@@ -443,7 +446,7 @@ window.MathJax = {
 </div></article></div>
 <div class="para" id="p-62">
 <em class="alert">Normality:</em> A vector is <dfn class="terminology">normal</dfn> if it has a length of <span class="process-math">\(1\text{.}\)</span> The length (sometimes also referred to as the norm) of a vector can be found be taking the square root of the sum of the squares of its entries, as shown below. A non-normal vector can be normalized by dividing each of its components by the vectors length. A normalized vector has the same direction as the original vector, but has a length of <span class="process-math">\(1\text{.}\)</span> A set of vectors is <dfn class="terminology">orthonormal</dfn> if each of the vectors are normal and each of the vectors are orthogonal to the rest.</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/subsec-Eigenvectors-and-Eigenvalues.html">
 \begin{equation*}
 \text{Length} (\begin{pmatrix} a_1 \\ a_2 \\ \vdots \\ a_n \end{pmatrix}) = \sqrt{a_{1}^2 + a_{2}^2 + \ldots + a_{n}^2} 
 \end{equation*}
@@ -483,26 +486,26 @@ window.MathJax = {
 </div></article></div>
 <div class="para" id="p-66">
 <em class="alert">Matrices:</em> Whereas a vector is a single column of elements, a <dfn class="terminology">matrix</dfn> is a table of elements organized in rows and columns. Technically speaking, a vector can be thought of a matrix with only one column. The dimension of a matrix is described by first listing the number of rows and then listing the number of columns. Thus, a <span class="process-math">\(2 \times 3\)</span> matrix (read "two by three") would have two rows and three columns. A <dfn class="terminology">square matrix</dfn> is any matrix with the same number of rows and columns. One of the most important matrices is the <dfn class="terminology">identity matrix</dfn>, a square matrixin which all of the entries along the diagonal are <span class="process-math">\(1\)</span> and all other entries are <span class="process-math">\(0\text{.}\)</span> Examples of the <span class="process-math">\(2\times2\)</span> and <span class="process-math">\(5\times5\)</span> identity matrices are shown below, which can be generalized to any <span class="process-math">\(n \times n\)</span> matrix.</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/subsec-Eigenvectors-and-Eigenvalues.html">
 \begin{equation*}
 I_{2\times2} = \begin{pmatrix} 1 &amp; 0 \\ 0 &amp; 1 \end{pmatrix}, I_{5\times5} = \begin{pmatrix} 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1   \end{pmatrix}
 \end{equation*}
 </div>
 <div class="para" id="p-67">A matrix can be multiplied by a scalar in the same way that a vector can, by multiplying each entry in the matrix by the scalar, as shown below.</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/subsec-Eigenvectors-and-Eigenvalues.html">
 \begin{equation*}
 c \times \begin{pmatrix} a_1 &amp; a_2 &amp; a_3 \\ a_4 &amp; a_5 &amp; a_6 \\ a_7 &amp; a_8 &amp; a_9 \end{pmatrix} = \begin{pmatrix} c \times a_1 &amp; c \times a_2 &amp; c \times a_3 \\ c \times a_4 &amp; c \times a_5 &amp; c \times a_6 \\ c \times a_7 &amp; c \times a_8 &amp; c \times a_9 \end{pmatrix} 
 \end{equation*}
 </div>
 <div class="para" id="p-68">The concept of a transpose can be extended from vectors to matrices as well. A matrix’s transpose is found by turning each of its rows into a column, or, equivalently, by turning each of its columns into a row. This means the transpose of an <span class="process-math">\(m \times n\)</span> matrix is an <span class="process-math">\(n \times m\)</span> matrix. The matrix transpose is also represented by a superscript <span class="process-math">\(T\text{.}\)</span> An example of transposing a <span class="process-math">\(3 \times 3\)</span> matrix is shown below.</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/subsec-Eigenvectors-and-Eigenvalues.html">
 \begin{equation*}
 \begin{pmatrix} a_1 &amp; a_2 &amp; a_3 \\ a_4 &amp; a_5 &amp; a_6 \\ a_7 &amp; a_8 &amp; a_9 \end{pmatrix} ^{T} = \begin{pmatrix} a_1 &amp; a_4 &amp; a_7 \\ a_2 &amp; a_5 &amp; a_8 \\ a_3 &amp; a_6 &amp; a_9 \end{pmatrix} 
 \end{equation*}
 </div>
 <div class="para" id="p-69">
 <em class="alert">Matrix Addition:</em> Two matrices can be added together only if they each have the same number of rows and columns. The sum of two matrices is found by adding together the corresponding entries of each matrix, as shown below with an example of two <span class="process-math">\(3\times3\)</span> matrices.</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/subsec-Eigenvectors-and-Eigenvalues.html">
 \begin{equation*}
 \begin{pmatrix} a_1 &amp; a_2 &amp; a_3 \\ a_4 &amp; a_5 &amp; a_6 \\ a_7 &amp; a_8 &amp; a_9 \end{pmatrix} + \begin{pmatrix} b_1 &amp; b_2 &amp; b_3 \\ b_4 &amp; b_5 &amp; b_6 \\ b_7 &amp; b_8 &amp; b_9 \end{pmatrix} = \begin{pmatrix} a_1 + b_1 &amp; a_2 + b_2 &amp; a_3 + b_3 \\ a_4 + b_4 &amp; a_5 + b_5 &amp; a_6 + b_6 \\ a_7 + b_7 &amp; a_8 + b_8 &amp; a_9 + b_9 \end{pmatrix} 
 \end{equation*}
@@ -524,7 +527,7 @@ c \times \begin{pmatrix} a_1 &amp; a_2 &amp; a_3 \\ a_4 &amp; a_5 &amp; a_6 \\ a
 </div></article></div>
 <div class="para" id="p-71">
 <em class="alert">Matrix Multiplication:</em> Two matrices can be multiplied together only if the number of columns of the left matrix is equal to the number of rows of the right matrix. The resulting product will be a matrix with the same number of rows as the left matrix and the same number of columns as the right. Thus an <span class="process-math">\(m /times n\)</span> matrix multiplied by a <span class="process-math">\(n \times q\)</span> matrix would produce an <span class="process-math">\(m \times q\)</span> matrix. Notably, matrix multiplication is non-commutative, which means for two matrices <span class="process-math">\(A\)</span> and <span class="process-math">\(B\text{,}\)</span> <span class="process-math">\(AB \neq BA\text{.}\)</span> The entries of a product matrix are determined by taking the dot product between the corresponding row of the left matrix and the corresponding column of the right matrix, as shown below with an example of multiplication between a <span class="process-math">\(3\times3\)</span> and a <span class="process-math">\(3\times2\)</span> matrix.</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/subsec-Eigenvectors-and-Eigenvalues.html">
 \begin{equation*}
 \begin{pmatrix} a_1 &amp; a_2 &amp; a_3 \\ a_4 &amp; a_5 &amp; a_6 \\ a_7 &amp; a_8 &amp; a_9 \end{pmatrix} \times \begin{pmatrix} b_1 &amp; b_2 \\ b_3 &amp; b_4 \\ b_5 &amp; b_6 \end{pmatrix} = \begin{pmatrix} a_1b_1 + a_2b_3+a_3b_5 &amp; a_1b_2 + a_2b_4 + a_3b_6 \\ a_4b_1 + a_5b_3 + a_6b_5 &amp; a_4b_2 + a_5b_4 + a_6b_6 \\ a_7b_1 + a_8b_3 + a_9b_5 &amp; a_7b_2 + a_8b_4 + a_9b_6 \end{pmatrix} 
 \end{equation*}
@@ -546,7 +549,21 @@ c \times \begin{pmatrix} a_1 &amp; a_2 &amp; a_3 \\ a_4 &amp; a_5 &amp; a_6 \\ a
 = \begin{pmatrix} 2 \times 5 + 4 \times 0 &amp; 2 \times 1 + 4 \times 7 &amp; 2 \times 2 + 4 \times 2 \\ 3 \times 5 + 0 \times 0 &amp; 3 \times 1 + 0 \times 7 &amp; 3 \times 2 + 0 \times 2 \end{pmatrix} = \begin{pmatrix} 10 &amp; 30 &amp; 12 \\ 15 &amp; 3 &amp; 6 \end{pmatrix} 
 \end{equation*}
 </div></div></div>
-</div></article></div></section></section></div>
+</div></article></div>
+<div class="para" id="p-75">
+<em class="alert">Determinant:</em> The <dfn class="terminology">determinant</dfn> is a scalar associated with a square matrix that can be used to find the eigenvalues (see <a href="Vectors-and-Vector-Spaces.html#subsec-Eigenvectors-and-Eigenvalues" class="internal" title="Subsection 1.5.5: Eigenvectors and Eigenvalues">Subsection 1.5.5</a>) of the matrix. For <span class="process-math">\(2 \times 2\)</span> and <span class="process-math">\(3 \times 3\)</span> matrices, their determinants are defined as follows:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/subsec-Eigenvectors-and-Eigenvalues.html">
+\begin{equation*}
+det(\begin{pmatrix} a &amp; b \\ c &amp; d \end{pmatrix}) = a \cdot d - b \cdot c 
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/subsec-Eigenvectors-and-Eigenvalues.html">
+\begin{equation*}
+det(\begin{pmatrix} a &amp; b &amp; c \\ d &amp; e &amp; f \\ g &amp; h &amp; i \end{pmatrix}) = a \cdot e \cdot i +  b \cdot f \cdot g + c \cdot d \cdot h - c \cdot e \cdot g - b \cdot d \cdot i - a \cdot f \cdot h 
+\end{equation*}
+</div></section><section class="subsection" id="subsec-Eigenvectors-and-Eigenvalues"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.5.5</span> <span class="title">Eigenvectors and Eigenvalues</span>
+</h3></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="Classical-Computing.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="Linear-Algebra-in-Quantum-Computation.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>
 </div></main>
