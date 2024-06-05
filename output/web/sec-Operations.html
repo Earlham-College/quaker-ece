@@ -279,6 +279,10 @@ window.MathJax = {
 <ul class="structural">
 <li><div class="toc-item"><a href="sec-Operations.html#subsec-Outer-Product" class="internal"><span class="codenumber">1.11.1</span> <span class="title">Outer Product</span></a></div></li>
 <li><div class="toc-item"><a href="sec-Operations.html#subsec-Completeness-Relation" class="internal"><span class="codenumber">1.11.2</span> <span class="title">Completeness Relation</span></a></div></li>
+<li><div class="toc-item"><a href="sec-Operations.html#subsec-Inner-Product" class="internal"><span class="codenumber">1.11.3</span> <span class="title">Inner Product</span></a></div></li>
+<li><div class="toc-item"><a href="sec-Operations.html#subsec-Diagonalization" class="internal"><span class="codenumber">1.11.4</span> <span class="title">Diagonalization</span></a></div></li>
+<li><div class="toc-item"><a href="sec-Operations.html#subsec-Density-Operator" class="internal"><span class="codenumber">1.11.5</span> <span class="title">Density Operator</span></a></div></li>
+<li><div class="toc-item"><a href="sec-Operations.html#subsec-The-Commutator" class="internal"><span class="codenumber">1.11.6</span> <span class="title">The Commutator</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -333,7 +337,11 @@ window.MathJax = {
 <section class="subsection" id="subsec-Outer-Product"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">1.11.1</span> <span class="title">Outer Product</span>
 </h3>
+<<<<<<< HEAD
+<div class="para" id="p-170">The tensor product is only one of many operations on qubits. In <a href="Vectors-and-Vector-Spaces.html#linear-algebra" class="internal" title="Subsection 1.5.4: Linear Algebra">Subsection 1.5.4</a> we described how the inner product could be represented as the product of a vector’s transpose and the vector. Since an <span class="process-math">\(n\)</span> dimensional vector transpose is <span class="process-math">\(1\times n\)</span> and the vector is <span class="process-math">\(n\times1\text{,}\)</span> the resulting product is <span class="process-math">\(1\times1\text{,}\)</span> which is functionally equivalent to a scalar. If we were to reverse the order of the vector multiplication and multiply a column vector on the left and a row vector on the right, we would multiply an <span class="process-math">\(n\times1\)</span> vector by an <span class="process-math">\(1\times m\)</span> vector to produce an <span class="process-math">\(n\times m\)</span> matrix. More specifically, we want to multiply a vector on the left by the vectors adjoint (complex conjugated transpose) on the right. This operation is known as the <dfn class="terminology">outer product</dfn>. The outer product between two qubits <span class="process-math">\(\ket{\psi}\)</span> and <span class="process-math">\(\ket{\phi}\)</span> is shown below.</div>
+=======
 <div class="para" id="p-158">The tensor product is only one of many operations on qubits. In <a href="Vectors-and-Vector-Spaces.html#linear-algebra" class="internal" title="Subsection 1.5.4: Linear Algebra">Subsection 1.5.4</a> we described how the inner product could be represented as the product of a vector’s transpose and the vector. Since an <span class="process-math">\(n\)</span> dimensional vector transpose is <span class="process-math">\(1\times n\)</span> and the vector is <span class="process-math">\(n\times1\text{,}\)</span> the resulting product is <span class="process-math">\(1\times1\text{,}\)</span> which is functionally equivalent to a scalar. If we were to reverse the order of the vector multiplication and multiply a column vector on the left and a row vector on the right, we would multiply an <span class="process-math">\(n\times1\)</span> vector by an <span class="process-math">\(1\times m\)</span> vector to produce an <span class="process-math">\(n\times m\)</span> matrix. This operation is known as the <dfn class="terminology">outer product</dfn>. The outer product between two qubits <span class="process-math">\(\ket{\psi}\)</span> and <span class="process-math">\(\ket{\phi}\)</span> is shown below.</div>
+>>>>>>> 5713a2ebdff2310a2ffc7b5893bd56c983a4152b
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/linear-algebra.html">
 \begin{equation*}
 \ket{\psi} = \begin{pmatrix} \alpha_1 \\ \alpha_2 \\ \vdots \\ \alpha_n \end{pmatrix}, \ket{\phi} = \begin{pmatrix} \beta_1 \\ \beta_2 \\ \vdots \\ \beta_m \end{pmatrix} 
@@ -346,18 +354,154 @@ window.MathJax = {
 </div></section><section class="subsection" id="subsec-Completeness-Relation"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">1.11.2</span> <span class="title">Completeness Relation</span>
 </h3>
+<<<<<<< HEAD
+<div class="para" id="p-171">If a set of basis vectors for a quantum system <span class="process-math">\(\{ \ket{\mathcal{B}_1},\ket{\mathcal{B}_2},\ldots,\ket{\mathcal{B}_n} \}\)</span> have the property that the sum of the outer products of each basis vector with itself is equal to the identity matrix:</div>
+=======
 <div class="para" id="p-159">If a set of basis vectors for a quantum system <span class="process-math">\(\{ \mathcal{B}_1,\mathcal{B}_2,\ldots,\mathcal{B}_n \}\)</span> have the property</div>
+>>>>>>> 5713a2ebdff2310a2ffc7b5893bd56c983a4152b
 <div class="displaymath process-math">
 \begin{equation*}
 \sum_{i=1}^{n} \ket{\mathcal{B}_i}\bra{\mathcal{B}_i}= I 
 \end{equation*}
 </div>
+<<<<<<< HEAD
+<div class="para" id="p-172">Then that set is said to have a <dfn class="terminology">completeness relation</dfn>. In general, orthonormal bases will have a completeness relation. Since the completeness relation is the same as the identity operator, we can use it on any vector expression without changing its value.</div>
+<div class="para" id="p-173">Suppose <span class="process-math">\(\ket{\psi}\)</span> is a vector in a space <span class="process-math">\(V\)</span> and <span class="process-math">\(\{ \ket{\phi_1},\ket{\phi_2},\ldots,\ket{\phi_n}  \}\)</span> is an orthonormal basis of <span class="process-math">\(V\)</span> with a completeness relation. We can then use the completeness relation as follows</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{split} \ket{\psi} &amp;= I \ket{\psi} \\ &amp;= \sum_{i=1}^n \ket{\phi_i} \bra{\phi_i} \ket{\psi} \\ &amp;= \ket{\phi_1} \bra{\phi_1} \ket{\psi} + \ket{\phi_2} \bra{\phi_2} \ket{\psi} + \ldots + \ket{\phi_n} \bra{\phi_n} \ket{\psi} \\ &amp;= \alpha_1 \ket{\phi_1} + \alpha_2 \ket{\phi_2} + \ldots + \alpha_n \ket{\phi_n} \end{split} 
+\end{equation*}
+</div>
+<div class="para" id="p-174">Where each <span class="process-math">\(\alpha_j = \braket{\phi_j | \psi} \)</span> and represents the component of the vector <span class="process-math">\(\ket{\psi}\)</span> that is in the direction of the basis <span class="process-math">\(\ket{\phi_j}\text{.}\)</span> Thus the completeness relation can be used to decompose a vector into its basis elements.</div></section><section class="subsection" id="subsec-Inner-Product"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.11.3</span> <span class="title">Inner Product</span>
+</h3>
+<div class="para" id="p-175">Here we will redefine the inner product in Bra-Ket notation and describe some additional properties. For two qubits <span class="process-math">\(\ket{a}\)</span> and <span class="process-math">\(\ket{b}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\ket{a}= \begin{pmatrix}a_{1} \\a_{2} \\\vdots \\a_{n}\end{pmatrix}, \ket{b}=\begin{pmatrix}b_{1} \\b_{2} \\\vdots \\b_{n} \end{pmatrix}  
+\end{equation*}
+</div>
+<div class="para" id="p-176">their inner product</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\braket{a | b} = \sum_{k=1}^{n} a_{k} b_{k} 
+\end{equation*}
+</div>
+<div class="para" id="p-177">We now define</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\delta_{k j}= \Bigg \{ \begin{array}{ll} 1, &amp; \text { if } k=j \\ 0, &amp; \text { if } k\neq j \end{array} 
+\end{equation*}
+</div>
+<div class="para" id="p-178">We call <span class="process-math">\(\delta_{k j}\text{,}\)</span> the Kronecker delta. It is the mathematical way to express anything that is equal to 0 unless the index <span class="process-math">\(k=j\text{,}\)</span> in which case it is 1. For an orthonormal basis <span class="process-math">\(\{ \ket{\beta_1}, \ket{\beta_n}, \ldots, \ket{\beta_n} \}\)</span> we have the property</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\braket{\beta_k | \beta_j} = \delta_{kj} 
+\end{equation*}
+</div>
+<div class="para" id="p-179">That is, for any two vectors in the basis, their inner product is 0, unless the two vectors are the same, in which case their inner product is 1.</div>
+<div class="para" id="p-180">For <span class="process-math">\(\alpha \in \mathbb{C}\)</span> and <span class="process-math">\(\ket{\psi},\ket{\phi},\ket{\rho}\in\mathcal{H}\text{,}\)</span> the inner product has the following properties:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{split} &amp; \text{1. Distributive Law: } \bra{\psi}(\ket{\phi} + \ket{\rho}) = \braket{\psi | \phi} + \braket{\psi | \rho}  
+\\ &amp; \text{2. Associative Law: } \bra{\psi} (\alpha \ket{\phi}) = \alpha \braket{ \psi | \phi} 
+\\ &amp; \text{3. Hermitian Symmetry: } \braket{\psi | \phi} = \braket{\phi | \psi}^{*} 
+\\ &amp; \text{4. Definite Form: } \braket{\psi | \psi} \geq 0 \text{ and } \braket{\psi | \psi} = 0 \text{ only if } \ket{\psi} = \vec{0} \end{split}
+\end{equation*}
+</div></section><section class="subsection" id="subsec-Diagonalization"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.11.4</span> <span class="title">Diagonalization</span>
+</h3>
+<div class="para logical" id="p-181">
+<div class="para">For a vector space <span class="process-math">\(V\)</span> with a basis <span class="process-math">\(\{ \ket{\beta_1}, \ket{\beta_2}, \ldots, \ket{\beta_n} \}\text{,}\)</span> A diagonal representation for an operator <span class="process-math">\(A\)</span> that acts on the space would be</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/subsec4-chap2.html">
+\begin{equation*}
+A=\sum_{i} \lambda_{i}\ket{\beta_i}\bra{\beta_i}
+\end{equation*}
+</div>
+<div class="para">where the <span class="process-math">\(\lambda_i\)</span> are eigenvalues that correspond to the basis state <span class="process-math">\(\beta_i\text{.}\)</span> An operator is said to be <dfn class="terminology">diagonalizable</dfn> if it has a diagonal representation. As an example of a diagonal representation, note that the Pauli <span class="process-math">\(Z\)</span> matrix (see <a href="sec2-chap2.html#subsec4-chap2" class="internal" title="Subsection 2.2.4: Pauli Z">Subsection 2.2.4</a>) may be written</div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/subsec4-chap2.html">
+\begin{equation*}
+Z = \begin{pmatrix} 1 &amp; 0 \\ 0 &amp; -1 \end{pmatrix} = \begin{pmatrix} 1 &amp; 0 \\ 0 &amp; 0 \end{pmatrix} - \begin{pmatrix} 0 &amp; 0 \\ 0 &amp; 1 \end{pmatrix} = \ket{0}\bra{0} - \ket{1}\bra{1} = \sum_{i=1}^{2} \lambda_i \ket{\beta_i}\bra{\beta_i}
+\end{equation*}
+</div>
+<div class="para" id="p-182">where <span class="process-math">\(\lambda_1 = 1, \lambda_2 = -1, \beta_1 = \ket{0}, \text{ and }\beta_2  = \ket{1}\text{.}\)</span> Diagonal representations are sometimes also known as orthonormal decompositions.</div></section><section class="subsection" id="subsec-Density-Operator"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.11.5</span> <span class="title">Density Operator</span>
+</h3>
+<div class="para" id="p-183">Any basis state for a vector space can also be expressed with a <dfn class="terminology">density operator</dfn> that provides us with another method to study the state of the entire system. For a vector space with a basis <span class="process-math">\(\{ \ket{\psi_1},\ket{\psi_2},\ldots,\ket{\psi_n} \}\text{,}\)</span> the density operators for its basis states are given by</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\rho_i = \ket{\psi_i}\bra{\psi_i} 
+\end{equation*}
+</div>
+<div class="para" id="p-184">This means that the density operator <span class="process-math">\(\rho\)</span> for any basis state is equal to the outer product of that state with itself. These density operators for states have the following properties:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{split} &amp; \text{1. Idempotent: } \rho^2 = \ket{\psi}\braket{\psi | \psi} \bra{\psi} = \ket{\psi}\bra{\psi} = \rho
+\\ &amp; \text{2. Trace(the sum of the diagonals): For an } n \times n \text{ density operator: } \\ &amp; Tr(\rho) = \sum_{i,j=1}^n \rho_{i,j} = 1 \text{ (where } \rho_{i,j} \text{ represents the entry in the i-th row and j-th column of }\rho)
+\\ &amp; \text{3. Hermiticity: } \rho^{\dagger} = (\ket{\psi}\bra{\psi})^{\dagger} = \ket{\psi}\bra{\psi} = \rho
+\\ &amp; \text{4. Positive Semi-Definite: For a state }\ket{\phi}, \bra{\phi}\rho\ket{\phi} = \braket{\phi|\psi} \braket{\psi|\phi} = \braket{\phi|\psi}^2 \geq 0 \end{split} 
+\end{equation*}
+</div>
+<div class="para" id="p-185">For a state</div>
+<div class="displaymath process-math">
+=======
 <div class="para" id="p-160">Then that set is said to have a <dfn class="terminology">completeness relation</dfn>. Since the completeness relation is the same as the identity operator, we can use it on any vector expression without changing its value.</div></section><div class="para" id="p-161">Suppose, we have two vector spaces <span class="process-math">\(V\)</span> and <span class="process-math">\(W,\)</span> and we want to know what kind of operator act on the space <span class="process-math">\(V\otimes W\text{.}\)</span> An operator <span class="process-math">\(A\otimes B\)</span> is linear if</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/linear-algebra.html">
+>>>>>>> 5713a2ebdff2310a2ffc7b5893bd56c983a4152b
 \begin{equation*}
-\big(A\otimes B\big) \big(\ket{v}\otimes \ket{w}\big) \equiv A\ket{v}\otimes B \ket{w} 
+\ket{\psi} = \begin{pmatrix} \alpha_1 \\ \alpha_2 \\ \vdots \\ \alpha_n \end{pmatrix} 
 \end{equation*}
-</div></section></div>
+</div>
+<div class="para" id="p-186">The density operator would be</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\rho = \begin{pmatrix} \alpha_1 \\ \alpha_2 \\ \vdots \\ \alpha_n \end{pmatrix} \begin{pmatrix} \alpha_1^* &amp; \alpha_2^* &amp; \ldots &amp; \alpha_n^* \end{pmatrix} = \begin{pmatrix} \alpha_1\alpha_1^* &amp; \alpha_1\alpha_2^* &amp; \ldots &amp; \alpha_1\alpha_n^* \\  \alpha_2\alpha_1^* &amp; \alpha_2\alpha_2^* &amp; \ldots &amp; \alpha_2\alpha_n^*  \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ \alpha_n\alpha_1^* &amp; \alpha_n\alpha_2^* &amp; \ldots &amp; \alpha_n\alpha_n^* \end{pmatrix} 
+\end{equation*}
+</div>
+<article class="exercise exercise-like" id="exercise-17"><a href="" data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exercise-17"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">1.11.1</span><span class="period">.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-17"><article class="exercise exercise-like"><div class="para" id="p-187">Find the density operator for the following state</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\ket{\psi} = \frac{1}{\sqrt{2}}(\ket{00} + \ket{11}) 
+\end{equation*}
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-3" id="hint-3"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-3"><div class="hint solution-like"><div class="displaymath process-math">
+\begin{equation*}
+\ket{\psi} = \frac{1}{\sqrt{2}} \begin{pmatrix} 1\\0\\0\\1 \end{pmatrix} 
+\end{equation*}
+</div></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-16" id="solution-16"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-16"><div class="solution solution-like"><div class="displaymath process-math">
+\begin{equation*}
+\rho = \frac{1}{\sqrt{2}}\begin{pmatrix} 1\\0\\0\\1 \end{pmatrix} \frac{1}{\sqrt{2}}\begin{pmatrix} 1&amp;0&amp;0&amp;1 \end{pmatrix} = \frac{1}{2}\begin{pmatrix} 1 &amp; 0 &amp; 0 &amp; 1 \\ 0 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 0 \\ 1 &amp; 0 &amp; 0 &amp; 1 \end{pmatrix} 
+\end{equation*}
+</div></div></div>
+</div></article></div>
+<div class="para" id="p-188">Now suppose we want to find a density operator for an entire system. The system exists within a vector space with a basis <span class="process-math">\(\{ \ket{\beta_1},\ket{\beta_2},\ldots,\ket{\beta_n} \}\)</span> and has a probability <span class="process-math">\(p_i\)</span> of being in the state <span class="process-math">\(\ket{\beta_i}\)</span> after measurement. The density operator for the entire system is defined by</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\rho = \sum_{i=1}^n p_i \rho_i = \sum_{i=1}^n p_i \ket{\beta_i}\bra{\beta_i} 
+\end{equation*}
+</div>
+<div class="para" id="p-189">The density operator for the system has the same properties as the density operator for individual states: Idempotent, Trace=1, Hermiticity, and Positive Semi-Definite.</div></section><section class="subsection" id="subsec-The-Commutator"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.11.6</span> <span class="title">The Commutator</span>
+</h3>
+<div class="para" id="p-190">Remember that matrix multiplication is generally not commutative, i.e. for two matrices <span class="process-math">\(A\)</span> and <span class="process-math">\(B\text{,}\)</span> <span class="process-math">\(AB \neq BA\text{.}\)</span> However, there are exceptions to this generality. The <dfn class="terminology">commutator</dfn> between two operators <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> is defined to be</div>
+<div class="displaymath process-math">
+\begin{equation*}
+[A, B] \equiv A B-B A 
+\end{equation*}
+</div>
+<div class="para" id="p-191">If <span class="process-math">\([A, B]=0\text{,}\)</span> that is, <span class="process-math">\(A B=B A\text{,}\)</span> then we say <span class="process-math">\(A\)</span> commutes with <span class="process-math">\(B\text{.}\)</span> Similarly, the <dfn class="terminology">anti-commutator</dfn> of two operators <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> is defined by</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\{A, B\} \equiv A B+B A 
+\end{equation*}
+</div>
+<div class="para" id="p-192">we say <span class="process-math">\(A\)</span> anti-commutes with <span class="process-math">\(B\)</span> if <span class="process-math">\(\{A, B\}=0\text{,}\)</span> that is <span class="process-math">\(AB = -BA\text{.}\)</span> It turns out that many important properties of pairs of operators can be deduced from their commutator and anti-commutator.</div></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="sec-Systems-of-Multiple-Qubits.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="chap2-chapter.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>
 </div></main>

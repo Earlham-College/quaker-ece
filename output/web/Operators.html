@@ -279,6 +279,10 @@ window.MathJax = {
 <ul class="structural">
 <li><div class="toc-item"><a href="sec-Operations.html#subsec-Outer-Product" class="internal"><span class="codenumber">1.11.1</span> <span class="title">Outer Product</span></a></div></li>
 <li><div class="toc-item"><a href="sec-Operations.html#subsec-Completeness-Relation" class="internal"><span class="codenumber">1.11.2</span> <span class="title">Completeness Relation</span></a></div></li>
+<li><div class="toc-item"><a href="sec-Operations.html#subsec-Inner-Product" class="internal"><span class="codenumber">1.11.3</span> <span class="title">Inner Product</span></a></div></li>
+<li><div class="toc-item"><a href="sec-Operations.html#subsec-Diagonalization" class="internal"><span class="codenumber">1.11.4</span> <span class="title">Diagonalization</span></a></div></li>
+<li><div class="toc-item"><a href="sec-Operations.html#subsec-Density-Operator" class="internal"><span class="codenumber">1.11.5</span> <span class="title">Density Operator</span></a></div></li>
+<li><div class="toc-item"><a href="sec-Operations.html#subsec-The-Commutator" class="internal"><span class="codenumber">1.11.6</span> <span class="title">The Commutator</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -330,53 +334,53 @@ window.MathJax = {
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="Operators"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">1.9</span> <span class="title">Operators</span>
 </h2>
-<div class="para" id="p-119">In physics, things we are able to measure are called <dfn class="terminology">observables</dfn>. Examples of observables are things like position, momentum, and energy, among many others. Any observables that relate to the quantum state of a particle have a corresponding <dfn class="terminology">operator</dfn>. In quantum computation, operators act on kets from the left side and on bras from the right side. For a ket <span class="process-math">\(\psi\)</span> and a bra <span class="process-math">\(\phi\text{,}\)</span> an operator <span class="process-math">\(A\)</span> would act on them as follows</div>
+<div class="para" id="p-127">In physics, things we are able to measure are called <dfn class="terminology">observables</dfn>. Examples of observables are things like position, momentum, and energy, among many others. Any observables that relate to the quantum state of a particle have a corresponding <dfn class="terminology">operator</dfn>. Operators are used to map vectors from one vector space onto another. An operator <span class="process-math">\(A\)</span> that maps from a vector space <span class="process-math">\(V\)</span> to a vector space <span class="process-math">\(W\)</span> could be written as <span class="process-math">\(A: V \rightarrow W\text{.}\)</span> In quantum computation, operators act on kets from the left side and on bras from the right side. For a ket <span class="process-math">\(\psi\)</span> and a bra <span class="process-math">\(\phi\text{,}\)</span> an operator <span class="process-math">\(A\)</span> would act on them as follows</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/linear-algebra.html ./knowl/subsec-Bra-Vectors-and-the-Inner-Product.html ./knowl/Operators.html ./knowl/sec3-chap2.html">
 \begin{equation*}
 A \cdot \ket{\psi} = A\ket{\psi}, \bra{\phi} \cdot A = \bra{\phi}A 
 \end{equation*}
 </div>
-<div class="para" id="p-120">Consider that <span class="process-math">\(A\)</span> is not a scalar, but rather an operator that exists in a Hilbert space, which means that these equations do not just represent basic multiplication. In quantum theory, operators can be represented by matrices, and tools like matrix multiplication and matrix addition (see <a href="Vectors-and-Vector-Spaces.html#linear-algebra" class="internal" title="Subsection 1.5.4: Linear Algebra">Subsection 1.5.4</a>) can be used to perform operations on qubits.</div>
+<div class="para" id="p-128">Consider that <span class="process-math">\(A\)</span> is not a scalar, but rather an operator maps between vector spaces, which means that these equations do not just represent basic multiplication. In quantum theory, operators can be represented by matrices, and tools like matrix multiplication and matrix addition (see <a href="Vectors-and-Vector-Spaces.html#linear-algebra" class="internal" title="Subsection 1.5.4: Linear Algebra">Subsection 1.5.4</a>) can be used to perform operations on qubits.</div>
 <section class="subsection" id="subsec-Hermitian-Operators"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">1.9.1</span> <span class="title">Hermitian Operators</span>
 </h3>
-<div class="para" id="p-121">Recall from <a href="Qubit-States.html#subsec-Bra-Vectors-and-the-Inner-Product" class="internal" title="Subsection 1.7.3: Bra Vectors and the Inner Product for Quantum Computation">Subsection 1.7.3</a> that the adjoint operation represented by the <span class="process-math">\(\dagger\)</span> symbol consisted of transposing and complex conjugating a vector. This same operation can be performed on an operator (note that operations and operators are two different things). An operator <span class="process-math">\(X\)</span> is <dfn class="terminology">Hermitian</dfn> (also referred to as adjoin) if it satisfies the following property:</div>
+<div class="para" id="p-129">Recall from <a href="Qubit-States.html#subsec-Bra-Vectors-and-the-Inner-Product" class="internal" title="Subsection 1.7.3: Bra Vectors and the Inner Product for Quantum Computation">Subsection 1.7.3</a> that the adjoint operation represented by the <span class="process-math">\(\dagger\)</span> symbol consisted of transposing and complex conjugating a vector. This same operation can be performed on an operator (note that operations and operators are two different things). An operator <span class="process-math">\(X\)</span> is <dfn class="terminology">Hermitian</dfn> (also referred to as adjoin) if it satisfies the following property:</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/subsec-Bra-Vectors-and-the-Inner-Product.html">
 \begin{equation*}
 X = X^{\dagger} 
 \end{equation*}
 </div>
-<div class="para" id="p-122">Other properties of Hermitian operators are</div>
-<div class="para" id="p-123"><em class="alert">Noncommutative</em></div>
+<div class="para" id="p-130">Other properties of Hermitian operators are</div>
+<div class="para" id="p-131"><em class="alert">Noncommutative</em></div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/subsec-Bra-Vectors-and-the-Inner-Product.html">
 \begin{equation*}
 XY \neq YX 
 \end{equation*}
 </div>
-<div class="para" id="p-124"><em class="alert">Associative (multiplicative)</em></div>
+<div class="para" id="p-132"><em class="alert">Associative (multiplicative)</em></div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/subsec-Bra-Vectors-and-the-Inner-Product.html">
 \begin{equation*}
 XYZ = (XY)Z = X(YZ) 
 \end{equation*}
 </div>
-<div class="para" id="p-125"><em class="alert">Hermitian Product</em></div>
+<div class="para" id="p-133"><em class="alert">Hermitian Product</em></div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/subsec-Bra-Vectors-and-the-Inner-Product.html">
 \begin{equation*}
 (XY)^{\dagger} = Y^{\dagger}X^{\dagger} 
 \end{equation*}
 </div>
-<div class="para" id="p-126">
+<div class="para" id="p-134">
 <em class="alert">Linear</em>  An operator <span class="process-math">\(L\)</span> takes a vector <span class="process-math">\(\vec{v}\)</span> and transforms it into a new vector <span class="process-math">\(L\vec{v}\text{.}\)</span> If <span class="process-math">\(L\)</span> is a linear operator, then</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/subsec-Bra-Vectors-and-the-Inner-Product.html">
 \begin{equation*}
 L(\alpha \vec{v} + \beta \vec{w}) = \alpha L \vec{v} + \beta L \vec{w} 
 \end{equation*}
 </div>
-<div class="para" id="p-127">where <span class="process-math">\(\alpha, \beta \in \mathbb{C}\)</span> and <span class="process-math">\(\vec{v},\vec{w} \in \mathcal{H}\)</span>
+<div class="para" id="p-135">where <span class="process-math">\(\alpha, \beta \in \mathbb{C}\)</span> and <span class="process-math">\(\vec{v},\vec{w} \in \mathcal{H}\)</span>
 </div>
 <article class="exercise exercise-like" id="exercise-13"><a href="" data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exercise-13"><h4 class="heading">
 <span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">1.9.1</span><span class="period">.</span>
-</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-13"><article class="exercise exercise-like"><div class="para" id="p-128">Which of the following operators are Hermitian?</div>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-13"><article class="exercise exercise-like"><div class="para" id="p-136">Which of the following operators are Hermitian?</div>
 <div class="displaymath process-math">
 \begin{equation*}
 1. \ \begin{pmatrix} 1 &amp; 1 \\ 1 &amp; 1 \end{pmatrix} 
@@ -399,61 +403,61 @@ L(\alpha \vec{v} + \beta \vec{w}) = \alpha L \vec{v} + \beta L \vec{w}
 </div>
 <div class="solutions">
 <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-12" id="solution-12"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-12"><div class="solution solution-like">
-<div class="para" id="p-129">1.</div>
+<div class="para" id="p-137">1.</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \begin{pmatrix} 1 &amp; 1 \\ 1 &amp; 1 \end{pmatrix}^{\dagger} = \begin{pmatrix} 1 &amp; 1 \\ 1 &amp; 1 \end{pmatrix} 
 \end{equation*}
 </div>
-<div class="para" id="p-130">Since this matrix equals its adjoint, it is Hermitian</div> <div class="para" id="p-131">2.</div>
+<div class="para" id="p-138">Since this matrix equals its adjoint, it is Hermitian</div> <div class="para" id="p-139">2.</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \begin{pmatrix} 0 &amp; -i \\ i &amp; 0 \end{pmatrix}^{\dagger} = \begin{pmatrix} 0 &amp; -i \\ i &amp; 0 \end{pmatrix} 
 \end{equation*}
 </div>
-<div class="para" id="p-132">Since this matrix equals its adjoint, it is Hermitian</div> <div class="para" id="p-133">3.</div>
+<div class="para" id="p-140">Since this matrix equals its adjoint, it is Hermitian</div> <div class="para" id="p-141">3.</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \begin{pmatrix} -i &amp; 0 \\ 0 &amp; i \end{pmatrix}^{\dagger} = \begin{pmatrix} i &amp; 0 \\ 0 &amp; -i \end{pmatrix} 
 \end{equation*}
 </div>
-<div class="para" id="p-134">Since this matrix does not equal its adjoint, it is not Hermitian</div> <div class="para" id="p-135">4.</div>
+<div class="para" id="p-142">Since this matrix does not equal its adjoint, it is not Hermitian</div> <div class="para" id="p-143">4.</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \begin{pmatrix} 1 &amp; 1+i \\ 1-i &amp; 1 \end{pmatrix}^{\dagger} = \begin{pmatrix} 1 &amp; 1+i \\ 1-i &amp; 1 \end{pmatrix} 
 \end{equation*}
 </div>
-<div class="para" id="p-136">Since this matrix equals its adjoint, it is Hermitian</div>
+<div class="para" id="p-144">Since this matrix equals its adjoint, it is Hermitian</div>
 </div></div>
 </div></article></div></section><section class="subsection" id="subsec-Unitary-Operators"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">1.9.2</span> <span class="title">Unitary Operators</span>
 </h3>
-<div class="para" id="p-137">Recall that for a qubit</div>
+<div class="para" id="p-145">Recall that for a qubit</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \ket{\psi}=\alpha \ket{0} + \beta \ket{1}
 \end{equation*}
 </div>
-<div class="para" id="p-138">the property <span class="process-math">\(\alpha^2 + \beta^2 = 1\)</span> must hold. After an operator <span class="process-math">\(U\)</span> is applied to this qubit, we get a new state defined by</div>
+<div class="para" id="p-146">the property <span class="process-math">\(\alpha^2 + \beta^2 = 1\)</span> must hold. After an operator <span class="process-math">\(U\)</span> is applied to this qubit, we get a new state defined by</div>
 <div class="displaymath process-math">
 \begin{equation*}
 U\ket{\psi} = \ket{\psi'} = \alpha'\ket{0} + \beta'\ket{1} 
 \end{equation*}
 </div>
-<div class="para" id="p-139">If the property that <span class="process-math">\(\alpha'^2 + \beta'^2 = 1\)</span> still holds, then the operator <span class="process-math">\(U\)</span> is <dfn class="terminology">unitary</dfn>. A defining property of unitary operators is</div>
+<div class="para" id="p-147">If the property that <span class="process-math">\(\alpha'^2 + \beta'^2 = 1\)</span> still holds, then the operator <span class="process-math">\(U\)</span> is <dfn class="terminology">unitary</dfn>. Unitary operators map qubits between Hilbert spaces. A unitary operator ,<span class="process-math">\(U\)</span> could be defined as <span class="process-math">\(U:\mathcal{H} \rightarrow \mathcal{H}\text{.}\)</span> A defining property of unitary operators is</div>
 <div class="displaymath process-math">
 \begin{equation*}
 U U^{\dagger} = U^{\dagger} U = I 
 \end{equation*}
 </div>
-<div class="para" id="p-140">where <span class="process-math">\(I\)</span> is the identity matrix.</div>
-<div class="para" id="p-141">Unitary operations performed on a qubit are reversible. This means that for an operator <span class="process-math">\(U\)</span> that acts on a qubit <span class="process-math">\(\ket{\psi}\)</span> such that <span class="process-math">\(U\ket{\psi} = \ket{\psi'}\text{,}\)</span> there exists some operator <span class="process-math">\(U^{-1}\)</span> such that <span class="process-math">\(U^{-1}\ket{\psi'} = \ket{\psi}\text{.}\)</span> This <span class="process-math">\(U^{-1}\)</span> is called the inverse of <span class="process-math">\(U\text{.}\)</span> Inverse matrices have the property that</div>
+<div class="para" id="p-148">where <span class="process-math">\(I\)</span> is the identity matrix.</div>
+<div class="para" id="p-149">Unitary operations performed on a qubit are reversible. This means that for an operator <span class="process-math">\(U\)</span> that acts on a qubit <span class="process-math">\(\ket{\psi}\)</span> such that <span class="process-math">\(U\ket{\psi} = \ket{\psi'}\text{,}\)</span> there exists some operator <span class="process-math">\(U^{-1}\)</span> such that <span class="process-math">\(U^{-1}\ket{\psi'} = \ket{\psi}\text{.}\)</span> This <span class="process-math">\(U^{-1}\)</span> is called the inverse of <span class="process-math">\(U\text{.}\)</span> Inverse matrices have the property that</div>
 <div class="displaymath process-math">
 \begin{equation*}
 UU^{-1} = U^{-1}U = I 
 \end{equation*}
 </div>
-<div class="para" id="p-142">This means that for Unitary operators, the following property holds:</div>
+<div class="para" id="p-150">This means that for Unitary operators, the following property holds:</div>
 <div class="displaymath process-math">
 \begin{equation*}
 U^{-1} = U^{\dagger} 
@@ -461,24 +465,24 @@ U^{-1} = U^{\dagger}
 </div></section><section class="subsection" id="subsec-Additional-Properties"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">1.9.3</span> <span class="title">Additional Properties and Other</span>
 </h3>
-<div class="para" id="p-143">Recall from <a href="Operators.html" class="internal" title="Section 1.9: Operators">Section 1.9</a> that operators work on a ket from the left side and on a bra from the right side. Additionally, recall</div>
+<div class="para" id="p-151">Recall from <a href="Operators.html" class="internal" title="Section 1.9: Operators">Section 1.9</a> that operators work on a ket from the left side and on a bra from the right side. Additionally, recall</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/Operators.html ./knowl/sec3-chap2.html">
 \begin{equation*}
 \ket{\psi}^{\dagger} = \bra{psi} 
 \end{equation*}
 </div>
-<div class="para" id="p-144">For an operator <span class="process-math">\(A\)</span> acting on a ket <span class="process-math">\(\ket{\psi}\text{,}\)</span> the adjoint is</div>
+<div class="para" id="p-152">For an operator <span class="process-math">\(A\)</span> acting on a ket <span class="process-math">\(\ket{\psi}\text{,}\)</span> the adjoint is</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/Operators.html ./knowl/sec3-chap2.html">
 \begin{equation*}
 (A \ket{\psi})^{\dagger} = \bra{\psi}A^{\dagger} 
 \end{equation*}
 </div>
-<div class="para" id="p-145">and <span class="process-math">\(A^{\dagger}\)</span> is another operator.</div>
-<div class="para" id="p-146"></div>
-<div class="para" id="p-147">That is the extent to which we will discuss operators in this webbook, but readers wishing to extend their knowledge should go to this document <a class="external" href="https://tinyurl.com/yzy4ycj5" target="_blank"><code class="code-inline tex2jax_ignore">https://tinyurl.com/yzy4ycj5</code></a>
+<div class="para" id="p-153">and <span class="process-math">\(A^{\dagger}\)</span> is another operator.</div>
+<div class="para" id="p-154"></div>
+<div class="para" id="p-155">That is the extent to which we will discuss operators in this webbook, but readers wishing to extend their knowledge should go to this document <a class="external" href="https://tinyurl.com/yzy4ycj5" target="_blank"><code class="code-inline tex2jax_ignore">https://tinyurl.com/yzy4ycj5</code></a>
 </div>
-<div class="para" id="p-148"></div>
-<div class="para" id="p-149">Below is pictured a circuit diagram (which we will delve deeper into in <a href="sec3-chap2.html" class="internal" title="Section 2.3: Circuits">Section 2.3</a>) representing the action on a single Qbit of the 1-Qbit gate <span class="process-math">\(U\text{.}\)</span> Initially the Qbit is described by the input state <span class="process-math">\(\ket{\psi}\)</span> on the left of the line. The line (wire) represents the subsequent operation on the Qbit. After emerging from the box representing the operator <span class="process-math">\(U\text{,}\)</span> the Qbit is described by the final state <span class="process-math">\(U \ket{\psi}.\)</span>
+<div class="para" id="p-156"></div>
+<div class="para" id="p-157">Below is pictured a circuit diagram (which we will delve deeper into in <a href="sec3-chap2.html" class="internal" title="Section 2.3: Circuits">Section 2.3</a>) representing the action on a single Qbit of the 1-Qbit gate <span class="process-math">\(U\text{.}\)</span> Initially the Qbit is described by the input state <span class="process-math">\(\ket{\psi}\)</span> on the left of the line. The line (wire) represents the subsequent operation on the Qbit. After emerging from the box representing the operator <span class="process-math">\(U\text{,}\)</span> the Qbit is described by the final state <span class="process-math">\(U \ket{\psi}.\)</span>
 </div>
 <div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/circuitdiagram.png" class="contained"></div></section></section></div>
 <div class="ptx-content-footer">

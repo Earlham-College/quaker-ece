@@ -279,6 +279,10 @@ window.MathJax = {
 <ul class="structural">
 <li><div class="toc-item"><a href="sec-Operations.html#subsec-Outer-Product" class="internal"><span class="codenumber">1.11.1</span> <span class="title">Outer Product</span></a></div></li>
 <li><div class="toc-item"><a href="sec-Operations.html#subsec-Completeness-Relation" class="internal"><span class="codenumber">1.11.2</span> <span class="title">Completeness Relation</span></a></div></li>
+<li><div class="toc-item"><a href="sec-Operations.html#subsec-Inner-Product" class="internal"><span class="codenumber">1.11.3</span> <span class="title">Inner Product</span></a></div></li>
+<li><div class="toc-item"><a href="sec-Operations.html#subsec-Diagonalization" class="internal"><span class="codenumber">1.11.4</span> <span class="title">Diagonalization</span></a></div></li>
+<li><div class="toc-item"><a href="sec-Operations.html#subsec-Density-Operator" class="internal"><span class="codenumber">1.11.5</span> <span class="title">Density Operator</span></a></div></li>
+<li><div class="toc-item"><a href="sec-Operations.html#subsec-The-Commutator" class="internal"><span class="codenumber">1.11.6</span> <span class="title">The Commutator</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -333,7 +337,11 @@ window.MathJax = {
 <section class="subsection" id="subsec1-chap2"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.3.1</span> <span class="title">NOT gate</span>
 </h3>
+<<<<<<< HEAD
+<div class="para" id="p-238">This model is inspired by the classical gates with their truth table.</div>
+=======
 <div class="para" id="p-207">This model is inspired by the classical gates with their truth table.</div>
+>>>>>>> 5713a2ebdff2310a2ffc7b5893bd56c983a4152b
 <figure class="figure figure-like" id="fig-NOTcgategateSimple_1"><div class="image-box" style="width: 45%; margin-left: 27.5%; margin-right: 27.5%;"><img src="external/NOTcgate.png" class="contained"></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.3.1<span class="period">.</span></span><span class="space"> </span>NOT logicall classical gate representation</figcaption></figure><div class="displaymath process-math" id="mdn-17">
 \begin{align}
@@ -347,7 +355,11 @@ x &amp;  y \\
 </div></section><section class="subsection" id="subsec2-chap2"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.3.2</span> <span class="title">AND gate</span>
 </h3>
+<<<<<<< HEAD
+<div class="para" id="p-239">AND logical classical gate and corresponding truth table.</div>
+=======
 <div class="para" id="p-208">AND logical classical gate and corresponding truth table.</div>
+>>>>>>> 5713a2ebdff2310a2ffc7b5893bd56c983a4152b
 <figure class="figure figure-like" id="fig-ANDcgatecgategateSimple_1"><div class="image-box" style="width: 45%; margin-left: 27.5%; margin-right: 27.5%;"><img src="external/ANDcgate.png" class="contained"></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.3.2<span class="period">.</span></span><span class="space"> </span>AND logicall classical gate logicall classical gate representation</figcaption></figure><div class="displaymath process-math" id="mdn-18">
 \begin{align}
@@ -362,9 +374,15 @@ x &amp; y &amp; x \wedge y \\
 </div></section><section class="subsection" id="subsec3-chap2"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.3.3</span> <span class="title">Reversible and Nonreversible gate</span>
 </h3>
+<<<<<<< HEAD
+<div class="para" id="p-240">Since QC is related to a theory of reversible computing, we note that the NOT gate is reversible while the AND gate is not.</div>
+<figure class="figure figure-like" id="fig-NonrANDgategateSimple_1"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/NonrAND.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.3.3<span class="period">.</span></span><span class="space"> </span>Non-reversible AND gate representation</figcaption></figure><div class="para" id="p-241">With the circuit in the fig. 2.3.3, we can simulate a non-reversible gate, besides, we keep a copy of the inputs and add of the <span class="process-math">\(x_0∧x_1\)</span> operation, after it adds previous result to <span class="process-math">\(x_2\text{.}\)</span> We fix <span class="process-math">\(x_2 = 0\)</span> and obtain a non-reversible AND gate. Where <span class="process-math">\(\oplus\)</span> represents the logical exclusive-OR operation, which it is the same addition modulo two. Then, we can obtain a reversible version of the circuit if we replace the irreversible parts with their reversible counterparts.</div></section><figure class="figure figure-like" id="fig-CCNOTcgategateSimple_1"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/CCNOT.png" class="contained"></div>
+=======
 <div class="para" id="p-209">Since QC is related to a theory of reversible computing, we note that the NOT gate is reversible while the AND gate is not.</div>
 <figure class="figure figure-like" id="fig-NonrANDgategateSimple_1"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/NonrAND.png" class="contained"></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.3.3<span class="period">.</span></span><span class="space"> </span>Non-reversible AND gate representation</figcaption></figure><div class="para" id="p-210">With the circuit in the fig. 2.3.3, we can simulate a non-reversible gate, besides, we keep a copy of the inputs and add of the <span class="process-math">\(x_0∧x_1\)</span> operation, after it adds previous result to <span class="process-math">\(x_2\text{.}\)</span> We fix <span class="process-math">\(x_2 = 0\)</span> and obtain a non-reversible AND gate. Where <span class="process-math">\(\oplus\)</span> represents the logical exclusive-OR operation, which it is the same addition modulo two. Then, we can obtain a reversible version of the circuit if we replace the irreversible parts with their reversible counterparts.</div></section><figure class="figure figure-like" id="fig-CCNOTcgategateSimple_1"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/CCNOT.png" class="contained"></div>
+>>>>>>> 5713a2ebdff2310a2ffc7b5893bd56c983a4152b
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.3.4<span class="period">.</span></span><span class="space"> </span>Controlled-NOT gate representation</figcaption></figure></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="sec2-chap2.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="chap3-chapter.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>

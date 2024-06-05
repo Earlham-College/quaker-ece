@@ -279,6 +279,10 @@ window.MathJax = {
 <ul class="structural">
 <li><div class="toc-item"><a href="sec-Operations.html#subsec-Outer-Product" class="internal"><span class="codenumber">1.11.1</span> <span class="title">Outer Product</span></a></div></li>
 <li><div class="toc-item"><a href="sec-Operations.html#subsec-Completeness-Relation" class="internal"><span class="codenumber">1.11.2</span> <span class="title">Completeness Relation</span></a></div></li>
+<li><div class="toc-item"><a href="sec-Operations.html#subsec-Inner-Product" class="internal"><span class="codenumber">1.11.3</span> <span class="title">Inner Product</span></a></div></li>
+<li><div class="toc-item"><a href="sec-Operations.html#subsec-Diagonalization" class="internal"><span class="codenumber">1.11.4</span> <span class="title">Diagonalization</span></a></div></li>
+<li><div class="toc-item"><a href="sec-Operations.html#subsec-Density-Operator" class="internal"><span class="codenumber">1.11.5</span> <span class="title">Density Operator</span></a></div></li>
+<li><div class="toc-item"><a href="sec-Operations.html#subsec-The-Commutator" class="internal"><span class="codenumber">1.11.6</span> <span class="title">The Commutator</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -474,10 +478,10 @@ window.MathJax = {
 </div></div>
 </div></article></div>
 <div class="para" id="p-62">
-<em class="alert">Normality:</em> A vector is <dfn class="terminology">normal</dfn> if it has a length of <span class="process-math">\(1\text{.}\)</span> The length (sometimes also referred to as the norm) of a vector can be found be taking the square root of the sum of the squares of its entries, as shown below. A non-normal vector can be normalized by dividing each of its components by the vectors length. A normalized vector has the same direction as the original vector, but has a length of <span class="process-math">\(1\text{.}\)</span> A set of vectors is <dfn class="terminology">orthonormal</dfn> if each of the vectors are normal and each of the vectors are orthogonal to the rest.</div>
+<em class="alert">Normality:</em> A vector is <dfn class="terminology">normal</dfn> if it has a length of <span class="process-math">\(1\text{.}\)</span> The length (sometimes also referred to as the norm) of a vector can be found be taking the square root of the sum of the squares of its entries, as shown below. This operation is represented by lines(<span class="process-math">\(\| \ \|\)</span>) on either side of the vector that is having its length found. A non-normal vector can be normalized by dividing each of its components by the vectors length. A normalized vector has the same direction as the original vector, but has a length of <span class="process-math">\(1\text{.}\)</span> A set of vectors is <dfn class="terminology">orthonormal</dfn> if each of the vectors are normal and each of the vectors are orthogonal to the rest.</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/subsec-Eigenvectors-and-Eigenvalues.html">
 \begin{equation*}
-\text{Length} (\begin{pmatrix} a_1 \\ a_2 \\ \vdots \\ a_n \end{pmatrix}) = \sqrt{a_{1}^2 + a_{2}^2 + \ldots + a_{n}^2} 
+\| (\begin{pmatrix} a_1 \\ a_2 \\ \vdots \\ a_n \end{pmatrix}) \| = \sqrt{a_{1}^2 + a_{2}^2 + \ldots + a_{n}^2} 
 \end{equation*}
 </div>
 <article class="exercise exercise-like" id="exercise-3"><a href="" data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exercise-3"><h4 class="heading">
@@ -562,16 +566,17 @@ c \times \begin{pmatrix} a_1 &amp; a_2 &amp; a_3 \\ a_4 &amp; a_5 &amp; a_6 \\ a
 \end{equation*}
 </div>
 <div class="para" id="p-72">Now that we know matrix multiplication, we can redefine the dot product / inner product as the transpose of a vector multiplied by the original vector. Since vectors are <span class="process-math">\(n \times 1\)</span> dimensional, the transpose will be <span class="process-math">\(1 \times n\)</span> dimensional, so multiplying the transpose on the left and the original on the right will produce a <span class="process-math">\(1 \times 1\)</span> matrix, which is functionally the same as a scalar.</div>
+<div class="para" id="p-73">Multiplying an <span class="process-math">\(m \times n\)</span> matrix by a <span class="process-math">\(n \times 1\)</span> vector produces an <span class="process-math">\(m \times 1\)</span> vector. This operation is known as a <dfn class="terminology">linear transformation</dfn> and it an be used to move vectors from one vector space to another.</div>
 <article class="exercise exercise-like" id="exercise-6"><a href="" data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exercise-6"><h4 class="heading">
 <span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">1.5.10</span><span class="period">.</span>
-</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-6"><article class="exercise exercise-like"><div class="para" id="p-73">Compute the following product:</div>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-6"><article class="exercise exercise-like"><div class="para" id="p-74">Compute the following product:</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \begin{pmatrix} 2 &amp; 4 \\ 3 &amp; 0 \end{pmatrix} \times \begin{pmatrix} 5 &amp; 1 &amp; 2 \\ 0 &amp; 7 &amp; 2 \end{pmatrix} 
 \end{equation*}
 </div>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1" id="hint-1"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1"><div class="hint solution-like"><div class="para" id="p-74">The resulting matrix should be <span class="process-math">\(2 \times 3\)</span>
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1" id="hint-1"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1"><div class="hint solution-like"><div class="para" id="p-75">The resulting matrix should be <span class="process-math">\(2 \times 3\)</span>
 </div></div></div>
 <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-6" id="solution-6"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-6"><div class="solution solution-like"><div class="displaymath process-math">
 \begin{equation*}
@@ -579,7 +584,7 @@ c \times \begin{pmatrix} a_1 &amp; a_2 &amp; a_3 \\ a_4 &amp; a_5 &amp; a_6 \\ a
 \end{equation*}
 </div></div></div>
 </div></article></div>
-<div class="para" id="p-75">
+<div class="para" id="p-76">
 <em class="alert">Determinant:</em> The <dfn class="terminology">determinant</dfn> is a scalar associated with a square matrix that can be used to find the eigenvalues (see <a href="Vectors-and-Vector-Spaces.html#subsec-Eigenvectors-and-Eigenvalues" class="internal" title="Subsection 1.5.5: Eigenvectors and Eigenvalues">Subsection 1.5.5</a>) of the matrix. For <span class="process-math">\(2 \times 2\)</span> and <span class="process-math">\(3 \times 3\)</span> matrices, their determinants are defined as follows:</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/subsec-Eigenvectors-and-Eigenvalues.html">
 \begin{equation*}
@@ -592,7 +597,26 @@ det(\begin{pmatrix} a &amp; b &amp; c \\ d &amp; e &amp; f \\ g &amp; h &amp; i 
 \end{equation*}
 </div></section><section class="subsection" id="subsec-Eigenvectors-and-Eigenvalues"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">1.5.5</span> <span class="title">Eigenvectors and Eigenvalues</span>
-</h3></section></section></div>
+</h3>
+<div class="para" id="p-77">Here we will provide a brief overview of eigenvectors and eigenvalues, but readers wishing to learn more should go to this link <a class="external" href="https://tinyurl.com/mhtupbk6" target="_blank"><code class="code-inline tex2jax_ignore">https://tinyurl.com/mhtupbk6</code></a>. An eigenvector of a matrix <span class="process-math">\(A\)</span> is a non-zero vector <span class="process-math">\(\vec{v}\)</span> such that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A \vec{v} = v\vec{v} 
+\end{equation*}
+</div>
+<div class="para" id="p-78">where v is a scalar known as the eigenvalue of <span class="process-math">\(A\)</span> corresponding to <span class="process-math">\(\vec{v}\text{.}\)</span> It will often be convenient to use the variable <span class="process-math">\(v\)</span> both as a label for the eigenvector, and to represent the eigenvalue. The eigenvalues of a matrix can be found by solving the equation</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\text{det}(A-\lambda I) = 0 
+\end{equation*}
+</div>
+<div class="para" id="p-79">In this equation, <span class="process-math">\(\lambda\)</span> is an unknown variable whose values we want to find. These values will be the eigenvalues of the matrix <span class="process-math">\(A\text{.}\)</span> Each eigenvalue <span class="process-math">\(\lambda_i\)</span> will have a corresponding eigenvector <span class="process-math">\(\vec{v_i}\)</span> such that <span class="process-math">\(A\vec{v_i} = \lambda_i \vec{v_i}\text{.}\)</span> The corresponding eigenvectors can then be found by solving</div>
+<div class="displaymath process-math">
+\begin{equation*}
+(A-\lambda_i I)\vec{v_i} = \vec{0} 
+\end{equation*}
+</div>
+<div class="para" id="p-80">The eigenspace corresponding to an eigenvalue <span class="process-math">\(v\)</span> is the set of vectors which have eigenvalue <span class="process-math">\(v\text{.}\)</span> It is a vector subspace of the vector space on which <span class="process-math">\(A\)</span> acts. The eigenspace corresponding to the matrix <span class="process-math">\(A\)</span> would be all vectors that have an eigenvalue for that matrix.</div></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="Classical-Computing.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="Linear-Algebra-in-Quantum-Computation.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>
 </div></main>

@@ -2,7 +2,7 @@ How to?
 
 to introduce a term in the index:
 1) Use the following tag
-<term>Word-in-document</term><idx><h>Parent-Word-in-index</h><h>son-word-in-index</h></idx> 
+<term>Word-in-document</term><idx><h>Parent-Word-in-index</h><h>son-word-in-index</h></idx>
 
 2) put enumerated equations in a row
    <mdn>

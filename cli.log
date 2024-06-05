@@ -5,10 +5,24 @@ INFO    :   GitHub Pages site that can be shared with readers who cannot access 
 INFO    :   personal computer.)
 INFO    : 
 WARNING : Port 8000 could not be used.
+<<<<<<< HEAD
 WARNING : Trying port 60955 instead.
 
 INFO    : Success! The most recent build of your project can be viewed in a web browser at the following url:
 INFO    :     http://localhost:60955
+=======
+<<<<<<< HEAD
+WARNING : Trying port 64675 instead.
+
+INFO    : Success! The most recent build of your project can be viewed in a web browser at the following url:
+INFO    :     http://localhost:64675
+=======
+WARNING : Trying port 50453 instead.
+
+INFO    : Success! The most recent build of your project can be viewed in a web browser at the following url:
+INFO    :     http://localhost:50453
+>>>>>>> 5713a2ebdff2310a2ffc7b5893bd56c983a4152b
+>>>>>>> c22f1a3d9b3d9a0820bc9ba15f4854df7fe550b8
 INFO    : This page should open in a new tab automatically.
 INFO    : Use [Ctrl]+[C] to halt the server.
 
