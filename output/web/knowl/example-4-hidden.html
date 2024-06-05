@@ -32,7 +32,7 @@
 <div class="displaymath process-math">
 \begin{align}
 \overline{x}&amp;-&amp;x_i &amp; =&amp;\delta\\
-9&amp;-&amp;19&amp;=&amp;-10\\
+9&amp;-&amp;19 &amp;=&amp;-10\\
 9&amp;-&amp;12 &amp;=&amp;3\\
 9&amp;-&amp;3  &amp;=&amp;6\\
 9&amp;-&amp;10 &amp;=&amp;-1\\
@@ -113,5 +113,50 @@ A = \frac{1}{5}
 \end{align}
 </div>
 <div class="para">This is a state where each amplitude is the average of all the amplitudes.</div>
-</div> <div class="para"><em class="emphasis">5. Invert amplitudes about the average.</em></div></article></body>
+</div> <div class="para logical">
+<div class="para"><em class="emphasis">5. Invert amplitudes about the average.</em></div>
+<div class="displaymath process-math">
+\begin{align}
+(-I+2A)\boldsymbol{x}&amp;=&amp;\boldsymbol{x}^\prime\\
+\left[-
+\begin{pmatrix}
+\begin{pmatrix}
+1&amp;0&amp;0&amp;0&amp;0\\
+0&amp;1&amp;0&amp;0&amp;0\\    
+0&amp;0&amp;1&amp;0&amp;0\\
+0&amp;0&amp;0&amp;1&amp;0\\
+0&amp;0&amp;0&amp;0&amp;1
+\end{pmatrix}
++ \frac{2}{5}
+\begin{pmatrix}
+1&amp;1&amp;1&amp;1&amp;1\\
+1&amp;1&amp;1&amp;1&amp;1\\
+1&amp;1&amp;1&amp;1&amp;1\\
+1&amp;1&amp;1&amp;1&amp;1\\
+1&amp;1&amp;1&amp;1&amp;1\\
+\end{pmatrix}
+\right]
+\begin{pmatrix}
+19\\12\\3\\10\\1
+\end{pmatrix}
+&amp;=&amp;\\
+%
+\frac{1}{5}
+\begin{pmatrix}
+-3&amp;2&amp;2&amp;2&amp;2\\
+2&amp;-3&amp;2&amp;2&amp;2\\
+2&amp;2&amp;-3&amp;2&amp;2\\
+2&amp;2&amp;2&amp;-3&amp;2\\
+2&amp;2&amp;2&amp;2&amp;-3\\
+\end{pmatrix}
+\begin{pmatrix}
+19\\12\\3\\10\\1
+\end{pmatrix}
+&amp;=&amp;
+\begin{pmatrix}
+-1\\ 6\\ 15\\ 8\\17\\          
+\end{pmatrix}\tag{3.1.11}
+\end{align}
+</div>
+</div> <div class="para">The item (4).b and eq. (3.1.11) show same results, the second report implies linear algebra operations.</div> <div class="para">This example emphasizes on invert amplitudes about the mean; however, Grover’s algorithm requires phase inversion. The following example explains the step.</div></article></body>
 </html>
