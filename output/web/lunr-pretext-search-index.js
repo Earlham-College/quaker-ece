@@ -448,7 +448,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.9",
   "title": "Operators",
-  "body": " Operators  In physics, things we are able to measure are called observables Observables . Examples of observables are things like position, momentum, and energy, among many others. Any observables that relate to the quantum state of a particle have a corresponding operator Operator . In quantum computation, operators act on kets from the left side and on bras from the right side. For a ket and a bra , an operator would act on them as follows   Consider that is not a scalar, but rather an operator that exists in a Hilbert space, which means that these equations do not just represent basic multiplication. In quantum theory, operators can be represented by matrices, and tools like matrix multiplication and matrix addition (see ) can be used to perform operations on qubits.   Hermitian Operators  Recall from that the adjoint operation represented by the symbol consisted of transposing and complex conjugating a vector. This same operation can be performed on an operator (note that operations and operators are two different things). An operator is Hermitian Operator Hermitian Operator (also referred to as adjoin) if it satisfies the following property:   Other properties of Hermitian operators are  Noncommutative   Associative (multiplicative)   Hermitian Product   Linear An operator takes a vector and transforms it into a new vector . If is a linear operator, then   where and    Which of the following operators are Hermitian?       1.   Since this matrix equals its adjoint, it is Hermitian  2.   Since this matrix equals its adjoint, it is Hermitian  3.   Since this matrix does not equal its adjoint, it is not Hermitian  4.   Since this matrix equals its adjoint, it is Hermitian     Unitary Operators  Recall that for a qubit the property must hold. After an operator is applied to this qubit, we get a new state defined by   If the property that still holds, then the operator is unitary Operator Unitary Operator . A defining property of unitary operators is   where is the identity matrix.  Unitary operations performed on a qubit are reversible. This means that for an operator that acts on a qubit such that , there exists some operator such that .  Below is pictured a circuit diagram (which we will delve deeper into in ) representing the action on a single Qbit of the 1-Qbit gate . Initially the Qbit is described by the input state on the left of the line. The line (wire) represents the subsequent operation on the Qbit. After emerging from the box representing the operator , the Qbit is described by the final state   "
+  "body": " Operators  In physics, things we are able to measure are called observables Observables . Examples of observables are things like position, momentum, and energy, among many others. Any observables that relate to the quantum state of a particle have a corresponding operator Operator . In quantum computation, operators act on kets from the left side and on bras from the right side. For a ket and a bra , an operator would act on them as follows   Consider that is not a scalar, but rather an operator that exists in a Hilbert space, which means that these equations do not just represent basic multiplication. In quantum theory, operators can be represented by matrices, and tools like matrix multiplication and matrix addition (see ) can be used to perform operations on qubits.   Hermitian Operators  Recall from that the adjoint operation represented by the symbol consisted of transposing and complex conjugating a vector. This same operation can be performed on an operator (note that operations and operators are two different things). An operator is Hermitian Operator Hermitian Operator (also referred to as adjoin) if it satisfies the following property:   Other properties of Hermitian operators are  Noncommutative   Associative (multiplicative)   Hermitian Product   Linear An operator takes a vector and transforms it into a new vector . If is a linear operator, then   where and    Which of the following operators are Hermitian?       1.   Since this matrix equals its adjoint, it is Hermitian  2.   Since this matrix equals its adjoint, it is Hermitian  3.   Since this matrix does not equal its adjoint, it is not Hermitian  4.   Since this matrix equals its adjoint, it is Hermitian     Unitary Operators  Recall that for a qubit the property must hold. After an operator is applied to this qubit, we get a new state defined by   If the property that still holds, then the operator is unitary Operator Unitary Operator . A defining property of unitary operators is   where is the identity matrix.  Unitary operations performed on a qubit are reversible. This means that for an operator that acts on a qubit such that , there exists some operator such that . This is called the inverse of . Inverse matrices have the property that   This means that for Unitary operators, the following property holds:     Additional Properties and Other  Recall from that operators work on a ket from the left side and on a bra from the right side. Additionally, recall   For an operator acting on a ket , the adjoint is   and is another operator.   That is the extent to which we will discuss operators in this webbook, but readers wishing to extend their knowledge should go to this document   Below is pictured a circuit diagram (which we will delve deeper into in ) representing the action on a single Qbit of the 1-Qbit gate . Initially the Qbit is described by the input state on the left of the line. The line (wire) represents the subsequent operation on the Qbit. After emerging from the box representing the operator , the Qbit is described by the final state     "
 },
 {
   "id": "p-119",
@@ -493,7 +493,52 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.10",
   "title": "Systems of Multiple Qubits",
-  "body": " Systems of Multiple Qubits  "
+  "body": " Systems of Multiple Qubits  Any system of qubits will have basis states. As we have seen already, in a one-qubit system, the two basis states are and . In a two-qubit system, the four basis states are , , , and . These four basis states each have vector representations, which are found by using the tensor product Tensor Product    Tensor Product  The tensor product (represented by a symbol) is an operation between two matrices (or vectors) that multiplies each entry in the matrix on the left by the matrix on the right. Thus the tensor product between a matrix and a matrix will be a , as shown below.   where each is the entry in the -th row and -th column of .  Computer the following tensor products        Systems of Multiple Qubits  The vector representation of a two qubit system would be found by the tensor product }. Thus the four basis states of a two qubit system are defined as:      This concept can be generalized to systems of any number of qubits.  The tensor product can also be applied to vector spaces. The tensor product of a vector that exists within a space and a vector that exists within a space would exist within the space . Thus, a system of qubits exists within the space , where the superscript means taking the tensor product of with itself times. Similarly, would represent the state tensored with itself times.   "
+},
+{
+  "id": "p-150",
+  "level": "2",
+  "url": "sec-Systems-of-Multiple-Qubits.html#p-150",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "tensor product "
+},
+{
+  "id": "exercise-14",
+  "level": "2",
+  "url": "sec-Systems-of-Multiple-Qubits.html#exercise-14",
+  "type": "Checkpoint",
+  "number": "1.10.1",
+  "title": "",
+  "body": "Computer the following tensor products     "
+},
+{
+  "id": "sec-Operations",
+  "level": "1",
+  "url": "sec-Operations.html",
+  "type": "Section",
+  "number": "1.11",
+  "title": "Operations in Quantum Computation",
+  "body": " Operations in Quantum Computation   Outer Product  The tensor product is only one of many operations on qubits. In we described how the inner product could be represented as the product of a vector's transpose and the vector. Since an dimensional vector transpose is and the vector is , the resulting product is , which is functionally equivalent to a scalar. If we were to reverse the order of the vector multiplication and multiply a column vector on the left and a row vector on the right, we would multiply an vector by an vector to produce an matrix. This operation is known as the outer product Outer Product . The outer product between two qubits and is shown below.      Completeness Relation  If a set of basis vectors for a quantum system have the property   Then that set is said to have a completeness relation Completeness Relation . Since the completeness relation is the same as the identity operator, we can use it on any vector expression without changing its value.   Suppose, we have two vector spaces and and we want to know what kind of operator act on the space . An operator is linear if   "
+},
+{
+  "id": "p-157",
+  "level": "2",
+  "url": "sec-Operations.html#p-157",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "outer product "
+},
+{
+  "id": "p-159",
+  "level": "2",
+  "url": "sec-Operations.html#p-159",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "completeness relation "
 },
 {
   "id": "sec1-chap2",
@@ -514,9 +559,9 @@ var ptx_lunr_docs = [
   "body": " Gates    Hadamard gate   Hadamard gate Gate Hadamard is one of the most popular gates in quantum computing.   Hadamard gate representation in a circuit.      The Hadamard operator on one qubit can be written as   which is the Hadamard gate in Dirac notation. Hadamard operation is a rotation of the Block sphere about y axis by , followed by a rotation about axis by .   Calculate                 Pauli X gate   Pauli X gate Gate Pauli X is also labeled as , or X    X gate representation in a circuit.       Calculate                     Pauli Y gate   Pauli Y gate Gate Pauli Y is also labeled as , or Y    Y gate representation in a circuit.       Calculate                   Pauli Z   Pauli Z gate Gate Pauli Z is also labeled as , or Z    Z gate representation in a circuit.       Calculate                     Pauli I gate   Pauli I gate Gate Pauli I is also labeled as or I    I gate representation in a circuit.       Calculate                 Phase gate   Phase gate Gate Phase is written as S.   Phase gate representation in a circuit.       Calculate                     \/8 gate   \/8 gate Gate \/8 is written as T.   \/8 gate representation in a circuit.       Calculate              Previous gates aplly on single qubit. The following subsections show the multiqubit gates.     Controled-NOT  CNOT gate in the quantum context has two input qubits:  Control qbit  target qbit  This gate acts as following    CNOT gate representation in a circuit.      Check the XOR and notice this gate is for two qubits.   Obtain the Dirac notation  and   and  and  and  ( can be written as )             The gate and matrix representation are,   CNOT gate representation in a circuit.      Since   and using CNOT matrix we can cancel out some terms and reduce others to 1, such as   and we have   which is the Dirac representation for the CNOT gate.   CNOT gate representation in a circuit.      Apply CNOT to the state           Contorolled-U  Let U be a two qbit operation with a control and target qbit. This operation sets the control qbit in order U is applied to the target qbit, otherwise the target qbit is left alone.   This operation is called controlled-U operation represented by   CU representation in a circuit     CU operator as Dirac notation      Contorolled-Z  The unitary matrix in the computational basis is,   CZ representation in a circuit       Obtain                    "
 },
 {
-  "id": "p-147",
+  "id": "p-165",
   "level": "2",
-  "url": "sec2-chap2.html#p-147",
+  "url": "sec2-chap2.html#p-165",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -541,9 +586,9 @@ var ptx_lunr_docs = [
   "body": " Calculate             "
 },
 {
-  "id": "p-152",
+  "id": "p-170",
   "level": "2",
-  "url": "sec2-chap2.html#p-152",
+  "url": "sec2-chap2.html#p-170",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -568,9 +613,9 @@ var ptx_lunr_docs = [
   "body": " Calculate                 "
 },
 {
-  "id": "p-155",
+  "id": "p-173",
   "level": "2",
-  "url": "sec2-chap2.html#p-155",
+  "url": "sec2-chap2.html#p-173",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -595,9 +640,9 @@ var ptx_lunr_docs = [
   "body": " Calculate               "
 },
 {
-  "id": "p-158",
+  "id": "p-176",
   "level": "2",
-  "url": "sec2-chap2.html#p-158",
+  "url": "sec2-chap2.html#p-176",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -622,9 +667,9 @@ var ptx_lunr_docs = [
   "body": " Calculate                 "
 },
 {
-  "id": "p-161",
+  "id": "p-179",
   "level": "2",
-  "url": "sec2-chap2.html#p-161",
+  "url": "sec2-chap2.html#p-179",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -649,9 +694,9 @@ var ptx_lunr_docs = [
   "body": " Calculate             "
 },
 {
-  "id": "p-164",
+  "id": "p-182",
   "level": "2",
-  "url": "sec2-chap2.html#p-164",
+  "url": "sec2-chap2.html#p-182",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -676,9 +721,9 @@ var ptx_lunr_docs = [
   "body": " Calculate                 "
 },
 {
-  "id": "p-167",
+  "id": "p-185",
   "level": "2",
-  "url": "sec2-chap2.html#p-167",
+  "url": "sec2-chap2.html#p-185",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",

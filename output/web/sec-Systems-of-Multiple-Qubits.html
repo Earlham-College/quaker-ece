@@ -204,7 +204,7 @@ window.MathJax = {
 <span id="theeye" class="motioncheck"></span>eye tracking - not yet</li>
 </ol>
 </li>
-</ol></div></button><span class="treebuttons"><a class="previous-button button" href="Operators.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="up-button button" href="chap1-chapter.html" title="Up"><span class="icon">^</span><span class="name">Up</span></a><a class="next-button button" href="chap2-chapter.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a></span><div class="searchbox"><div class="searchwidget">
+</ol></div></button><span class="treebuttons"><a class="previous-button button" href="Operators.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="up-button button" href="chap1-chapter.html" title="Up"><span class="icon">^</span><span class="name">Up</span></a><a class="next-button button" href="sec-Operations.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a></span><div class="searchbox"><div class="searchwidget">
 <input id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search" onchange="doSearch()"><button id="searchbutton" class="searchbutton" type="button" onclick="doSearch()">🔍</button>
 </div></div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} 
 \newcommand{\Z}{\mathbb Z} 
@@ -264,9 +264,23 @@ window.MathJax = {
 <ul class="structural">
 <li><div class="toc-item"><a href="Operators.html#subsec-Hermitian-Operators" class="internal"><span class="codenumber">1.9.1</span> <span class="title">Hermitian Operators</span></a></div></li>
 <li><div class="toc-item"><a href="Operators.html#subsec-Unitary-Operators" class="internal"><span class="codenumber">1.9.2</span> <span class="title">Unitary Operators</span></a></div></li>
+<li><div class="toc-item"><a href="Operators.html#subsec-Additional-Properties" class="internal"><span class="codenumber">1.9.3</span> <span class="title">Additional Properties and Other</span></a></div></li>
 </ul>
 </li>
-<li class="active"><div class="toc-item"><a href="sec-Systems-of-Multiple-Qubits.html" class="internal"><span class="codenumber">1.10</span> <span class="title">Systems of Multiple Qubits</span></a></div></li>
+<li class="active">
+<div class="toc-item"><a href="sec-Systems-of-Multiple-Qubits.html" class="internal"><span class="codenumber">1.10</span> <span class="title">Systems of Multiple Qubits</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-Systems-of-Multiple-Qubits.html#subsec-Tensor-Product" class="internal"><span class="codenumber">1.10.1</span> <span class="title">Tensor Product</span></a></div></li>
+<li><div class="toc-item"><a href="sec-Systems-of-Multiple-Qubits.html#subsec-Systems-of-Multiple-Qubits" class="internal"><span class="codenumber">1.10.2</span> <span class="title">Systems of Multiple Qubits</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="sec-Operations.html" class="internal"><span class="codenumber">1.11</span> <span class="title">Operations in Quantum Computation</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-Operations.html#subsec-Outer-Product" class="internal"><span class="codenumber">1.11.1</span> <span class="title">Outer Product</span></a></div></li>
+<li><div class="toc-item"><a href="sec-Operations.html#subsec-Completeness-Relation" class="internal"><span class="codenumber">1.11.2</span> <span class="title">Completeness Relation</span></a></div></li>
+</ul>
+</li>
 </ul>
 </li>
 <li>
@@ -309,9 +323,74 @@ window.MathJax = {
 </ul></nav></div>
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-Systems-of-Multiple-Qubits"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">1.10</span> <span class="title">Systems of Multiple Qubits</span>
-</h2></section></div>
+</h2>
+<div class="para" id="p-150">Any system of <span class="process-math">\(n\)</span> qubits will have <span class="process-math">\(2^n\)</span> basis states. As we have seen already, in a one-qubit system, the two basis states are <span class="process-math">\(\ket{0}\)</span> and <span class="process-math">\(\ket{1}\text{.}\)</span> In a two-qubit system, the four basis states are <span class="process-math">\(\ket{00}\text{,}\)</span> <span class="process-math">\(\ket{01}\text{,}\)</span> <span class="process-math">\(\ket{10}\text{,}\)</span> and <span class="process-math">\(\ket{11}\text{.}\)</span> These four basis states each have vector representations, which are found by using the <dfn class="terminology">tensor product</dfn>
+</div>
+<section class="subsection" id="subsec-Tensor-Product"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.10.1</span> <span class="title">Tensor Product</span>
+</h3>
+<div class="para" id="p-151">The tensor product (represented by a <span class="process-math">\(\otimes\)</span> symbol) is an operation between two matrices (or vectors) that multiplies each entry in the matrix on the left by the matrix on the right. Thus the tensor product between a <span class="process-math">\(m\times n\)</span> matrix and a <span class="process-math">\(p \times q\)</span> matrix will be a <span class="process-math">\(mp \times nq \text{,}\)</span> as shown below.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A \otimes B = \begin{pmatrix} A_{11}B &amp; A_{12}B &amp; A{13}B &amp; \\ A_{21}B &amp; A_{22}B &amp; A_{23}B \\ A_{31}B &amp; A_{32}B &amp; A_{33}B \end{pmatrix} 
+\end{equation*}
+</div>
+<div class="para" id="p-152">where each <span class="process-math">\(A_{ij}\)</span> is the entry in the <span class="process-math">\(i\)</span>-th row and <span class="process-math">\(j\)</span>-th column of <span class="process-math">\(A\text{.}\)</span>
+</div>
+<article class="exercise exercise-like" id="exercise-14"><a href="" data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exercise-14"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">1.10.1</span><span class="period">.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-14"><article class="exercise exercise-like"><div class="para" id="p-153">Computer the following tensor products</div>
+<div class="displaymath process-math">
+\begin{equation*}
+1. \ \begin{pmatrix}1 \\ 2 \end{pmatrix} \otimes \begin{pmatrix}4 \\ 8 \end{pmatrix} 
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+2. \ \begin{pmatrix} 2 &amp; 1 \\ 1 &amp; 3 \end{pmatrix} \otimes \begin{pmatrix} 4 &amp; 1 \\ 0 &amp; 2 \end{pmatrix}
+\end{equation*}
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-13" id="solution-13"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-13"><div class="solution solution-like">
+<div class="displaymath process-math">
+\begin{equation*}
+1. \ \begin{pmatrix}1 \\ 2 \end{pmatrix} \otimes \begin{pmatrix}4 \\ 8 \end{pmatrix} = \begin{pmatrix} 1 \times 4 \\ 1 \times 8 \\ 2 \times 4 \\ 2 \times 8 \end{pmatrix} =  \begin{pmatrix} 4 \\ 8 \\ 8 \\ 16 \end{pmatrix}
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+2. \ \begin{pmatrix} 2 &amp; 1 \\ 1 &amp; 3 \end{pmatrix} \otimes \begin{pmatrix} 4 &amp; 1 \\ 0 &amp; 2 \end{pmatrix} = \begin{pmatrix} 2\begin{pmatrix} 4 &amp; 1 \\ 0 &amp; 2 \end{pmatrix} &amp; 1\begin{pmatrix} 4 &amp; 1 \\ 0 &amp; 2 \end{pmatrix} \\ 1\begin{pmatrix} 4 &amp; 1 \\ 0 &amp; 2 \end{pmatrix} &amp; 3\begin{pmatrix} 4 &amp; 1 \\ 0 &amp; 2 \end{pmatrix} \end{pmatrix} = \begin{pmatrix} 8 &amp; 2 &amp; 4 &amp; 1 \\ 0 &amp; 4 &amp; 0 &amp; 2 \\ 4 &amp; 1 &amp; 12 &amp; 3 \\ 0 &amp; 2 &amp; 0 &amp; 6 \end{pmatrix} 
+\end{equation*}
+</div>
+</div></div>
+</div></article></div></section><section class="subsection" id="subsec-Systems-of-Multiple-Qubits"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.10.2</span> <span class="title">Systems of Multiple Qubits</span>
+</h3>
+<div class="para" id="p-154">The vector representation of a two qubit system <span class="process-math">\(\ket{\psi \phi}\)</span> would be found by the tensor product <span class="process-math">\(\ket{\psi} \otimes \ket{\phi]\)</span>}. Thus the four basis states of a two qubit system are defined as:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\ket{00} = \ket{0} \otimes \ket{0} = \begin{pmatrix} 1 \\ 0 \end{pmatrix} \otimes \begin{pmatrix} 1 \\ 0 \end{pmatrix} = \begin{pmatrix} 1 \\ 0 \\ 0 \\ 0 \end{pmatrix}  
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\ket{01} = \ket{0} \otimes \ket{1} = \begin{pmatrix} 1 \\ 0 \end{pmatrix} \otimes \begin{pmatrix} 0 \\ 1 \end{pmatrix} = \begin{pmatrix} 0 \\ 1 \\ 0 \\ 0 \end{pmatrix}  
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\ket{10} = \ket{1} \otimes \ket{0} = \begin{pmatrix} 0 \\ 1 \end{pmatrix} \otimes \begin{pmatrix} 1 \\ 0 \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \\ 1 \\ 0 \end{pmatrix}  
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\ket{1} = \ket{1} \otimes \ket{1} = \begin{pmatrix} 0 \\ 1 \end{pmatrix} \otimes \begin{pmatrix} 0 \\ 1 \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \\ 0 \\ 1 \end{pmatrix}  
+\end{equation*}
+</div>
+<div class="para" id="p-155">This concept can be generalized to systems of any number of qubits.</div>
+<div class="para" id="p-156">The tensor product can also be applied to vector spaces. The tensor product of a vector that exists within a space <span class="process-math">\(V\)</span> and a vector that exists within a space <span class="process-math">\(W\)</span> would exist within the space <span class="process-math">\(V \otimes W\text{.}\)</span> Thus, a system of <span class="process-math">\(n\)</span> qubits exists within the space <span class="process-math">\(\mathcal{H}^{\otimes \mathcal{H}}\text{,}\)</span> where the <span class="process-math">\(\otimes n\)</span> superscript means taking the tensor product of <span class="process-math">\(\mathcal{H}\)</span> with itself <span class="process-math">\(n\)</span> times. Similarly, <span class="process-math">\(\ket{\psi}^{\otimes n}\)</span> would represent the state <span class="process-math">\(\ket{\psi}\)</span> tensored with itself <span class="process-math">\(n\)</span> times.</div></section></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="Operators.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="chap2-chapter.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>
+<a class="previous-button button" href="Operators.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="sec-Operations.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">

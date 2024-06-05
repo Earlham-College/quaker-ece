@@ -264,9 +264,23 @@ window.MathJax = {
 <ul class="structural">
 <li><div class="toc-item"><a href="Operators.html#subsec-Hermitian-Operators" class="internal"><span class="codenumber">1.9.1</span> <span class="title">Hermitian Operators</span></a></div></li>
 <li><div class="toc-item"><a href="Operators.html#subsec-Unitary-Operators" class="internal"><span class="codenumber">1.9.2</span> <span class="title">Unitary Operators</span></a></div></li>
+<li><div class="toc-item"><a href="Operators.html#subsec-Additional-Properties" class="internal"><span class="codenumber">1.9.3</span> <span class="title">Additional Properties and Other</span></a></div></li>
 </ul>
 </li>
-<li><div class="toc-item"><a href="sec-Systems-of-Multiple-Qubits.html" class="internal"><span class="codenumber">1.10</span> <span class="title">Systems of Multiple Qubits</span></a></div></li>
+<li>
+<div class="toc-item"><a href="sec-Systems-of-Multiple-Qubits.html" class="internal"><span class="codenumber">1.10</span> <span class="title">Systems of Multiple Qubits</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-Systems-of-Multiple-Qubits.html#subsec-Tensor-Product" class="internal"><span class="codenumber">1.10.1</span> <span class="title">Tensor Product</span></a></div></li>
+<li><div class="toc-item"><a href="sec-Systems-of-Multiple-Qubits.html#subsec-Systems-of-Multiple-Qubits" class="internal"><span class="codenumber">1.10.2</span> <span class="title">Systems of Multiple Qubits</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="sec-Operations.html" class="internal"><span class="codenumber">1.11</span> <span class="title">Operations in Quantum Computation</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-Operations.html#subsec-Outer-Product" class="internal"><span class="codenumber">1.11.1</span> <span class="title">Outer Product</span></a></div></li>
+<li><div class="toc-item"><a href="sec-Operations.html#subsec-Completeness-Relation" class="internal"><span class="codenumber">1.11.2</span> <span class="title">Completeness Relation</span></a></div></li>
+</ul>
+</li>
 </ul>
 </li>
 <li>
@@ -311,7 +325,7 @@ window.MathJax = {
 <span class="type">Section</span> <span class="codenumber">1.9</span> <span class="title">Operators</span>
 </h2>
 <div class="para" id="p-119">In physics, things we are able to measure are called <dfn class="terminology">observables</dfn>. Examples of observables are things like position, momentum, and energy, among many others. Any observables that relate to the quantum state of a particle have a corresponding <dfn class="terminology">operator</dfn>. In quantum computation, operators act on kets from the left side and on bras from the right side. For a ket <span class="process-math">\(\psi\)</span> and a bra <span class="process-math">\(\phi\text{,}\)</span> an operator <span class="process-math">\(A\)</span> would act on them as follows</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/linear-algebra.html ./knowl/subsec-Bra-Vectors-and-the-Inner-Product.html ./knowl/sec3-chap2.html">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/linear-algebra.html ./knowl/subsec-Bra-Vectors-and-the-Inner-Product.html ./knowl/Operators.html ./knowl/sec3-chap2.html">
 \begin{equation*}
 A \cdot \ket{\psi} = A\ket{\psi}, \bra{\phi} \cdot A = \bra{\phi}A 
 \end{equation*}
@@ -409,28 +423,58 @@ L(\alpha \vec{v} + \beta \vec{w}) = \alpha L \vec{v} + \beta L \vec{w}
 <span class="type">Subsection</span> <span class="codenumber">1.9.2</span> <span class="title">Unitary Operators</span>
 </h3>
 <div class="para" id="p-137">Recall that for a qubit</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/sec3-chap2.html">
+<div class="displaymath process-math">
 \begin{equation*}
 \ket{\psi}=\alpha \ket{0} + \beta \ket{1}
 \end{equation*}
 </div>
 <div class="para" id="p-138">the property <span class="process-math">\(\alpha^2 + \beta^2 = 1\)</span> must hold. After an operator <span class="process-math">\(U\)</span> is applied to this qubit, we get a new state defined by</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/sec3-chap2.html">
+<div class="displaymath process-math">
 \begin{equation*}
 U\ket{\psi} = \ket{\psi'} = \alpha'\ket{0} + \beta'\ket{1} 
 \end{equation*}
 </div>
 <div class="para" id="p-139">If the property that <span class="process-math">\(\alpha'^2 + \beta'^2 = 1\)</span> still holds, then the operator <span class="process-math">\(U\)</span> is <dfn class="terminology">unitary</dfn>. A defining property of unitary operators is</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/sec3-chap2.html">
+<div class="displaymath process-math">
 \begin{equation*}
 U U^{\dagger} = U^{\dagger} U = I 
 \end{equation*}
 </div>
 <div class="para" id="p-140">where <span class="process-math">\(I\)</span> is the identity matrix.</div>
-<div class="para" id="p-141">Unitary operations performed on a qubit are reversible. This means that for an operator <span class="process-math">\(U\)</span> that acts on a qubit <span class="process-math">\(\ket{\psi}\)</span> such that <span class="process-math">\(U\ket{\psi} = \ket{\psi'}\text{,}\)</span> there exists some operator <span class="process-math">\(U^{-1}\)</span> such that <span class="process-math">\(U^{-1}\ket{\psi'} = \ket{\psi}\text{.}\)</span>
+<div class="para" id="p-141">Unitary operations performed on a qubit are reversible. This means that for an operator <span class="process-math">\(U\)</span> that acts on a qubit <span class="process-math">\(\ket{\psi}\)</span> such that <span class="process-math">\(U\ket{\psi} = \ket{\psi'}\text{,}\)</span> there exists some operator <span class="process-math">\(U^{-1}\)</span> such that <span class="process-math">\(U^{-1}\ket{\psi'} = \ket{\psi}\text{.}\)</span> This <span class="process-math">\(U^{-1}\)</span> is called the inverse of <span class="process-math">\(U\text{.}\)</span> Inverse matrices have the property that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+UU^{-1} = U^{-1}U = I 
+\end{equation*}
 </div>
-<div class="para" id="p-142">Below is pictured a circuit diagram (which we will delve deeper into in <a href="sec3-chap2.html" class="internal" title="Section 2.3: Circuits">Section 2.3</a>) representing the action on a single Qbit of the 1-Qbit gate <span class="process-math">\(U\text{.}\)</span> Initially the Qbit is described by the input state <span class="process-math">\(\ket{\psi}\)</span> on the left of the line. The line (wire) represents the subsequent operation on the Qbit. After emerging from the box representing the operator <span class="process-math">\(U\text{,}\)</span> the Qbit is described by the final state <span class="process-math">\(U \ket{\psi}.\)</span>
-</div></section></section></div>
+<div class="para" id="p-142">This means that for Unitary operators, the following property holds:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+U^{-1} = U^{\dagger} 
+\end{equation*}
+</div></section><section class="subsection" id="subsec-Additional-Properties"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.9.3</span> <span class="title">Additional Properties and Other</span>
+</h3>
+<div class="para" id="p-143">Recall from <a href="Operators.html" class="internal" title="Section 1.9: Operators">Section 1.9</a> that operators work on a ket from the left side and on a bra from the right side. Additionally, recall</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/Operators.html ./knowl/sec3-chap2.html">
+\begin{equation*}
+\ket{\psi}^{\dagger} = \bra{psi} 
+\end{equation*}
+</div>
+<div class="para" id="p-144">For an operator <span class="process-math">\(A\)</span> acting on a ket <span class="process-math">\(\ket{\psi}\text{,}\)</span> the adjoint is</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/Operators.html ./knowl/sec3-chap2.html">
+\begin{equation*}
+(A \ket{\psi})^{\dagger} = \bra{\psi}A^{\dagger} 
+\end{equation*}
+</div>
+<div class="para" id="p-145">and <span class="process-math">\(A^{\dagger}\)</span> is another operator.</div>
+<div class="para" id="p-146"></div>
+<div class="para" id="p-147">That is the extent to which we will discuss operators in this webbook, but readers wishing to extend their knowledge should go to this document <a class="external" href="https://tinyurl.com/yzy4ycj5" target="_blank"><code class="code-inline tex2jax_ignore">https://tinyurl.com/yzy4ycj5</code></a>
+</div>
+<div class="para" id="p-148"></div>
+<div class="para" id="p-149">Below is pictured a circuit diagram (which we will delve deeper into in <a href="sec3-chap2.html" class="internal" title="Section 2.3: Circuits">Section 2.3</a>) representing the action on a single Qbit of the 1-Qbit gate <span class="process-math">\(U\text{.}\)</span> Initially the Qbit is described by the input state <span class="process-math">\(\ket{\psi}\)</span> on the left of the line. The line (wire) represents the subsequent operation on the Qbit. After emerging from the box representing the operator <span class="process-math">\(U\text{,}\)</span> the Qbit is described by the final state <span class="process-math">\(U \ket{\psi}.\)</span>
+</div>
+<div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/circuitdiagram.png" class="contained"></div></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="Computational-Bases.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="sec-Systems-of-Multiple-Qubits.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>
 </div></main>

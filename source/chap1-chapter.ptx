@@ -323,17 +323,84 @@
 <p> If the property that <m>\alpha'^2 + \beta'^2 = 1</m> still holds, then the operator <m>U</m> is <term>unitary</term><idx><h>Operator</h><h>Unitary Operator</h></idx>. A defining property of unitary operators is </p>
 <me> U U^{\dagger} = U^{\dagger} U = I </me>
 <p> where <m>I</m> is the identity matrix. </p>
-<p> Unitary operations performed on a qubit are reversible. This means that for an operator <m>U</m> that acts on a qubit <m>\ket{\psi}</m> such that <m>U\ket{\psi} = \ket{\psi'}</m>, there exists some operator <m>U^{-1}</m> such that <m>U^{-1}\ket{\psi'} = \ket{\psi}</m>. </p>
-
-
-
+<p> Unitary operations performed on a qubit are reversible. This means that for an operator <m>U</m> that acts on a qubit <m>\ket{\psi}</m> such that <m>U\ket{\psi} = \ket{\psi'}</m>, there exists some operator <m>U^{-1}</m> such that <m>U^{-1}\ket{\psi'} = \ket{\psi}</m>. This <m>U^{-1}</m> is called the inverse of <m>U</m>. Inverse matrices have the property that</p>
+<me> UU^{-1} = U^{-1}U = I </me>
+<p> This means that for Unitary operators, the following property holds: </p>
+<me> U^{-1} = U^{\dagger} </me>
+</subsection>
+<subsection xml:id="subsec-Additional-Properties">
+  <title>Additional Properties and Other</title>
+  <p> Recall from <xref ref="Operators"/> that operators work on a ket from the left side and on a bra from the right side. Additionally, recall </p>
+  <me> \ket{\psi}^{\dagger} = \bra{psi} </me>
+  <p> For an operator <m>A</m> acting on a ket <m>\ket{\psi}</m>, the adjoint is </p>
+  <me> (A \ket{\psi})^{\dagger} = \bra{\psi}A^{\dagger} </me>
+  <p> and <m>A^{\dagger}</m> is another operator. </p> 
+  <p></p>
+  <p> That is the extent to which we will discuss operators in this webbook, but readers wishing to extend their knowledge should go to this document <url href="https://tinyurl.com/yzy4ycj5"></url></p>
+<p></p>
 <p> Below is pictured a circuit diagram (which we will delve deeper into in <xref ref="sec3-chap2"/>) representing the action on a single Qbit of the 1-Qbit gate <m>U</m>. Initially the Qbit is described by the input state <m>\ket{\psi}</m> on the left of the line. The line (wire) represents the subsequent operation on the Qbit. After emerging from the box representing the operator <m>U</m>, the Qbit is described by the final state <m>U \ket{\psi}.</m></p>
+<image source="circuitdiagram.png" width="60%"> </image>
 </subsection>
 </section>
 
 <section xml:id="sec-Systems-of-Multiple-Qubits">
   <title>Systems of Multiple Qubits</title>
-  
+  <p> Any system of <m>n</m> qubits will have <m>2^n</m> basis states. As we have seen already, in a one-qubit system, the two basis states are <m>\ket{0}</m> and <m>\ket{1}</m>. In a two-qubit system, the four basis states are <m>\ket{00}</m>, <m>\ket{01}</m>, <m>\ket{10}</m>, and <m>\ket{11}</m>. These four basis states each have vector representations, which are found by using the <term>tensor product</term><idx><h>Tensor Product</h></idx> </p>
+  <subsection xml:id="subsec-Tensor-Product">
+    <title>Tensor Product</title>
+    <p> The tensor product (represented by a <m>\otimes</m> symbol) is an operation between two matrices (or vectors) that multiplies each entry in the matrix on the left by the matrix on the right. Thus the tensor product between a <m>m\times n</m> matrix and a <m>p \times q</m> matrix will be a <m>mp \times nq </m>, as shown below. </p>
+<me> A \otimes B = \begin{pmatrix} A_{11}B &amp; A_{12}B &amp; A{13}B &amp; \\ A_{21}B &amp; A_{22}B &amp; A_{23}B \\ A_{31}B &amp; A_{32}B &amp; A_{33}B \end{pmatrix} </me>
+    <p>where each <m>A_{ij}</m> is the entry in the <m>i</m>-th row and <m>j</m>-th column of <m>A</m>. </p>
+    <exercise>
+      <statement><p>Computer the following tensor products</p>
+      <me>1. \ \begin{pmatrix}1 \\ 2 \end{pmatrix} \otimes \begin{pmatrix}4 \\ 8 \end{pmatrix} </me> 
+  <me>2. \ \begin{pmatrix} 2 &amp; 1 \\ 1 &amp; 3 \end{pmatrix} \otimes \begin{pmatrix} 4 &amp; 1 \\ 0 &amp; 2 \end{pmatrix}</me></statement>
+  <solution> 
+    <me>1. \ \begin{pmatrix}1 \\ 2 \end{pmatrix} \otimes \begin{pmatrix}4 \\ 8 \end{pmatrix} = \begin{pmatrix} 1 \times 4 \\ 1 \times 8 \\ 2 \times 4 \\ 2 \times 8 \end{pmatrix} =  \begin{pmatrix} 4 \\ 8 \\ 8 \\ 16 \end{pmatrix}</me>
+    <me>2. \ \begin{pmatrix} 2 &amp; 1 \\ 1 &amp; 3 \end{pmatrix} \otimes \begin{pmatrix} 4 &amp; 1 \\ 0 &amp; 2 \end{pmatrix} = \begin{pmatrix} 2\begin{pmatrix} 4 &amp; 1 \\ 0 &amp; 2 \end{pmatrix} &amp; 1\begin{pmatrix} 4 &amp; 1 \\ 0 &amp; 2 \end{pmatrix} \\ 1\begin{pmatrix} 4 &amp; 1 \\ 0 &amp; 2 \end{pmatrix} &amp; 3\begin{pmatrix} 4 &amp; 1 \\ 0 &amp; 2 \end{pmatrix} \end{pmatrix} = \begin{pmatrix} 8 &amp; 2 &amp; 4 &amp; 1 \\ 0 &amp; 4 &amp; 0 &amp; 2 \\ 4 &amp; 1 &amp; 12 &amp; 3 \\ 0 &amp; 2 &amp; 0 &amp; 6 \end{pmatrix} </me></solution>
+    </exercise>
+  </subsection>
+
+  <subsection xml:id="subsec-Systems-of-Multiple-Qubits">
+    <title>Systems of Multiple Qubits</title>
+    <p> The vector representation of a two qubit system <m>\ket{\psi \phi}</m> would be found by the tensor product <m>\ket{\psi} \otimes \ket{\phi]</m>}. Thus the four basis states of a two qubit system are defined as: </p>
+    <me> \ket{00} = \ket{0} \otimes \ket{0} = \begin{pmatrix} 1 \\ 0 \end{pmatrix} \otimes \begin{pmatrix} 1 \\ 0 \end{pmatrix} = \begin{pmatrix} 1 \\ 0 \\ 0 \\ 0 \end{pmatrix}  </me>
+    <me> \ket{01} = \ket{0} \otimes \ket{1} = \begin{pmatrix} 1 \\ 0 \end{pmatrix} \otimes \begin{pmatrix} 0 \\ 1 \end{pmatrix} = \begin{pmatrix} 0 \\ 1 \\ 0 \\ 0 \end{pmatrix}  </me>
+    <me> \ket{10} = \ket{1} \otimes \ket{0} = \begin{pmatrix} 0 \\ 1 \end{pmatrix} \otimes \begin{pmatrix} 1 \\ 0 \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \\ 1 \\ 0 \end{pmatrix}  </me>
+    <me> \ket{1} = \ket{1} \otimes \ket{1} = \begin{pmatrix} 0 \\ 1 \end{pmatrix} \otimes \begin{pmatrix} 0 \\ 1 \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \\ 0 \\ 1 \end{pmatrix}  </me>
+    <p> This concept can be generalized to systems of any number of qubits. </p>
+    <p> The tensor product can also be applied to vector spaces. The tensor product of a vector that exists within a space <m>V</m> and a vector that exists within a space <m>W</m> would exist within the space <m>V \otimes W</m>. Thus, a system of <m>n</m> qubits exists within the space <m>\mathcal{H}^{\otimes \mathcal{H}}</m>, where the <m>\otimes n</m> superscript means taking the tensor product of <m>\mathcal{H}</m> with itself <m>n</m> times. Similarly, <m>\ket{\psi}^{\otimes n}</m> would represent the state <m>\ket{\psi}</m> tensored with itself <m>n</m> times. </p>
+  <exercise>
+    <statement><p>For the two qubit system <m>\ket{\psi}</m> compute the probabilities that it will collapse into each the basis states <m>\ket{00}</m>, <m>\ket{01}</m>, <m>\ket{10}</m>, and <m>\ket{11}</m></p> 
+      <me> \ket{\psi} = \frac{1}{2\sqrt{2}} \ket{00} + \frac{\sqrt{3}}{2\sqrt{2}} \ket{01} + \frac{1}{2}\ket{10} + \frac{1}{2} \ket{11}</me></statement>
+  <solution> <me> P(00) = \frac{1}{8} </me> 
+    <me> P(01) = \frac{3}{8} </me> 
+    <me> P(10) = \frac{1}{4} </me> 
+    <me> P(11) = \frac{1}{4} </me> </solution>
+    </exercise>
+  </subsection>
 </section>
+
+<section xml:id="sec-Operations">
+  <title>Operations in Quantum Computation</title>
+<subsection xml:id="subsec-Outer-Product">
+  <title>Outer Product</title>
+ <p> The tensor product is only one of many operations on qubits. In <xref ref="linear-algebra"/> we described how the inner product could be represented as the product of a vector's transpose and the vector. Since an <m>n</m> dimensional vector transpose is <m>1\times n</m> and the vector is <m>n\times1</m>, the resulting product is <m>1\times1</m>, which is functionally equivalent to a scalar. If we were to reverse the order of the vector multiplication and multiply a column vector on the left and a row vector on the right, we would multiply an <m>n\times1</m> vector by an <m>1\times m</m> vector to produce an <m>n\times m</m> matrix. This operation is known as the <term>outer product</term><idx><h>Outer Product</h></idx>. The outer product between two qubits <m>\ket{\psi}</m> and <m>\ket{\phi}</m> is shown below. </p> 
+<me> \ket{\psi} = \begin{pmatrix} \alpha_1 \\ \alpha_2 \\ \vdots \\ \alpha_n \end{pmatrix}, \ket{\phi} = \begin{pmatrix} \beta_1 \\ \beta_2 \\ \vdots \\ \beta_m \end{pmatrix} </me>
+  <me> \ket{\psi}\bra{\phi} = \begin{pmatrix} \alpha_1 \\ \alpha_2 \\ \vdots \\ \alpha_n \end{pmatrix}  \begin{pmatrix} \beta_1^* &amp; \beta_2^* &amp; \ldots &amp; \beta_m^* \end{pmatrix} = \begin{pmatrix} \alpha_1 \beta_1^* &amp; \alpha_1 \beta_2^* &amp; \ldots &amp;\alpha_1\beta_m^*\\ \alpha_2 \beta_1^* &amp; \alpha_2 \beta_2^* &amp;\ldots &amp;\alpha_2\beta_m^*\\ \vdots&amp;\vdots&amp;\ddots&amp;\vdots\\ \alpha_n \beta_1^* &amp; \alpha_n \beta_2^* &amp;\ldots &amp;\alpha_n\beta_m^*\\ \end{pmatrix} </me>
+
+
+</subsection>
+
+<subsection xml:id="subsec-Completeness-Relation">
+  <title>Completeness Relation</title>
+ <p> If a set of basis vectors for a quantum system <m>\{ \mathcal{B}_1,\mathcal{B}_2,\ldots,\mathcal{B}_n \}</m> have the property </p>
+ <me> \sum_{i=1}^{n} \ket{\mathcal{B}_i}\bra{\mathcal{B}_i}= I </me>
+  <p> Then that set is said to have a <term>completeness relation</term><idx><h>Completeness Relation</h></idx>. Since the completeness relation is the same as the identity operator, we can use it on any vector expression without changing its value. </p>
+</subsection>
+  <p>Suppose, we have two vector spaces <m>V</m> and <m>W,</m> and we want to know what kind of operator act on the space <m>V\otimes W</m>. An operator <m>A\otimes B</m> is linear if </p>
+<me>\big(A\otimes B\big) \big(\ket{v}\otimes \ket{w}\big) \equiv A\ket{v}\otimes B \ket{w} </me>
+</section>
+
 
 </chapter>
