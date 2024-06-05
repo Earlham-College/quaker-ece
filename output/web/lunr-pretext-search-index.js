@@ -502,7 +502,11 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.10",
   "title": "Systems of Multiple Qubits",
+<<<<<<< HEAD
   "body": " Systems of Multiple Qubits  Any system of qubits will have basis states. As we have seen already, in a one-qubit system, the two basis states are and . In a two-qubit system, the four basis states are , , , and . These four basis states each have vector representations, which are found by using the tensor product Tensor Product    Tensor Product  The tensor product (represented by a symbol) is an operation between two matrices (or vectors) that multiplies each entry in the matrix on the left by the matrix on the right. Thus the tensor product between a matrix and a matrix will be a , as shown below.   where each is the entry in the -th row and -th column of .  For scalars and vectors the tensor product can be distributed as follows   Computer the following tensor products        Systems of Multiple Qubits  The vector representation of a two qubit system would be found by the tensor product . Thus the four basis states of a two qubit system are defined as:      This concept can be generalized to systems of any number of qubits. A system of two qubits is referred to as bipartite Bipartite or composite.  The tensor product can also be applied to vector spaces. The tensor product of a vector that exists within a space and a vector that exists within a space would exist within the space . Thus, a system of two qubits would exist within the space and a system of qubits exists within the space , where the superscript means taking the tensor product of with itself times. Similarly, would represent the state tensored with itself times. Suppose the space is dimensional the space is dimensional, then the vector space would be dimensional.     Suppose, we have two vector spaces and and we want to know what kind of operator act on the space . If is an operator on the space and is an operator on the space , then is an operator on the space . An operator is linear if   For and .  For the two qubit system compute the probabilities that it will collapse into each the basis states , , , and        Compute         "
+=======
+  "body": " Systems of Multiple Qubits  Any system of qubits will have basis states. As we have seen already, in a one-qubit system, the two basis states are and . In a two-qubit system, the four basis states are , , , and . These four basis states each have vector representations, which are found by using the tensor product Tensor Product    Tensor Product  The tensor product (represented by a symbol) is an operation between two matrices (or vectors) that multiplies each entry in the matrix on the left by the matrix on the right. Thus the tensor product between a matrix and a matrix will be a , as shown below.   where each is the entry in the -th row and -th column of .  Computer the following tensor products        Systems of Multiple Qubits  The vector representation of a two qubit system would be found by the tensor product }. Thus the four basis states of a two qubit system are defined as:      This concept can be generalized to systems of any number of qubits.  The tensor product can also be applied to vector spaces. The tensor product of a vector that exists within a space and a vector that exists within a space would exist within the space . Thus, a system of qubits exists within the space , where the superscript means taking the tensor product of with itself times. Similarly, would represent the state tensored with itself times.  For the two qubit system compute the probabilities that it will collapse into each the basis states , , , and         "
+>>>>>>> 5713a2ebdff2310a2ffc7b5893bd56c983a4152b
 },
 {
   "id": "p-158",
@@ -523,6 +527,7 @@ var ptx_lunr_docs = [
   "body": "Computer the following tensor products     "
 },
 {
+<<<<<<< HEAD
   "id": "p-164",
   "level": "2",
   "url": "sec-Systems-of-Multiple-Qubits.html#p-164",
@@ -541,15 +546,22 @@ var ptx_lunr_docs = [
   "body": "  "
 },
 {
+=======
+>>>>>>> 5713a2ebdff2310a2ffc7b5893bd56c983a4152b
   "id": "exercise-15",
   "level": "2",
   "url": "sec-Systems-of-Multiple-Qubits.html#exercise-15",
   "type": "Checkpoint",
+<<<<<<< HEAD
   "number": "1.10.3",
+=======
+  "number": "1.10.2",
+>>>>>>> 5713a2ebdff2310a2ffc7b5893bd56c983a4152b
   "title": "",
   "body": "For the two qubit system compute the probabilities that it will collapse into each the basis states , , , and       "
 },
 {
+<<<<<<< HEAD
   "id": "exercise-16",
   "level": "2",
   "url": "sec-Systems-of-Multiple-Qubits.html#exercise-16",
@@ -559,6 +571,8 @@ var ptx_lunr_docs = [
   "body": "Compute       "
 },
 {
+=======
+>>>>>>> 5713a2ebdff2310a2ffc7b5893bd56c983a4152b
   "id": "sec-Operations",
   "level": "1",
   "url": "sec-Operations.html",
@@ -568,18 +582,30 @@ var ptx_lunr_docs = [
   "body": " Operations in Quantum Computation   Outer Product  The tensor product is only one of many operations on qubits. In we described how the inner product could be represented as the product of a vector's transpose and the vector. Since an dimensional vector transpose is and the vector is , the resulting product is , which is functionally equivalent to a scalar. If we were to reverse the order of the vector multiplication and multiply a column vector on the left and a row vector on the right, we would multiply an vector by an vector to produce an matrix. More specifically, we want to multiply a vector on the left by the vectors adjoint (complex conjugated transpose) on the right. This operation is known as the outer product Outer Product . The outer product between two qubits and is shown below.      Completeness Relation  If a set of basis vectors for a quantum system have the property that the sum of the outer products of each basis vector with itself is equal to the identity matrix:   Then that set is said to have a completeness relation Completeness Relation . In general, orthonormal bases will have a completeness relation. Since the completeness relation is the same as the identity operator, we can use it on any vector expression without changing its value.  Suppose is a vector in a space and is an orthonormal basis of with a completeness relation. We can then use the completeness relation as follows   Where each and represents the component of the vector that is in the direction of the basis . Thus the completeness relation can be used to decompose a vector into its basis elements.    Inner Product  Here we will redefine the inner product in Bra-Ket notation and describe some additional properties. For two qubits and    their inner product   We now define   We call , the Kronecker delta. It is the mathematical way to express anything that is equal to 0 unless the index , in which case it is 1. For an orthonormal basis we have the property   That is, for any two vectors in the basis, their inner product is 0, unless the two vectors are the same, in which case their inner product is 1.  For and , the inner product has the following properties:     Diagonalization  For a vector space with a basis , A diagonal representation for an operator that acts on the space would be where the are eigenvalues that correspond to the basis state . An operator is said to be diagonalizable Diagonalizable if it has a diagonal representation. As an example of a diagonal representation, note that the Pauli matrix (see ) may be written   where . Diagonal representations are sometimes also known as orthonormal decompositions.    Density Operator  Any basis state for a vector space can also be expressed with a density operator Density Operator that provides us with another method to study the state of the entire system. For a vector space with a basis , the density operators for its basis states are given by   This means that the density operator for any basis state is equal to the outer product of that state with itself. These density operators for states have the following properties:   For a state   The density operator would be    Find the density operator for the following state       Now suppose we want to find a density operator for an entire system. The system exists within a vector space with a basis and has a probability of being in the state after measurement. The density operator for the entire system is defined by   The density operator for the system has the same properties as the density operator for individual states: Idempotent, Trace=1, Hermiticity, and Positive Semi-Definite.    The Commutator  Remember that matrix multiplication is generally not commutative, i.e. for two matrices and , . However, there are exceptions to this generality. The commutator Commutator between two operators and is defined to be   If , that is, , then we say commutes with . Similarly, the anti-commutator Anti-Commutator of two operators and is defined by   we say anti-commutes with if , that is . It turns out that many important properties of pairs of operators can be deduced from their commutator and anti-commutator.   "
 },
 {
+<<<<<<< HEAD
   "id": "p-170",
   "level": "2",
   "url": "sec-Operations.html#p-170",
+=======
+  "id": "p-158",
+  "level": "2",
+  "url": "sec-Operations.html#p-158",
+>>>>>>> 5713a2ebdff2310a2ffc7b5893bd56c983a4152b
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "outer product "
 },
 {
+<<<<<<< HEAD
   "id": "p-172",
   "level": "2",
   "url": "sec-Operations.html#p-172",
+=======
+  "id": "p-160",
+  "level": "2",
+  "url": "sec-Operations.html#p-160",
+>>>>>>> 5713a2ebdff2310a2ffc7b5893bd56c983a4152b
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -649,9 +675,15 @@ var ptx_lunr_docs = [
   "body": " Gates    Hadamard gate   Hadamard gate Gate Hadamard is one of the most popular gates in quantum computing.   Hadamard gate representation in a circuit.      The Hadamard operator on one qubit can be written as   which is the Hadamard gate in Dirac notation. Hadamard operation is a rotation of the Block sphere about y axis by , followed by a rotation about axis by .   Calculate                 Pauli X gate   Pauli X gate Gate Pauli X is also labeled as , or X    X gate representation in a circuit.       Calculate                     Pauli Y gate   Pauli Y gate Gate Pauli Y is also labeled as , or Y    Y gate representation in a circuit.       Calculate                   Pauli Z   Pauli Z gate Gate Pauli Z is also labeled as , or Z    Z gate representation in a circuit.       Calculate                     Pauli I gate   Pauli I gate Gate Pauli I is also labeled as or I    I gate representation in a circuit.       Calculate                 Phase gate   Phase gate Gate Phase is written as S.   Phase gate representation in a circuit.       Calculate                     \/8 gate   \/8 gate Gate \/8 is written as T.   \/8 gate representation in a circuit.       Calculate              Previous gates aplly on single qubit. The following subsections show the multiqubit gates.     Controled-NOT  CNOT gate in the quantum context has two input qubits:  Control qbit  target qbit  This gate acts as following    CNOT gate representation in a circuit.      Check the XOR and notice this gate is for two qubits.   Obtain the Dirac notation  and   and  and  and  ( can be written as )             The gate and matrix representation are,   CNOT gate representation in a circuit.      Since   and using CNOT matrix we can cancel out some terms and reduce others to 1, such as   and we have   which is the Dirac representation for the CNOT gate.   CNOT gate representation in a circuit.      Apply CNOT to the state           Contorolled-U  Let U be a two qbit operation with a control and target qbit. This operation sets the control qbit in order U is applied to the target qbit, otherwise the target qbit is left alone.   This operation is called controlled-U operation represented by   CU representation in a circuit     CU operator as Dirac notation      Contorolled-Z  The unitary matrix in the computational basis is,   CZ representation in a circuit       Obtain                    "
 },
 {
+<<<<<<< HEAD
   "id": "p-197",
   "level": "2",
   "url": "sec2-chap2.html#p-197",
+=======
+  "id": "p-166",
+  "level": "2",
+  "url": "sec2-chap2.html#p-166",
+>>>>>>> 5713a2ebdff2310a2ffc7b5893bd56c983a4152b
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -676,9 +708,15 @@ var ptx_lunr_docs = [
   "body": " Calculate             "
 },
 {
+<<<<<<< HEAD
   "id": "p-202",
   "level": "2",
   "url": "sec2-chap2.html#p-202",
+=======
+  "id": "p-171",
+  "level": "2",
+  "url": "sec2-chap2.html#p-171",
+>>>>>>> 5713a2ebdff2310a2ffc7b5893bd56c983a4152b
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -703,9 +741,15 @@ var ptx_lunr_docs = [
   "body": " Calculate                 "
 },
 {
+<<<<<<< HEAD
   "id": "p-205",
   "level": "2",
   "url": "sec2-chap2.html#p-205",
+=======
+  "id": "p-174",
+  "level": "2",
+  "url": "sec2-chap2.html#p-174",
+>>>>>>> 5713a2ebdff2310a2ffc7b5893bd56c983a4152b
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -730,9 +774,15 @@ var ptx_lunr_docs = [
   "body": " Calculate               "
 },
 {
+<<<<<<< HEAD
   "id": "p-208",
   "level": "2",
   "url": "sec2-chap2.html#p-208",
+=======
+  "id": "p-177",
+  "level": "2",
+  "url": "sec2-chap2.html#p-177",
+>>>>>>> 5713a2ebdff2310a2ffc7b5893bd56c983a4152b
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -757,9 +807,15 @@ var ptx_lunr_docs = [
   "body": " Calculate                 "
 },
 {
+<<<<<<< HEAD
   "id": "p-211",
   "level": "2",
   "url": "sec2-chap2.html#p-211",
+=======
+  "id": "p-180",
+  "level": "2",
+  "url": "sec2-chap2.html#p-180",
+>>>>>>> 5713a2ebdff2310a2ffc7b5893bd56c983a4152b
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -784,9 +840,15 @@ var ptx_lunr_docs = [
   "body": " Calculate             "
 },
 {
+<<<<<<< HEAD
   "id": "p-214",
   "level": "2",
   "url": "sec2-chap2.html#p-214",
+=======
+  "id": "p-183",
+  "level": "2",
+  "url": "sec2-chap2.html#p-183",
+>>>>>>> 5713a2ebdff2310a2ffc7b5893bd56c983a4152b
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -811,9 +873,15 @@ var ptx_lunr_docs = [
   "body": " Calculate                 "
 },
 {
+<<<<<<< HEAD
   "id": "p-217",
   "level": "2",
   "url": "sec2-chap2.html#p-217",
+=======
+  "id": "p-186",
+  "level": "2",
+  "url": "sec2-chap2.html#p-186",
+>>>>>>> 5713a2ebdff2310a2ffc7b5893bd56c983a4152b
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -955,13 +1023,58 @@ var ptx_lunr_docs = [
   "body": " Controlled-NOT gate representation    "
 },
 {
-  "id": "chap3-chapter",
+  "id": "sec1-chap3",
   "level": "1",
-  "url": "chap3-chapter.html",
-  "type": "Chapter",
-  "number": "3",
-  "title": "Chapter 3",
-  "body": " Chapter 3   Text before the first section.    Hello  "
+  "url": "sec1-chap3.html",
+  "type": "Section",
+  "number": "3.1",
+  "title": "Grover’s Algorithm",
+  "body": " Grover's Algorithm    Classical search algorithms are fundamental techniques used in computer science to locate a specific item within a collection of items. Common approaches include linear search, where each item is checked sequentially until the target is found, and binary search, which efficiently narrows down the search range in a sorted array by repeatedly dividing it in half. These methods are crucial in various applications, from database retrieval to optimization problems, as they determine how quickly and efficiently data can be accessed and processed. However, classical search often requires significant time and resources, especially with large datasets. Quantum computing has the potential to revolutionize search algorithms through methods like Grover's algorithm, which can search an unsorted database quadratically faster than classical algorithms, offering a profound improvement in speed and efficiency for large-scale search problems.  To implement Grover's algorithm, we need unitary matrix , written as . This matrix works as a black box as following   The XOR operartion is    diffusion gate is an operator given by  Household transform is is a linear algebra technique often used to construct quantum operations that reflect a quantum state about a certain axis or state, which is a crucial step in many quantum algorithms, including Grover's algorithm. By applying a series of these transformations, one can systematically manipulate and amplify the amplitude of the desired state while diminishing the amplitudes of the undesired ones, ultimately leading to a more efficient search process. This method contributes to the algorithm's overall quadratic speedup compared to classical search methods.  Now, we implement Grover's algorithm for the following example    We prose a random vector , and tries to find the expected factor.   1. Consider you have the following data    Representation of values       2. Calculate the average   3. Invert each element aorund the average by defining   We calculate the units away, , from the average, , for each    4.a define   and calculate   The inversion about the average calculates the units away, , from the average, , for each .   4.b Plot the data      Representation of values      The last operation, has the following representation in terms of matrices, where where is the matrix for the average. It means . As follows, This is a state where each amplitude is the average of all the amplitudes.   5. Invert amplitudes about the average.    "
+},
+{
+  "id": "p-212",
+  "level": "2",
+  "url": "sec1-chap3.html#p-212",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Classical search "
+},
+{
+  "id": "p-213",
+  "level": "2",
+  "url": "sec1-chap3.html#p-213",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "unitary matrix "
+},
+{
+  "id": "p-215",
+  "level": "2",
+  "url": "sec1-chap3.html#p-215",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "diffusion gate Household transform "
+},
+{
+  "id": "example-4",
+  "level": "2",
+  "url": "sec1-chap3.html#example-4",
+  "type": "Example",
+  "number": "3.1.1",
+  "title": "",
+  "body": " We prose a random vector , and tries to find the expected factor.   1. Consider you have the following data    Representation of values       2. Calculate the average   3. Invert each element aorund the average by defining   We calculate the units away, , from the average, , for each    4.a define   and calculate   The inversion about the average calculates the units away, , from the average, , for each .   4.b Plot the data      Representation of values      The last operation, has the following representation in terms of matrices, where where is the matrix for the average. It means . As follows, This is a state where each amplitude is the average of all the amplitudes.   5. Invert amplitudes about the average.   "
+},
+{
+  "id": "sec2-chap3",
+  "level": "1",
+  "url": "sec2-chap3.html",
+  "type": "Section",
+  "number": "3.2",
+  "title": "Shor’s Algorithm",
+  "body": " Shor's Algorithm  Text of section.  "
 },
 {
   "id": "index-1",
