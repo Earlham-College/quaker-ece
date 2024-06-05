@@ -279,6 +279,10 @@ window.MathJax = {
 <ul class="structural">
 <li><div class="toc-item"><a href="sec-Operations.html#subsec-Outer-Product" class="internal"><span class="codenumber">1.11.1</span> <span class="title">Outer Product</span></a></div></li>
 <li><div class="toc-item"><a href="sec-Operations.html#subsec-Completeness-Relation" class="internal"><span class="codenumber">1.11.2</span> <span class="title">Completeness Relation</span></a></div></li>
+<li><div class="toc-item"><a href="sec-Operations.html#subsec-Inner-Product" class="internal"><span class="codenumber">1.11.3</span> <span class="title">Inner Product</span></a></div></li>
+<li><div class="toc-item"><a href="sec-Operations.html#subsec-Diagonalization" class="internal"><span class="codenumber">1.11.4</span> <span class="title">Diagonalization</span></a></div></li>
+<li><div class="toc-item"><a href="sec-Operations.html#subsec-Density-Operator" class="internal"><span class="codenumber">1.11.5</span> <span class="title">Density Operator</span></a></div></li>
+<li><div class="toc-item"><a href="sec-Operations.html#subsec-The-Commutator" class="internal"><span class="codenumber">1.11.6</span> <span class="title">The Commutator</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -316,7 +320,13 @@ window.MathJax = {
 <div class="toc-item"><a href="chap3-chapter.html" class="internal"><span class="codenumber">3</span> <span class="title">Algorithm</span></a></div>
 <ul class="structural">
 <li class="active"><div class="toc-item"><a href="sec1-chap3.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Grover’s Algorithm</span></a></div></li>
-<li><div class="toc-item"><a href="sec2-chap3.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Shor’s Algorithm</span></a></div></li>
+<li>
+<div class="toc-item"><a href="sec2-chap3.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Shor’s Algorithm</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec2-chap3.html#subsec-Building-Up-to-the-Algorithm" class="internal"><span class="codenumber">3.2.1</span> <span class="title">Building Up to the Algorithm</span></a></div></li>
+<li><div class="toc-item"><a href="sec2-chap3.html#subsec-An-Example" class="internal"><span class="codenumber">3.2.2</span> <span class="title">An Example</span></a></div></li>
+</ul>
+</li>
 </ul>
 </li>
 <li>
@@ -330,15 +340,15 @@ window.MathJax = {
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec1-chap3"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">3.1</span> <span class="title">Grover’s Algorithm</span>
 </h2>
-<div class="para" id="p-212">
+<div class="para" id="p-243">
 <dfn class="terminology">Classical search</dfn> algorithms are fundamental techniques used in computer science to locate a specific item within a collection of items. Common approaches include linear search, where each item is checked sequentially until the target is found, and binary search, which efficiently narrows down the search range in a sorted array by repeatedly dividing it in half. These methods are crucial in various applications, from database retrieval to optimization problems, as they determine how quickly and efficiently data can be accessed and processed. However, classical search often requires significant time and resources, especially with large datasets. Quantum computing has the potential to revolutionize search algorithms through methods like Grover’s algorithm, which can search an unsorted database quadratically faster than classical algorithms, offering a profound improvement in speed and efficiency for large-scale search problems.</div>
-<div class="para" id="p-213">To implement Grover’s algorithm, we need <dfn class="terminology">unitary matrix</dfn>, written as <span class="process-math">\(U_f\text{.}\)</span> This matrix works as a black box as following</div>
+<div class="para" id="p-244">To implement Grover’s algorithm, we need <dfn class="terminology">unitary matrix</dfn>, written as <span class="process-math">\(U_f\text{.}\)</span> This matrix works as a black box as following</div>
 <div class="displaymath process-math" id="mdn-19">
 \begin{gather}
 \ket{x,y} \stackrel{U_f}{\rightarrow} \ket{x, y\oplus f(x)}\tag{3.1.1}
 \end{gather}
 </div>
-<div class="para logical" id="p-214">
+<div class="para logical" id="p-245">
 <div class="para">The XOR operartion is</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -346,7 +356,7 @@ window.MathJax = {
 \end{equation*}
 </div>
 </div>
-<div class="para logical" id="p-215">
+<div class="para logical" id="p-246">
 <div class="para">
 <dfn class="terminology">diffusion gate</dfn> is an operator given by</div>
 <div class="displaymath process-math" id="mdn-20">
@@ -357,10 +367,10 @@ O = - I + 2\ket{\phi}\bra{\phi}\tag{3.1.2}
 <div class="para">
 <dfn class="terminology">Household transform</dfn> is is a linear algebra technique often used to construct quantum operations that reflect a quantum state about a certain axis or state, which is a crucial step in many quantum algorithms, including Grover’s algorithm. By applying a series of these transformations, one can systematically manipulate and amplify the amplitude of the desired state while diminishing the amplitudes of the undesired ones, ultimately leading to a more efficient search process. This method contributes to the algorithm’s overall quadratic speedup compared to classical search methods.</div>
 </div>
-<div class="para" id="p-216">Now, we implement Grover’s algorithm for the following example</div>
-<article class="example example-like" id="example-4"><a href="" data-knowl="" class="id-ref example-knowl original has-image" data-refid="hk-example-4"><h3 class="heading">
+<div class="para" id="p-247">Now, we implement Grover’s algorithm for the following example</div>
+<article class="example example-like" id="example-5"><a href="" data-knowl="" class="id-ref example-knowl original has-image" data-refid="hk-example-5"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">3.1.1</span><span class="period">.</span>
-</h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-4"><article class="example example-like"><div class="para" id="p-217">We prose a random vector <span class="process-math">\(x\text{,}\)</span> and tries to find the expected factor.</div> <div class="para logical" id="p-218">
+</h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-5"><article class="example example-like"><div class="para" id="p-248">We prose a random vector <span class="process-math">\(x\text{,}\)</span> and tries to find the expected factor.</div> <div class="para logical" id="p-249">
 <div class="para"><em class="emphasis">1. Consider you have the following data</em></div>
 <div class="displaymath process-math" id="mdn-21">
 \begin{gather}
@@ -369,7 +379,7 @@ O = - I + 2\ket{\phi}\bra{\phi}\tag{3.1.2}
 </div>
 <div class="para"><figure class="figure figure-like" id="fig-grover_1"><div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="external/grover1.png" class="contained"></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.1.2<span class="period">.</span></span><span class="space"> </span>Representation of <span class="process-math">\(x_i\)</span>values</figcaption></figure></div>
-</div> <div class="para logical" id="p-219">
+</div> <div class="para logical" id="p-250">
 <div class="para"><em class="emphasis">2. Calculate the average</em></div>
 <div class="displaymath process-math" id="mdn-22">
 \begin{gather}
@@ -382,7 +392,7 @@ O = - I + 2\ket{\phi}\bra{\phi}\tag{3.1.2}
 <div class="displaymath process-math" id="mdn-23">
 \begin{align}
 \overline{x}&amp;-&amp;x_i &amp; =&amp;\delta\\
-9&amp;-&amp;19&amp;=&amp;-10\\
+9&amp;-&amp;19 &amp;=&amp;-10\\
 9&amp;-&amp;12 &amp;=&amp;3\\
 9&amp;-&amp;3  &amp;=&amp;6\\
 9&amp;-&amp;10 &amp;=&amp;-1\\
@@ -391,7 +401,7 @@ O = - I + 2\ket{\phi}\bra{\phi}\tag{3.1.2}
 </div>
 <div class="para">We calculate the units away, <span class="process-math">\(δ\)</span> , from the average,<span class="process-math">\(x\)</span> , for each <span class="process-math">\(xi\)</span>
 </div>
-</div> <div class="para logical" id="p-220">
+</div> <div class="para logical" id="p-251">
 <div class="para">
 <em class="emphasis">4.a define</em> <span class="process-math">\(2x-x_i =x^\prime_i\)</span> <em class="emphasis">and calculate</em>
 </div>
@@ -410,7 +420,7 @@ x_i^\prime\\
 \end{align}
 </div>
 <div class="para"> The inversion about the average calculates the units away, <span class="process-math">\(δ\text{,}\)</span> from the average, <span class="process-math">\(x\text{,}\)</span> for each <span class="process-math">\(x_i\)</span> .</div>
-</div> <div class="para logical" id="p-221">
+</div> <div class="para logical" id="p-252">
 <div class="para"><em class="emphasis">4.b Plot the data</em></div>
 <div class="displaymath process-math" id="mdn-25">
 \begin{align}
@@ -421,8 +431,8 @@ x_i^\prime\\
 \end{pmatrix}\tag{3.1.7}
 \end{align}
 </div>
-</div> <div class="para" id="p-222"><figure class="figure figure-like" id="fig-grover_2"><div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="external/grover2.png" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.1.3<span class="period">.</span></span><span class="space"> </span>Representation of <span class="process-math">\(x^\prime_i\)</span>values</figcaption></figure></div> <div class="para logical" id="p-223">
+</div> <div class="para" id="p-253"><figure class="figure figure-like" id="fig-grover_2"><div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="external/grover2.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.1.3<span class="period">.</span></span><span class="space"> </span>Representation of <span class="process-math">\(x^\prime_i\)</span>values</figcaption></figure></div> <div class="para logical" id="p-254">
 <div class="para">The last operation,<span class="process-math">\(-x_i +2\overline{x}=x_i^\prime\)</span>  has the following representation in terms of matrices,</div>
 <div class="displaymath process-math" id="mdn-26">
 \begin{gather}
@@ -463,7 +473,7 @@ A = \frac{1}{5}
 \end{align}
 </div>
 <div class="para">This is a state where each amplitude is the average of all the amplitudes.</div>
-</div> <div class="para" id="p-224"><em class="emphasis">5. Invert amplitudes about the average.</em></div></article></div></section></div>
+</div> <div class="para" id="p-255"><em class="emphasis">5. Invert amplitudes about the average.</em></div></article></div></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="chap3-chapter.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="sec2-chap3.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>
 </div></main>

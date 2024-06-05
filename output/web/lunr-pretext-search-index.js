@@ -124,7 +124,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.5",
   "title": "Vectors and Vector Spaces",
-  "body": " Vectors and Vector Spaces   Introduction to Vectors  A vector is an ordered list of numbers that is used to describe quantities with both magnitude and direction. One example of a vector is force, which has both a magnitude (how strong the force is) and a direction (the angle at which the force is being applied). Each vector has a dimension, which is the number of components that comprise it. It is customary to signify that something is a vector by either drawing an arrow on top of it or bolding it. If we have a vector called , we would write or . The number is called the -th component of .  The most typical use of a vector with components is to describe a point in dimensional space in reference to some starting point. For example, if you have a square piece of paper and label the bottom left corner with the starting point (0,0), then a vector with components (1,1) would represent moving one unit of measurement along the bottom of the paper and one unit of measurement along the side of the paper to reach a new point. This vector would have a direction of and a magnitude of units (by the pythagorean theorem).   An example of a vector     Vector Spaces  Every vector exists within a vector space Vector Vector Space , which are sets that satisfy certain mathematical properties. The most common vector spaces we will deal with are , the set of all dimensional vectors with real components, and , the set of all dimensional vectors with complex components. Notice , so we will usually work with for generality. All vector spaces have the same properties regardless of dimension. Here are the properties for an -dimensional vector space:  1. Vector equality: means   2. Vector addition: means   3. Scalar multiplication:   4. Negative of a vector:   5. Null vector: There exists a null vector   If our vector components are all real numbers (i.e. the vector space exists in instead of ), then the following properties also hold:  1. Addition of vectors is commutative:  2. Addition of vectors is associative:  3. Scalar multiplication is distributive: and  4. Scalar multiplication is associative:     Bases  For any vector space, one can find a subset of vectors which can be used to generate any other vector in the space through linear combinations (scalar multiplication and vector addition). The smallest set of vectors that fulfills this property is called the basis Vector basis . In , we only need two vectors to produce the rest through linear combination. The standard basis, is:   The ^ symbol is used to denote that a vector is normal Vector Normal , which means that it has a length of 1. The vector is referred to as \" hat.\" This property is extremely important to quantum mechanics and will be discussed more later.  Bases have two properties:   Linear Independence: A set of vectors is linearly independent Vector Linearly Independent if we cannot express any one of them as a linear combination of the others. If we can express one as a linear combination of the others, then it is called a linearly dependent Vector Linearly Dependent set. A basis must be linearly independent.   Completeness: A set of vectors is complete if it spans Vector Span its vector space, which in turn means that any vector in the space can be expressed as a linear combination of the vectors in that set. A basis for a vector space must span the space.    (A Counterexample)  Let be the set,   And let be the vector,   Since we are unable to express as a linear combination of the elements of , then we say is not complete.    Let be the set,   And let be the vector,  We can express as:  Since we can express as a linear combination of the elements of and it is easy to show that we could construct any other vector in from these same elements, we say that spans and is complete.   Dimension of a basis. The number of basis elements for a vector space is the same as that spaces dimension.   Linear Algebra  Linear algebra is the study of vectors and transformations. In this subsection we will describe some other pieces of linear algebra that will be important to quantum computation.  Vector Transpose: The transpose Vector Transpose is an operation that turns a standard column vector into a row vector, or vice versa. This means an dimensional vector changes from having rows and column to having row and columns. The transpose is represented with a superscript and the operation is shown below.   Dot Product \/ Inner Product: The dot product (more generally known as the inner product Vector Inner Product in the context of quantum computation) is an operation between two vectors of the same dimension that produces a scalar. This product is typically referred to with a , but has an alternate notation in quantum computation that we will see in the next section. In and In this operation is performed by taking the sum of the products of the corresponding entries in each vector, as shown below.      Find the inner product     Orthogonality:  Orthogonality Orthogonality is the generalization of the concept of perpendicularity. In two and three dimensional space, two vectors are orthogonal if the angle between them is a right angle. Two vectors are orthogonal if their inner product is equal to .  Are the following vectors orthogonal?  Yes, Since the inner product between the two vectors is 0, they are orthogonal  Normality: A vector is normal Vector Normal Vector if it has a length of . The length (sometimes also referred to as the norm) of a vector can be found be taking the square root of the sum of the squares of its entries, as shown below. This operation is represented by lines( ) on either side of the vector that is having its length found. A non-normal vector can be normalized by dividing each of its components by the vectors length. A normalized vector has the same direction as the original vector, but has a length of . A set of vectors is orthonormal Vector Orthonormal Vectors if each of the vectors are normal and each of the vectors are orthogonal to the rest.   What is the length of the following vector?    Normalize the following vector In the previous exercise, we found that this vector has a length of . To normalize the vector, we will divide each of its components by its length.   Matrices: Whereas a vector is a single column of elements, a matrix Matrix is a table of elements organized in rows and columns. Technically speaking, a vector can be thought of a matrix with only one column. The dimension of a matrix is described by first listing the number of rows and then listing the number of columns. Thus, a matrix (read \"two by three\") would have two rows and three columns. A square matrix Matrix Square Matrix is any matrix with the same number of rows and columns. One of the most important matrices is the identity matrix Matrix Identity Matrix , a square matrix in which all of the entries along the diagonal are and all other entries are . Examples of the and identity matrices are shown below, which can be generalized to any matrix.   A matrix can be multiplied by a scalar in the same way that a vector can, by multiplying each entry in the matrix by the scalar, as shown below.   The concept of a transpose can be extended from vectors to matrices as well. A matrix's transpose is found by turning each of its rows into a column, or, equivalently, by turning each of its columns into a row. This means the transpose of an matrix is an matrix. The matrix transpose is also represented by a superscript . An example of transposing a matrix is shown below.   Matrix Addition: Two matrices can be added together only if they each have the same number of rows and columns. The sum of two matrices is found by adding together the corresponding entries of each matrix, as shown below with an example of two matrices.    Compute the following sum:      Matrix Multiplication: Two matrices can be multiplied together only if the number of columns of the left matrix is equal to the number of rows of the right matrix. The resulting product will be a matrix with the same number of rows as the left matrix and the same number of columns as the right. Thus an matrix multiplied by a matrix would produce an matrix. Notably, matrix multiplication is non-commutative, which means for two matrices and , . The entries of a product matrix are determined by taking the dot product between the corresponding row of the left matrix and the corresponding column of the right matrix, as shown below with an example of multiplication between a and a matrix.   Now that we know matrix multiplication, we can redefine the dot product \/ inner product as the transpose of a vector multiplied by the original vector. Since vectors are dimensional, the transpose will be dimensional, so multiplying the transpose on the left and the original on the right will produce a matrix, which is functionally the same as a scalar.  Multiplying an matrix by a vector produces an vector. This operation is known as a linear transformation Linear Transformation and it an be used to move vectors from one vector space to another.   Compute the following product:    The resulting matrix should be     Determinant: The determinant Determinant is a scalar associated with a square matrix that can be used to find the eigenvalues (see ) of the matrix. For and matrices, their determinants are defined as follows:      Eigenvectors and Eigenvalues  Here we will provide a brief overview of eigenvectors and eigenvalues, but readers wishing to learn more should go to this link . An eigenvector of a matrix is a non-zero vector such that   where v is a scalar known as the eigenvalue of corresponding to . It will often be convenient to use the variable both as a label for the eigenvector, and to represent the eigenvalue. The eigenvalues of a matrix can be found by solving the equation   In this equation, is an unknown variable whose values we want to find. These values will be the eigenvalues of the matrix . Each eigenvalue will have a corresponding eigenvector such that . The corresponding eigenvectors can then be found by solving   The eigenspace corresponding to an eigenvalue is the set of vectors which have eigenvalue . It is a vector subspace of the vector space on which acts. The eigenspace corresponding to the matrix would be all vectors that have an eigenvalue for that matrix.   "
+  "body": " Vectors and Vector Spaces   Introduction to Vectors  A vector is an ordered list of numbers that is used to describe quantities with both magnitude and direction. One example of a vector is force, which has both a magnitude (how strong the force is) and a direction (the angle at which the force is being applied). Each vector has a dimension, which is the number of components that comprise it. It is customary to signify that something is a vector by either drawing an arrow on top of it or bolding it. If we have a vector called , we would write or . The number is called the -th component of .  The most typical use of a vector with components is to describe a point in dimensional space in reference to some starting point. For example, if you have a square piece of paper and label the bottom left corner with the starting point (0,0), then a vector with components (1,1) would represent moving one unit of measurement along the bottom of the paper and one unit of measurement along the side of the paper to reach a new point. This vector would have a direction of and a magnitude of units (by the pythagorean theorem).   An example of a vector     Vector Spaces  Every vector exists within a vector space Vector Vector Space , which are sets that satisfy certain mathematical properties. The most common vector spaces we will deal with are , the set of all dimensional vectors with real components, and , the set of all dimensional vectors with complex components. Notice , so we will usually work with for generality. All vector spaces have the same properties regardless of dimension. Here are the properties for an -dimensional vector space:  1. Vector equality: means   2. Vector addition: means   3. Scalar multiplication:   4. Negative of a vector:   5. Null vector: There exists a null vector   If our vector components are all real numbers (i.e. the vector space exists in instead of ), then the following properties also hold:  1. Addition of vectors is commutative:  2. Addition of vectors is associative:  3. Scalar multiplication is distributive: and  4. Scalar multiplication is associative:     Bases  For any vector space, one can find a subset of vectors which can be used to generate any other vector in the space through linear combinations (scalar multiplication and vector addition). The smallest set of vectors that fulfills this property is called the basis Vector basis . In , we only need two vectors to produce the rest through linear combination. The standard basis, is:   The ^ symbol is used to denote that a vector is normal Vector Normal , which means that it has a length of 1. The vector is referred to as \" hat.\" This property is extremely important to quantum mechanics and will be discussed more later.  Bases have two properties:   Linear Independence: A set of vectors is linearly independent Vector Linearly Independent if we cannot express any one of them as a linear combination of the others. If we can express one as a linear combination of the others, then it is called a linearly dependent Vector Linearly Dependent set. A basis must be linearly independent.   Completeness: A set of vectors is complete if it spans Vector Span its vector space, which in turn means that any vector in the space can be expressed as a linear combination of the vectors in that set. A basis for a vector space must span the space.    (A Counterexample)  Let be the set,   And let be the vector,   Since we are unable to express as a linear combination of the elements of , then we say is not complete.    Let be the set,   And let be the vector,  We can express as:  Since we can express as a linear combination of the elements of and it is easy to show that we could construct any other vector in from these same elements, we say that spans and is complete.   Dimension of a basis. The number of basis elements for a vector space is the same as that spaces dimension.   Linear Algebra  Linear algebra is the study of vectors and transformations. In this subsection we will describe some other pieces of linear algebra that will be important to quantum computation.  Vector Transpose: The transpose Vector Transpose is an operation that turns a standard column vector into a row vector, or vice versa. This means an dimensional vector changes from having rows and column to having row and columns. The transpose is represented with a superscript and the operation is shown below.   Dot Product \/ Inner Product: The dot product (more generally known as the inner product Vector Inner Product in the context of quantum computation) is an operation between two vectors of the same dimension that produces a scalar. This product is typically referred to with a , but has an alternate notation in quantum computation that we will see in the next section. In and In this operation is performed by taking the sum of the products of the corresponding entries in each vector, as shown below.      Find the inner product     Orthogonality:  Orthogonality Orthogonality is the generalization of the concept of perpendicularity. In two and three dimensional space, two vectors are orthogonal if the angle between them is a right angle. Two vectors are orthogonal if their inner product is equal to .  Are the following vectors orthogonal?  Yes, Since the inner product between the two vectors is 0, they are orthogonal  Normality: A vector is normal Vector Normal Vector if it has a length of . The length (sometimes also referred to as the norm) of a vector can be found be taking the square root of the sum of the squares of its entries, as shown below. This operation is represented by lines( ) on either side of the vector that is having its length found. A non-normal vector can be normalized by dividing each of its components by the vectors length. A normalized vector has the same direction as the original vector, but has a length of . A set of vectors is orthonormal Vector Orthonormal Vectors if each of the vectors are normal and each of the vectors are orthogonal to the rest.   What is the length of the following vector?    Normalize the following vector In the previous exercise, we found that this vector has a length of . To normalize the vector, we will divide each of its components by its length.   Matrices: Whereas a vector is a single column of elements, a matrix Matrix is a table of elements organized in rows and columns. Technically speaking, a vector can be thought of a matrix with only one column. The dimension of a matrix is described by first listing the number of rows and then listing the number of columns. Thus, a matrix (read \"two by three\") would have two rows and three columns. A square matrix Matrix Square Matrix is any matrix with the same number of rows and columns. One of the most important matrices is the identity matrix Matrix Identity Matrix , a square matrix in which all of the entries along the diagonal are and all other entries are . Examples of the and identity matrices are shown below, which can be generalized to any matrix.   A matrix can be multiplied by a scalar in the same way that a vector can, by multiplying each entry in the matrix by the scalar, as shown below.   The concept of a transpose can be extended from vectors to matrices as well. A matrix's transpose is found by turning each of its rows into a column, or, equivalently, by turning each of its columns into a row. This means the transpose of an matrix is an matrix. The matrix transpose is also represented by a superscript . An example of transposing a matrix is shown below.   Matrix Addition: Two matrices can be added together only if they each have the same number of rows and columns. The sum of two matrices is found by adding together the corresponding entries of each matrix, as shown below with an example of two matrices.    Compute the following sum:      Matrix Multiplication: Two matrices can be multiplied together only if the number of columns of the left matrix is equal to the number of rows of the right matrix. The resulting product will be a matrix with the same number of rows as the left matrix and the same number of columns as the right. Thus an matrix multiplied by a matrix would produce an matrix. Notably, matrix multiplication is non-commutative, which means for two matrices and , . The entries of a product matrix are determined by taking the dot product between the corresponding row of the left matrix and the corresponding column of the right matrix, as shown below with an example of multiplication between a and a matrix.   Now that we know matrix multiplication, we can redefine the dot product \/ inner product as the transpose of a vector multiplied by the original vector. Since vectors are dimensional, the transpose will be dimensional, so multiplying the transpose on the left and the original on the right will produce a matrix, which is functionally the same as a scalar.  Multiplying an matrix by a vector produces an vector. This operation is known as a linear transformation Linear Transformation and it an be used to move vectors from one vector space to another.   Compute the following product:    The resulting matrix should be     Determinant: The determinant Determinant is a scalar associated with a square matrix that can be used to find the eigenvalues (see ) of the matrix. For and matrices, their determinants are defined as follows:      Eigenvectors and Eigenvalues  Here we will provide a brief overview of eigenvectors and eigenvalues, but readers wishing to learn more should go to this link . An eigenvector of a matrix is a non-zero vector such that   where is a scalar known as the eigenvalue of corresponding to . It will often be convenient to use the variable both as a label for the eigenvector, and to represent the eigenvalue. The eigenvalues of a matrix can be found by solving the equation   In this equation, is an unknown variable whose values we want to find. These values will be the eigenvalues of the matrix . Each eigenvalue will have a corresponding eigenvector such that . The corresponding eigenvectors can then be found by solving   The eigenspace corresponding to an eigenvalue is the set of vectors which have eigenvalue . It is a vector subspace of the vector space on which acts. The eigenspace corresponding to the matrix would be all vectors that have an eigenvalue for that matrix.   "
 },
 {
   "id": "p-31",
@@ -502,11 +502,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.10",
   "title": "Systems of Multiple Qubits",
-<<<<<<< HEAD
   "body": " Systems of Multiple Qubits  Any system of qubits will have basis states. As we have seen already, in a one-qubit system, the two basis states are and . In a two-qubit system, the four basis states are , , , and . These four basis states each have vector representations, which are found by using the tensor product Tensor Product    Tensor Product  The tensor product (represented by a symbol) is an operation between two matrices (or vectors) that multiplies each entry in the matrix on the left by the matrix on the right. Thus the tensor product between a matrix and a matrix will be a , as shown below.   where each is the entry in the -th row and -th column of .  For scalars and vectors the tensor product can be distributed as follows   Computer the following tensor products        Systems of Multiple Qubits  The vector representation of a two qubit system would be found by the tensor product . Thus the four basis states of a two qubit system are defined as:      This concept can be generalized to systems of any number of qubits. A system of two qubits is referred to as bipartite Bipartite or composite.  The tensor product can also be applied to vector spaces. The tensor product of a vector that exists within a space and a vector that exists within a space would exist within the space . Thus, a system of two qubits would exist within the space and a system of qubits exists within the space , where the superscript means taking the tensor product of with itself times. Similarly, would represent the state tensored with itself times. Suppose the space is dimensional the space is dimensional, then the vector space would be dimensional.     Suppose, we have two vector spaces and and we want to know what kind of operator act on the space . If is an operator on the space and is an operator on the space , then is an operator on the space . An operator is linear if   For and .  For the two qubit system compute the probabilities that it will collapse into each the basis states , , , and        Compute         "
-=======
-  "body": " Systems of Multiple Qubits  Any system of qubits will have basis states. As we have seen already, in a one-qubit system, the two basis states are and . In a two-qubit system, the four basis states are , , , and . These four basis states each have vector representations, which are found by using the tensor product Tensor Product    Tensor Product  The tensor product (represented by a symbol) is an operation between two matrices (or vectors) that multiplies each entry in the matrix on the left by the matrix on the right. Thus the tensor product between a matrix and a matrix will be a , as shown below.   where each is the entry in the -th row and -th column of .  Computer the following tensor products        Systems of Multiple Qubits  The vector representation of a two qubit system would be found by the tensor product }. Thus the four basis states of a two qubit system are defined as:      This concept can be generalized to systems of any number of qubits.  The tensor product can also be applied to vector spaces. The tensor product of a vector that exists within a space and a vector that exists within a space would exist within the space . Thus, a system of qubits exists within the space , where the superscript means taking the tensor product of with itself times. Similarly, would represent the state tensored with itself times.  For the two qubit system compute the probabilities that it will collapse into each the basis states , , , and         "
->>>>>>> 5713a2ebdff2310a2ffc7b5893bd56c983a4152b
 },
 {
   "id": "p-158",
@@ -527,7 +523,6 @@ var ptx_lunr_docs = [
   "body": "Computer the following tensor products     "
 },
 {
-<<<<<<< HEAD
   "id": "p-164",
   "level": "2",
   "url": "sec-Systems-of-Multiple-Qubits.html#p-164",
@@ -546,22 +541,15 @@ var ptx_lunr_docs = [
   "body": "  "
 },
 {
-=======
->>>>>>> 5713a2ebdff2310a2ffc7b5893bd56c983a4152b
   "id": "exercise-15",
   "level": "2",
   "url": "sec-Systems-of-Multiple-Qubits.html#exercise-15",
   "type": "Checkpoint",
-<<<<<<< HEAD
   "number": "1.10.3",
-=======
-  "number": "1.10.2",
->>>>>>> 5713a2ebdff2310a2ffc7b5893bd56c983a4152b
   "title": "",
   "body": "For the two qubit system compute the probabilities that it will collapse into each the basis states , , , and       "
 },
 {
-<<<<<<< HEAD
   "id": "exercise-16",
   "level": "2",
   "url": "sec-Systems-of-Multiple-Qubits.html#exercise-16",
@@ -571,8 +559,6 @@ var ptx_lunr_docs = [
   "body": "Compute       "
 },
 {
-=======
->>>>>>> 5713a2ebdff2310a2ffc7b5893bd56c983a4152b
   "id": "sec-Operations",
   "level": "1",
   "url": "sec-Operations.html",
@@ -582,30 +568,18 @@ var ptx_lunr_docs = [
   "body": " Operations in Quantum Computation   Outer Product  The tensor product is only one of many operations on qubits. In we described how the inner product could be represented as the product of a vector's transpose and the vector. Since an dimensional vector transpose is and the vector is , the resulting product is , which is functionally equivalent to a scalar. If we were to reverse the order of the vector multiplication and multiply a column vector on the left and a row vector on the right, we would multiply an vector by an vector to produce an matrix. More specifically, we want to multiply a vector on the left by the vectors adjoint (complex conjugated transpose) on the right. This operation is known as the outer product Outer Product . The outer product between two qubits and is shown below.      Completeness Relation  If a set of basis vectors for a quantum system have the property that the sum of the outer products of each basis vector with itself is equal to the identity matrix:   Then that set is said to have a completeness relation Completeness Relation . In general, orthonormal bases will have a completeness relation. Since the completeness relation is the same as the identity operator, we can use it on any vector expression without changing its value.  Suppose is a vector in a space and is an orthonormal basis of with a completeness relation. We can then use the completeness relation as follows   Where each and represents the component of the vector that is in the direction of the basis . Thus the completeness relation can be used to decompose a vector into its basis elements.    Inner Product  Here we will redefine the inner product in Bra-Ket notation and describe some additional properties. For two qubits and    their inner product   We now define   We call , the Kronecker delta. It is the mathematical way to express anything that is equal to 0 unless the index , in which case it is 1. For an orthonormal basis we have the property   That is, for any two vectors in the basis, their inner product is 0, unless the two vectors are the same, in which case their inner product is 1.  For and , the inner product has the following properties:     Diagonalization  For a vector space with a basis , A diagonal representation for an operator that acts on the space would be where the are eigenvalues that correspond to the basis state . An operator is said to be diagonalizable Diagonalizable if it has a diagonal representation. As an example of a diagonal representation, note that the Pauli matrix (see ) may be written   where . Diagonal representations are sometimes also known as orthonormal decompositions.    Density Operator  Any basis state for a vector space can also be expressed with a density operator Density Operator that provides us with another method to study the state of the entire system. For a vector space with a basis , the density operators for its basis states are given by   This means that the density operator for any basis state is equal to the outer product of that state with itself. These density operators for states have the following properties:   For a state   The density operator would be    Find the density operator for the following state       Now suppose we want to find a density operator for an entire system. The system exists within a vector space with a basis and has a probability of being in the state after measurement. The density operator for the entire system is defined by   The density operator for the system has the same properties as the density operator for individual states: Idempotent, Trace=1, Hermiticity, and Positive Semi-Definite.    The Commutator  Remember that matrix multiplication is generally not commutative, i.e. for two matrices and , . However, there are exceptions to this generality. The commutator Commutator between two operators and is defined to be   If , that is, , then we say commutes with . Similarly, the anti-commutator Anti-Commutator of two operators and is defined by   we say anti-commutes with if , that is . It turns out that many important properties of pairs of operators can be deduced from their commutator and anti-commutator.   "
 },
 {
-<<<<<<< HEAD
   "id": "p-170",
   "level": "2",
   "url": "sec-Operations.html#p-170",
-=======
-  "id": "p-158",
-  "level": "2",
-  "url": "sec-Operations.html#p-158",
->>>>>>> 5713a2ebdff2310a2ffc7b5893bd56c983a4152b
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "outer product "
 },
 {
-<<<<<<< HEAD
   "id": "p-172",
   "level": "2",
   "url": "sec-Operations.html#p-172",
-=======
-  "id": "p-160",
-  "level": "2",
-  "url": "sec-Operations.html#p-160",
->>>>>>> 5713a2ebdff2310a2ffc7b5893bd56c983a4152b
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -675,15 +649,9 @@ var ptx_lunr_docs = [
   "body": " Gates    Hadamard gate   Hadamard gate Gate Hadamard is one of the most popular gates in quantum computing.   Hadamard gate representation in a circuit.      The Hadamard operator on one qubit can be written as   which is the Hadamard gate in Dirac notation. Hadamard operation is a rotation of the Block sphere about y axis by , followed by a rotation about axis by .   Calculate                 Pauli X gate   Pauli X gate Gate Pauli X is also labeled as , or X    X gate representation in a circuit.       Calculate                     Pauli Y gate   Pauli Y gate Gate Pauli Y is also labeled as , or Y    Y gate representation in a circuit.       Calculate                   Pauli Z   Pauli Z gate Gate Pauli Z is also labeled as , or Z    Z gate representation in a circuit.       Calculate                     Pauli I gate   Pauli I gate Gate Pauli I is also labeled as or I    I gate representation in a circuit.       Calculate                 Phase gate   Phase gate Gate Phase is written as S.   Phase gate representation in a circuit.       Calculate                     \/8 gate   \/8 gate Gate \/8 is written as T.   \/8 gate representation in a circuit.       Calculate              Previous gates aplly on single qubit. The following subsections show the multiqubit gates.     Controled-NOT  CNOT gate in the quantum context has two input qubits:  Control qbit  target qbit  This gate acts as following    CNOT gate representation in a circuit.      Check the XOR and notice this gate is for two qubits.   Obtain the Dirac notation  and   and  and  and  ( can be written as )             The gate and matrix representation are,   CNOT gate representation in a circuit.      Since   and using CNOT matrix we can cancel out some terms and reduce others to 1, such as   and we have   which is the Dirac representation for the CNOT gate.   CNOT gate representation in a circuit.      Apply CNOT to the state           Contorolled-U  Let U be a two qbit operation with a control and target qbit. This operation sets the control qbit in order U is applied to the target qbit, otherwise the target qbit is left alone.   This operation is called controlled-U operation represented by   CU representation in a circuit     CU operator as Dirac notation      Contorolled-Z  The unitary matrix in the computational basis is,   CZ representation in a circuit       Obtain                    "
 },
 {
-<<<<<<< HEAD
   "id": "p-197",
   "level": "2",
   "url": "sec2-chap2.html#p-197",
-=======
-  "id": "p-166",
-  "level": "2",
-  "url": "sec2-chap2.html#p-166",
->>>>>>> 5713a2ebdff2310a2ffc7b5893bd56c983a4152b
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -708,15 +676,9 @@ var ptx_lunr_docs = [
   "body": " Calculate             "
 },
 {
-<<<<<<< HEAD
   "id": "p-202",
   "level": "2",
   "url": "sec2-chap2.html#p-202",
-=======
-  "id": "p-171",
-  "level": "2",
-  "url": "sec2-chap2.html#p-171",
->>>>>>> 5713a2ebdff2310a2ffc7b5893bd56c983a4152b
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -741,15 +703,9 @@ var ptx_lunr_docs = [
   "body": " Calculate                 "
 },
 {
-<<<<<<< HEAD
   "id": "p-205",
   "level": "2",
   "url": "sec2-chap2.html#p-205",
-=======
-  "id": "p-174",
-  "level": "2",
-  "url": "sec2-chap2.html#p-174",
->>>>>>> 5713a2ebdff2310a2ffc7b5893bd56c983a4152b
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -774,15 +730,9 @@ var ptx_lunr_docs = [
   "body": " Calculate               "
 },
 {
-<<<<<<< HEAD
   "id": "p-208",
   "level": "2",
   "url": "sec2-chap2.html#p-208",
-=======
-  "id": "p-177",
-  "level": "2",
-  "url": "sec2-chap2.html#p-177",
->>>>>>> 5713a2ebdff2310a2ffc7b5893bd56c983a4152b
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -807,15 +757,9 @@ var ptx_lunr_docs = [
   "body": " Calculate                 "
 },
 {
-<<<<<<< HEAD
   "id": "p-211",
   "level": "2",
   "url": "sec2-chap2.html#p-211",
-=======
-  "id": "p-180",
-  "level": "2",
-  "url": "sec2-chap2.html#p-180",
->>>>>>> 5713a2ebdff2310a2ffc7b5893bd56c983a4152b
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -840,15 +784,9 @@ var ptx_lunr_docs = [
   "body": " Calculate             "
 },
 {
-<<<<<<< HEAD
   "id": "p-214",
   "level": "2",
   "url": "sec2-chap2.html#p-214",
-=======
-  "id": "p-183",
-  "level": "2",
-  "url": "sec2-chap2.html#p-183",
->>>>>>> 5713a2ebdff2310a2ffc7b5893bd56c983a4152b
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -873,15 +811,9 @@ var ptx_lunr_docs = [
   "body": " Calculate                 "
 },
 {
-<<<<<<< HEAD
   "id": "p-217",
   "level": "2",
   "url": "sec2-chap2.html#p-217",
-=======
-  "id": "p-186",
-  "level": "2",
-  "url": "sec2-chap2.html#p-186",
->>>>>>> 5713a2ebdff2310a2ffc7b5893bd56c983a4152b
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -1032,36 +964,36 @@ var ptx_lunr_docs = [
   "body": " Grover's Algorithm    Classical search algorithms are fundamental techniques used in computer science to locate a specific item within a collection of items. Common approaches include linear search, where each item is checked sequentially until the target is found, and binary search, which efficiently narrows down the search range in a sorted array by repeatedly dividing it in half. These methods are crucial in various applications, from database retrieval to optimization problems, as they determine how quickly and efficiently data can be accessed and processed. However, classical search often requires significant time and resources, especially with large datasets. Quantum computing has the potential to revolutionize search algorithms through methods like Grover's algorithm, which can search an unsorted database quadratically faster than classical algorithms, offering a profound improvement in speed and efficiency for large-scale search problems.  To implement Grover's algorithm, we need unitary matrix , written as . This matrix works as a black box as following   The XOR operartion is    diffusion gate is an operator given by  Household transform is is a linear algebra technique often used to construct quantum operations that reflect a quantum state about a certain axis or state, which is a crucial step in many quantum algorithms, including Grover's algorithm. By applying a series of these transformations, one can systematically manipulate and amplify the amplitude of the desired state while diminishing the amplitudes of the undesired ones, ultimately leading to a more efficient search process. This method contributes to the algorithm's overall quadratic speedup compared to classical search methods.  Now, we implement Grover's algorithm for the following example    We prose a random vector , and tries to find the expected factor.   1. Consider you have the following data    Representation of values       2. Calculate the average   3. Invert each element aorund the average by defining   We calculate the units away, , from the average, , for each    4.a define   and calculate   The inversion about the average calculates the units away, , from the average, , for each .   4.b Plot the data      Representation of values      The last operation, has the following representation in terms of matrices, where where is the matrix for the average. It means . As follows, This is a state where each amplitude is the average of all the amplitudes.   5. Invert amplitudes about the average.    "
 },
 {
-  "id": "p-212",
+  "id": "p-243",
   "level": "2",
-  "url": "sec1-chap3.html#p-212",
+  "url": "sec1-chap3.html#p-243",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "Classical search "
 },
 {
-  "id": "p-213",
+  "id": "p-244",
   "level": "2",
-  "url": "sec1-chap3.html#p-213",
+  "url": "sec1-chap3.html#p-244",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "unitary matrix "
 },
 {
-  "id": "p-215",
+  "id": "p-246",
   "level": "2",
-  "url": "sec1-chap3.html#p-215",
+  "url": "sec1-chap3.html#p-246",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "diffusion gate Household transform "
 },
 {
-  "id": "example-4",
+  "id": "example-5",
   "level": "2",
-  "url": "sec1-chap3.html#example-4",
+  "url": "sec1-chap3.html#example-5",
   "type": "Example",
   "number": "3.1.1",
   "title": "",
@@ -1074,7 +1006,16 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "3.2",
   "title": "Shor’s Algorithm",
-  "body": " Shor's Algorithm  Text of section.  "
+  "body": " Shor's Algorithm   Building Up to the Algorithm  In the field of cryptography, quantum computers could be used to improve the security of our information systems. However, quantum computations can also be used to break through our modern crypto-systems much faster than is possible through classical computing. One method through which quantum computation could be used to break through our modern cybersecurity is with an algorithm created by American mathematician Peter Shor in 1994.  The security behind our modern cryptographic methods lies in the fact that it is very computationally difficult to find the prime factors of large numbers. It takes years of computing time on a classical computer to find the factors of numbers with hundreds of digits. The algorithm designed by Peter Shor takes advantage of quantum concepts to find the prime factors of large numbers much quicker. If a powerful enough quantum computer is ever built it could be used to break most modern encryptions jarringly quickly. Before describing the algorithm, we must first define some terms.  Prime Numbers: A number is prime if the only positive integers that divide it are itself and the number one  Coprime Numbers: Two numbers are coprime (also known as relatively prime or mutually prime) if the only positive integer that is a divisor of both of them is the number one. In other words, two numbers are coprime if their greatest common divisor is one and they share no prime factors  Period of a function: Suppose and are two binary strings. The period of a function would be a binary string such that   where and represents the XOR operation.  Congruence Relation: The congruence relation comes from the field of modular arithmetic. This relation deals with numbers that have the same remained when divided by a specific value, which is called a modulus Modulus .   This equation reads \" is congruent to modulo .\" Congruence relations have the following properties:   Suppose and . Congruence relations have the following operations defined:     An Example  We will start the discussion of this algorithm with an example. Suppose we have two prime numbers, We can multiply them togehter to get which a positive number and the result of two prime numbers. Now, think about this   where is either prime or the product of primes. We can calculate this number fairly easily. However, if you have   where and are either prime or the product of primes. We can still calculate this fairly easily and find that 315 actually has more than two factors   Instead of trying to solve for and , it makes more sense to solve for and where each is a prime number and each is an exponent that represents how many times appears as a factor. This means we want to express the number we are looking to factor as    "
+},
+{
+  "id": "p-262",
+  "level": "2",
+  "url": "sec2-chap3.html#p-262",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "modulus "
 },
 {
   "id": "index-1",

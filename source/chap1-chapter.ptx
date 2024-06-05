@@ -158,7 +158,7 @@
   <title>Eigenvectors and Eigenvalues</title>
   <p> Here we will provide a brief overview of eigenvectors and eigenvalues, but readers wishing to learn more should go to this link <url href="https://tinyurl.com/mhtupbk6" />. An eigenvector of a matrix <m>A</m> is a non-zero vector <m>\vec{v}</m> such that </p> 
 <me> A \vec{v} = v\vec{v} </me> 
-<p> where v is a scalar known as the eigenvalue of <m>A</m> corresponding to <m>\vec{v}</m>. It will often be convenient to use the variable <m>v</m> both as a label for the eigenvector, and to represent the eigenvalue. The eigenvalues of a matrix can be found by solving the equation </p> 
+<p> where <m>v</m> is a scalar known as the eigenvalue of <m>A</m> corresponding to <m>\vec{v}</m>. It will often be convenient to use the variable <m>v</m> both as a label for the eigenvector, and to represent the eigenvalue. The eigenvalues of a matrix can be found by solving the equation </p> 
 <me> \text{det}(A-\lambda I) = 0 </me>
 <p> In this equation, <m>\lambda</m> is an unknown variable whose values we want to find. These values will be the eigenvalues of the matrix <m>A</m>. Each eigenvalue <m>\lambda_i</m> will have a corresponding eigenvector <m>\vec{v_i}</m> such that <m>A\vec{v_i} = \lambda_i \vec{v_i}</m>. The corresponding eigenvectors can then be found by solving</p> 
 <me> (A-\lambda_i I)\vec{v_i} = \vec{0} </me>
