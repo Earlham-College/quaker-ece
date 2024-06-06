@@ -649,15 +649,9 @@ var ptx_lunr_docs = [
   "body": " Gates    Hadamard gate   Hadamard gate Gate Hadamard is one of the most popular gates in quantum computing.   Hadamard gate representation in a circuit.      The Hadamard operator on one qubit can be written as   which is the Hadamard gate in Dirac notation. Hadamard operation is a rotation of the Block sphere about y axis by , followed by a rotation about axis by .   Calculate                 Pauli X gate   Pauli X gate Gate Pauli X is also labeled as , or X    X gate representation in a circuit.       Calculate                     Pauli Y gate   Pauli Y gate Gate Pauli Y is also labeled as , or Y    Y gate representation in a circuit.       Calculate                   Pauli Z   Pauli Z gate Gate Pauli Z is also labeled as , or Z    Z gate representation in a circuit.       Calculate                     Pauli I gate   Pauli I gate Gate Pauli I is also labeled as or I    I gate representation in a circuit.       Calculate                 Phase gate   Phase gate Gate Phase is written as S.   Phase gate representation in a circuit.       Calculate                     \/8 gate   \/8 gate Gate \/8 is written as T.   \/8 gate representation in a circuit.       Calculate              Previous gates aplly on single qubit. The following subsections show the multiqubit gates.     Controled-NOT  CNOT gate in the quantum context has two input qubits:  Control qbit  target qbit  This gate acts as following    CNOT gate representation in a circuit.      Check the XOR and notice this gate is for two qubits.   Obtain the Dirac notation  and   and  and  and  ( can be written as )             The gate and matrix representation are,   CNOT gate representation in a circuit.      Since   and using CNOT matrix we can cancel out some terms and reduce others to 1, such as   and we have   which is the Dirac representation for the CNOT gate.   CNOT gate representation in a circuit.      Apply CNOT to the state           Contorolled-U  Let U be a two qbit operation with a control and target qbit. This operation sets the control qbit in order U is applied to the target qbit, otherwise the target qbit is left alone.   This operation is called controlled-U operation represented by   CU representation in a circuit     CU operator as Dirac notation      Contorolled-Z  The unitary matrix in the computational basis is,   CZ representation in a circuit       Obtain                    "
 },
 {
-<<<<<<< HEAD
-  "id": "p-200",
+  "id": "p-199",
   "level": "2",
-  "url": "sec2-chap2.html#p-200",
-=======
-  "id": "p-196",
-  "level": "2",
-  "url": "sec2-chap2.html#p-196",
->>>>>>> refs/remotes/origin/main
+  "url": "sec2-chap2.html#p-199",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -682,15 +676,9 @@ var ptx_lunr_docs = [
   "body": " Calculate             "
 },
 {
-<<<<<<< HEAD
-  "id": "p-205",
+  "id": "p-204",
   "level": "2",
-  "url": "sec2-chap2.html#p-205",
-=======
-  "id": "p-201",
-  "level": "2",
-  "url": "sec2-chap2.html#p-201",
->>>>>>> refs/remotes/origin/main
+  "url": "sec2-chap2.html#p-204",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -715,15 +703,9 @@ var ptx_lunr_docs = [
   "body": " Calculate                 "
 },
 {
-<<<<<<< HEAD
-  "id": "p-208",
+  "id": "p-207",
   "level": "2",
-  "url": "sec2-chap2.html#p-208",
-=======
-  "id": "p-204",
-  "level": "2",
-  "url": "sec2-chap2.html#p-204",
->>>>>>> refs/remotes/origin/main
+  "url": "sec2-chap2.html#p-207",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -748,15 +730,9 @@ var ptx_lunr_docs = [
   "body": " Calculate               "
 },
 {
-<<<<<<< HEAD
-  "id": "p-211",
+  "id": "p-210",
   "level": "2",
-  "url": "sec2-chap2.html#p-211",
-=======
-  "id": "p-207",
-  "level": "2",
-  "url": "sec2-chap2.html#p-207",
->>>>>>> refs/remotes/origin/main
+  "url": "sec2-chap2.html#p-210",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -781,15 +757,9 @@ var ptx_lunr_docs = [
   "body": " Calculate                 "
 },
 {
-<<<<<<< HEAD
-  "id": "p-214",
+  "id": "p-213",
   "level": "2",
-  "url": "sec2-chap2.html#p-214",
-=======
-  "id": "p-210",
-  "level": "2",
-  "url": "sec2-chap2.html#p-210",
->>>>>>> refs/remotes/origin/main
+  "url": "sec2-chap2.html#p-213",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -814,15 +784,9 @@ var ptx_lunr_docs = [
   "body": " Calculate             "
 },
 {
-<<<<<<< HEAD
-  "id": "p-217",
+  "id": "p-216",
   "level": "2",
-  "url": "sec2-chap2.html#p-217",
-=======
-  "id": "p-213",
-  "level": "2",
-  "url": "sec2-chap2.html#p-213",
->>>>>>> refs/remotes/origin/main
+  "url": "sec2-chap2.html#p-216",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -847,15 +811,9 @@ var ptx_lunr_docs = [
   "body": " Calculate                 "
 },
 {
-<<<<<<< HEAD
-  "id": "p-220",
+  "id": "p-219",
   "level": "2",
-  "url": "sec2-chap2.html#p-220",
-=======
-  "id": "p-216",
-  "level": "2",
-  "url": "sec2-chap2.html#p-216",
->>>>>>> refs/remotes/origin/main
+  "url": "sec2-chap2.html#p-219",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -1002,15 +960,6 @@ var ptx_lunr_docs = [
   "url": "sec1-chap3.html",
   "type": "Section",
   "number": "3.1",
-<<<<<<< HEAD
-  "title": "Grover’s Algorithm",
-  "body": " Grover's Algorithm    Classical search algorithms are fundamental techniques used in computer science to locate a specific item within a collection of items. Common approaches include linear search, where each item is checked sequentially until the target is found, and binary search, which efficiently narrows down the search range in a sorted array by repeatedly dividing it in half. These methods are crucial in various applications, from database retrieval to optimization problems, as they determine how quickly and efficiently data can be accessed and processed. However, classical search often requires significant time and resources, especially with large datasets. Quantum computing has the potential to revolutionize search algorithms through methods like Grover's algorithm, which can search an unsorted database quadratically faster than classical algorithms, offering a profound improvement in speed and efficiency for large-scale search problems.  To implement Grover's algorithm, we need unitary matrix , written as . This matrix works as a black box as following   The XOR operartion is    diffusion gate is an operator given by  Household transform is is a linear algebra technique often used to construct quantum operations that reflect a quantum state about a certain axis or state, which is a crucial step in many quantum algorithms, including Grover's algorithm. By applying a series of these transformations, one can systematically manipulate and amplify the amplitude of the desired state while diminishing the amplitudes of the undesired ones, ultimately leading to a more efficient search process. This method contributes to the algorithm's overall quadratic speedup compared to classical search methods.  Now, we implement Grover's algorithm for the following example    We prose a random vector , and tries to find the expected factor.   1. Consider you have the following data    Representation of values       2. Calculate the average   3. Invert each element aorund the average by defining   We calculate the units away, , from the average, , for each    4.a define   and calculate   The inversion about the average calculates the units away, , from the average, , for each .   4.b Plot the data      Representation of values      The last operation, has the following representation in terms of matrices, where where is the matrix for the average. It means . As follows, This is a state where each amplitude is the average of all the amplitudes.   5. Invert amplitudes about the average.    The item (4).b and eq. (3.1.11) show same results, the second report implies linear algebra operations.  This example emphasizes on invert amplitudes about the mean; however, Grover's algorithm requires phase inversion. The following example explains the step.      Consider the information from the example 3.1.1. We have the same vector.    To apply the phase inversion about the average, which requires the function,   and   which is usually shown such as   where is an $U_f$ aka oracle. This oracle shifts the phase of the solution, and highlights the solutions to the search problem.   We will take the vector   And suppose we are looking for the second input, it means x=x_2=w  is the winner, it is oul goal.    \\ Now we apply   Representation of the values. The horizontal line is the new average      and calculate    Representation of the values. The horizontal line is the new average      and calculate   We can see how the amplitude for the second element increases.   We showed how this search algorithm works, and it is clear that we will get the second element in the list as the most probable output.    This part shows the Grover's algorithm in bracket notation.  This algorithm enables this search method to be speed up to operations. With this algorithm \"searching an unsorted database\" with elements in time. Classical algorithm needs on average time. The goal is find , given an oracle with    "
-},
-{
-  "id": "p-246",
-  "level": "2",
-  "url": "sec1-chap3.html#p-246",
-=======
   "title": "Introduction",
   "body": " Introduction  In general, algorithms are step-by-step procedures that take an input, process it through a series of well-defined steps, and produce an output. They are the backbone of problem-solving in computing, enabling machines to perform tasks efficiently and systematically. Quantum computing introduces a new paradigm in algorithm design, leveraging the principles of quantum mechanics to solve problems that are intractable for classical computers. Two of the most prominent quantum algorithms are Grover's algorithm and Shor's algorithm, each demonstrating the transformative potential of quantum computing.  Grover's algorithm, developed by Lov Grover in 1996, provides a quadratic speedup for unsorted database searches. In classical computing, searching an unsorted database of items requires time, whereas Grover's algorithm can achieve this in time. This is achieved by exploiting the principles of superposition and amplitude amplification, allowing the quantum computer to evaluate multiple possibilities simultaneously. Grover's algorithm has broad implications for fields requiring extensive search capabilities, such as cryptography and database management.  Shor's algorithm, proposed by Peter Shor in 1994, addresses the problem of integer factorization, which underpins the security of many classical cryptographic systems, such as RSA. Classical algorithms for factoring large integers are inefficient, making RSA encryption secure under current classical computing capabilities. However, Shor's algorithm can factorize large integers exponentially faster than the best-known classical algorithms, in polynomial time. This breakthrough poses a significant threat to current cryptographic practices, necessitating the development of quantum-resistant encryption methods.  Algorithms are fundamental to computing, guiding processes and solving problems efficiently. Quantum algorithms harness the unique properties of quantum mechanics to tackle challenges beyond the reach of classical algorithms. These developments not only demonstrate the power of quantum computing but also herald a new era of computational possibilities, revolutionizing fields from cryptography to data search. In this chapter, we will discuss the basic concepts and process of Grover's and Shor's algorithms.  "
 },
@@ -1024,40 +973,27 @@ var ptx_lunr_docs = [
   "body": " Grover's Algorithm    Classical search algorithms are fundamental techniques used in computer science to locate a specific item within a collection of items. Common approaches include linear search, where each item is checked sequentially until the target is found, and binary search, which efficiently narrows down the search range in a sorted array by repeatedly dividing it in half. These methods are crucial in various applications, from database retrieval to optimization problems, as they determine how quickly and efficiently data can be accessed and processed. However, classical search often requires significant time and resources, especially with large datasets. Quantum computing has the potential to revolutionize search algorithms through methods like Grover's algorithm, which can search an unsorted database quadratically faster than classical algorithms, offering a profound improvement in speed and efficiency for large-scale search problems.  To implement Grover's algorithm, we need unitary matrix , written as . This matrix works as a black box as following   The XOR operartion is    diffusion gate is an operator given by  Household transform is is a linear algebra technique often used to construct quantum operations that reflect a quantum state about a certain axis or state, which is a crucial step in many quantum algorithms, including Grover's algorithm. By applying a series of these transformations, one can systematically manipulate and amplify the amplitude of the desired state while diminishing the amplitudes of the undesired ones, ultimately leading to a more efficient search process. This method contributes to the algorithm's overall quadratic speedup compared to classical search methods.  Now, we implement Grover's algorithm for the following example    We prose a random vector , and try to find the expected factor   1. Consider you have the following data    Representation of values       2. Calculate the average   3. Invert each element aorund the average by defining   We calculate the units away, , from the average, , for each    4.a define   and calculate   The inversion about the average calculates the units away, , from the average, , for each .   4.b Plot the data      Representation of values      The last operation, has the following representation in terms of matrices, where where is the matrix for the average. It means . As follows, This is a state where each amplitude is the average of all the amplitudes.   5. Invert amplitudes about the average.    The item (4).b and eq. (3.1.11) show same results, the second report implies linear algebra operations.  This example emphasizes on invert amplitudes about the mean; however, Grover's algorithm requires phase inversion. The following example explains the step.      Consider the information from the example 3.1.1. We have the same vector.    To apply the phase inversion about the average, which requires the function,   and   which is usually shown such as   where  is an oracle. This oracle shifts the phase of the solution, and highlights the solutions to the search problem.   We will take the vector   And suppose we are looking for the second input, it means x=x_2=w  is the winner, it is oul goal.     Now we apply   Representation of the values. The horizontal line is the new average      and calculate    Representation of the values. The horizontal line is the new average      and calculate   We can see how the amplitude for the second element increases.   We showed how this search algorithm works, and it is clear that we will get the second element in the list as the most probable output.    This part shows the Grover's algorithm in bracket notation.  This algorithm enables this search method to be speed up to operations. With this algorithm \"searching an unsorted database\" with elements in time. Classical algorithm needs on average time. The goal is find , given an oracle with  and where the phase oracle is where then and then the Grover's iteration   The algorithm is shown below  The process of Grover's algorithm       Here is another explanation       Define a superposition state and (note the dashed line in the circuit) where we used eq.(3.1.24) and eq.(3.1.26)   This algorithm carries out the operation on the state   The representation of the Grover's algorithm using circuits is shown in fig(3.1.8.)  Quantum circuit for the Grover algorithm      "
 },
 {
-  "id": "p-245",
+  "id": "p-248",
   "level": "2",
-  "url": "sec2-chap3.html#p-245",
->>>>>>> refs/remotes/origin/main
+  "url": "sec2-chap3.html#p-248",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "Classical search "
 },
 {
-<<<<<<< HEAD
-  "id": "p-247",
+  "id": "p-249",
   "level": "2",
-  "url": "sec1-chap3.html#p-247",
-=======
-  "id": "p-246",
-  "level": "2",
-  "url": "sec2-chap3.html#p-246",
->>>>>>> refs/remotes/origin/main
+  "url": "sec2-chap3.html#p-249",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "unitary matrix "
 },
 {
-<<<<<<< HEAD
-  "id": "p-249",
+  "id": "p-251",
   "level": "2",
-  "url": "sec1-chap3.html#p-249",
-=======
-  "id": "p-248",
-  "level": "2",
-  "url": "sec2-chap3.html#p-248",
->>>>>>> refs/remotes/origin/main
+  "url": "sec2-chap3.html#p-251",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -1075,11 +1011,7 @@ var ptx_lunr_docs = [
 {
   "id": "example-6",
   "level": "2",
-<<<<<<< HEAD
-  "url": "sec1-chap3.html#example-6",
-=======
   "url": "sec2-chap3.html#example-6",
->>>>>>> refs/remotes/origin/main
   "type": "Example",
   "number": "3.2.4",
   "title": "",
@@ -1113,30 +1045,15 @@ var ptx_lunr_docs = [
   "body": " Shor's Algorithm   Building Up to the Algorithm  In the field of cryptography, quantum computers could be used to improve the security of our information systems. However, quantum computations can also be used to break through our modern crypto-systems much faster than is possible through classical computing. One method through which quantum computation could be used to break through our modern cybersecurity is with an algorithm created by American mathematician Peter Shor in 1994.  The security behind our modern cryptographic methods lies in the fact that it is very computationally difficult to find the prime factors of large numbers. It takes years of computing time on a classical computer to find the factors of numbers with hundreds of digits. The algorithm designed by Peter Shor takes advantage of quantum concepts to find the prime factors of large numbers much quicker. If a powerful enough quantum computer is ever built it could be used to break most modern encryptions jarringly quickly. Before describing the algorithm, we must first define some terms.  Prime Numbers: A number is prime if the only positive integers that divide it are itself and the number one  Coprime Numbers: Two numbers are coprime (also known as relatively prime or mutually prime) if the only positive integer that is a divisor of both of them is the number one. In other words, two numbers are coprime if their greatest common divisor is one and they share no prime factors  Period of a function: Suppose and are two binary strings. The period of a function would be a binary string such that   where and represents the XOR operation.  A periodic function is any function with a series of outputs that repeat as the inputs continue to increase. The period of a function is the length of the sequence of repeating outputs.  Congruence Relation: The congruence relation comes from the field of modular arithmetic. This relation deals with numbers that have the same remained when divided by a specific value, which is called a modulus Modulus .   This equation reads \" is congruent to modulo .\" Congruence relations have the following properties:   Suppose and . Congruence relations have the following operations defined:   An alternate form for the equation is   Here is called the remainder and is what we want to solve for to find the value of .  For two coprimes and (where ) we propose the sequence   The terms of this sequence are defined by the periodic function    The following examples will show the period of this function for different values of and .   Consider , and running from 0 to    Notice that after 11 values of the function begins to repeat itself. If we continued to write out this sequence as continues to increase, we would find that every 11 integers, the sequence repeats again. This means that has a period of 11, which means .    A counterexample  This example will show what will happen when and are not coprimes. Consider , and running from to . and share the prime factor so they are not coprime.   As we can see, the function does begin to repeat, but it does not repeat the entire sequence. Thus this function is not periodic, which is why we must choose coprimes for and .    Consider , and running from 0 to    Notice that after 4 values of the function begins to repeat itself. If we continued to write out this sequence as continues to increase, we would find that every 4 integers, the sequence repeats again. This means that has a period of 4, which means .     An Example  Before fully diving into Shor's algorithm, we will have another example. Suppose we have two prime numbers, We can multiply them togehter to get which a positive number and the result of two prime numbers. Now, think about this   where is either prime or the product of primes. We can calculate this number fairly easily. However, if you have   where and are either prime or the product of primes. We can still calculate this fairly easily and find that 315 actually has more than two factors   Instead of trying to solve for and , it makes more sense to solve for and where each is a prime factor and each is an exponent that represents how many times appears as a factor. This means we want to express the number we are looking to factor as     Shor's Algorithm   Integer Factorization Problem   An integer    Output positive integers and where the are distinct primes and   The complexity to calculate the prime factors increases rapidly as increases.   In 1994, while Peter Shor was working for Bell Labs, his proposed algorithm to quickly factor large numbers sent ripples across the fields of computer science, number theory, quantum computation, and cryptography. While it has not been proven that factoring large numbers can not be achieved on a classical computer in polynomial time, as of 2015 the fastest algorithm publicly available for factoring large number runs in   operations where is the number of bits used to represent the number; this runtime exceeds polynomial time. In contrast Shor's algorithm runs in   operations on a quantum computer, and then must perform steps of post processing on a classical computer. Overall this time is polynomial. This discovery propelled the study of quantum computing forward, as such an algorithm has been highly sought after.    Shor's algorithm uses quantum parallelism to produce a superposition of all values of this function in one step.  The Quantum Fourier Transform The Quantum Fourier Transform is a highly advanced topic which we will not delve into here, but readers wishing to expand their knowledge on it should go to this link is used to create a state in which most of the amplitudes are close to multiples of the reciprocals of the functions period. With high probability, measuring the state yields information from which, by classical means, the period can be extracted. The period is then used to factor N  The function   is a periodic function where is an integer coprime to and is the integer we want to factor. Calculating this function for an exponential number of inputs would take an exponential amount of time on a classical computer, but an a quantum computer Shor's algorithm can take advantage of quantum parallelism to perform this exponential number of operations in one step.  The first thing we need to know in order to do Shor's algorithm is order finding Order Finding . Let and be positive integers with no common factors such that . The order of for the function is the smallest positive integer such that   which means   This equation can be expanded   This tells us that the period of the function will be the smallest nonzero value of that satisfies the equation . If is even, then and are guaranteed to be integers. Since we are looking to find integer factors, if we want to factor , then we must keep choosing values of until is an even number.  When is even, we know that . It cannot be the case that because this would imply that which cannot be true since is the smallest value that satisfies that equation. If we can show that it is also not the case that , then we will know that is a multiple of but that is not a multiple of nor of . This means that must share common factors with and .  In order to verify it is not the case that we should first compute   using the Euclidean Algorithm (we do not describe the Euclidean Algorithm in this webbook, but readers unfamiliar with it may be interested in this link ). If we calculate that then we know that , which means we will not be able to factor using this value of and we will need to restart the algorithm with a new value of . If we calculate that then is a factor of and is another factor. If either of these factors are not prime then we can perform the entire algorithm on them again in order to find their factors. We keep repeating this process until we can fully factor and represent it as a product of primes.   Suppose we want to find the period of the function for . We could use the same method we did in examples 3.2.1, 3.2.2, and 3.3.3   This method tells us that the period of the function is 5, but it is extremely time consuming. If our values of or were larger it would be very difficult to perform these operations, even on a powerful computer. This problem can be solved much more efficiently by using a quantum algorithm based on phase estimation Phase Estimation .    "
 },
 {
-<<<<<<< HEAD
-  "id": "p-273",
+  "id": "p-282",
   "level": "2",
-  "url": "sec2-chap3.html#p-273",
-=======
-  "id": "p-279",
-  "level": "2",
-  "url": "sec3-chap3.html#p-279",
->>>>>>> refs/remotes/origin/main
+  "url": "sec3-chap3.html#p-282",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "modulus "
 },
 {
-<<<<<<< HEAD
-  "id": "references",
-  "level": "1",
-  "url": "references.html",
-  "type": "References",
-  "number": "",
-  "title": "References",
-  "body": "  Mary L Boas. Mathematical methods in the physical sciences , John Wiley & Sons, 2006.  Phillip Kaye, Raymond Laflamme, and Michelle Mosca. An introduction to quantum computing , Oxford Univ. Press, 2007.  Loceff, M. A course in quantum computing (for the community college) , Foothill College, 2015.  David McMahon. Quantum computing explained. , John Wiley & Sons, 2007.  N. David Mermin. Quantum Computer Science: An Introduction , Cambridge University Press, 2007.  Isaac Newton and NW Chittenden. Newton’s principia: The mathematical principles of natural philosophy , Geo. P. Putnam, 1850.  Michael A Nielsen and Isaac Chuang. Quantum computation and quantum information , 2002.  Eleanor Rieffel and Wolfgang Polak. An introduction to quantum computing for non-physicists , ACM Comput. Surv., 32(3):300–335, September 2000.  Hans J Weber and George B Arfken. Essential mathematical methods for physicists, ISE , Elsevier, 2003.  Peter Wittek. Quantum machine learning: what quantum computing means to data mining. , Academic Press, 2014.  Noson S Yanofsky and Mirco A Mannucci. Quantum computing for computer scientists , Cambridge University Press, 2008.    "
-=======
   "id": "example-7",
   "level": "2",
   "url": "sec3-chap3.html#example-7",
@@ -1173,9 +1090,9 @@ var ptx_lunr_docs = [
   "body": " Integer Factorization Problem   An integer    Output positive integers and where the are distinct primes and   The complexity to calculate the prime factors increases rapidly as increases.  "
 },
 {
-  "id": "p-306",
+  "id": "p-309",
   "level": "2",
-  "url": "sec3-chap3.html#p-306",
+  "url": "sec3-chap3.html#p-309",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -1189,7 +1106,15 @@ var ptx_lunr_docs = [
   "number": "3.3.5",
   "title": "",
   "body": " Suppose we want to find the period of the function for . We could use the same method we did in examples 3.2.1, 3.2.2, and 3.3.3   This method tells us that the period of the function is 5, but it is extremely time consuming. If our values of or were larger it would be very difficult to perform these operations, even on a powerful computer. This problem can be solved much more efficiently by using a quantum algorithm based on phase estimation Phase Estimation .  "
->>>>>>> refs/remotes/origin/main
+},
+{
+  "id": "references",
+  "level": "1",
+  "url": "references.html",
+  "type": "References",
+  "number": "",
+  "title": "References",
+  "body": "  Mary L Boas. Mathematical methods in the physical sciences , John Wiley & Sons, 2006.  Phillip Kaye, Raymond Laflamme, and Michelle Mosca. An introduction to quantum computing , Oxford Univ. Press, 2007.  Loceff, M. A course in quantum computing (for the community college) , Foothill College, 2015.  David McMahon. Quantum computing explained. , John Wiley & Sons, 2007.  N. David Mermin. Quantum Computer Science: An Introduction , Cambridge University Press, 2007.  Isaac Newton and NW Chittenden. Newton’s principia: The mathematical principles of natural philosophy , Geo. P. Putnam, 1850.  Michael A Nielsen and Isaac Chuang. Quantum computation and quantum information , 2002.  Eleanor Rieffel and Wolfgang Polak. An introduction to quantum computing for non-physicists , ACM Comput. Surv., 32(3):300–335, September 2000.  Hans J Weber and George B Arfken. Essential mathematical methods for physicists, ISE , Elsevier, 2003.  Peter Wittek. Quantum machine learning: what quantum computing means to data mining. , Academic Press, 2014.  Noson S Yanofsky and Mirco A Mannucci. Quantum computing for computer scientists , Cambridge University Press, 2008.    "
 },
 {
   "id": "index-1",
