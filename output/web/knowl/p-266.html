@@ -12,30 +12,9 @@
 </head>
 <body class="ignore-math">
 <h3 class="heading"><span class="type">Paragraph</span></h3>
-<div class="para logical">
-<div class="para">
-<span class="process-math">\(\textbf{Proof:}\)</span> Define a superposition state</div>
-<div class="displaymath process-math">
-\begin{gather}
-\ket{\psi_1} = H^{\otimes n}\ket{0}^{\otimes n} = 2^{-\frac{n}{2}}\sum_{x\in \{0,1\}}^{2^n-1}\ket{x}\tag{3.2.26}
-\end{gather}
+<div class="para">The algorithm is shown below <figure class="figure figure-like"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/grover5.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.2.7<span class="period">.</span></span><span class="space"> </span>The process of Grover’s algorithm</figcaption></figure>
 </div>
-<div class="para">and (note the dashed line in the circuit)</div>
-<div class="displaymath process-math">
-\begin{align}
-V = H^{\otimes n} {U_f}_0H^{\otimes n} &amp;= 
-H^{\otimes n}\big(
-2 \ket{0}\bra{0}^{\otimes n} - I
-\big)
-H^{\otimes n}\\=
-&amp;
-2 H^{\otimes n}\ket{0}\bra{0}^{\otimes n}H^{\otimes n} - H^{\otimes n}IH^{\otimes n}\\
-&amp;=
-2 \ket{\psi_1}\bra{\psi_1} - I\tag{3.2.27}
-\end{align}
-</div>
-<div class="para">where we used eq.(3.1.24) and eq.(3.1.26)</div>
-</div>
-<span class="incontext"><a href="sec1-chap3.html#p-266" class="internal">in-context</a></span>
+<span class="incontext"><a href="sec2-chap3.html#p-266" class="internal">in-context</a></span>
 </body>
 </html>
