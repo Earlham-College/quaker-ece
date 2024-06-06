@@ -8,7 +8,7 @@
 <html lang="en-US" dir="ltr">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Grover’s Algorithm</title>
+<title>Introduction</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:type" content="book">
@@ -92,7 +92,7 @@ window.MathJax = {
 </head>
 <body id="changeme" class="pretext book ignore-math">
 <a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
-<a id="logo-link" class="logo-link" href=""></a><div class="title-container">
+<a id="logo-link" class="logo-link" href="" target="_blank"><img src="external/earlhamlogo.png" alt="Logo image"></a><div class="title-container">
 <h1 class="heading"><a href="my-great-book.html"><span class="title">Quantum Computing:</span> <span class="subtitle">A gentle introduction for Liberal Arts Institutions</span></a></h1>
 <p class="byline">Levi Goldberg, Shun Suzuki, Javier Orduz</p>
 </div>
@@ -319,12 +319,14 @@ window.MathJax = {
 <li>
 <div class="toc-item"><a href="chap3-chapter.html" class="internal"><span class="codenumber">3</span> <span class="title">Algorithm</span></a></div>
 <ul class="structural">
-<li class="active"><div class="toc-item"><a href="sec1-chap3.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Grover’s Algorithm</span></a></div></li>
+<li class="active"><div class="toc-item"><a href="sec1-chap3.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Introduction</span></a></div></li>
+<li><div class="toc-item"><a href="sec2-chap3.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Grover’s Algorithm</span></a></div></li>
 <li>
-<div class="toc-item"><a href="sec2-chap3.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Shor’s Algorithm</span></a></div>
+<div class="toc-item"><a href="sec3-chap3.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Shor’s Algorithm</span></a></div>
 <ul class="structural">
-<li><div class="toc-item"><a href="sec2-chap3.html#subsec-Building-Up-to-the-Algorithm" class="internal"><span class="codenumber">3.2.1</span> <span class="title">Building Up to the Algorithm</span></a></div></li>
-<li><div class="toc-item"><a href="sec2-chap3.html#subsec-An-Example" class="internal"><span class="codenumber">3.2.2</span> <span class="title">An Example</span></a></div></li>
+<li><div class="toc-item"><a href="sec3-chap3.html#subsec-Building-Up-to-the-Algorithm" class="internal"><span class="codenumber">3.3.1</span> <span class="title">Building Up to the Algorithm</span></a></div></li>
+<li><div class="toc-item"><a href="sec3-chap3.html#subsec-An-Example" class="internal"><span class="codenumber">3.3.2</span> <span class="title">An Example</span></a></div></li>
+<li><div class="toc-item"><a href="sec3-chap3.html#subsec-Shors-Algorithm" class="internal"><span class="codenumber">3.3.3</span> <span class="title">Shor’s Algorithm</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -339,8 +341,9 @@ window.MathJax = {
 </li>
 </ul></nav></div>
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec1-chap3"><h2 class="heading hide-type">
-<span class="type">Section</span> <span class="codenumber">3.1</span> <span class="title">Grover’s Algorithm</span>
+<span class="type">Section</span> <span class="codenumber">3.1</span> <span class="title">Introduction</span>
 </h2>
+<<<<<<< HEAD
 <div class="para" id="p-246">
 <dfn class="terminology">Classical search</dfn> algorithms are fundamental techniques used in computer science to locate a specific item within a collection of items. Common approaches include linear search, where each item is checked sequentially until the target is found, and binary search, which efficiently narrows down the search range in a sorted array by repeatedly dividing it in half. These methods are crucial in various applications, from database retrieval to optimization problems, as they determine how quickly and efficiently data can be accessed and processed. However, classical search often requires significant time and resources, especially with large datasets. Quantum computing has the potential to revolutionize search algorithms through methods like Grover’s algorithm, which can search an unsorted database quadratically faster than classical algorithms, offering a profound improvement in speed and efficiency for large-scale search problems.</div>
 <div class="para" id="p-247">To implement Grover’s algorithm, we need <dfn class="terminology">unitary matrix</dfn>, written as <span class="process-math">\(U_f\text{.}\)</span> This matrix works as a black box as following</div>
@@ -630,6 +633,12 @@ f(x)=
 \tag{3.1.18}
 \end{gather}
 </div></section></div>
+=======
+<div class="para" id="p-241">In general, algorithms are step-by-step procedures that take an input, process it through a series of well-defined steps, and produce an output. They are the backbone of problem-solving in computing, enabling machines to perform tasks efficiently and systematically. Quantum computing introduces a new paradigm in algorithm design, leveraging the principles of quantum mechanics to solve problems that are intractable for classical computers. Two of the most prominent quantum algorithms are Grover’s algorithm and Shor’s algorithm, each demonstrating the transformative potential of quantum computing.</div>
+<div class="para" id="p-242">Grover’s algorithm, developed by Lov Grover in 1996, provides a quadratic speedup for unsorted database searches. In classical computing, searching an unsorted database of <span class="process-math">\(N\)</span> items requires <span class="process-math">\(O(N)\)</span>  time, whereas Grover’s algorithm can achieve this in <span class="process-math">\(O(\sqrt{N})\)</span> time. This is achieved by exploiting the principles of superposition and amplitude amplification, allowing the quantum computer to evaluate multiple possibilities simultaneously. Grover’s algorithm has broad implications for fields requiring extensive search capabilities, such as cryptography and database management.</div>
+<div class="para" id="p-243">Shor’s algorithm, proposed by Peter Shor in 1994, addresses the problem of integer factorization, which underpins the security of many classical cryptographic systems, such as RSA. Classical algorithms for factoring large integers are inefficient, making RSA encryption secure under current classical computing capabilities. However, Shor’s algorithm can factorize large integers exponentially faster than the best-known classical algorithms, in polynomial time. This breakthrough poses a significant threat to current cryptographic practices, necessitating the development of quantum-resistant encryption methods.</div>
+<div class="para" id="p-244">Algorithms are fundamental to computing, guiding processes and solving problems efficiently. Quantum algorithms harness the unique properties of quantum mechanics to tackle challenges beyond the reach of classical algorithms. These developments not only demonstrate the power of quantum computing but also herald a new era of computational possibilities, revolutionizing fields from cryptography to data search. In this chapter, we will discuss the basic concepts and process of Grover’s and Shor’s algorithms.</div></section></div>
+>>>>>>> refs/remotes/origin/main
 <div class="ptx-content-footer">
 <a class="previous-button button" href="chap3-chapter.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="sec2-chap3.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>
 </div></main>
