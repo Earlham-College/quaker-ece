@@ -297,7 +297,7 @@
                 </mrow>
             </mdn>
         
-    <em>where is an $U_f$ aka oracle. This oracle shifts the phase of the solution, and highlights the solutions to the search problem.</em>
+    <em>where </em> <m>U_f</m><em> is an oracle. This oracle shifts the phase of the solution, and highlights the solutions to the search problem.</em>
     
     <p>
        <em>We will take the vector</em> 
@@ -496,7 +496,7 @@ where
 
     <figure xml:id="fig-grover_5">
         <caption>The process of Grover's algorithm </caption>
-        <image source="grover5.png" width="80%" height="150%"> </image>
+        <image source="grover5.png" width="100%" height="150%"> </image>
       </figure>
 
 </p>
@@ -539,7 +539,7 @@ where
 
 <p>
     <m>\textbf{Process:}</m>
-    This algorithm carries out the operation<m>(V U_f)^r</m>  on the state <m> \ket{\psi_1}.</m>
+    This algorithm carries out the operation <m>(V U_f)^r</m> on the state <m> \ket{\psi_1}</m>
 </p>
 <p>
     The representation of the Grover's algorithm using circuits is shown in 
@@ -547,7 +547,7 @@ fig(3.1.8.)
 
 <figure xml:id="fig-grover_6">
     <caption>Quantum circuit for the Grover algorithm</caption>
-    <image source="grover6.png" width="80%" height="150%"> </image>
+    <image source="grover6.png" width="100%" height="150%"> </image>
   </figure>
 </p>
 
