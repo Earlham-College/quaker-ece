@@ -11,6 +11,7 @@
 <p><alert> Period of a function:</alert> Suppose <m>\textbf{x}</m> and <m>\textbf{y}</m> are two binary strings. The period of a function <m>f</m> would be a binary string <m>\textbf{c}</m> such that </p>
 <me> f(\textbf{x}) = f(\textbf{y}) \text{ if and only if } \textbf{x} = \textbf{y} \oplus \textbf{c} </me>  
 <p> where <m>\textbf{x},\textbf{y},\textbf{c} \in \{0,1\}^n</m> and <m>\oplus</m> represents the XOR operation. </p> 
+<p> A periodic function is any function with a series of outputs that repeat as the inputs continue to increase. The period of a function is the length of the sequence of repeating outputs. </p>
 <p><alert> Congruence Relation:</alert> The congruence relation comes from the field of modular arithmetic. This relation deals with numbers that have the same remained when divided by a specific value, which is called a <term>modulus</term><idx><h>Modulus</h></idx>.</p>
 <me> a \equiv b \text{ mod } m</me> 
 <p> This equation reads "<m>a</m> is congruent to <m>b</m> modulo <m>m</m>." Congruence relations have the following properties:  </p>
@@ -22,18 +23,91 @@
   \\&amp; \text{Subtraction:  } a - c \equiv b - d \text{ mod } m
   \\&amp; \text{Multiplication:  } ac \equiv bd \text{ mod } m
   \\&amp; \text{Exponentiation:  } a^n \equiv b^n \text{ mod } m \ \ \ \ \ \ \ \ \text{   }\end{split} </me>
+<p> An alternate form for the equation <m>a \text{ mod } m = r</m> is </p>
+<me> a = mq + r </me> 
+<p> Here <m>r</m> is called the remainder and <m>q</m> is what we want to solve for to find the value of <m>a</m>.</p>  
+<p> For two coprimes <m>a</m> and <m>N</m> (where <m>aN</m>) we propose the sequence </p> 
+<me> a^0 \text{ mod } N, \ a^1 \text{ mod } N, \ a^2 \text{ mod } N, \ a^3 \text{ mod } N, \ \ldots, \ a^n \text{ mod } N </me>
+<p> The terms of this sequence are defined by the periodic function <m>g_{a,N}</m> </p> 
+<me> g_{a,N}(r) = a^r \text{ mod } N </me>
+<p> The following examples will show the period of this function for different values of <m>a</m> and <m>N</m>. </p>
+<example>
+  <p> Consider <m>a=2, \ N=23</m>, and <m>r</m> running from 0 to <m>n</m> </p> 
+  <me> \begin{array}{r r r r r r r r r r r r r r r r r}
+  r&amp;0&amp;1&amp;2&amp;3&amp;4&amp;5&amp;6&amp;7&amp;8&amp;9&amp;10&amp;11&amp;12&amp;13&amp;14&amp;\ldots\\
+  a^r&amp;1&amp;2&amp;4&amp;8&amp;16&amp;32&amp;64&amp;128&amp;256&amp;512&amp;1024&amp;2048&amp;4096&amp;8192&amp;16384&amp;\ldots\\
+  g_{2, 23}(r)&amp;1&amp;2&amp;4&amp;8&amp;16&amp;9&amp;18&amp;13&amp;3&amp;6&amp;12&amp;1&amp;2&amp;4&amp;8&amp;\ldots
+    \end{array} </me>
+    <p> Notice that after 11 values of <m>r</m> the function <m>g_{2,23}(r)</m> begins to repeat itself. If we continued to write out this sequence as <m>r</m> continues to increase, we would find that every 11 integers, the sequence repeats again. This means that <m>g_{2,23}(r)</m> has a period of 11, which means <m>g_{2,23}(r) = g_{2,23}(r+11)</m>. </p>
+  </example>
+<example>
+  <title> A counterexample </title> 
+  <p> This example will show what will happen when  <m>a</m> and <m>N</m> are not coprimes. Consider <m> a=2, \ N=24 </m>, and <m>r</m> running from <m>0</m> to <m>n</m>. <m>2</m> and <m>24</m> share the prime factor <m>2</m> so they are not coprime. </p> 
+  <me>  \begin{array}{r r r r r r r r r r r r r r r}
+    r&amp;0&amp;1&amp;2&amp;3&amp;4&amp;5&amp;6&amp;7&amp;8&amp;9&amp;10&amp;11&amp;12&amp;\ldots\\
+    a^r&amp;1&amp;2&amp;4&amp;8&amp;16&amp;32&amp;64&amp;128&amp;256&amp;512&amp;1024&amp;2048&amp;4096&amp;\ldots\\
+    g_{2, 24}(r)&amp;1&amp;2&amp;4&amp;8&amp;16&amp;8&amp;16&amp;8&amp;16&amp;8&amp;16&amp;8&amp;16&amp;\ldots\end{array} </me>
+    <p> As we can see, the function <m>g_{2,24}(r)</m> does begin to repeat, but it does not repeat the entire sequence. Thus this function is not periodic, which is why we must choose coprimes for <m>a</m> and <m>N</m>. </p> 
+  </example>
+<example>
+  <p> Consider <m>a=229, / N=247</m>, and <m>r</m> running from 0 to <m>n</m> </p> 
+<me>  \begin{array}{r r r r r r r r r}
+  r&amp;0&amp;1&amp;2&amp;3&amp;4&amp;5&amp;6&amp;\ldots\\
+  a^r&amp;1&amp;229&amp;52441&amp;12008989&amp;2750058481&amp;629763392149&amp;144215816802121&amp;\ldots\\
+  g_{229, 247}(r)&amp;1&amp;229&amp;77&amp;96&amp;1&amp;229&amp;77&amp;\ldots\\
+    \end{array} </me>
+    <p> Notice that after 4 values of <m>r</m> the function <m>g_{229,247}(r)</m> begins to repeat itself. If we continued to write out this sequence as <m>r</m> continues to increase, we would find that every 4 integers, the sequence repeats again. This means that <m>g_{229,247}(r)</m> has a period of 4, which means <m>g_{229,247}(r) = g_{229,247}(r+4)</m>.  </p>
+</example>
 </subsection>
 <subsection xml:id="subsec-An-Example">
   <title>An Example</title>
-  <p> We will start the discussion of this algorithm with an example. Suppose we have two prime numbers, <m>3, 7.</m> We can multiply them togehter to get <m>(3\times 7 = ) 21</m> which a positive number and the result of two prime numbers. Now, think about this </p> 
+  <p> Before fully diving into Shor's algorithm, we will have another example. Suppose we have two prime numbers, <m>3, 7.</m> We can multiply them togehter to get <m>(3\times 7 = ) 21</m> which a positive number and the result of two prime numbers. Now, think about this </p> 
 <me> p \times 7 = 21 </me> 
 <p> where <m>p</m> is either prime or the product of primes. We can calculate this number fairly easily. However, if you have </p>
 <me> p \times q = 315 </me> 
 <p> where <m>p</m> and <m>q</m> are either prime or the product of primes. We can still calculate this fairly easily and find that 315 actually has more than two factors </p> 
-<me> 315 = 3 \times 3 \times 5 \times 7 = 3^2 \times 5 \times 7</me>
-<p> Instead of trying to solve for <m>p</m> and <m>q</m>, it makes more sense to solve for <m>p_1,p_2,\ldots,p_n</m> and <m>r_1,r_2,\ldots,r_n</m> where each <m>p_i</m> is a prime number and each <m>r_i</m> is an exponent that represents how many times <m>p_i</m> appears as a factor. This means we want to express the number we are looking to factor as </p> 
+<me> 315 = 3 \times 3 \times 5 \times 7 = 3^2 \times 5^1 \times 7^1</me>
+<p> Instead of trying to solve for <m>p</m> and <m>q</m>, it makes more sense to solve for <m>p_1,p_2,\ldots,p_n</m> and <m>r_1,r_2,\ldots,r_n</m> where each <m>p_i</m> is a prime factor and each <m>r_i</m> is an exponent that represents how many times <m>p_i</m> appears as a factor. This means we want to express the number we are looking to factor as </p> 
 <me>p_1^{r_1} \times p_2^{r_2} \times \ldots \times p_n^{r_n}</me>
+</subsection> 
+<subsection xml:id="subsec-Shors-Algorithm"> 
+  <title>Shor's Algorithm</title>
+<problem>
+  <title>Integer Factorization Problem</title>
+  <p> <m>\textbf{Input:}</m> An integer <m>N</m> </p>
+  <p> <m>\textbf{Problem:}</m> Output positive integers <m>p_1,p_2,\ldots,p_n</m> and <m>r_1,r_2,\ldots,r_n</m> where the <m>p_i</m> are distinct primes and <m>N=p_1^{r_1} \times p_2^{r_2} \times \ldots \times p_n^{r_n} </m> </p> 
+  <p> The complexity to calculate the prime factors increases rapidly as <m>N</m> increases. </p>  
+</problem>
+<p> In 1994, while Peter Shor was working for Bell Labs, his proposed algorithm to quickly factor large numbers sent ripples across the fields of computer science, number theory, quantum computation, and cryptography. While it has not been proven that factoring large numbers can not be achieved on a classical computer in polynomial time, as of 2015 the fastest algorithm publicly available for factoring large number runs in </p> 
+<me> \mathcal{O}\big(e^{\frac{64}{9}n^{1/3} (\log {n})^{2/3}}\big) </me>
+<p>operations where <m>n</m> is the number of bits used to represent the number; this runtime exceeds polynomial time. In contrast Shor's algorithm runs in </p> 
+<me> \mathcal{O}((\log{n})^2\log{\log {n}}) </me> 
+<p> operations on a quantum computer, and then must perform <m>\mathcal{O}(\log{n})</m> steps of post processing on a classical computer. Overall this time is polynomial. This discovery propelled the study of quantum computing forward, as such an algorithm has been highly sought after.  </p>
+<p> <ul> <li>Shor's algorithm uses quantum parallelism to produce a superposition of all values of this function in one step. </li> <li> The Quantum Fourier Transform <aside>The Quantum Fourier Transform is a highly advanced topic which we will not delve into here, but readers wishing to expand their knowledge on it should go to this link <url href="https://jonathan-hui.medium.com/qc-quantum-fourier-transform-45436f90a43" /></aside> is used to create a state in which most of the amplitudes are close to multiples of the reciprocals of the functions period.  </li><li> With high probability, measuring the state yields information from which, by classical means, the period can be extracted. The period is then used to factor N </li></ul></p>
+<p> The function</p> 
+<me>f(r) = a^r \text{ mod } N </me> 
+<p> is a periodic function where <m>a</m> is an integer coprime to <m>N</m> and <m>N</m> is the integer we want to factor. Calculating this function for an exponential number of inputs <m>r</m> would take an exponential amount of time on a classical computer, but an a quantum computer Shor's algorithm can take advantage of quantum parallelism to perform this exponential number of operations in one step. </p>  
+<p> The first thing we need to know in order to do Shor's algorithm is <term>order finding</term><idx><h>Order Finding</h></idx>. Let <m>a</m> and <m>N</m> be positive integers with no common factors such that <m>a &lt; N</m>. The order of <m>a</m> for the function <m>f(r)</m> is the smallest positive integer <m>r</m> such that </p>
+<me> f(r) = a^r \text{ mod } N=  1 </me> 
+<p>which means</p>
+<me> a^r = 1 \text{ mod } N </me>
+<p>This equation can be expanded</p> 
+<me> \begin{split} a^r &amp;= 1 \text{ mod } N \\ a^{(r/2)2} &amp;= 1 \text{ mod } N  \\ a^{(r/2)2} - 1 &amp;= 0 \text{ mod } N  \\ (a^{r/2}+1)(a^{r/2}-1) &amp;= 0 \text{ mod } N \end{split} </me>
+<p> This tells us that the period of the function <m>f</m> will be the smallest nonzero value of <m>r</m> that satisfies the equation <m>(a^{r/2}+1)(a^{r/2}-1)=0 \text{ mod } N</m>. If <m>r</m> is even, then <m>a^{r/2}+1</m> and <m>a^{r/2}-1</m> are guaranteed to be integers. Since we are looking to find integer factors, if we want to factor <m>N</m>, then we must keep choosing values of <m>a</m> until <m>r</m> is an even number.  </p>
+<p> When <m>r</m> is even, we know that <m> N | (a^{r/2}-1)(a^{r/2}+1)</m>. It cannot be the case that <m>N | a^{r/2}-1</m> because this would imply that <m>a^{r/2} = 1 \text{ mod } N</m> which cannot be true since <m>r</m> is the smallest value that satisfies that equation. If we can show that it is also not the case that <m>N | a^{r/2}+1</m>, then we will know that <m>N</m> is a multiple of <m>(a^{r/2}+1)(a^{r/2}-1)</m> but that <m>N</m> is not a multiple of <m>a^{r/2}+1</m> nor of <m>a^{r/2}-1</m>. This means that <m>N</m> must share common factors with <m>a^{r/2}+1</m> and <m>a^{r/2}-1</m>.</p>
+<p> In order to verify it is not the case that <m>N | a^{r/2}+1</m> we should first compute </p> 
+<me> d = \text{GCD}(N,a^{r/2}-1) </me>
+<p> using the Euclidean Algorithm (we do not describe the Euclidean Algorithm in this webbook, but readers unfamiliar with it may be interested in this link <url href="https://tinyurl.com/4twaxsrf" />). If we calculate that <m>d=1</m> then we know that <m>N | a^{r/2}+1</m>, which means we will not be able to factor <m>N</m> using this value of <m>a</m> and we will need to restart the algorithm with a new value of <m>a</m>. If we calculate that <m>d\neq 1</m> then <m>d</m> is a factor of <m>N</m> and <m>\frac{N}{d}</m> is another factor. If either of these factors are not prime then we can perform the entire algorithm on them again in order to find their factors. We keep repeating this process until we can fully factor <m>N</m> and represent it as a product of primes.</p>
+
+
+<example>
+  <p> Suppose we want to find the period of the function <m>f</m> for <m>a=5, \ N=44 </m>. We could use the same method we did in examples 3.2.1, 3.2.2, and 3.3.3</p> 
+  <me> \begin{array}{r r r r r r r r r r r r r}
+    r&amp;0&amp;1&amp;2&amp;3&amp;4&amp;5&amp;6&amp;7&amp;8&amp;9&amp;10&amp;\ldots\\
+    a^r&amp;1&amp;5&amp;25&amp;125&amp;625&amp;3,125&amp;15,625&amp;78,125&amp;390,625&amp;1,953,125&amp;9,765,625&amp;\ldots\\
+    g_{5, 44}(r)&amp;1&amp;5&amp;25&amp;37&amp;9&amp;1&amp;5&amp;25&amp;37&amp;9&amp;1&amp;\ldots\end{array} </me>
+  <p> This method tells us that the period of the function is 5, but it is extremely time consuming. If our values of <m>a</m> or <m>N</m> were larger it would be very difficult to perform these operations, even on a powerful computer. This problem can be solved much more efficiently by using a quantum algorithm based on <term>phase estimation</term><idx><h>Phase Estimation</h></idx> . </p>
+</example>
 
 </subsection>
-
 </section>

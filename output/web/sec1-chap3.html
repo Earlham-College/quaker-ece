@@ -92,7 +92,7 @@ window.MathJax = {
 </head>
 <body id="changeme" class="pretext book ignore-math">
 <a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
-<a id="logo-link" class="logo-link" href=""></a><div class="title-container">
+<a id="logo-link" class="logo-link" href="" target="_blank"><img src="external/earlhamlogo.png" alt="Logo image"></a><div class="title-container">
 <h1 class="heading"><a href="my-great-book.html"><span class="title">Quantum Computing:</span> <span class="subtitle">A gentle introduction for Liberal Arts Institutions</span></a></h1>
 <p class="byline">Levi Goldberg, Shun Suzuki, Javier Orduz</p>
 </div>
@@ -325,6 +325,7 @@ window.MathJax = {
 <ul class="structural">
 <li><div class="toc-item"><a href="sec2-chap3.html#subsec-Building-Up-to-the-Algorithm" class="internal"><span class="codenumber">3.2.1</span> <span class="title">Building Up to the Algorithm</span></a></div></li>
 <li><div class="toc-item"><a href="sec2-chap3.html#subsec-An-Example" class="internal"><span class="codenumber">3.2.2</span> <span class="title">An Example</span></a></div></li>
+<li><div class="toc-item"><a href="sec2-chap3.html#subsec-Shors-Algorithm" class="internal"><span class="codenumber">3.2.3</span> <span class="title">Shor’s Algorithm</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -473,10 +474,7 @@ A = \frac{1}{5}
 \end{align}
 </div>
 <div class="para">This is a state where each amplitude is the average of all the amplitudes.</div>
-<<<<<<< HEAD
-</div> <div class="para" id="p-255"><em class="emphasis">5. Invert amplitudes about the average.</em></div></article></div></section></div>
-=======
-</div> <div class="para logical" id="p-224">
+</div> <div class="para logical" id="p-255">
 <div class="para"><em class="emphasis">5. Invert amplitudes about the average.</em></div>
 <div class="displaymath process-math" id="mdn-29">
 \begin{align}
@@ -521,10 +519,10 @@ A = \frac{1}{5}
 \end{pmatrix}\tag{3.1.11}
 \end{align}
 </div>
-</div> <div class="para" id="p-225">The item (4).b and eq. (3.1.11) show same results, the second report implies linear algebra operations.</div> <div class="para" id="p-226">This example emphasizes on invert amplitudes about the mean; however, Grover’s algorithm requires phase inversion. The following example explains the step.</div></article></div>
-<article class="example example-like" id="example-5"><a href="" data-knowl="" class="id-ref example-knowl original has-image" data-refid="hk-example-5"><h3 class="heading">
+</div> <div class="para" id="p-256">The item (4).b and eq. (3.1.11) show same results, the second report implies linear algebra operations.</div> <div class="para" id="p-257">This example emphasizes on invert amplitudes about the mean; however, Grover’s algorithm requires phase inversion. The following example explains the step.</div></article></div>
+<article class="example example-like" id="example-6"><a href="" data-knowl="" class="id-ref example-knowl original has-image" data-refid="hk-example-6"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">3.1.4</span><span class="period">.</span>
-</h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-5"><article class="example example-like"><div class="para" id="p-227"><em class="emphasis">Consider the information from the example 3.1.1. We have the same vector.</em></div>
+</h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-6"><article class="example example-like"><div class="para" id="p-258"><em class="emphasis">Consider the information from the example 3.1.1. We have the same vector.</em></div>
 <div class="displaymath process-math" id="mdn-30">
 \begin{gather}
 \boldsymbol{x}^T=(x_1,x_2,x_3,x_4,x_5)=(19,12,3,10,1)\label{eq:randomVector_b}\tag{3.1.12}
@@ -550,7 +548,7 @@ f(x)=
 \ket{x} \stackrel{U_f}{\rightarrow} (-1)^{f(x)}\ket{x}\tag{3.1.14}
 \end{gather}
 </div>
-<em class="emphasis">where is an $U_f$ aka oracle. This oracle shifts the phase of the solution, and highlights the solutions to the search problem.</em> <div class="para logical" id="p-228">
+<em class="emphasis">where is an $U_f$ aka oracle. This oracle shifts the phase of the solution, and highlights the solutions to the search problem.</em> <div class="para logical" id="p-259">
 <div class="para"><em class="emphasis">We will take the vector</em></div>
 <div class="displaymath process-math" id="mdn-33">
 \begin{align}
@@ -565,7 +563,7 @@ f(x)=
 9&amp;-9&amp;9&amp;9&amp;9
 \end{pmatrix}.\)</span>
 </div>
-</div> <div class="para logical" id="p-229">
+</div> <div class="para logical" id="p-260">
 <div class="para">\<em class="emphasis">Now we apply</em> <figure class="figure figure-like" id="fig-grover_3"><div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="external/grover3.png" class="contained"></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.1.5<span class="period">.</span></span><span class="space"> </span>Representation of the <span class="process-math">\(\overline{x}_i\)</span> values. The horizontal line is the new average<span class="process-math">\(\frac{9-9+9+9+9}{5} = 5.4\)</span></figcaption></figure> <em class="emphasis">and calculate</em>
 </div>
@@ -612,14 +610,13 @@ f(x)=
 \end{align}
 </div>
 <div class="para"><em class="emphasis">We can see how the amplitude for the second element increases.</em></div>
-</div> <div class="para" id="p-230">We showed how this search algorithm works, and it is clear that we will get the second element in the list as the most probable output.</div></article></div>
-<div class="para" id="p-231">This part shows the Grover’s algorithm in bracket notation.</div>
-<div class="para logical" id="p-232">
+</div> <div class="para" id="p-261">We showed how this search algorithm works, and it is clear that we will get the second element in the list as the most probable output.</div></article></div>
+<div class="para" id="p-262">This part shows the Grover’s algorithm in bracket notation.</div>
+<div class="para logical" id="p-263">
 <div class="para">This algorithm enables this search method to be speed up to<span class="process-math">\(\mathcal{O}(\sqrt{N})\)</span> operations. With this algorithm "searching an unsorted database" with<span class="process-math">\(N=2^n\)</span>  elements in<span class="process-math">\(\mathcal{O}(\sqrt{N})\)</span> time. Classical algorithm needs on average<span class="process-math">\(N/2 =\mathcal{O}(\sqrt{N})\)</span>  time. The goal is find<span class="process-math">\(w\text{,}\)</span> given an oracle<span class="process-math">\(U_f\)</span> with</div>
 <div class="displaymath process-math">
 \begin{equation*}
 f:\{0,1\}^n \to \{0,1\}
-\be
 f(x)=
 \begin{cases}
 1&amp; \text{if } x=w\\
@@ -627,8 +624,12 @@ f(x)=
 \end{cases}
 \end{equation*}
 </div>
+</div>
+<div class="displaymath process-math" id="mdn-36">
+\begin{gather}
+\tag{3.1.18}
+\end{gather}
 </div></section></div>
->>>>>>> 1d1d38aa2fdee921ccd3636f13fad3019c7331b0
 <div class="ptx-content-footer">
 <a class="previous-button button" href="chap3-chapter.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="sec2-chap3.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>
 </div></main>

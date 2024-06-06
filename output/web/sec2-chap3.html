@@ -92,7 +92,7 @@ window.MathJax = {
 </head>
 <body id="changeme" class="pretext book ignore-math">
 <a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
-<a id="logo-link" class="logo-link" href=""></a><div class="title-container">
+<a id="logo-link" class="logo-link" href="" target="_blank"><img src="external/earlhamlogo.png" alt="Logo image"></a><div class="title-container">
 <h1 class="heading"><a href="my-great-book.html"><span class="title">Quantum Computing:</span> <span class="subtitle">A gentle introduction for Liberal Arts Institutions</span></a></h1>
 <p class="byline">Levi Goldberg, Shun Suzuki, Javier Orduz</p>
 </div>
@@ -325,6 +325,7 @@ window.MathJax = {
 <ul class="structural">
 <li><div class="toc-item"><a href="sec2-chap3.html#subsec-Building-Up-to-the-Algorithm" class="internal"><span class="codenumber">3.2.1</span> <span class="title">Building Up to the Algorithm</span></a></div></li>
 <li><div class="toc-item"><a href="sec2-chap3.html#subsec-An-Example" class="internal"><span class="codenumber">3.2.2</span> <span class="title">An Example</span></a></div></li>
+<li><div class="toc-item"><a href="sec2-chap3.html#subsec-Shors-Algorithm" class="internal"><span class="codenumber">3.2.3</span> <span class="title">Shor’s Algorithm</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -340,32 +341,32 @@ window.MathJax = {
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec2-chap3"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">3.2</span> <span class="title">Shor’s Algorithm</span>
 </h2>
-<<<<<<< HEAD
 <section class="subsection" id="subsec-Building-Up-to-the-Algorithm"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">3.2.1</span> <span class="title">Building Up to the Algorithm</span>
 </h3>
-<div class="para" id="p-256">In the field of cryptography, quantum computers could be used to improve the security of our information systems. However, quantum computations can also be used to break through our modern crypto-systems much faster than is possible through classical computing. One method through which quantum computation could be used to break through our modern cybersecurity is with an algorithm created by American mathematician Peter Shor in 1994.</div>
-<div class="para" id="p-257">The security behind our modern cryptographic methods lies in the fact that it is very computationally difficult to find the prime factors of large numbers. It takes years of computing time on a classical computer to find the factors of numbers with hundreds of digits. The algorithm designed by Peter Shor takes advantage of quantum concepts to find the prime factors of large numbers much quicker. If a powerful enough quantum computer is ever built it could be used to break most modern encryptions jarringly quickly. Before describing the algorithm, we must first define some terms.</div>
-<div class="para" id="p-258">
+<div class="para" id="p-264">In the field of cryptography, quantum computers could be used to improve the security of our information systems. However, quantum computations can also be used to break through our modern crypto-systems much faster than is possible through classical computing. One method through which quantum computation could be used to break through our modern cybersecurity is with an algorithm created by American mathematician Peter Shor in 1994.</div>
+<div class="para" id="p-265">The security behind our modern cryptographic methods lies in the fact that it is very computationally difficult to find the prime factors of large numbers. It takes years of computing time on a classical computer to find the factors of numbers with hundreds of digits. The algorithm designed by Peter Shor takes advantage of quantum concepts to find the prime factors of large numbers much quicker. If a powerful enough quantum computer is ever built it could be used to break most modern encryptions jarringly quickly. Before describing the algorithm, we must first define some terms.</div>
+<div class="para" id="p-266">
 <em class="alert">Prime Numbers:</em> A number is prime if the only positive integers that divide it are itself and the number one</div>
-<div class="para" id="p-259">
+<div class="para" id="p-267">
 <em class="alert">Coprime Numbers:</em> Two numbers are coprime (also known as relatively prime or mutually prime) if the only positive integer that is a divisor of both of them is the number one. In other words, two numbers are coprime if their greatest common divisor is one and they share no prime factors</div>
-<div class="para" id="p-260">
+<div class="para" id="p-268">
 <em class="alert">Period of a function:</em> Suppose <span class="process-math">\(\textbf{x}\)</span> and <span class="process-math">\(\textbf{y}\)</span> are two binary strings. The period of a function <span class="process-math">\(f\)</span> would be a binary string <span class="process-math">\(\textbf{c}\)</span> such that</div>
 <div class="displaymath process-math">
 \begin{equation*}
 f(\textbf{x}) = f(\textbf{y}) \text{ if and only if } \textbf{x} = \textbf{y} \oplus \textbf{c} 
 \end{equation*}
 </div>
-<div class="para" id="p-261">where <span class="process-math">\(\textbf{x},\textbf{y},\textbf{c} \in \{0,1\}^n\)</span> and <span class="process-math">\(\oplus\)</span> represents the XOR operation.</div>
-<div class="para" id="p-262">
+<div class="para" id="p-269">where <span class="process-math">\(\textbf{x},\textbf{y},\textbf{c} \in \{0,1\}^n\)</span> and <span class="process-math">\(\oplus\)</span> represents the XOR operation.</div>
+<div class="para" id="p-270">A periodic function is any function with a series of outputs that repeat as the inputs continue to increase. The period of a function is the length of the sequence of repeating outputs.</div>
+<div class="para" id="p-271">
 <em class="alert">Congruence Relation:</em> The congruence relation comes from the field of modular arithmetic. This relation deals with numbers that have the same remained when divided by a specific value, which is called a <dfn class="terminology">modulus</dfn>.</div>
 <div class="displaymath process-math">
 \begin{equation*}
 a \equiv b \text{ mod } m
 \end{equation*}
 </div>
-<div class="para" id="p-263">This equation reads "<span class="process-math">\(a\)</span> is congruent to <span class="process-math">\(b\)</span> modulo <span class="process-math">\(m\text{.}\)</span>" Congruence relations have the following properties:</div>
+<div class="para" id="p-272">This equation reads "<span class="process-math">\(a\)</span> is congruent to <span class="process-math">\(b\)</span> modulo <span class="process-math">\(m\text{.}\)</span>" Congruence relations have the following properties:</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \begin{split} &amp; \text{Reflexive:  } a \equiv a \text{ mod } m
@@ -373,7 +374,7 @@ a \equiv b \text{ mod } m
 \\&amp; \text{Reflexive:  }  \text{if } a \equiv b \text{ mod } m \text{  and  } b \equiv c \text{ mod } m \text{  then  } a \equiv c \text{ mod } m  \end{split}
 \end{equation*}
 </div>
-<div class="para" id="p-264">Suppose <span class="process-math">\(a \equiv b \text{ mod } m \)</span> and <span class="process-math">\(c \equiv d \text{ mod } m \text{.}\)</span> Congruence relations have the following operations defined:</div>
+<div class="para" id="p-273">Suppose <span class="process-math">\(a \equiv b \text{ mod } m \)</span> and <span class="process-math">\(c \equiv d \text{ mod } m \text{.}\)</span> Congruence relations have the following operations defined:</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \begin{split} &amp; \text{Addition: }  a + c \equiv b + d \text{ mod } m
@@ -381,36 +382,173 @@ a \equiv b \text{ mod } m
 \\&amp; \text{Multiplication:  } ac \equiv bd \text{ mod } m
 \\&amp; \text{Exponentiation:  } a^n \equiv b^n \text{ mod } m \ \ \ \ \ \ \ \ \text{   }\end{split} 
 \end{equation*}
-</div></section><section class="subsection" id="subsec-An-Example"><h3 class="heading hide-type">
+</div>
+<div class="para" id="p-274">An alternate form for the equation <span class="process-math">\(a \text{ mod } m = r\)</span> is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+a = mq + r 
+\end{equation*}
+</div>
+<div class="para" id="p-275">Here <span class="process-math">\(r\)</span> is called the remainder and <span class="process-math">\(q\)</span> is what we want to solve for to find the value of <span class="process-math">\(a\text{.}\)</span>
+</div>
+<div class="para" id="p-276">For two coprimes <span class="process-math">\(a\)</span> and <span class="process-math">\(N\)</span> (where <span class="process-math">\(aN\)</span>) we propose the sequence</div>
+<div class="displaymath process-math">
+\begin{equation*}
+a^0 \text{ mod } N, \ a^1 \text{ mod } N, \ a^2 \text{ mod } N, \ a^3 \text{ mod } N, \ \ldots, \ a^n \text{ mod } N 
+\end{equation*}
+</div>
+<div class="para" id="p-277">The terms of this sequence are defined by the periodic function <span class="process-math">\(g_{a,N}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+g_{a,N}(r) = a^r \text{ mod } N 
+\end{equation*}
+</div>
+<div class="para" id="p-278">The following examples will show the period of this function for different values of <span class="process-math">\(a\)</span> and <span class="process-math">\(N\text{.}\)</span>
+</div>
+<article class="example example-like" id="example-7"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-7"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.2.1</span><span class="period">.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-7"><article class="example example-like"><div class="para" id="p-279">Consider <span class="process-math">\(a=2, \ N=23\text{,}\)</span> and <span class="process-math">\(r\)</span> running from 0 to <span class="process-math">\(n\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{array}{r r r r r r r r r r r r r r r r r}
+r&amp;0&amp;1&amp;2&amp;3&amp;4&amp;5&amp;6&amp;7&amp;8&amp;9&amp;10&amp;11&amp;12&amp;13&amp;14&amp;\ldots\\
+a^r&amp;1&amp;2&amp;4&amp;8&amp;16&amp;32&amp;64&amp;128&amp;256&amp;512&amp;1024&amp;2048&amp;4096&amp;8192&amp;16384&amp;\ldots\\
+g_{2, 23}(r)&amp;1&amp;2&amp;4&amp;8&amp;16&amp;9&amp;18&amp;13&amp;3&amp;6&amp;12&amp;1&amp;2&amp;4&amp;8&amp;\ldots
+\end{array} 
+\end{equation*}
+</div>
+<div class="para" id="p-280">Notice that after 11 values of <span class="process-math">\(r\)</span> the function <span class="process-math">\(g_{2,23}(r)\)</span> begins to repeat itself. If we continued to write out this sequence as <span class="process-math">\(r\)</span> continues to increase, we would find that every 11 integers, the sequence repeats again. This means that <span class="process-math">\(g_{2,23}(r)\)</span> has a period of 11, which means <span class="process-math">\(g_{2,23}(r) = g_{2,23}(r+11)\text{.}\)</span>
+</div></article></div>
+<article class="example example-like" id="example-8"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-8"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.2.2</span><span class="period">.</span><span class="space"> </span><span class="title">A counterexample.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-8"><article class="example example-like"> <div class="para" id="p-281">This example will show what will happen when  <span class="process-math">\(a\)</span> and <span class="process-math">\(N\)</span> are not coprimes. Consider <span class="process-math">\(a=2, \ N=24 \text{,}\)</span> and <span class="process-math">\(r\)</span> running from <span class="process-math">\(0\)</span> to <span class="process-math">\(n\text{.}\)</span> <span class="process-math">\(2\)</span> and <span class="process-math">\(24\)</span> share the prime factor <span class="process-math">\(2\)</span> so they are not coprime.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{array}{r r r r r r r r r r r r r r r}
+r&amp;0&amp;1&amp;2&amp;3&amp;4&amp;5&amp;6&amp;7&amp;8&amp;9&amp;10&amp;11&amp;12&amp;\ldots\\
+a^r&amp;1&amp;2&amp;4&amp;8&amp;16&amp;32&amp;64&amp;128&amp;256&amp;512&amp;1024&amp;2048&amp;4096&amp;\ldots\\
+g_{2, 24}(r)&amp;1&amp;2&amp;4&amp;8&amp;16&amp;8&amp;16&amp;8&amp;16&amp;8&amp;16&amp;8&amp;16&amp;\ldots\end{array} 
+\end{equation*}
+</div>
+<div class="para" id="p-282">As we can see, the function <span class="process-math">\(g_{2,24}(r)\)</span> does begin to repeat, but it does not repeat the entire sequence. Thus this function is not periodic, which is why we must choose coprimes for <span class="process-math">\(a\)</span> and <span class="process-math">\(N\text{.}\)</span>
+</div></article></div>
+<article class="example example-like" id="example-9"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-9"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.2.3</span><span class="period">.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-9"><article class="example example-like"><div class="para" id="p-283">Consider <span class="process-math">\(a=229, / N=247\text{,}\)</span> and <span class="process-math">\(r\)</span> running from 0 to <span class="process-math">\(n\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{array}{r r r r r r r r r}
+r&amp;0&amp;1&amp;2&amp;3&amp;4&amp;5&amp;6&amp;\ldots\\
+a^r&amp;1&amp;229&amp;52441&amp;12008989&amp;2750058481&amp;629763392149&amp;144215816802121&amp;\ldots\\
+g_{229, 247}(r)&amp;1&amp;229&amp;77&amp;96&amp;1&amp;229&amp;77&amp;\ldots\\
+\end{array} 
+\end{equation*}
+</div>
+<div class="para" id="p-284">Notice that after 4 values of <span class="process-math">\(r\)</span> the function <span class="process-math">\(g_{229,247}(r)\)</span> begins to repeat itself. If we continued to write out this sequence as <span class="process-math">\(r\)</span> continues to increase, we would find that every 4 integers, the sequence repeats again. This means that <span class="process-math">\(g_{229,247}(r)\)</span> has a period of 4, which means <span class="process-math">\(g_{229,247}(r) = g_{229,247}(r+4)\text{.}\)</span>
+</div></article></div></section><section class="subsection" id="subsec-An-Example"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">3.2.2</span> <span class="title">An Example</span>
 </h3>
-<div class="para" id="p-265">We will start the discussion of this algorithm with an example. Suppose we have two prime numbers, <span class="process-math">\(3, 7.\)</span> We can multiply them togehter to get <span class="process-math">\((3\times 7 = ) 21\)</span> which a positive number and the result of two prime numbers. Now, think about this</div>
+<div class="para" id="p-285">Before fully diving into Shor’s algorithm, we will have another example. Suppose we have two prime numbers, <span class="process-math">\(3, 7.\)</span> We can multiply them togehter to get <span class="process-math">\((3\times 7 = ) 21\)</span> which a positive number and the result of two prime numbers. Now, think about this</div>
 <div class="displaymath process-math">
 \begin{equation*}
 p \times 7 = 21 
 \end{equation*}
 </div>
-<div class="para" id="p-266">where <span class="process-math">\(p\)</span> is either prime or the product of primes. We can calculate this number fairly easily. However, if you have</div>
+<div class="para" id="p-286">where <span class="process-math">\(p\)</span> is either prime or the product of primes. We can calculate this number fairly easily. However, if you have</div>
 <div class="displaymath process-math">
 \begin{equation*}
 p \times q = 315 
 \end{equation*}
 </div>
-<div class="para" id="p-267">where <span class="process-math">\(p\)</span> and <span class="process-math">\(q\)</span> are either prime or the product of primes. We can still calculate this fairly easily and find that 315 actually has more than two factors</div>
+<div class="para" id="p-287">where <span class="process-math">\(p\)</span> and <span class="process-math">\(q\)</span> are either prime or the product of primes. We can still calculate this fairly easily and find that 315 actually has more than two factors</div>
 <div class="displaymath process-math">
 \begin{equation*}
-315 = 3 \times 3 \times 5 \times 7 = 3^2 \times 5 \times 7
+315 = 3 \times 3 \times 5 \times 7 = 3^2 \times 5^1 \times 7^1
 \end{equation*}
 </div>
-<div class="para" id="p-268">Instead of trying to solve for <span class="process-math">\(p\)</span> and <span class="process-math">\(q\text{,}\)</span> it makes more sense to solve for <span class="process-math">\(p_1,p_2,\ldots,p_n\)</span> and <span class="process-math">\(r_1,r_2,\ldots,r_n\)</span> where each <span class="process-math">\(p_i\)</span> is a prime number and each <span class="process-math">\(r_i\)</span> is an exponent that represents how many times <span class="process-math">\(p_i\)</span> appears as a factor. This means we want to express the number we are looking to factor as</div>
+<div class="para" id="p-288">Instead of trying to solve for <span class="process-math">\(p\)</span> and <span class="process-math">\(q\text{,}\)</span> it makes more sense to solve for <span class="process-math">\(p_1,p_2,\ldots,p_n\)</span> and <span class="process-math">\(r_1,r_2,\ldots,r_n\)</span> where each <span class="process-math">\(p_i\)</span> is a prime factor and each <span class="process-math">\(r_i\)</span> is an exponent that represents how many times <span class="process-math">\(p_i\)</span> appears as a factor. This means we want to express the number we are looking to factor as</div>
 <div class="displaymath process-math">
 \begin{equation*}
 p_1^{r_1} \times p_2^{r_2} \times \ldots \times p_n^{r_n}
 \end{equation*}
-</div></section></section></div>
-=======
-<div class="para" id="p-233">Text of section.</div></section></div>
->>>>>>> 1d1d38aa2fdee921ccd3636f13fad3019c7331b0
+</div></section><section class="subsection" id="subsec-Shors-Algorithm"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">3.2.3</span> <span class="title">Shor’s Algorithm</span>
+</h3>
+<article class="problem example-like" id="problem-1"><a href="" data-knowl="" class="id-ref problem-knowl original" data-refid="hk-problem-1"><h4 class="heading">
+<span class="type">Problem</span><span class="space"> </span><span class="codenumber">3.2.4</span><span class="period">.</span><span class="space"> </span><span class="title">Integer Factorization Problem.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-problem-1"><article class="problem example-like"> <div class="para" id="p-289">
+<span class="process-math">\(\textbf{Input:}\)</span> An integer <span class="process-math">\(N\)</span>
+</div> <div class="para" id="p-290">
+<span class="process-math">\(\textbf{Problem:}\)</span> Output positive integers <span class="process-math">\(p_1,p_2,\ldots,p_n\)</span> and <span class="process-math">\(r_1,r_2,\ldots,r_n\)</span> where the <span class="process-math">\(p_i\)</span> are distinct primes and <span class="process-math">\(N=p_1^{r_1} \times p_2^{r_2} \times \ldots \times p_n^{r_n} \)</span>
+</div> <div class="para" id="p-291">The complexity to calculate the prime factors increases rapidly as <span class="process-math">\(N\)</span> increases.</div></article></div>
+<div class="para" id="p-292">In 1994, while Peter Shor was working for Bell Labs, his proposed algorithm to quickly factor large numbers sent ripples across the fields of computer science, number theory, quantum computation, and cryptography. While it has not been proven that factoring large numbers can not be achieved on a classical computer in polynomial time, as of 2015 the fastest algorithm publicly available for factoring large number runs in</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathcal{O}\big(e^{\frac{64}{9}n^{1/3} (\log {n})^{2/3}}\big) 
+\end{equation*}
+</div>
+<div class="para" id="p-293">operations where <span class="process-math">\(n\)</span> is the number of bits used to represent the number; this runtime exceeds polynomial time. In contrast Shor’s algorithm runs in</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathcal{O}((\log{n})^2\log{\log {n}}) 
+\end{equation*}
+</div>
+<div class="para" id="p-294">operations on a quantum computer, and then must perform <span class="process-math">\(\mathcal{O}(\log{n})\)</span> steps of post processing on a classical computer. Overall this time is polynomial. This discovery propelled the study of quantum computing forward, as such an algorithm has been highly sought after.</div>
+<div class="para logical" id="p-295"><ul class="disc">
+<li id="li-63"><div class="para" id="p-derived-li-63">Shor’s algorithm uses quantum parallelism to produce a superposition of all values of this function in one step.</div></li>
+<li id="li-64">The Quantum Fourier Transform <aside class="aside aside-like" id="aside-1"></aside> is used to create a state in which most of the amplitudes are close to multiples of the reciprocals of the functions period.</li>
+<li id="li-65"><div class="para" id="p-derived-li-65">With high probability, measuring the state yields information from which, by classical means, the period can be extracted. The period is then used to factor N</div></li>
+</ul></div>
+<div class="para" id="p-296">The function</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f(r) = a^r \text{ mod } N 
+\end{equation*}
+</div>
+<div class="para" id="p-297">is a periodic function where <span class="process-math">\(a\)</span> is an integer coprime to <span class="process-math">\(N\)</span> and <span class="process-math">\(N\)</span> is the integer we want to factor. Calculating this function for an exponential number of inputs <span class="process-math">\(r\)</span> would take an exponential amount of time on a classical computer, but an a quantum computer Shor’s algorithm can take advantage of quantum parallelism to perform this exponential number of operations in one step.</div>
+<div class="para" id="p-298">The first thing we need to know in order to do Shor’s algorithm is <dfn class="terminology">order finding</dfn>. Let <span class="process-math">\(a\)</span> and <span class="process-math">\(N\)</span> be positive integers with no common factors such that <span class="process-math">\(a &lt; N\text{.}\)</span> The order of <span class="process-math">\(a\)</span> for the function <span class="process-math">\(f(r)\)</span> is the smallest positive integer <span class="process-math">\(r\)</span> such that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f(r) = a^r \text{ mod } N=  1 
+\end{equation*}
+</div>
+<div class="para" id="p-299">which means</div>
+<div class="displaymath process-math">
+\begin{equation*}
+a^r = 1 \text{ mod } N 
+\end{equation*}
+</div>
+<div class="para" id="p-300">This equation can be expanded</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{split} a^r &amp;= 1 \text{ mod } N \\ a^{(r/2)2} &amp;= 1 \text{ mod } N  \\ a^{(r/2)2} - 1 &amp;= 0 \text{ mod } N  \\ (a^{r/2}+1)(a^{r/2}-1) &amp;= 0 \text{ mod } N \end{split} 
+\end{equation*}
+</div>
+<div class="para" id="p-301">This tells us that the period of the function <span class="process-math">\(f\)</span> will be the smallest nonzero value of <span class="process-math">\(r\)</span> that satisfies the equation <span class="process-math">\((a^{r/2}+1)(a^{r/2}-1)=0 \text{ mod } N\text{.}\)</span> If <span class="process-math">\(r\)</span> is even, then <span class="process-math">\(a^{r/2}+1\)</span> and <span class="process-math">\(a^{r/2}-1\)</span> are guaranteed to be integers. Since we are looking to find integer factors, if we want to factor <span class="process-math">\(N\text{,}\)</span> then we must keep choosing values of <span class="process-math">\(a\)</span> until <span class="process-math">\(r\)</span> is an even number.</div>
+<div class="para" id="p-302">When <span class="process-math">\(r\)</span> is even, we know that <span class="process-math">\(N | (a^{r/2}-1)(a^{r/2}+1)\text{.}\)</span> It cannot be the case that <span class="process-math">\(N | a^{r/2}-1\)</span> because this would imply that <span class="process-math">\(a^{r/2} = 1 \text{ mod } N\)</span> which cannot be true since <span class="process-math">\(r\)</span> is the smallest value that satisfies that equation. If we can show that it is also not the case that <span class="process-math">\(N | a^{r/2}+1\text{,}\)</span> then we will know that <span class="process-math">\(N\)</span> is a multiple of <span class="process-math">\((a^{r/2}+1)(a^{r/2}-1)\)</span> but that <span class="process-math">\(N\)</span> is not a multiple of <span class="process-math">\(a^{r/2}+1\)</span> nor of <span class="process-math">\(a^{r/2}-1\text{.}\)</span> This means that <span class="process-math">\(N\)</span> must share common factors with <span class="process-math">\(a^{r/2}+1\)</span> and <span class="process-math">\(a^{r/2}-1\text{.}\)</span>
+</div>
+<div class="para" id="p-303">In order to verify it is not the case that <span class="process-math">\(N | a^{r/2}+1\)</span> we should first compute</div>
+<div class="displaymath process-math">
+\begin{equation*}
+d = \text{GCD}(N,a^{r/2}-1) 
+\end{equation*}
+</div>
+<div class="para" id="p-304">using the Euclidean Algorithm (we do not describe the Euclidean Algorithm in this webbook, but readers unfamiliar with it may be interested in this link <a class="external" href="https://tinyurl.com/4twaxsrf" target="_blank"><code class="code-inline tex2jax_ignore">https://tinyurl.com/4twaxsrf</code></a>). If we calculate that <span class="process-math">\(d=1\)</span> then we know that <span class="process-math">\(N | a^{r/2}+1\text{,}\)</span> which means we will not be able to factor <span class="process-math">\(N\)</span> using this value of <span class="process-math">\(a\)</span> and we will need to restart the algorithm with a new value of <span class="process-math">\(a\text{.}\)</span> If we calculate that <span class="process-math">\(d\neq 1\)</span> then <span class="process-math">\(d\)</span> is a factor of <span class="process-math">\(N\)</span> and <span class="process-math">\(\frac{N}{d}\)</span> is another factor. If either of these factors are not prime then we can perform the entire algorithm on them again in order to find their factors. We keep repeating this process until we can fully factor <span class="process-math">\(N\)</span> and represent it as a product of primes.</div>
+<article class="example example-like" id="example-10"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-10"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.2.5</span><span class="period">.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-10"><article class="example example-like"><div class="para" id="p-305">Suppose we want to find the period of the function <span class="process-math">\(f\)</span> for <span class="process-math">\(a=5, \ N=44 \text{.}\)</span> We could use the same method we did in examples 3.2.1, 3.2.2, and 3.3.3</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{array}{r r r r r r r r r r r r r}
+r&amp;0&amp;1&amp;2&amp;3&amp;4&amp;5&amp;6&amp;7&amp;8&amp;9&amp;10&amp;\ldots\\
+a^r&amp;1&amp;5&amp;25&amp;125&amp;625&amp;3,125&amp;15,625&amp;78,125&amp;390,625&amp;1,953,125&amp;9,765,625&amp;\ldots\\
+g_{5, 44}(r)&amp;1&amp;5&amp;25&amp;37&amp;9&amp;1&amp;5&amp;25&amp;37&amp;9&amp;1&amp;\ldots\end{array} 
+\end{equation*}
+</div>
+<div class="para" id="p-306">This method tells us that the period of the function is 5, but it is extremely time consuming. If our values of <span class="process-math">\(a\)</span> or <span class="process-math">\(N\)</span> were larger it would be very difficult to perform these operations, even on a powerful computer. This problem can be solved much more efficiently by using a quantum algorithm based on <dfn class="terminology">phase estimation</dfn> .</div></article></div></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="sec1-chap3.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>
 </div></main>
