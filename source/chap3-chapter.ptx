@@ -3,12 +3,15 @@
 <chapter xml:id="chap3-chapter" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Algorithm</title>
 
-  <introduction>
-    <p> Text before the first section. </p>
-  </introduction>
+
 
 
   <xi:include href="sec1-chap3.ptx" />
   <xi:include href="sec2-chap3.ptx" />
+  <xi:include href="sec3-chap3.ptx" />
+  
+  
+  
+
 
 </chapter>

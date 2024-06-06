@@ -11,8 +11,36 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
+<<<<<<< HEAD
 <h4 class="heading"><span class="type">Paragraph</span></h4>
 <div class="para">where <span class="process-math">\(\textbf{x},\textbf{y},\textbf{c} \in \{0,1\}^n\)</span> and <span class="process-math">\(\oplus\)</span> represents the XOR operation.</div>
+=======
+<h3 class="heading"><span class="type">Paragraph</span></h3>
+<div class="para logical">
+<div class="para">
+<span class="process-math">\(\textbf{Proof:}\)</span> Define a superposition state</div>
+<div class="displaymath process-math">
+\begin{gather}
+\ket{\psi_1} = H^{\otimes n}\ket{0}^{\otimes n} = 2^{-\frac{n}{2}}\sum_{x\in \{0,1\}}^{2^n-1}\ket{x}\tag{3.2.26}
+\end{gather}
+</div>
+<div class="para">and (note the dashed line in the circuit)</div>
+<div class="displaymath process-math">
+\begin{align}
+V = H^{\otimes n} {U_f}_0H^{\otimes n} &amp;= 
+H^{\otimes n}\big(
+2 \ket{0}\bra{0}^{\otimes n} - I
+\big)
+H^{\otimes n}\\=
+&amp;
+2 H^{\otimes n}\ket{0}\bra{0}^{\otimes n}H^{\otimes n} - H^{\otimes n}IH^{\otimes n}\\
+&amp;=
+2 \ket{\psi_1}\bra{\psi_1} - I\tag{3.2.27}
+\end{align}
+</div>
+<div class="para">where we used eq.(3.1.24) and eq.(3.1.26)</div>
+</div>
+>>>>>>> ca12b83e1f5467f454e507fff8257c3c707ffedd
 <span class="incontext"><a href="sec2-chap3.html#p-269" class="internal">in-context</a></span>
 </body>
 </html>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<section xml:id="sec2-chap3" xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xml:id="sec3-chap3" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Shor's Algorithm</title>
   <subsection xml:id="subsec-Building-Up-to-the-Algorithm">
     <title>Building Up to the Algorithm</title>
