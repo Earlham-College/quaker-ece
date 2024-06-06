@@ -11,171 +11,21 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<article class="example example-like"><h3 class="heading">
-<<<<<<< HEAD
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.1.1</span><span class="period">.</span>
-=======
+<article class="example example-like"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">3.2.1</span><span class="period">.</span>
->>>>>>> ca12b83e1f5467f454e507fff8257c3c707ffedd
-</h3>
-<div class="para">We prose a random vector <span class="process-math">\(x\text{,}\)</span> and try to find the expected factor</div> <div class="para logical">
-<div class="para"><em class="emphasis">1. Consider you have the following data</em></div>
-<div class="displaymath process-math">
-\begin{gather}
-\boldsymbol{x}^T=(x_1,x_2,x_3,x_4,x_5)=(19,12,3,10,1)\label{eq:randomVector_a}\tag{3.2.3}
-\end{gather}
-</div>
-<div class="para"><figure class="figure figure-like"><div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="external/grover1.png" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.2.2<span class="period">.</span></span><span class="space"> </span>Representation of <span class="process-math">\(x_i\)</span>values</figcaption></figure></div>
-</div> <div class="para logical">
-<div class="para"><em class="emphasis">2. Calculate the average</em></div>
-<div class="displaymath process-math">
-\begin{gather}
-\overline{x}=\sum_i^N\frac{x_i}{N} = \frac{19+12+3+10+1}{5} = \frac{45}{5} = 9\tag{3.2.4}
-\end{gather}
-</div>
-<div class="para">
-<em class="emphasis">3. Invert each element aorund the average by defining</em> <span class="process-math">\(\overline{x} - x_i = \delta_i\)</span>
+</h4>
+<div class="para">Consider <span class="process-math">\(a=2, \ N=23\text{,}\)</span> and <span class="process-math">\(r\)</span> running from 0 to <span class="process-math">\(n\)</span>
 </div>
 <div class="displaymath process-math">
-\begin{align}
-\overline{x}&amp;-&amp;x_i &amp; =&amp;\delta\\
-9&amp;-&amp;19 &amp;=&amp;-10\\
-9&amp;-&amp;12 &amp;=&amp;3\\
-9&amp;-&amp;3  &amp;=&amp;6\\
-9&amp;-&amp;10 &amp;=&amp;-1\\
-9&amp;-&amp;1 &amp;=&amp;8    \tag{3.2.5}
-\end{align}
+\begin{equation*}
+\begin{array}{r r r r r r r r r r r r r r r r r}
+r&amp;0&amp;1&amp;2&amp;3&amp;4&amp;5&amp;6&amp;7&amp;8&amp;9&amp;10&amp;11&amp;12&amp;13&amp;14&amp;\ldots\\
+a^r&amp;1&amp;2&amp;4&amp;8&amp;16&amp;32&amp;64&amp;128&amp;256&amp;512&amp;1024&amp;2048&amp;4096&amp;8192&amp;16384&amp;\ldots\\
+g_{2, 23}(r)&amp;1&amp;2&amp;4&amp;8&amp;16&amp;9&amp;18&amp;13&amp;3&amp;6&amp;12&amp;1&amp;2&amp;4&amp;8&amp;\ldots
+\end{array} 
+\end{equation*}
 </div>
-<div class="para">We calculate the units away, <span class="process-math">\(δ\)</span> , from the average,<span class="process-math">\(x\)</span> , for each <span class="process-math">\(xi\)</span>
-</div>
-</div> <div class="para logical">
-<div class="para">
-<em class="emphasis">4.a define</em> <span class="process-math">\(2x-x_i =x^\prime_i\)</span> <em class="emphasis">and calculate</em>
-</div>
-<div class="displaymath process-math">
-\begin{align}
-2\overline{x}&amp;
--&amp;
-x_i&amp;
-=&amp;
-x_i^\prime\\
-18 &amp; - &amp; 19 &amp; = &amp; -1\\
-18&amp; -&amp;12 &amp;=&amp;6\\
-18&amp; -&amp;3 &amp;=&amp;15\\
-18&amp; -&amp;10 &amp;=&amp;8\\
-18&amp; -&amp;1 &amp;=&amp;17     \tag{3.2.6}
-\end{align}
-</div>
-<div class="para"> The inversion about the average calculates the units away, <span class="process-math">\(δ\text{,}\)</span> from the average, <span class="process-math">\(x\text{,}\)</span> for each <span class="process-math">\(x_i\)</span> .</div>
-</div> <div class="para logical">
-<div class="para"><em class="emphasis">4.b Plot the data</em></div>
-<div class="displaymath process-math">
-\begin{align}
-\begin{pmatrix} x_1^\prime&amp;x_2^\prime&amp;x_3^\prime&amp;x_4^\prime&amp;x_2^\prime
-\end{pmatrix}
-=       \begin{pmatrix} 
--1&amp; 6&amp; 15&amp; 8 &amp;17
-\end{pmatrix}\tag{3.2.7}
-\end{align}
-</div>
-</div> <div class="para"><figure class="figure figure-like"><div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="external/grover2.png" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.2.3<span class="period">.</span></span><span class="space"> </span>Representation of <span class="process-math">\(x^\prime_i\)</span>values</figcaption></figure></div> <div class="para logical">
-<div class="para">The last operation,<span class="process-math">\(-x_i +2\overline{x}=x_i^\prime\)</span>  has the following representation in terms of matrices,</div>
-<div class="displaymath process-math">
-\begin{gather}
-(- I + 2 A) \boldsymbol{x} = \boldsymbol{x}^\prime\tag{3.2.8}
-\end{gather}
-</div>
-<div class="para">where <span class="process-math">\(\overline{x} \to A \boldsymbol{x},\)</span>  where</div>
-<div class="displaymath process-math">
-\begin{align}
-A = \frac{1}{5}
-\begin{pmatrix}
-1&amp;1&amp;1&amp;1&amp;1\\
-1&amp;1&amp;1&amp;1&amp;1\\
-1&amp;1&amp;1&amp;1&amp;1\\
-1&amp;1&amp;1&amp;1&amp;1\\
-1&amp;1&amp;1&amp;1&amp;1
-\end{pmatrix}\tag{3.2.9}
-\end{align}
-</div>
-<div class="para">is the matrix for the average. It means <span class="process-math">\(\boldsymbol{\overline{x}} = A\boldsymbol{x}\text{.}\)</span>  As follows,</div>
-<div class="displaymath process-math">
-\begin{align}
-\boldsymbol{\overline{x}} = A \boldsymbol{x}= \frac{1}{5}
-\begin{pmatrix}
-1&amp;1&amp;1&amp;1&amp;1\\
-1&amp;1&amp;1&amp;1&amp;1\\
-1&amp;1&amp;1&amp;1&amp;1\\
-1&amp;1&amp;1&amp;1&amp;1\\
-1&amp;1&amp;1&amp;1&amp;1
-\end{pmatrix}
-\begin{pmatrix}
-19\\12\\3\\10\\1
-\end{pmatrix}
-=
-\begin{pmatrix}
-9\\9\\9\\9\\9
-\end{pmatrix}\tag{3.2.10}
-\end{align}
-</div>
-<div class="para">This is a state where each amplitude is the average of all the amplitudes.</div>
-</div> <div class="para logical">
-<div class="para"><em class="emphasis">5. Invert amplitudes about the average.</em></div>
-<div class="displaymath process-math">
-\begin{align}
-(-I+2A)\boldsymbol{x}&amp;=&amp;\boldsymbol{x}^\prime\\
-\left[-
-\begin{pmatrix}
-<<<<<<< HEAD
-\begin{pmatrix}
-=======
->>>>>>> ca12b83e1f5467f454e507fff8257c3c707ffedd
-1&amp;0&amp;0&amp;0&amp;0\\
-0&amp;1&amp;0&amp;0&amp;0\\    
-0&amp;0&amp;1&amp;0&amp;0\\
-0&amp;0&amp;0&amp;1&amp;0\\
-0&amp;0&amp;0&amp;0&amp;1
-\end{pmatrix}
-+ \frac{2}{5}
-\begin{pmatrix}
-1&amp;1&amp;1&amp;1&amp;1\\
-1&amp;1&amp;1&amp;1&amp;1\\
-1&amp;1&amp;1&amp;1&amp;1\\
-1&amp;1&amp;1&amp;1&amp;1\\
-1&amp;1&amp;1&amp;1&amp;1\\
-\end{pmatrix}
-\right]
-\begin{pmatrix}
-19\\12\\3\\10\\1
-\end{pmatrix}
-&amp;=&amp;\\
-%
-\frac{1}{5}
-\begin{pmatrix}
--3&amp;2&amp;2&amp;2&amp;2\\
-2&amp;-3&amp;2&amp;2&amp;2\\
-2&amp;2&amp;-3&amp;2&amp;2\\
-2&amp;2&amp;2&amp;-3&amp;2\\
-2&amp;2&amp;2&amp;2&amp;-3\\
-\end{pmatrix}
-\begin{pmatrix}
-19\\12\\3\\10\\1
-\end{pmatrix}
-&amp;=&amp;
-\begin{pmatrix}
--1\\ 6\\ 15\\ 8\\17\\          
-<<<<<<< HEAD
-\end{pmatrix}\tag{3.1.11}
-\end{align}
-</div>
-</div> <div class="para">The item (4).b and eq. (3.1.11) show same results, the second report implies linear algebra operations.</div> <div class="para">This example emphasizes on invert amplitudes about the mean; however, Grover’s algorithm requires phase inversion. The following example explains the step.</div></article><span class="incontext"><a href="sec1-chap3.html#example-5" class="internal">in-context</a></span>
-=======
-\end{pmatrix}\tag{3.2.11}
-\end{align}
-</div>
-</div> <div class="para">The item (4).b and eq. (3.1.11) show same results, the second report implies linear algebra operations.</div> <div class="para">This example emphasizes on invert amplitudes about the mean; however, Grover’s algorithm requires phase inversion. The following example explains the step.</div></article><span class="incontext"><a href="sec2-chap3.html#example-5" class="internal">in-context</a></span>
->>>>>>> ca12b83e1f5467f454e507fff8257c3c707ffedd
+<div class="para">Notice that after 11 values of <span class="process-math">\(r\)</span> the function <span class="process-math">\(g_{2,23}(r)\)</span> begins to repeat itself. If we continued to write out this sequence as <span class="process-math">\(r\)</span> continues to increase, we would find that every 11 integers, the sequence repeats again. This means that <span class="process-math">\(g_{2,23}(r)\)</span> has a period of 11, which means <span class="process-math">\(g_{2,23}(r) = g_{2,23}(r+11)\text{.}\)</span>
+</div></article><span class="incontext"><a href="sec3-chap3.html#example-5" class="internal">in-context</a></span>
 </body>
 </html>
