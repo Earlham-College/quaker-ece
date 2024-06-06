@@ -222,10 +222,10 @@ window.MathJax = {
 <div class="toc-item"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
 <ul class="structural">
 <li><div class="toc-item"><a href="colophon-1.html" class="internal"><span class="title">Colophon</span></a></div></li>
-<li><div class="toc-item"><a href="author-bio-TWJ.html" class="internal"><span class="title">Author Biography</span></a></div></li>
+<li><div class="toc-item"><a href="author-bio-LG.html" class="internal"><span class="title">Author Biography</span></a></div></li>
 <li><div class="toc-item"><a href="dedication.html" class="internal"><span class="title">Dedication</span></a></div></li>
 <li><div class="toc-item"><a href="acknowledgement.html" class="internal"><span class="title">Acknowledgements</span></a></div></li>
-<li><div class="toc-item"><a href="frontmatter-intro.html" class="internal"><span class="codenumber">1</span> <span class="title">Introduction</span></a></div></li>
+<li><div class="toc-item"><a href="frontmatter-intro.html" class="internal"><span class="codenumber">1</span> <span class="title">Overview</span></a></div></li>
 </ul>
 </li>
 <li>
@@ -332,6 +332,7 @@ window.MathJax = {
 <li>
 <div class="toc-item"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div>
 <ul class="structural">
+<li><div class="toc-item"><a href="references.html" class="internal"><span class="title">References</span></a></div></li>
 <li><div class="toc-item"><a href="index-1.html" class="internal"><span class="title">Index</span></a></div></li>
 <li><div class="toc-item"><a href="colophon-2.html" class="internal"><span class="title">Colophon</span></a></div></li>
 </ul>
@@ -340,25 +341,25 @@ window.MathJax = {
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="Computational-Bases"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">1.8</span> <span class="title">Computational Bases and the Bloch Sphere</span>
 </h2>
-<div class="para" id="p-101">So far, the only basis we have looked at for measuring a qubit is <span class="process-math">\((\ket{0},\ket{1})\text{,}\)</span> but this is not the only one. In quantum computation, we define three orthogonal basis states. For now, we will call these the X-measurement, Y-measurement, and Z-measurement, which will make sense shortly.</div>
-<div class="para" id="p-102"><em class="alert">X-Measurement</em></div>
-<div class="para" id="p-103">
+<div class="para" id="p-104">So far, the only basis we have looked at for measuring a qubit is <span class="process-math">\((\ket{0},\ket{1})\text{,}\)</span> but this is not the only one. In quantum computation, we define three orthogonal basis states. For now, we will call these the X-measurement, Y-measurement, and Z-measurement, which will make sense shortly.</div>
+<div class="para" id="p-105"><em class="alert">X-Measurement</em></div>
+<div class="para" id="p-106">
 <span class="process-math">\(\{\ket{+},\ket{-}\}\)</span> are eigenstates of the Pauli X Matrix, <span class="process-math">\(\sigma_x\)</span> (which is <span class="process-math">\(\begin{pmatrix} 0 &amp; 1 \\ 1 &amp; 0 \end{pmatrix}\text{,}\)</span> as we will see in <a href="sec2-chap2.html#subsec2-chap2" class="internal" title="Subsection 2.2.2: Pauli X gate">Subsection 2.2.2</a>). These are called the Hadamard (transversal) basis states</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/subsec2-chap2.html ./knowl/subsec3-chap2.html ./knowl/subsec4-chap2.html ./knowl/sec2-chap2.html">
 \begin{equation*}
 \Big\{\ket{+}:=\frac{1}{\sqrt{2}}\Big(\ket{0}+\ket{1}\Big), \ket{-}:=\frac{1}{\sqrt{2}}\Big(\ket{0}-\ket{1}\Big) \Big\} 
 \end{equation*}
 </div>
-<div class="para" id="p-104"><em class="alert">Y-Measurement</em></div>
-<div class="para" id="p-105">
+<div class="para" id="p-107"><em class="alert">Y-Measurement</em></div>
+<div class="para" id="p-108">
 <span class="process-math">\(\{\ket{+i},\ket{-i}\}\)</span> are eigenstates of the Pauli Y Matrix, <span class="process-math">\(\sigma_y\)</span> (which is <span class="process-math">\(\begin{pmatrix} 0 &amp; -i \\ i &amp; 0 \end{pmatrix}\text{,}\)</span> as we will see in <a href="sec2-chap2.html#subsec3-chap2" class="internal" title="Subsection 2.2.3: Pauli Y gate">Subsection 2.2.3</a>).These are called the Longitudinal (Left-Right) basis states</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/subsec2-chap2.html ./knowl/subsec3-chap2.html ./knowl/subsec4-chap2.html ./knowl/sec2-chap2.html">
 \begin{equation*}
 \Big\{\ket{+i}:=\frac{1}{\sqrt{2}}\Big(\ket{0}+i\ket{1}\Big), \ket{-i}:=\frac{1}{\sqrt{2}}\Big(\ket{0}-i\ket{1}\Big) \Big\} 
 \end{equation*}
 </div>
-<div class="para" id="p-106"><em class="alert">Z-Measurement</em></div>
-<div class="para" id="p-107">
+<div class="para" id="p-109"><em class="alert">Z-Measurement</em></div>
+<div class="para" id="p-110">
 <span class="process-math">\(\{\ket{0},\ket{1}\}\)</span> are eigenstates of the Pauli Z Matrix, <span class="process-math">\(\sigma_z\)</span> (which is <span class="process-math">\(\begin{pmatrix} 1 &amp; 0 \\ 0 &amp; -1 \end{pmatrix}\text{,}\)</span> as we will see in <a href="sec2-chap2.html#subsec4-chap2" class="internal" title="Subsection 2.2.4: Pauli Z">Subsection 2.2.4</a>). These are called the Computational basis states</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/subsec2-chap2.html ./knowl/subsec3-chap2.html ./knowl/subsec4-chap2.html ./knowl/sec2-chap2.html">
 \begin{equation*}
@@ -367,7 +368,7 @@ window.MathJax = {
 </div>
 <article class="exercise exercise-like" id="exercise-10"><a href="" data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exercise-10"><h3 class="heading">
 <span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">1.8.1</span><span class="period">.</span><span class="space"> </span><span class="title">A state in the Hadamard basis.</span>
-</h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-10"><article class="exercise exercise-like"><div class="para" id="p-108">
+</h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-10"><article class="exercise exercise-like"><div class="para" id="p-111">
 <span class="process-math">\(\ket{\psi}=\frac{1}{\sqrt{2}}\Big(\ket{0}-\ket{1}\Big)\)</span> is measured in the basis <span class="process-math">\(\{\ket{+},\ket{-}\}.\)</span> Calculate <span class="process-math">\(P(+)\)</span> and <span class="process-math">\(P(-).\)</span>
 </div>
 <div class="solutions">
@@ -386,7 +387,7 @@ P(-) = (\braket{-|\psi})^2 = (\frac{1}{\sqrt{2}}(\bra{0} - \bra{1}) \cdot \frac{
 </div></article></div>
 <article class="exercise exercise-like" id="exercise-11"><a href="" data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exercise-11"><h3 class="heading">
 <span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">1.8.2</span><span class="period">.</span><span class="space"> </span><span class="title">A state in the Computational basis.</span>
-</h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-11"><article class="exercise exercise-like"><div class="para" id="p-109">
+</h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-11"><article class="exercise exercise-like"><div class="para" id="p-112">
 <span class="process-math">\(\ket{\psi}=\frac{1}{\sqrt{3}}\Big(\ket{0} +\sqrt{2}\ket{1}\Big)\)</span> is measured in the basis <span class="process-math">\(\{\ket{0},\ket{1}\}.\)</span> Calculate <span class="process-math">\(P(0)\)</span> and <span class="process-math">\(P(1)\text{.}\)</span>
 </div>
 <div class="solutions">
@@ -406,48 +407,48 @@ P(1) = (\braket{1|\psi})^2 = (\bra{1} \cdot \frac{1}{\sqrt{3}} (\ket{0} + \sqrt{
 <section class="subsection" id="subsec-Bloch-Sphere"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">1.8.1</span> <span class="title">The Bloch Sphere</span>
 </h3>
-<div class="para" id="p-110">Recall that any qubit can be written as <span class="process-math">\(\ket{\psi} = \alpha \ket{0} + \beta \ket{1} \)</span> and <span class="process-math">\(\alpha^2 + \beta^2 = 1 \text{.}\)</span> Because of this bounding property, we can say there exist some real numbers <span class="process-math">\(\gamma, \theta, \text{ and } \phi\)</span> such that</div>
+<div class="para" id="p-113">Recall that any qubit can be written as <span class="process-math">\(\ket{\psi} = \alpha \ket{0} + \beta \ket{1} \)</span> and <span class="process-math">\(\alpha^2 + \beta^2 = 1 \text{.}\)</span> Because of this bounding property, we can say there exist some real numbers <span class="process-math">\(\gamma, \theta, \text{ and } \phi\)</span> such that</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/sec2-chap2.html">
 \begin{equation*}
 \ket{\psi} = e^{i\gamma}(\cos(\frac{\theta}{2})\ket{0} + e^{i\phi}\sin(\frac{\theta}{2})\ket{1}) 
 \end{equation*}
 </div>
-<div class="para" id="p-111">Since the <span class="process-math">\(e^{i\gamma}\)</span> is simply a scalar applied to the entire system, it will have no observable effect on the state of the system. This means we can ignore that term, leaving us with</div>
+<div class="para" id="p-114">Since the <span class="process-math">\(e^{i\gamma}\)</span> is simply a scalar applied to the entire system, it will have no observable effect on the state of the system. This means we can ignore that term, leaving us with</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/sec2-chap2.html">
 \begin{equation*}
 \ket{\psi} = \cos(\frac{\theta}{2})\ket{0} + e^{i\phi}\sin(\frac{\theta}{2})\ket{1} 
 \end{equation*}
 </div>
-<div class="para" id="p-112">The numbers <span class="process-math">\(\theta\)</span> and <span class="process-math">\(\phi\)</span> define a point on the three-dimensional unit sphere, which we will here call the <dfn class="terminology">Bloch sphere</dfn>. The Bloch sphere exists within a Hilbert Space, <span class="process-math">\(\mathcal{H}\text{,}\)</span> and provides an intuitive method for depicting qubits as vectors and visualizing the operations we can perform on them.</div>
+<div class="para" id="p-115">The numbers <span class="process-math">\(\theta\)</span> and <span class="process-math">\(\phi\)</span> define a point on the three-dimensional unit sphere, which we will here call the <dfn class="terminology">Bloch sphere</dfn>. The Bloch sphere exists within a Hilbert Space, <span class="process-math">\(\mathcal{H}\text{,}\)</span> and provides an intuitive method for depicting qubits as vectors and visualizing the operations we can perform on them.</div>
 <figure class="figure figure-like" id="fig-Bloch-Sphere"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/BlochSphere.png" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.8.3<span class="period">.</span></span><span class="space"> </span>The Bloch sphere and the representation of a qubit <span class="process-math">\(\ket{\psi}\)</span> with angle <span class="process-math">\(\phi\)</span> along the horizontal plane and angle <span class="process-math">\(\theta\)</span> along the vertical axis, as well as the computational basis vectors.</figcaption></figure><div class="para" id="p-113">One quirk of the Bloch sphere is that any two orthogonal state vectors (qubits) are represented on the sphere not as perpendicular, but as two vectors along the same line pointing in opposite directions. Thus the x-axis is defined by <span class="process-math">\(\ket{+}\)</span> in the positive direction and <span class="process-math">\(\ket{i}\)</span> in the negative direction, the y-axis is defined by <span class="process-math">\(\ket{+i}\)</span> in the positive and <span class="process-math">\(\ket{-i}\)</span> in the negative, and the z-axis is defined by <span class="process-math">\(\ket{0}\)</span> in the positive and <span class="process-math">\(\ket{1}\)</span> in the negative, hence the reason for the names of these states.</div>
-<div class="para" id="p-114">Those familiar with multivariate calculus will know that any point on the surface of the unit sphere can be described with the vector</div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.8.3<span class="period">.</span></span><span class="space"> </span>The Bloch sphere and the representation of a qubit <span class="process-math">\(\ket{\psi}\)</span> with angle <span class="process-math">\(\phi\)</span> along the horizontal plane and angle <span class="process-math">\(\theta\)</span> along the vertical axis, as well as the computational basis vectors.</figcaption></figure><div class="para" id="p-116">One quirk of the Bloch sphere is that any two orthogonal state vectors (qubits) are represented on the sphere not as perpendicular, but as two vectors along the same line pointing in opposite directions. Thus the x-axis is defined by <span class="process-math">\(\ket{+}\)</span> in the positive direction and <span class="process-math">\(\ket{i}\)</span> in the negative direction, the y-axis is defined by <span class="process-math">\(\ket{+i}\)</span> in the positive and <span class="process-math">\(\ket{-i}\)</span> in the negative, and the z-axis is defined by <span class="process-math">\(\ket{0}\)</span> in the positive and <span class="process-math">\(\ket{1}\)</span> in the negative, hence the reason for the names of these states.</div>
+<div class="para" id="p-117">Those familiar with multivariate calculus will know that any point on the surface of the unit sphere can be described with the vector</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/sec2-chap2.html">
 \begin{equation*}
 \vec{r} = \begin{pmatrix} \sin \theta \cos \phi \\ \sin \theta \sin \phi \\ \cos \theta \end{pmatrix} 
 \end{equation*}
 </div>
-<div class="para" id="p-115">If we choose <span class="process-math">\(\theta = 0\text{,}\)</span> we obtain</div>
+<div class="para" id="p-118">If we choose <span class="process-math">\(\theta = 0\text{,}\)</span> we obtain</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/sec2-chap2.html">
 \begin{equation*}
 \vec{r} = \begin{pmatrix}0\\0\\1\end{pmatrix} 
 \end{equation*}
 </div>
-<div class="para" id="p-116">which corresponds to <span class="process-math">\(\ket{0}\)</span> on the Block sphere.</div>
-<div class="para" id="p-117">If we choose <span class="process-math">\(\theta=\pi\text{.}\)</span> we obtain</div>
+<div class="para" id="p-119">which corresponds to <span class="process-math">\(\ket{0}\)</span> on the Block sphere.</div>
+<div class="para" id="p-120">If we choose <span class="process-math">\(\theta=\pi\text{.}\)</span> we obtain</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/sec2-chap2.html">
 \begin{equation*}
 \vec{r} = \begin{pmatrix}0\\0\\-1\end{pmatrix} 
 \end{equation*}
 </div>
-<div class="para" id="p-118">which corresponds to <span class="process-math">\(\ket{1}\)</span> on the Block sphere. This is our reason for choosing to use <span class="process-math">\(\frac{\theta}{2}\)</span> as an angle in our definition of the block instead of just using <span class="process-math">\(\theta\text{.}\)</span> When <span class="process-math">\(\theta=0\text{,}\)</span>
+<div class="para" id="p-121">which corresponds to <span class="process-math">\(\ket{1}\)</span> on the Block sphere. This is our reason for choosing to use <span class="process-math">\(\frac{\theta}{2}\)</span> as an angle in our definition of the block instead of just using <span class="process-math">\(\theta\text{.}\)</span> When <span class="process-math">\(\theta=0\text{,}\)</span>
 </div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/sec2-chap2.html">
 \begin{equation*}
 \ket{\psi} = \cos(0)\ket{0} + e^{i\phi}\sin(0)\ket{1} = \ket{0}
 \end{equation*}
 </div>
-<div class="para" id="p-119">and when <span class="process-math">\(\theta = \pi\)</span> and <span class="process-math">\(\phi = 0\text{,}\)</span>
+<div class="para" id="p-122">and when <span class="process-math">\(\theta = \pi\)</span> and <span class="process-math">\(\phi = 0\text{,}\)</span>
 </div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/sec2-chap2.html">
 \begin{equation*}
@@ -456,13 +457,13 @@ P(1) = (\braket{1|\psi})^2 = (\bra{1} \cdot \frac{1}{\sqrt{3}} (\ket{0} + \sqrt{
 </div>
 <article class="exercise exercise-like" id="exercise-12"><a href="" data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exercise-12"><h4 class="heading">
 <span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">1.8.4</span><span class="period">.</span>
-</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-12"><article class="exercise exercise-like"><div class="para" id="p-120">Using the vector equation for points on the surface of the unit sphere, consider the following values:</div> <div class="para" id="p-121">1. <span class="process-math">\(\theta = \frac{\pi}{2}\)</span> and <span class="process-math">\(\phi =0.\)</span> Obtain <span class="process-math">\(\vec{r}.\)</span>
-</div> <div class="para" id="p-122">2. <span class="process-math">\(\theta = \frac{\pi}{2}\)</span> and <span class="process-math">\(\phi =\pi.\)</span> Obtain <span class="process-math">\(\vec{r}.\)</span>
-</div> <div class="para" id="p-123">3. <span class="process-math">\(\theta = \frac{\pi}{2}\)</span> and <span class="process-math">\(\phi =\frac{\pi}{2}.\)</span> Obtain <span class="process-math">\(\vec{r}.\)</span>
-</div> <div class="para" id="p-124">4. <span class="process-math">\(\theta = \frac{\pi}{2}\)</span> and <span class="process-math">\(\phi =\frac{3\pi}{2}.\)</span> Obtain <span class="process-math">\(\vec{r}.\)</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-12"><article class="exercise exercise-like"><div class="para" id="p-123">Using the vector equation for points on the surface of the unit sphere, consider the following values:</div> <div class="para" id="p-124">1. <span class="process-math">\(\theta = \frac{\pi}{2}\)</span> and <span class="process-math">\(\phi =0.\)</span> Obtain <span class="process-math">\(\vec{r}.\)</span>
+</div> <div class="para" id="p-125">2. <span class="process-math">\(\theta = \frac{\pi}{2}\)</span> and <span class="process-math">\(\phi =\pi.\)</span> Obtain <span class="process-math">\(\vec{r}.\)</span>
+</div> <div class="para" id="p-126">3. <span class="process-math">\(\theta = \frac{\pi}{2}\)</span> and <span class="process-math">\(\phi =\frac{\pi}{2}.\)</span> Obtain <span class="process-math">\(\vec{r}.\)</span>
+</div> <div class="para" id="p-127">4. <span class="process-math">\(\theta = \frac{\pi}{2}\)</span> and <span class="process-math">\(\phi =\frac{3\pi}{2}.\)</span> Obtain <span class="process-math">\(\vec{r}.\)</span>
 </div></article></div>
-<div class="para" id="p-125">The Bloch sphere is called a projective sphere because the states of our quantum system are rays in the Hilbert space<span class="process-math">\(\mathcal{H}\text{,}\)</span> and we would prefer to visualize vectors as points, not rays. Going back to the underlying <span class="process-math">\(\mathbb{C}^{n}\)</span> we collapse the ray that represents a quantum state onto the surface of an <span class="process-math">\(n\)</span>-dimensional sphere. We are projecting all those representatives onto a single point on the complex n-sphere. Notice that each point on that sphere still has infinitely many representations impossible to picture due to the potential scalar factor <span class="process-math">\(e^{i \gamma}\text{,}\)</span> that we left out of our equation.</div>
-<div class="para" id="p-126">The Pauli gates <span class="process-math">\(X, Y,\)</span> and <span class="process-math">\(Z\)</span> (which we will see in <a href="sec2-chap2.html" class="internal" title="Section 2.2: Gates">Section 2.2</a>) correspond to rotations about the <span class="process-math">\(x-, y-\)</span> and <span class="process-math">\(z-\)</span>axes of the Bloch sphere</div></section></section></div>
+<div class="para" id="p-128">The Bloch sphere is called a projective sphere because the states of our quantum system are rays in the Hilbert space<span class="process-math">\(\mathcal{H}\text{,}\)</span> and we would prefer to visualize vectors as points, not rays. Going back to the underlying <span class="process-math">\(\mathbb{C}^{n}\)</span> we collapse the ray that represents a quantum state onto the surface of an <span class="process-math">\(n\)</span>-dimensional sphere. We are projecting all those representatives onto a single point on the complex n-sphere. Notice that each point on that sphere still has infinitely many representations impossible to picture due to the potential scalar factor <span class="process-math">\(e^{i \gamma}\text{,}\)</span> that we left out of our equation.</div>
+<div class="para" id="p-129">The Pauli gates <span class="process-math">\(X, Y,\)</span> and <span class="process-math">\(Z\)</span> (which we will see in <a href="sec2-chap2.html" class="internal" title="Section 2.2: Gates">Section 2.2</a>) correspond to rotations about the <span class="process-math">\(x-, y-\)</span> and <span class="process-math">\(z-\)</span>axes of the Bloch sphere</div></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="Qubit-States.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="Operators.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>
 </div></main>

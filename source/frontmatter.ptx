@@ -50,8 +50,32 @@
     </copyright>
 </colophon>
 
+<biography xml:id="author-bio-LG">
+  <p>
+    Levi Goldberg is a junior at Earlham 
+    College who is double majoring in 
+    Mathematics and Accounting with a 
+    minor in Computer Science. 
+    His research for this project focused on 
+    quantum teleportation and its applications 
+    in quantum cryptography. After graduation, 
+    he plans to do something, but has no idea 
+    what that may be. In his spare time, he 
+    enjoys playing tabletop RPGs and going on 
+    runs with his dog.
+  </p>
+    <p>
+      Shun Suzuki is a sophomore student 
+      from Japan currently studying at 
+      Earlham College. He is majoring in 
+      Computer Science with a strong interest 
+      in artificial intelligence. His research 
+      aims to deepen his knowledge and expertise 
+      in this field. He enjoys watching anime in 
+      his free time.
+    </p>
 
-<biography xml:id="author-bio-TWJ">
+
   <p>Dr. Javier Orduz holds the distinguished position of 
     Visiting Assistant Professor at Earlham College and 
     also serves as an Instructor at Baylor University. 
@@ -90,6 +114,7 @@
   </p>
 </biography>
 
+
 <dedication xml:id="dedication">
   <p>
       <line>My family in Colombia, Mexico, and USA.</line>
@@ -102,11 +127,17 @@
 <acknowledgement xml:id="acknowledgement">
 
 <p>
-  This project was supported by the Summer Collaborative Research at Earlhma College.
+  This project was supported by the Summer 
+  Collaborative Research at Earlhma College.
 </p>
 
-<p>JO would like to acknowledge the following 
-  people for their comments and suggestions.
+<p>The authors would like to acknowledge Stephen 
+  and Sylvia Tregidga Burges Endowed Fund for 
+  Student Faculty Collaborative Research.
+</p>
+<p>
+  JO would like to thank to EC, and the CS, Math departments 
+  for funding this research.
 </p>
   <!-- Added NSF support statement.  TWJ 8/9/2012 -->
   <!-- <p></em>The open source version of this book has received support from the National Science Foundation (Award #DUE-1020957).</p> -->
