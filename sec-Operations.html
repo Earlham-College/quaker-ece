@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Operations in Quantum Computation</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Quantum Computing">
+<meta property="book:author" content="Levi Goldberg">
+<meta property="book:author" content="Shun Suzuki">
+<meta property="book:author" content="Javier Orduz">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "https://pretextbook.org/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.3/pretext_search.js"></script><link href="https://pretextbook.org/css/0.7/pretext_search.css" rel="stylesheet" type="text/css">
+<script>js_version = 0.3</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.3/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.3/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.3/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link href="https://pretextbook.org/css/0.7/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.7/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.7/shell_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.7/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.7/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.7/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.7/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.7/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.7/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.7/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body id="changeme" class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" class="logo-link" href="" target="_blank"><img src="external/earlhamlogo.png" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="my-great-book.html"><span class="title">Quantum Computing:</span> <span class="subtitle">A gentle introduction for Liberal Arts Institutions</span></a></h1>
+<p class="byline">Levi Goldberg, Shun Suzuki, Javier Orduz</p>
+</div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<button id="closesearchresults" class="closesearchresults" onclick="document.getElementById('searchresultsplaceholder').style.display = 'none'; return false;">x</button><h2>Search Results: <span id="searchterms" class="searchterms"></span>
+</h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" aria-label="Show or hide table of contents"><span class="icon">☰</span><span class="name">Contents</span></button><a class="index-button button" href="index-1.html" title="Index"><span class="name">Index</span></a><button id="user-preferences-button" class="user-preferences-button button" title="Modify user preferences"><span id="avatarbutton" class="avatarbutton name">You!</span><div id="preferences_menu_holder" class="preferences_menu_holder hidden"><ol id="preferences_menu" class="preferences_menu" style="font-family: 'Roboto Serif', serif;">
+<li data-env="avatar" tabindex="-1">Choose avatar<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden avatar">
+<li data-val="You!" tabindex="-1">
+<span id="theYou!" class="avatarcheck">✔️</span>You!</li>
+<li data-val="😺" tabindex="-1">
+<span id="the😺" class="avatarcheck"></span>😺</li>
+<li data-val="👤" tabindex="-1">
+<span id="the👤" class="avatarcheck"></span>👤</li>
+<li data-val="👽" tabindex="-1">
+<span id="the👽" class="avatarcheck"></span>👽</li>
+<li data-val="🐶" tabindex="-1">
+<span id="the🐶" class="avatarcheck"></span>🐶</li>
+<li data-val="🐼" tabindex="-1">
+<span id="the🐼" class="avatarcheck"></span>🐼</li>
+<li data-val="🌈" tabindex="-1">
+<span id="the🌈" class="avatarcheck"></span>🌈</li>
+</ol>
+</li>
+<li data-env="fontfamily" tabindex="-1">Font family<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden fontfamily">
+<li data-val="face" data-change="OS" tabindex="-1" style="font-family: 'Open Sans'">
+<span id="theOS" class="ffcheck">✔️</span><span class="name">Open Sans</span><span class="sample">AaBbCc 123 PreTeXt</span>
+</li>
+<li data-val="face" data-change="RS" tabindex="-1" style="font-family: 'Roboto Serif'">
+<span id="theRS" class="ffcheck"></span><span class="name">Roboto Serif</span><span class="sample">AaBbCc 123 PreTeXt</span>
+</li>
+</ol>
+</li>
+<li data-env="font" tabindex="-1">Adjust font<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden fonts">
+<li>Size</li>
+<li><span id="thesize">12</span></li>
+<li data-val="size" data-change="-1" tabindex="-1" style="font-size: 80%">Smaller</li>
+<li data-val="size" data-change="1" tabindex="-1" style="font-size: 110%">Larger</li>
+<li>Width</li>
+<li><span id="thewdth">100</span></li>
+<li data-val="wdth" data-change="-5" tabindex="-1" style="font-variation-settings: 'wdth' 60">narrower</li>
+<li data-val="wdth" data-change="5" tabindex="-1" style="font-variation-settings: 'wdth' 150">wider</li>
+<li>Weight</li>
+<li><span id="thewght">400</span></li>
+<li data-val="wght" data-change="-50" tabindex="-1" style="font-weight: 200">thinner</li>
+<li data-val="wght" data-change="50" tabindex="-1" style="font-weight: 700">heavier</li>
+<li>Letter spacing</li>
+<li>
+<span id="thelspace">0</span><span class="byunits">/200</span>
+</li>
+<li data-val="lspace" data-change="-1" tabindex="-1">closer</li>
+<li data-val="lspace" data-change="1" tabindex="-1">f a r t h e r</li>
+<li>Word spacing</li>
+<li>
+<span id="thewspace">0</span><span class="byunits">/50</span>
+</li>
+<li data-val="wspace" data-change="-1" tabindex="-1">smaller gap </li>
+<li data-val="wspace" data-change="1" tabindex="-1">larger gap</li>
+<li>Line Spacing</li>
+<li>
+<span id="theheight">135</span><span class="byunits">/100</span>
+</li>
+<li data-val="height" data-change="-5" tabindex="-1" style="line-height: 1">closer<br>together</li>
+<li data-val="height" data-change="5" tabindex="-1" style="line-height: 1.75">further<br>apart</li>
+</ol>
+</li>
+<li data-env="atmosphere" tabindex="-1">Light/dark mode<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden atmosphere">
+<li data-val="default" tabindex="-1">
+<span id="thedefault" class="atmospherecheck">✔️</span>default</li>
+<li data-val="pastel" tabindex="-1">
+<span id="thepastel" class="atmospherecheck"></span>pastel</li>
+<li data-val="darktwilight" tabindex="-1">
+<span id="thedarktwilight" class="atmospherecheck"></span>twilight</li>
+<li data-val="dark" tabindex="-1">
+<span id="thedark" class="atmospherecheck"></span>dark</li>
+<li data-val="darkmidnight" tabindex="-1">
+<span id="thedarkmidnight" class="atmospherecheck"></span>midnight</li>
+</ol>
+</li>
+<li data-env="ruler" tabindex="-1">Reading ruler<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden ruler">
+<li data-val="none" tabindex="-1">
+<span id="thenone" class="rulercheck">✔️</span>none</li>
+<li data-val="underline" tabindex="-1">
+<span id="theunderline" class="rulercheck"></span>underline</li>
+<li data-val="lunderline" tabindex="-1">
+<span id="thelunderline" class="rulercheck"></span>L-underline</li>
+<li data-val="greybar" tabindex="-1">
+<span id="thegreybar" class="rulercheck"></span>grey bar</li>
+<li data-val="lightbox" tabindex="-1">
+<span id="thelightbox" class="rulercheck"></span>light box</li>
+<li data-val="sunrise" tabindex="-1">
+<span id="thesunrise" class="rulercheck"></span>sunrise</li>
+<li data-val="sunriseunderline" tabindex="-1">
+<span id="thesunriseunderline" class="rulercheck"></span>sunrise underline</li>
+<li class="moveQ">Motion by:</li>
+<li data-val="mouse" tabindex="-1">
+<span id="themouse" class="motioncheck">✔️</span>follow the mouse</li>
+<li data-val="arrow" tabindex="-1">
+<span id="thearrow" class="motioncheck"></span>up/down arrows - not yet</li>
+<li data-val="eye" tabindex="-1">
+<span id="theeye" class="motioncheck"></span>eye tracking - not yet</li>
+</ol>
+</li>
+</ol></div></button><span class="treebuttons"><a class="previous-button button" href="sec-Systems-of-Multiple-Qubits.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="up-button button" href="chap1-chapter.html" title="Up"><span class="icon">^</span><span class="name">Up</span></a><a class="next-button button" href="chap2-chapter.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a></span><div class="searchbox"><div class="searchwidget">
+<input id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search" onchange="doSearch()"><button id="searchbutton" class="searchbutton" type="button" onclick="doSearch()">🔍</button>
+</div></div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} 
+\newcommand{\Z}{\mathbb Z} 
+\newcommand{\Q}{\mathbb Q} 
+\newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural">
+<li>
+<div class="toc-item"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="colophon-1.html" class="internal"><span class="title">Colophon</span></a></div></li>
+<li><div class="toc-item"><a href="author-bio-LG.html" class="internal"><span class="title">Author Biography</span></a></div></li>
+<li><div class="toc-item"><a href="dedication.html" class="internal"><span class="title">Dedication</span></a></div></li>
+<li><div class="toc-item"><a href="acknowledgement.html" class="internal"><span class="title">Acknowledgements</span></a></div></li>
+<li><div class="toc-item"><a href="frontmatter-intro.html" class="internal"><span class="codenumber">1</span> <span class="title">Overview</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="chap1-chapter.html" class="internal"><span class="codenumber">1</span> <span class="title">Basic Concepts of Quantum Computation</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="chap1-intro.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Introduction</span></a></div></li>
+<li><div class="toc-item"><a href="Classical-Physics.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Classical Physics</span></a></div></li>
+<li><div class="toc-item"><a href="Newtonian-Mechanics.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Newtonian Mechanics</span></a></div></li>
+<li><div class="toc-item"><a href="Classical-Computing.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Classical Computing</span></a></div></li>
+<li>
+<div class="toc-item"><a href="Vectors-and-Vector-Spaces.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Vectors and Vector Spaces</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="Vectors-and-Vector-Spaces.html#Vectors" class="internal"><span class="codenumber">1.5.1</span> <span class="title">Introduction to Vectors</span></a></div></li>
+<li><div class="toc-item"><a href="Vectors-and-Vector-Spaces.html#Vector-Spaces" class="internal"><span class="codenumber">1.5.2</span> <span class="title">Vector Spaces</span></a></div></li>
+<li><div class="toc-item"><a href="Vectors-and-Vector-Spaces.html#Bases" class="internal"><span class="codenumber">1.5.3</span> <span class="title">Bases</span></a></div></li>
+<li><div class="toc-item"><a href="Vectors-and-Vector-Spaces.html#linear-algebra" class="internal"><span class="codenumber">1.5.4</span> <span class="title">Linear Algebra</span></a></div></li>
+<li><div class="toc-item"><a href="Vectors-and-Vector-Spaces.html#subsec-Eigenvectors-and-Eigenvalues" class="internal"><span class="codenumber">1.5.5</span> <span class="title">Eigenvectors and Eigenvalues</span></a></div></li>
+</ul>
+</li>
+<li><div class="toc-item"><a href="Linear-Algebra-in-Quantum-Computation.html" class="internal"><span class="codenumber">1.6</span> <span class="title">Linear Algebra in Quantum Computation</span></a></div></li>
+<li>
+<div class="toc-item"><a href="Qubit-States.html" class="internal"><span class="codenumber">1.7</span> <span class="title">Qubit States</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="Qubit-States.html#subsec-Qubit" class="internal"><span class="codenumber">1.7.1</span> <span class="title">Qubits</span></a></div></li>
+<li><div class="toc-item"><a href="Qubit-States.html#subsec-Hilbert-Space" class="internal"><span class="codenumber">1.7.2</span> <span class="title">Hilbert Space</span></a></div></li>
+<li><div class="toc-item"><a href="Qubit-States.html#subsec-Bra-Vectors-and-the-Inner-Product" class="internal"><span class="codenumber">1.7.3</span> <span class="title">Bra Vectors and the Inner Product for Quantum Computation</span></a></div></li>
+<li><div class="toc-item"><a href="Qubit-States.html#subsec-Qubit-Measurements" class="internal"><span class="codenumber">1.7.4</span> <span class="title">Qubit Measurements</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="Computational-Bases.html" class="internal"><span class="codenumber">1.8</span> <span class="title">Computational Bases and the Bloch Sphere</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="Computational-Bases.html#subsec-Bloch-Sphere" class="internal"><span class="codenumber">1.8.1</span> <span class="title">The Bloch Sphere</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="Operators.html" class="internal"><span class="codenumber">1.9</span> <span class="title">Operators</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="Operators.html#subsec-Hermitian-Operators" class="internal"><span class="codenumber">1.9.1</span> <span class="title">Hermitian Operators</span></a></div></li>
+<li><div class="toc-item"><a href="Operators.html#subsec-Unitary-Operators" class="internal"><span class="codenumber">1.9.2</span> <span class="title">Unitary Operators</span></a></div></li>
+<li><div class="toc-item"><a href="Operators.html#subsec-Additional-Properties" class="internal"><span class="codenumber">1.9.3</span> <span class="title">Additional Properties and Other</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="sec-Systems-of-Multiple-Qubits.html" class="internal"><span class="codenumber">1.10</span> <span class="title">Systems of Multiple Qubits</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-Systems-of-Multiple-Qubits.html#subsec-Tensor-Product" class="internal"><span class="codenumber">1.10.1</span> <span class="title">Tensor Product</span></a></div></li>
+<li><div class="toc-item"><a href="sec-Systems-of-Multiple-Qubits.html#subsec-Systems-of-Multiple-Qubits" class="internal"><span class="codenumber">1.10.2</span> <span class="title">Systems of Multiple Qubits</span></a></div></li>
+</ul>
+</li>
+<li class="active">
+<div class="toc-item"><a href="sec-Operations.html" class="internal"><span class="codenumber">1.11</span> <span class="title">Operations in Quantum Computation</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-Operations.html#subsec-Outer-Product" class="internal"><span class="codenumber">1.11.1</span> <span class="title">Outer Product</span></a></div></li>
+<li><div class="toc-item"><a href="sec-Operations.html#subsec-Completeness-Relation" class="internal"><span class="codenumber">1.11.2</span> <span class="title">Completeness Relation</span></a></div></li>
+<li><div class="toc-item"><a href="sec-Operations.html#subsec-Inner-Product" class="internal"><span class="codenumber">1.11.3</span> <span class="title">Inner Product</span></a></div></li>
+<li><div class="toc-item"><a href="sec-Operations.html#subsec-Diagonalization" class="internal"><span class="codenumber">1.11.4</span> <span class="title">Diagonalization</span></a></div></li>
+<li><div class="toc-item"><a href="sec-Operations.html#subsec-Density-Operator" class="internal"><span class="codenumber">1.11.5</span> <span class="title">Density Operator</span></a></div></li>
+<li><div class="toc-item"><a href="sec-Operations.html#subsec-The-Commutator" class="internal"><span class="codenumber">1.11.6</span> <span class="title">The Commutator</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="chap2-chapter.html" class="internal"><span class="codenumber">2</span> <span class="title">Gates and Circuits</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec1-chap2.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Introduction</span></a></div></li>
+<li>
+<div class="toc-item"><a href="sec2-chap2.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Gates</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec2-chap2.html#subsec1-chap2" class="internal"><span class="codenumber">2.2.1</span> <span class="title">Hadamard gate</span></a></div></li>
+<li><div class="toc-item"><a href="sec2-chap2.html#subsec2-chap2" class="internal"><span class="codenumber">2.2.2</span> <span class="title">Pauli X gate</span></a></div></li>
+<li><div class="toc-item"><a href="sec2-chap2.html#subsec3-chap2" class="internal"><span class="codenumber">2.2.3</span> <span class="title">Pauli Y gate</span></a></div></li>
+<li><div class="toc-item"><a href="sec2-chap2.html#subsec4-chap2" class="internal"><span class="codenumber">2.2.4</span> <span class="title">Pauli Z</span></a></div></li>
+<li><div class="toc-item"><a href="sec2-chap2.html#subsec5-chap2" class="internal"><span class="codenumber">2.2.5</span> <span class="title">Pauli I gate</span></a></div></li>
+<li><div class="toc-item"><a href="sec2-chap2.html#subsec6-chap2" class="internal"><span class="codenumber">2.2.6</span> <span class="title">Phase gate</span></a></div></li>
+<li><div class="toc-item"><a href="sec2-chap2.html#subsec7-chap2" class="internal"><span class="codenumber">2.2.7</span> <span class="title"><span class="process-math">\(\pi\)</span>/8 gate</span></a></div></li>
+<li><div class="toc-item"><a href="sec2-chap2.html#subsec8-chap2" class="internal"><span class="codenumber">2.2.8</span> <span class="title">Controled-NOT</span></a></div></li>
+<li><div class="toc-item"><a href="sec2-chap2.html#subsec9-chap2" class="internal"><span class="codenumber">2.2.9</span> <span class="title">Contorolled-U</span></a></div></li>
+<li><div class="toc-item"><a href="sec2-chap2.html#subsec10-chap2" class="internal"><span class="codenumber">2.2.10</span> <span class="title">Contorolled-Z</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="sec3-chap2.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Circuits</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec3-chap2.html#subsec1-chap2" class="internal"><span class="codenumber">2.3.1</span> <span class="title">NOT gate</span></a></div></li>
+<li><div class="toc-item"><a href="sec3-chap2.html#subsec2-chap2" class="internal"><span class="codenumber">2.3.2</span> <span class="title">AND gate</span></a></div></li>
+<li><div class="toc-item"><a href="sec3-chap2.html#subsec3-chap2" class="internal"><span class="codenumber">2.3.3</span> <span class="title">Reversible and Nonreversible gate</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="chap3-chapter.html" class="internal"><span class="codenumber">3</span> <span class="title">Algorithm</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec1-chap3.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Introduction</span></a></div></li>
+<li><div class="toc-item"><a href="sec2-chap3.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Grover’s Algorithm</span></a></div></li>
+<li>
+<div class="toc-item"><a href="sec3-chap3.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Shor’s Algorithm</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec3-chap3.html#subsec-Building-Up-to-the-Algorithm" class="internal"><span class="codenumber">3.3.1</span> <span class="title">Building Up to the Algorithm</span></a></div></li>
+<li><div class="toc-item"><a href="sec3-chap3.html#subsec-An-Example" class="internal"><span class="codenumber">3.3.2</span> <span class="title">An Example</span></a></div></li>
+<li><div class="toc-item"><a href="sec3-chap3.html#subsec-Shors-Algorithm" class="internal"><span class="codenumber">3.3.3</span> <span class="title">Shor’s Algorithm</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="references.html" class="internal"><span class="title">References</span></a></div></li>
+<li><div class="toc-item"><a href="index-1.html" class="internal"><span class="title">Index</span></a></div></li>
+<li><div class="toc-item"><a href="colophon-2.html" class="internal"><span class="title">Colophon</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-Operations"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">1.11</span> <span class="title">Operations in Quantum Computation</span>
+</h2>
+<section class="subsection" id="subsec-Outer-Product"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.11.1</span> <span class="title">Outer Product</span>
+</h3>
+<div class="para" id="p-173">The tensor product is only one of many operations on qubits. In <a href="Vectors-and-Vector-Spaces.html#linear-algebra" class="internal" title="Subsection 1.5.4: Linear Algebra">Subsection 1.5.4</a> we described how the inner product could be represented as the product of a vector’s transpose and the vector. Since an <span class="process-math">\(n\)</span> dimensional vector transpose is <span class="process-math">\(1\times n\)</span> and the vector is <span class="process-math">\(n\times1\text{,}\)</span> the resulting product is <span class="process-math">\(1\times1\text{,}\)</span> which is functionally equivalent to a scalar. If we were to reverse the order of the vector multiplication and multiply a column vector on the left and a row vector on the right, we would multiply an <span class="process-math">\(n\times1\)</span> vector by an <span class="process-math">\(1\times m\)</span> vector to produce an <span class="process-math">\(n\times m\)</span> matrix. More specifically, we want to multiply a vector on the left by the vectors adjoint (complex conjugated transpose) on the right. This operation is known as the <dfn class="terminology">outer product</dfn>. The outer product between two qubits <span class="process-math">\(\ket{\psi}\)</span> and <span class="process-math">\(\ket{\phi}\)</span> is shown below.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/linear-algebra.html">
+\begin{equation*}
+\ket{\psi} = \begin{pmatrix} \alpha_1 \\ \alpha_2 \\ \vdots \\ \alpha_n \end{pmatrix}, \ket{\phi} = \begin{pmatrix} \beta_1 \\ \beta_2 \\ \vdots \\ \beta_m \end{pmatrix} 
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/linear-algebra.html">
+\begin{equation*}
+\ket{\psi}\bra{\phi} = \begin{pmatrix} \alpha_1 \\ \alpha_2 \\ \vdots \\ \alpha_n \end{pmatrix}  \begin{pmatrix} \beta_1^* &amp; \beta_2^* &amp; \ldots &amp; \beta_m^* \end{pmatrix} = \begin{pmatrix} \alpha_1 \beta_1^* &amp; \alpha_1 \beta_2^* &amp; \ldots &amp;\alpha_1\beta_m^*\\ \alpha_2 \beta_1^* &amp; \alpha_2 \beta_2^* &amp;\ldots &amp;\alpha_2\beta_m^*\\ \vdots&amp;\vdots&amp;\ddots&amp;\vdots\\ \alpha_n \beta_1^* &amp; \alpha_n \beta_2^* &amp;\ldots &amp;\alpha_n\beta_m^*\\ \end{pmatrix} 
+\end{equation*}
+</div></section><section class="subsection" id="subsec-Completeness-Relation"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.11.2</span> <span class="title">Completeness Relation</span>
+</h3>
+<div class="para" id="p-174">If a set of basis vectors for a quantum system <span class="process-math">\(\{ \ket{\mathcal{B}_1},\ket{\mathcal{B}_2},\ldots,\ket{\mathcal{B}_n} \}\)</span> have the property that the sum of the outer products of each basis vector with itself is equal to the identity matrix:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\sum_{i=1}^{n} \ket{\mathcal{B}_i}\bra{\mathcal{B}_i}= I 
+\end{equation*}
+</div>
+<div class="para" id="p-175">Then that set is said to have a <dfn class="terminology">completeness relation</dfn>. In general, orthonormal bases will have a completeness relation. Since the completeness relation is the same as the identity operator, we can use it on any vector expression without changing its value.</div>
+<div class="para" id="p-176">Suppose <span class="process-math">\(\ket{\psi}\)</span> is a vector in a space <span class="process-math">\(V\)</span> and <span class="process-math">\(\{ \ket{\phi_1},\ket{\phi_2},\ldots,\ket{\phi_n}  \}\)</span> is an orthonormal basis of <span class="process-math">\(V\)</span> with a completeness relation. We can then use the completeness relation as follows</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{split} \ket{\psi} &amp;= I \ket{\psi} \\ &amp;= \sum_{i=1}^n \ket{\phi_i} \bra{\phi_i} \ket{\psi} \\ &amp;= \ket{\phi_1} \bra{\phi_1} \ket{\psi} + \ket{\phi_2} \bra{\phi_2} \ket{\psi} + \ldots + \ket{\phi_n} \bra{\phi_n} \ket{\psi} \\ &amp;= \alpha_1 \ket{\phi_1} + \alpha_2 \ket{\phi_2} + \ldots + \alpha_n \ket{\phi_n} \end{split} 
+\end{equation*}
+</div>
+<div class="para" id="p-177">Where each <span class="process-math">\(\alpha_j = \braket{\phi_j | \psi} \)</span> and represents the component of the vector <span class="process-math">\(\ket{\psi}\)</span> that is in the direction of the basis <span class="process-math">\(\ket{\phi_j}\text{.}\)</span> Thus the completeness relation can be used to decompose a vector into its basis elements.</div></section><section class="subsection" id="subsec-Inner-Product"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.11.3</span> <span class="title">Inner Product</span>
+</h3>
+<div class="para" id="p-178">Here we will redefine the inner product in Bra-Ket notation and describe some additional properties. For two qubits <span class="process-math">\(\ket{a}\)</span> and <span class="process-math">\(\ket{b}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\ket{a}= \begin{pmatrix}a_{1} \\a_{2} \\\vdots \\a_{n}\end{pmatrix}, \ket{b}=\begin{pmatrix}b_{1} \\b_{2} \\\vdots \\b_{n} \end{pmatrix}  
+\end{equation*}
+</div>
+<div class="para" id="p-179">their inner product</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\braket{a | b} = \sum_{k=1}^{n} a_{k} b_{k} 
+\end{equation*}
+</div>
+<div class="para" id="p-180">We now define</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\delta_{k j}= \Bigg \{ \begin{array}{ll} 1, &amp; \text { if } k=j \\ 0, &amp; \text { if } k\neq j \end{array} 
+\end{equation*}
+</div>
+<div class="para" id="p-181">We call <span class="process-math">\(\delta_{k j}\text{,}\)</span> the Kronecker delta. It is the mathematical way to express anything that is equal to 0 unless the index <span class="process-math">\(k=j\text{,}\)</span> in which case it is 1. For an orthonormal basis <span class="process-math">\(\{ \ket{\beta_1}, \ket{\beta_n}, \ldots, \ket{\beta_n} \}\)</span> we have the property</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\braket{\beta_k | \beta_j} = \delta_{kj} 
+\end{equation*}
+</div>
+<div class="para" id="p-182">That is, for any two vectors in the basis, their inner product is 0, unless the two vectors are the same, in which case their inner product is 1.</div>
+<div class="para" id="p-183">For <span class="process-math">\(\alpha \in \mathbb{C}\)</span> and <span class="process-math">\(\ket{\psi},\ket{\phi},\ket{\rho}\in\mathcal{H}\text{,}\)</span> the inner product has the following properties:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{split} &amp; \text{1. Distributive Law: } \bra{\psi}(\ket{\phi} + \ket{\rho}) = \braket{\psi | \phi} + \braket{\psi | \rho}  
+\\ &amp; \text{2. Associative Law: } \bra{\psi} (\alpha \ket{\phi}) = \alpha \braket{ \psi | \phi} 
+\\ &amp; \text{3. Hermitian Symmetry: } \braket{\psi | \phi} = \braket{\phi | \psi}^{*} 
+\\ &amp; \text{4. Definite Form: } \braket{\psi | \psi} \geq 0 \text{ and } \braket{\psi | \psi} = 0 \text{ only if } \ket{\psi} = \vec{0} \end{split}
+\end{equation*}
+</div></section><section class="subsection" id="subsec-Diagonalization"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.11.4</span> <span class="title">Diagonalization</span>
+</h3>
+<div class="para logical" id="p-184">
+<div class="para">For a vector space <span class="process-math">\(V\)</span> with a basis <span class="process-math">\(\{ \ket{\beta_1}, \ket{\beta_2}, \ldots, \ket{\beta_n} \}\text{,}\)</span> A diagonal representation for an operator <span class="process-math">\(A\)</span> that acts on the space would be</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/subsec4-chap2.html">
+\begin{equation*}
+A=\sum_{i} \lambda_{i}\ket{\beta_i}\bra{\beta_i}
+\end{equation*}
+</div>
+<div class="para">where the <span class="process-math">\(\lambda_i\)</span> are eigenvalues that correspond to the basis state <span class="process-math">\(\beta_i\text{.}\)</span> An operator is said to be <dfn class="terminology">diagonalizable</dfn> if it has a diagonal representation. As an example of a diagonal representation, note that the Pauli <span class="process-math">\(Z\)</span> matrix (see <a href="sec2-chap2.html#subsec4-chap2" class="internal" title="Subsection 2.2.4: Pauli Z">Subsection 2.2.4</a>) may be written</div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/subsec4-chap2.html">
+\begin{equation*}
+Z = \begin{pmatrix} 1 &amp; 0 \\ 0 &amp; -1 \end{pmatrix} = \begin{pmatrix} 1 &amp; 0 \\ 0 &amp; 0 \end{pmatrix} - \begin{pmatrix} 0 &amp; 0 \\ 0 &amp; 1 \end{pmatrix} = \ket{0}\bra{0} - \ket{1}\bra{1} = \sum_{i=1}^{2} \lambda_i \ket{\beta_i}\bra{\beta_i}
+\end{equation*}
+</div>
+<div class="para" id="p-185">where <span class="process-math">\(\lambda_1 = 1, \lambda_2 = -1, \beta_1 = \ket{0}, \text{ and }\beta_2  = \ket{1}\text{.}\)</span> Diagonal representations are sometimes also known as orthonormal decompositions.</div></section><section class="subsection" id="subsec-Density-Operator"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.11.5</span> <span class="title">Density Operator</span>
+</h3>
+<div class="para" id="p-186">Any basis state for a vector space can also be expressed with a <dfn class="terminology">density operator</dfn> that provides us with another method to study the state of the entire system. For a vector space with a basis <span class="process-math">\(\{ \ket{\psi_1},\ket{\psi_2},\ldots,\ket{\psi_n} \}\text{,}\)</span> the density operators for its basis states are given by</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\rho_i = \ket{\psi_i}\bra{\psi_i} 
+\end{equation*}
+</div>
+<div class="para" id="p-187">This means that the density operator <span class="process-math">\(\rho\)</span> for any basis state is equal to the outer product of that state with itself. These density operators for states have the following properties:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{split} &amp; \text{1. Idempotent: } \rho^2 = \ket{\psi}\braket{\psi | \psi} \bra{\psi} = \ket{\psi}\bra{\psi} = \rho
+\\ &amp; \text{2. Trace(the sum of the diagonals): For an } n \times n \text{ density operator: } \\ &amp; Tr(\rho) = \sum_{i,j=1}^n \rho_{i,j} = 1 \text{ (where } \rho_{i,j} \text{ represents the entry in the i-th row and j-th column of }\rho)
+\\ &amp; \text{3. Hermiticity: } \rho^{\dagger} = (\ket{\psi}\bra{\psi})^{\dagger} = \ket{\psi}\bra{\psi} = \rho
+\\ &amp; \text{4. Positive Semi-Definite: For a state }\ket{\phi}, \bra{\phi}\rho\ket{\phi} = \braket{\phi|\psi} \braket{\psi|\phi} = \braket{\phi|\psi}^2 \geq 0 \end{split} 
+\end{equation*}
+</div>
+<div class="para" id="p-188">For a state</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\ket{\psi} = \begin{pmatrix} \alpha_1 \\ \alpha_2 \\ \vdots \\ \alpha_n \end{pmatrix} 
+\end{equation*}
+</div>
+<div class="para" id="p-189">The density operator would be</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\rho = \begin{pmatrix} \alpha_1 \\ \alpha_2 \\ \vdots \\ \alpha_n \end{pmatrix} \begin{pmatrix} \alpha_1^* &amp; \alpha_2^* &amp; \ldots &amp; \alpha_n^* \end{pmatrix} = \begin{pmatrix} \alpha_1\alpha_1^* &amp; \alpha_1\alpha_2^* &amp; \ldots &amp; \alpha_1\alpha_n^* \\  \alpha_2\alpha_1^* &amp; \alpha_2\alpha_2^* &amp; \ldots &amp; \alpha_2\alpha_n^*  \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ \alpha_n\alpha_1^* &amp; \alpha_n\alpha_2^* &amp; \ldots &amp; \alpha_n\alpha_n^* \end{pmatrix} 
+\end{equation*}
+</div>
+<article class="exercise exercise-like" id="exercise-17"><a href="" data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exercise-17"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">1.11.1</span><span class="period">.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-17"><article class="exercise exercise-like"><div class="para" id="p-190">Find the density operator for the following state</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\ket{\psi} = \frac{1}{\sqrt{2}}(\ket{00} + \ket{11}) 
+\end{equation*}
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-3" id="hint-3"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-3"><div class="hint solution-like"><div class="displaymath process-math">
+\begin{equation*}
+\ket{\psi} = \frac{1}{\sqrt{2}} \begin{pmatrix} 1\\0\\0\\1 \end{pmatrix} 
+\end{equation*}
+</div></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-16" id="solution-16"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-16"><div class="solution solution-like"><div class="displaymath process-math">
+\begin{equation*}
+\rho = \frac{1}{\sqrt{2}}\begin{pmatrix} 1\\0\\0\\1 \end{pmatrix} \frac{1}{\sqrt{2}}\begin{pmatrix} 1&amp;0&amp;0&amp;1 \end{pmatrix} = \frac{1}{2}\begin{pmatrix} 1 &amp; 0 &amp; 0 &amp; 1 \\ 0 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 0 \\ 1 &amp; 0 &amp; 0 &amp; 1 \end{pmatrix} 
+\end{equation*}
+</div></div></div>
+</div></article></div>
+<div class="para" id="p-191">Now suppose we want to find a density operator for an entire system. The system exists within a vector space with a basis <span class="process-math">\(\{ \ket{\beta_1},\ket{\beta_2},\ldots,\ket{\beta_n} \}\)</span> and has a probability <span class="process-math">\(p_i\)</span> of being in the state <span class="process-math">\(\ket{\beta_i}\)</span> after measurement. The density operator for the entire system is defined by</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\rho = \sum_{i=1}^n p_i \rho_i = \sum_{i=1}^n p_i \ket{\beta_i}\bra{\beta_i} 
+\end{equation*}
+</div>
+<div class="para" id="p-192">The density operator for the system has the same properties as the density operator for individual states: Idempotent, Trace=1, Hermiticity, and Positive Semi-Definite.</div></section><section class="subsection" id="subsec-The-Commutator"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.11.6</span> <span class="title">The Commutator</span>
+</h3>
+<div class="para" id="p-193">Remember that matrix multiplication is generally not commutative, i.e. for two matrices <span class="process-math">\(A\)</span> and <span class="process-math">\(B\text{,}\)</span> <span class="process-math">\(AB \neq BA\text{.}\)</span> However, there are exceptions to this generality. The <dfn class="terminology">commutator</dfn> between two operators <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> is defined to be</div>
+<div class="displaymath process-math">
+\begin{equation*}
+[A, B] \equiv A B-B A 
+\end{equation*}
+</div>
+<div class="para" id="p-194">If <span class="process-math">\([A, B]=0\text{,}\)</span> that is, <span class="process-math">\(A B=B A\text{,}\)</span> then we say <span class="process-math">\(A\)</span> commutes with <span class="process-math">\(B\text{.}\)</span> Similarly, the <dfn class="terminology">anti-commutator</dfn> of two operators <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> is defined by</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\{A, B\} \equiv A B+B A 
+\end{equation*}
+</div>
+<div class="para" id="p-195">we say <span class="process-math">\(A\)</span> anti-commutes with <span class="process-math">\(B\)</span> if <span class="process-math">\(\{A, B\}=0\text{,}\)</span> that is <span class="process-math">\(AB = -BA\text{.}\)</span> It turns out that many important properties of pairs of operators can be deduced from their commutator and anti-commutator.</div></section></section></div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="sec-Systems-of-Multiple-Qubits.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="chap2-chapter.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+</div>
+</body>
+</html>

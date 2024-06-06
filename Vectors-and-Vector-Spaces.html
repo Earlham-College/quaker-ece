@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Vectors and Vector Spaces</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Quantum Computing">
+<meta property="book:author" content="Levi Goldberg">
+<meta property="book:author" content="Shun Suzuki">
+<meta property="book:author" content="Javier Orduz">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "https://pretextbook.org/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.3/pretext_search.js"></script><link href="https://pretextbook.org/css/0.7/pretext_search.css" rel="stylesheet" type="text/css">
+<script>js_version = 0.3</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.3/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.3/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.3/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link href="https://pretextbook.org/css/0.7/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.7/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.7/shell_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.7/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.7/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.7/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.7/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.7/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.7/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.7/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body id="changeme" class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" class="logo-link" href="" target="_blank"><img src="external/earlhamlogo.png" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="my-great-book.html"><span class="title">Quantum Computing:</span> <span class="subtitle">A gentle introduction for Liberal Arts Institutions</span></a></h1>
+<p class="byline">Levi Goldberg, Shun Suzuki, Javier Orduz</p>
+</div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<button id="closesearchresults" class="closesearchresults" onclick="document.getElementById('searchresultsplaceholder').style.display = 'none'; return false;">x</button><h2>Search Results: <span id="searchterms" class="searchterms"></span>
+</h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" aria-label="Show or hide table of contents"><span class="icon">☰</span><span class="name">Contents</span></button><a class="index-button button" href="index-1.html" title="Index"><span class="name">Index</span></a><button id="user-preferences-button" class="user-preferences-button button" title="Modify user preferences"><span id="avatarbutton" class="avatarbutton name">You!</span><div id="preferences_menu_holder" class="preferences_menu_holder hidden"><ol id="preferences_menu" class="preferences_menu" style="font-family: 'Roboto Serif', serif;">
+<li data-env="avatar" tabindex="-1">Choose avatar<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden avatar">
+<li data-val="You!" tabindex="-1">
+<span id="theYou!" class="avatarcheck">✔️</span>You!</li>
+<li data-val="😺" tabindex="-1">
+<span id="the😺" class="avatarcheck"></span>😺</li>
+<li data-val="👤" tabindex="-1">
+<span id="the👤" class="avatarcheck"></span>👤</li>
+<li data-val="👽" tabindex="-1">
+<span id="the👽" class="avatarcheck"></span>👽</li>
+<li data-val="🐶" tabindex="-1">
+<span id="the🐶" class="avatarcheck"></span>🐶</li>
+<li data-val="🐼" tabindex="-1">
+<span id="the🐼" class="avatarcheck"></span>🐼</li>
+<li data-val="🌈" tabindex="-1">
+<span id="the🌈" class="avatarcheck"></span>🌈</li>
+</ol>
+</li>
+<li data-env="fontfamily" tabindex="-1">Font family<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden fontfamily">
+<li data-val="face" data-change="OS" tabindex="-1" style="font-family: 'Open Sans'">
+<span id="theOS" class="ffcheck">✔️</span><span class="name">Open Sans</span><span class="sample">AaBbCc 123 PreTeXt</span>
+</li>
+<li data-val="face" data-change="RS" tabindex="-1" style="font-family: 'Roboto Serif'">
+<span id="theRS" class="ffcheck"></span><span class="name">Roboto Serif</span><span class="sample">AaBbCc 123 PreTeXt</span>
+</li>
+</ol>
+</li>
+<li data-env="font" tabindex="-1">Adjust font<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden fonts">
+<li>Size</li>
+<li><span id="thesize">12</span></li>
+<li data-val="size" data-change="-1" tabindex="-1" style="font-size: 80%">Smaller</li>
+<li data-val="size" data-change="1" tabindex="-1" style="font-size: 110%">Larger</li>
+<li>Width</li>
+<li><span id="thewdth">100</span></li>
+<li data-val="wdth" data-change="-5" tabindex="-1" style="font-variation-settings: 'wdth' 60">narrower</li>
+<li data-val="wdth" data-change="5" tabindex="-1" style="font-variation-settings: 'wdth' 150">wider</li>
+<li>Weight</li>
+<li><span id="thewght">400</span></li>
+<li data-val="wght" data-change="-50" tabindex="-1" style="font-weight: 200">thinner</li>
+<li data-val="wght" data-change="50" tabindex="-1" style="font-weight: 700">heavier</li>
+<li>Letter spacing</li>
+<li>
+<span id="thelspace">0</span><span class="byunits">/200</span>
+</li>
+<li data-val="lspace" data-change="-1" tabindex="-1">closer</li>
+<li data-val="lspace" data-change="1" tabindex="-1">f a r t h e r</li>
+<li>Word spacing</li>
+<li>
+<span id="thewspace">0</span><span class="byunits">/50</span>
+</li>
+<li data-val="wspace" data-change="-1" tabindex="-1">smaller gap </li>
+<li data-val="wspace" data-change="1" tabindex="-1">larger gap</li>
+<li>Line Spacing</li>
+<li>
+<span id="theheight">135</span><span class="byunits">/100</span>
+</li>
+<li data-val="height" data-change="-5" tabindex="-1" style="line-height: 1">closer<br>together</li>
+<li data-val="height" data-change="5" tabindex="-1" style="line-height: 1.75">further<br>apart</li>
+</ol>
+</li>
+<li data-env="atmosphere" tabindex="-1">Light/dark mode<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden atmosphere">
+<li data-val="default" tabindex="-1">
+<span id="thedefault" class="atmospherecheck">✔️</span>default</li>
+<li data-val="pastel" tabindex="-1">
+<span id="thepastel" class="atmospherecheck"></span>pastel</li>
+<li data-val="darktwilight" tabindex="-1">
+<span id="thedarktwilight" class="atmospherecheck"></span>twilight</li>
+<li data-val="dark" tabindex="-1">
+<span id="thedark" class="atmospherecheck"></span>dark</li>
+<li data-val="darkmidnight" tabindex="-1">
+<span id="thedarkmidnight" class="atmospherecheck"></span>midnight</li>
+</ol>
+</li>
+<li data-env="ruler" tabindex="-1">Reading ruler<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden ruler">
+<li data-val="none" tabindex="-1">
+<span id="thenone" class="rulercheck">✔️</span>none</li>
+<li data-val="underline" tabindex="-1">
+<span id="theunderline" class="rulercheck"></span>underline</li>
+<li data-val="lunderline" tabindex="-1">
+<span id="thelunderline" class="rulercheck"></span>L-underline</li>
+<li data-val="greybar" tabindex="-1">
+<span id="thegreybar" class="rulercheck"></span>grey bar</li>
+<li data-val="lightbox" tabindex="-1">
+<span id="thelightbox" class="rulercheck"></span>light box</li>
+<li data-val="sunrise" tabindex="-1">
+<span id="thesunrise" class="rulercheck"></span>sunrise</li>
+<li data-val="sunriseunderline" tabindex="-1">
+<span id="thesunriseunderline" class="rulercheck"></span>sunrise underline</li>
+<li class="moveQ">Motion by:</li>
+<li data-val="mouse" tabindex="-1">
+<span id="themouse" class="motioncheck">✔️</span>follow the mouse</li>
+<li data-val="arrow" tabindex="-1">
+<span id="thearrow" class="motioncheck"></span>up/down arrows - not yet</li>
+<li data-val="eye" tabindex="-1">
+<span id="theeye" class="motioncheck"></span>eye tracking - not yet</li>
+</ol>
+</li>
+</ol></div></button><span class="treebuttons"><a class="previous-button button" href="Classical-Computing.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="up-button button" href="chap1-chapter.html" title="Up"><span class="icon">^</span><span class="name">Up</span></a><a class="next-button button" href="Linear-Algebra-in-Quantum-Computation.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a></span><div class="searchbox"><div class="searchwidget">
+<input id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search" onchange="doSearch()"><button id="searchbutton" class="searchbutton" type="button" onclick="doSearch()">🔍</button>
+</div></div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} 
+\newcommand{\Z}{\mathbb Z} 
+\newcommand{\Q}{\mathbb Q} 
+\newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural">
+<li>
+<div class="toc-item"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="colophon-1.html" class="internal"><span class="title">Colophon</span></a></div></li>
+<li><div class="toc-item"><a href="author-bio-LG.html" class="internal"><span class="title">Author Biography</span></a></div></li>
+<li><div class="toc-item"><a href="dedication.html" class="internal"><span class="title">Dedication</span></a></div></li>
+<li><div class="toc-item"><a href="acknowledgement.html" class="internal"><span class="title">Acknowledgements</span></a></div></li>
+<li><div class="toc-item"><a href="frontmatter-intro.html" class="internal"><span class="codenumber">1</span> <span class="title">Overview</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="chap1-chapter.html" class="internal"><span class="codenumber">1</span> <span class="title">Basic Concepts of Quantum Computation</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="chap1-intro.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Introduction</span></a></div></li>
+<li><div class="toc-item"><a href="Classical-Physics.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Classical Physics</span></a></div></li>
+<li><div class="toc-item"><a href="Newtonian-Mechanics.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Newtonian Mechanics</span></a></div></li>
+<li><div class="toc-item"><a href="Classical-Computing.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Classical Computing</span></a></div></li>
+<li class="active">
+<div class="toc-item"><a href="Vectors-and-Vector-Spaces.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Vectors and Vector Spaces</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="Vectors-and-Vector-Spaces.html#Vectors" class="internal"><span class="codenumber">1.5.1</span> <span class="title">Introduction to Vectors</span></a></div></li>
+<li><div class="toc-item"><a href="Vectors-and-Vector-Spaces.html#Vector-Spaces" class="internal"><span class="codenumber">1.5.2</span> <span class="title">Vector Spaces</span></a></div></li>
+<li><div class="toc-item"><a href="Vectors-and-Vector-Spaces.html#Bases" class="internal"><span class="codenumber">1.5.3</span> <span class="title">Bases</span></a></div></li>
+<li><div class="toc-item"><a href="Vectors-and-Vector-Spaces.html#linear-algebra" class="internal"><span class="codenumber">1.5.4</span> <span class="title">Linear Algebra</span></a></div></li>
+<li><div class="toc-item"><a href="Vectors-and-Vector-Spaces.html#subsec-Eigenvectors-and-Eigenvalues" class="internal"><span class="codenumber">1.5.5</span> <span class="title">Eigenvectors and Eigenvalues</span></a></div></li>
+</ul>
+</li>
+<li><div class="toc-item"><a href="Linear-Algebra-in-Quantum-Computation.html" class="internal"><span class="codenumber">1.6</span> <span class="title">Linear Algebra in Quantum Computation</span></a></div></li>
+<li>
+<div class="toc-item"><a href="Qubit-States.html" class="internal"><span class="codenumber">1.7</span> <span class="title">Qubit States</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="Qubit-States.html#subsec-Qubit" class="internal"><span class="codenumber">1.7.1</span> <span class="title">Qubits</span></a></div></li>
+<li><div class="toc-item"><a href="Qubit-States.html#subsec-Hilbert-Space" class="internal"><span class="codenumber">1.7.2</span> <span class="title">Hilbert Space</span></a></div></li>
+<li><div class="toc-item"><a href="Qubit-States.html#subsec-Bra-Vectors-and-the-Inner-Product" class="internal"><span class="codenumber">1.7.3</span> <span class="title">Bra Vectors and the Inner Product for Quantum Computation</span></a></div></li>
+<li><div class="toc-item"><a href="Qubit-States.html#subsec-Qubit-Measurements" class="internal"><span class="codenumber">1.7.4</span> <span class="title">Qubit Measurements</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="Computational-Bases.html" class="internal"><span class="codenumber">1.8</span> <span class="title">Computational Bases and the Bloch Sphere</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="Computational-Bases.html#subsec-Bloch-Sphere" class="internal"><span class="codenumber">1.8.1</span> <span class="title">The Bloch Sphere</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="Operators.html" class="internal"><span class="codenumber">1.9</span> <span class="title">Operators</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="Operators.html#subsec-Hermitian-Operators" class="internal"><span class="codenumber">1.9.1</span> <span class="title">Hermitian Operators</span></a></div></li>
+<li><div class="toc-item"><a href="Operators.html#subsec-Unitary-Operators" class="internal"><span class="codenumber">1.9.2</span> <span class="title">Unitary Operators</span></a></div></li>
+<li><div class="toc-item"><a href="Operators.html#subsec-Additional-Properties" class="internal"><span class="codenumber">1.9.3</span> <span class="title">Additional Properties and Other</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="sec-Systems-of-Multiple-Qubits.html" class="internal"><span class="codenumber">1.10</span> <span class="title">Systems of Multiple Qubits</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-Systems-of-Multiple-Qubits.html#subsec-Tensor-Product" class="internal"><span class="codenumber">1.10.1</span> <span class="title">Tensor Product</span></a></div></li>
+<li><div class="toc-item"><a href="sec-Systems-of-Multiple-Qubits.html#subsec-Systems-of-Multiple-Qubits" class="internal"><span class="codenumber">1.10.2</span> <span class="title">Systems of Multiple Qubits</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="sec-Operations.html" class="internal"><span class="codenumber">1.11</span> <span class="title">Operations in Quantum Computation</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-Operations.html#subsec-Outer-Product" class="internal"><span class="codenumber">1.11.1</span> <span class="title">Outer Product</span></a></div></li>
+<li><div class="toc-item"><a href="sec-Operations.html#subsec-Completeness-Relation" class="internal"><span class="codenumber">1.11.2</span> <span class="title">Completeness Relation</span></a></div></li>
+<li><div class="toc-item"><a href="sec-Operations.html#subsec-Inner-Product" class="internal"><span class="codenumber">1.11.3</span> <span class="title">Inner Product</span></a></div></li>
+<li><div class="toc-item"><a href="sec-Operations.html#subsec-Diagonalization" class="internal"><span class="codenumber">1.11.4</span> <span class="title">Diagonalization</span></a></div></li>
+<li><div class="toc-item"><a href="sec-Operations.html#subsec-Density-Operator" class="internal"><span class="codenumber">1.11.5</span> <span class="title">Density Operator</span></a></div></li>
+<li><div class="toc-item"><a href="sec-Operations.html#subsec-The-Commutator" class="internal"><span class="codenumber">1.11.6</span> <span class="title">The Commutator</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="chap2-chapter.html" class="internal"><span class="codenumber">2</span> <span class="title">Gates and Circuits</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec1-chap2.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Introduction</span></a></div></li>
+<li>
+<div class="toc-item"><a href="sec2-chap2.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Gates</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec2-chap2.html#subsec1-chap2" class="internal"><span class="codenumber">2.2.1</span> <span class="title">Hadamard gate</span></a></div></li>
+<li><div class="toc-item"><a href="sec2-chap2.html#subsec2-chap2" class="internal"><span class="codenumber">2.2.2</span> <span class="title">Pauli X gate</span></a></div></li>
+<li><div class="toc-item"><a href="sec2-chap2.html#subsec3-chap2" class="internal"><span class="codenumber">2.2.3</span> <span class="title">Pauli Y gate</span></a></div></li>
+<li><div class="toc-item"><a href="sec2-chap2.html#subsec4-chap2" class="internal"><span class="codenumber">2.2.4</span> <span class="title">Pauli Z</span></a></div></li>
+<li><div class="toc-item"><a href="sec2-chap2.html#subsec5-chap2" class="internal"><span class="codenumber">2.2.5</span> <span class="title">Pauli I gate</span></a></div></li>
+<li><div class="toc-item"><a href="sec2-chap2.html#subsec6-chap2" class="internal"><span class="codenumber">2.2.6</span> <span class="title">Phase gate</span></a></div></li>
+<li><div class="toc-item"><a href="sec2-chap2.html#subsec7-chap2" class="internal"><span class="codenumber">2.2.7</span> <span class="title"><span class="process-math">\(\pi\)</span>/8 gate</span></a></div></li>
+<li><div class="toc-item"><a href="sec2-chap2.html#subsec8-chap2" class="internal"><span class="codenumber">2.2.8</span> <span class="title">Controled-NOT</span></a></div></li>
+<li><div class="toc-item"><a href="sec2-chap2.html#subsec9-chap2" class="internal"><span class="codenumber">2.2.9</span> <span class="title">Contorolled-U</span></a></div></li>
+<li><div class="toc-item"><a href="sec2-chap2.html#subsec10-chap2" class="internal"><span class="codenumber">2.2.10</span> <span class="title">Contorolled-Z</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="sec3-chap2.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Circuits</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec3-chap2.html#subsec1-chap2" class="internal"><span class="codenumber">2.3.1</span> <span class="title">NOT gate</span></a></div></li>
+<li><div class="toc-item"><a href="sec3-chap2.html#subsec2-chap2" class="internal"><span class="codenumber">2.3.2</span> <span class="title">AND gate</span></a></div></li>
+<li><div class="toc-item"><a href="sec3-chap2.html#subsec3-chap2" class="internal"><span class="codenumber">2.3.3</span> <span class="title">Reversible and Nonreversible gate</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="chap3-chapter.html" class="internal"><span class="codenumber">3</span> <span class="title">Algorithm</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec1-chap3.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Introduction</span></a></div></li>
+<li><div class="toc-item"><a href="sec2-chap3.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Grover’s Algorithm</span></a></div></li>
+<li>
+<div class="toc-item"><a href="sec3-chap3.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Shor’s Algorithm</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec3-chap3.html#subsec-Building-Up-to-the-Algorithm" class="internal"><span class="codenumber">3.3.1</span> <span class="title">Building Up to the Algorithm</span></a></div></li>
+<li><div class="toc-item"><a href="sec3-chap3.html#subsec-An-Example" class="internal"><span class="codenumber">3.3.2</span> <span class="title">An Example</span></a></div></li>
+<li><div class="toc-item"><a href="sec3-chap3.html#subsec-Shors-Algorithm" class="internal"><span class="codenumber">3.3.3</span> <span class="title">Shor’s Algorithm</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="references.html" class="internal"><span class="title">References</span></a></div></li>
+<li><div class="toc-item"><a href="index-1.html" class="internal"><span class="title">Index</span></a></div></li>
+<li><div class="toc-item"><a href="colophon-2.html" class="internal"><span class="title">Colophon</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="Vectors-and-Vector-Spaces"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">1.5</span> <span class="title">Vectors and Vector Spaces</span>
+</h2>
+<section class="subsection" id="Vectors"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.5.1</span> <span class="title">Introduction to Vectors</span>
+</h3>
+<div class="para" id="p-32">A vector is an ordered list of numbers that is used to describe quantities with both magnitude and direction. One example of a vector is force, which has both a magnitude (how strong the force is) and a direction (the angle at which the force is being applied). Each vector has a dimension, which is the number of components that comprise it. It is customary to signify that something is a vector by either drawing an arrow on top of it or bolding it. If we have a vector called <span class="process-math">\(x\text{,}\)</span> we would write <span class="process-math">\(\vec{x}\)</span> or <span class="process-math">\(\boldsymbol{x}\text{.}\)</span> The number <span class="process-math">\(x_{n}\)</span> is called the <span class="process-math">\(n\)</span>-th component of <span class="process-math">\(\vec{x}\text{.}\)</span>
+</div>
+<div class="para" id="p-33">The most typical use of a vector with <span class="process-math">\(n\)</span> components is to describe a point in <span class="process-math">\(n\)</span> dimensional space in reference to some starting point. For example, if you have a square piece of paper and label the bottom left corner with the starting point (0,0), then a vector with components (1,1) would represent moving one unit of measurement along the bottom of the paper and one unit of measurement along the side of the paper to reach a new point. This vector would have a direction of <span class="process-math">\(45^{\circ}\)</span> and a magnitude of <span class="process-math">\(\sqrt{2}\)</span> units (by the pythagorean theorem).</div>
+<div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/VectorExample.png" class="contained"></div></section><section class="subsection" id="Vector-Spaces"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.5.2</span> <span class="title">Vector Spaces</span>
+</h3>
+<div class="para" id="p-34">Every vector exists within a <dfn class="terminology">vector space</dfn>, which are sets that satisfy certain mathematical properties. The most common vector spaces we will deal with are <span class="process-math">\(\mathbb{R}^n\text{,}\)</span> the set of all <span class="process-math">\(n\)</span> dimensional vectors with real components, and <span class="process-math">\(\mathbb{C}^n\text{,}\)</span> the set of all <span class="process-math">\(n\)</span> dimensional vectors with complex components. Notice <span class="process-math">\(\mathbb{R}^n \subseteq \mathbb{C}^n\text{,}\)</span> so we will usually work with <span class="process-math">\(\mathbb{C}^n\)</span> for generality. All vector spaces have the same properties regardless of dimension. Here are the properties for an <span class="process-math">\(n\)</span>-dimensional vector space:</div>
+<div class="para" id="p-35">1. Vector equality: <span class="process-math">\(\vec{x}=\vec{y}\)</span> means <span class="process-math">\(x_{i}=y_{i}, i \in n. \)</span>
+</div>
+<div class="para" id="p-36">2. Vector addition: <span class="process-math">\(\vec{x}+\vec{y}=\vec{z}\)</span> means <span class="process-math">\(x_{i}+y_{i}=z_{i}, i \in n. \)</span>
+</div>
+<div class="para" id="p-37">3. Scalar multiplication: <span class="process-math">\(a \vec{x} \equiv \big(a x_{1}, a x_{2},..., a x_{n}\big). \)</span>
+</div>
+<div class="para" id="p-38">4. Negative of a vector: <span class="process-math">\(-\vec{x}=(-1) \vec{x} \equiv \big(-x_{1},-x_{2},...,-x_{n}\big).  \)</span>
+</div>
+<div class="para" id="p-39">5. Null vector: There exists a null vector <span class="process-math">\(\vec{0} \equiv (0,0,...,0).  \)</span>
+</div>
+<div class="para" id="p-40">If our vector components are all real numbers (i.e. the vector space exists in <span class="process-math">\(\mathbb{R}^n\)</span> instead of <span class="process-math">\(\mathbb{C}^n\)</span>), then the following properties also hold:</div>
+<div class="para" id="p-41">1. Addition of vectors is commutative: <span class="process-math">\(\vec{x}+\vec{y}=\vec{y}+\vec{x}. \)</span>
+</div>
+<div class="para" id="p-42">2. Addition of vectors is associative: <span class="process-math">\((\vec{x}+\vec{y})+\vec{z}=\vec{x}+(\vec{y}+\vec{z}). \)</span>
+</div>
+<div class="para" id="p-43">3. Scalar multiplication is distributive: <span class="process-math">\(a(\vec{x}+\vec{y})=a \vec{x}+a \vec{y},\)</span> and <span class="process-math">\((a+b) \vec{x}=a \vec{x}+b \vec{x}\)</span>
+</div>
+<div class="para" id="p-44">4. Scalar multiplication is associative: <span class="process-math">\((a b) \vec{x}=a(b \vec{x}).\)</span>
+</div></section><section class="subsection" id="Bases"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.5.3</span> <span class="title">Bases</span>
+</h3>
+<div class="para" id="p-45">For any vector space, one can find a subset of vectors which can be used to generate any other vector in the space through linear combinations (scalar multiplication and vector addition). The smallest set of vectors that fulfills this property is called the <dfn class="terminology">basis</dfn>. In <span class="process-math">\(\mathbb{R}^{2}\text{,}\)</span> we only need two vectors to produce the rest through linear combination. The standard basis, <span class="process-math">\(\mathcal{B},\)</span> is:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+{\mathcal{B}}=\bigg\{ \{\widehat{\mathbf{x}}, \widehat{\mathbf{y}}\}= \begin{pmatrix} 1 \\ 0 \end{pmatrix}, \begin{pmatrix} 0 \\ 1 \end{pmatrix} \bigg\}
+\end{equation*}
+</div>
+<div class="para" id="p-46">The ^ symbol is used to denote that a vector is <dfn class="terminology">normal</dfn>, which means that it has a length of 1. The vector <span class="process-math">\(\widehat{x}\)</span> is referred to as "<span class="process-math">\(x\)</span> hat." This property is extremely important to quantum mechanics and will be discussed more later.</div>
+<div class="para" id="p-47">Bases have two properties:</div>
+<div class="para" id="p-48">
+<em class="alert">Linear Independence:</em> A set of vectors is <dfn class="terminology">linearly independent</dfn> if we cannot express any one of them as a linear combination of the others. If we can express one as a linear combination of the others, then it is called a <dfn class="terminology">linearly dependent</dfn> set. A basis must be linearly independent.</div>
+<div class="para" id="p-49">
+<em class="alert">Completeness:</em> A set of vectors is complete if it <dfn class="terminology">spans</dfn> its vector space, which in turn means that any vector in the space can be expressed as a linear combination of the vectors in that set. A basis for a vector space must span the space.</div></section><article class="example example-like" id="example-1"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-1"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.5.1</span><span class="period">.</span><span class="space"> </span><span class="title">(A Counterexample).</span>
+</h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-1"><article class="example example-like"> <div class="para" id="p-50">Let <span class="process-math">\({\mathcal{B}}\)</span> be the set,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+{\mathcal{B}} = \Bigg\{ \begin{pmatrix} 1\\ 0\\ 0\\ \end{pmatrix}, \begin{pmatrix} 0\\ 1\\ 0\\ \end{pmatrix} \Bigg\} 
+\end{equation*}
+</div>
+<div class="para" id="p-51">And let <span class="process-math">\(\vec{v}\)</span> be the vector,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\vec{v}= \begin{pmatrix} 2\\ -3\\ 1\\ \end{pmatrix} 
+\end{equation*}
+</div>
+<div class="para" id="p-52">Since we are unable to express <span class="process-math">\(\vec{v}\)</span> as a linear combination of the elements of <span class="process-math">\(\mathcal{B}\text{,}\)</span> then we say <span class="process-math">\({\mathcal{B}}\)</span> is not complete.</div></article></div>
+<article class="example example-like" id="example-2"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-2"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.5.2</span><span class="period">.</span>
+</h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-2"><article class="example example-like"><div class="para" id="p-53">Let <span class="process-math">\({\mathcal{B}}\)</span> be the set,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+{\mathcal{B}} = \Bigg\{ \begin{pmatrix} 1\\ 0\\  \end{pmatrix}, \begin{pmatrix} 0\\ 1\\ \end{pmatrix} \Bigg\} 
+\end{equation*}
+</div>
+<div class="para" id="p-54">And let <span class="process-math">\(\vec{x}\)</span> be the vector,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\vec{x} = \begin{pmatrix} 5\\ -7\\ \end{pmatrix} 
+\end{equation*}
+</div>We can express <span class="process-math">\(\vec{x}\)</span> as:<div class="displaymath process-math">
+\begin{equation*}
+\vec{x} = 5 \cdot \begin{pmatrix} 1\\ 0\\ \end{pmatrix} + (-7) \cdot \begin{pmatrix} 0\\ 1\\ \end{pmatrix} = \begin{pmatrix}5\\0\\ \end{pmatrix} + \begin{pmatrix}0\\ -7\\ \end{pmatrix} = \begin{pmatrix} 5\\ -7\\ \end{pmatrix} 
+\end{equation*}
+</div>
+<div class="para" id="p-55">Since we can express <span class="process-math">\(\vec{x}\)</span> as a linear combination of the elements of <span class="process-math">\(\mathcal{B}\)</span> and it is easy to show that we could construct any other vector in <span class="process-math">\(\mathbb{R}^2\)</span> from these same elements, we say that <span class="process-math">\(\mathcal{B}\)</span> spans <span class="process-math">\(\mathbb{R}^2\)</span> and is complete.</div></article></div>
+<article class="theorem theorem-like" id="thm-1"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.5.3</span><span class="period">.</span>
+</h3>
+<div class="para" id="p-56">
+<em class="alert">Dimension of a basis.</em> The number of basis elements for a vector space is the same as that spaces dimension.</div></article><section class="subsection" id="linear-algebra"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.5.4</span> <span class="title">Linear Algebra</span>
+</h3>
+<div class="para" id="p-57">Linear algebra is the study of vectors and transformations. In this subsection we will describe some other pieces of linear algebra that will be important to quantum computation.</div>
+<div class="para" id="p-58">
+<em class="alert">Vector Transpose:</em> The <dfn class="terminology">transpose</dfn> is an operation that turns a standard column vector into a row vector, or vice versa. This means an <span class="process-math">\(n\)</span> dimensional vector changes from having <span class="process-math">\(n\)</span> rows and <span class="process-math">\(1\)</span> column to having <span class="process-math">\(1\)</span> row and <span class="process-math">\(n\)</span> columns. The transpose is represented with a superscript <span class="process-math">\(T\)</span> and the operation is shown below.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/subsec-Eigenvectors-and-Eigenvalues.html">
+\begin{equation*}
+\begin{pmatrix} a_1 \\ a_2 \\ \vdots \\ a_n \end{pmatrix}^{T} = \begin{pmatrix} a_1 &amp; a_2 &amp; \ldots &amp; a_n \end{pmatrix} 
+\end{equation*}
+</div>
+<div class="para" id="p-59">
+<em class="alert">Dot Product / Inner Product:</em> The dot product (more generally known as the <dfn class="terminology">inner product</dfn> in the context of quantum computation) is an operation between two vectors of the same dimension that produces a scalar. This product is typically referred to with a <span class="process-math">\(\cdot\text{,}\)</span> but has an alternate notation in quantum computation that we will see in the next section. In <span class="process-math">\(\mathbb{R}^n\)</span> and In <span class="process-math">\(\mathbb{C}^n\)</span> this operation is performed by taking the sum of the products of the corresponding entries in each vector, as shown below.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/subsec-Eigenvectors-and-Eigenvalues.html">
+\begin{equation*}
+\begin{pmatrix} a_1 \\ a_2 \\ \vdots \\ a_n \end{pmatrix} \cdot \begin{pmatrix} b_1 \\ b_2 \\ \vdots \\ b_n \end{pmatrix} = a_1 \cdot b_1 + a_2 \cdot b_2 + \ldots + a_n \cdot b_n 
+\end{equation*}
+</div>
+<article class="example example-like" id="example-3"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-3"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.5.4</span><span class="period">.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-3"><article class="example example-like"><div class="displaymath process-math">
+\begin{equation*}
+\begin{pmatrix} 5 \\ 3 \\ 7\\ 2 \end{pmatrix} \cdot \begin{pmatrix} 6 \\ 0 \\ 5 \\ 1 \end{pmatrix} = 5 \cdot 6 + 3 \cdot 0 + 7 \cdot 5 + 2 \cdot 1 = 67 
+\end{equation*}
+</div></article></div>
+<article class="exercise exercise-like" id="exercise-1"><a href="" data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exercise-1"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">1.5.5</span><span class="period">.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-1"><article class="exercise exercise-like"><div class="para" id="p-60">Find the inner product <span class="process-math">\(\vec{v_1} \cdot \vec{v_2} \)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\vec{v_1} = \begin{pmatrix} 8 \\ -4 \\ 5 \end{pmatrix}, \text{  } \vec{v_2} = \begin{pmatrix} 3 \\ 5 \\ -2 \end{pmatrix} 
+\end{equation*}
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1" id="solution-1"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1"><div class="solution solution-like"><div class="displaymath process-math">
+\begin{equation*}
+\begin{pmatrix} 8 \\ -4 \\ 5 \end{pmatrix} \cdot \begin{pmatrix} 3 \\ 5 \\ -2 \end{pmatrix} = 8 \cdot 3 + -4 \cdot 5 + 5\cdot -2 = -6 
+\end{equation*}
+</div></div></div>
+</div></article></div>
+<div class="para" id="p-61">
+<em class="alert">Orthogonality:</em> <dfn class="terminology">Orthogonality</dfn> is the generalization of the concept of perpendicularity. In two and three dimensional space, two vectors are orthogonal if the angle between them is a right angle. Two vectors are orthogonal if their inner product is equal to <span class="process-math">\(0\text{.}\)</span>
+</div>
+<article class="exercise exercise-like" id="exercise-2"><a href="" data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exercise-2"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">1.5.6</span><span class="period">.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-2"><article class="exercise exercise-like"><div class="para" id="p-62">Are the following vectors orthogonal?</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{pmatrix} 4 \\ 3 \\ -2 \end{pmatrix}, \begin{pmatrix} 1 \\ 2 \\ 5 \end{pmatrix}
+\end{equation*}
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2" id="solution-2"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2"><div class="solution solution-like">
+<div class="para" id="p-63">Yes,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{pmatrix} 4 \\ 3 \\ -2 \end{pmatrix} \cdot \begin{pmatrix} 1 \\ 2 \\ 5 \end{pmatrix} = 4 \cdot 1 + 3 \cdot 2 + -2 \cdot 5 = 0
+\end{equation*}
+</div>
+<div class="para" id="p-64">Since the inner product between the two vectors is 0, they are orthogonal</div>
+</div></div>
+</div></article></div>
+<div class="para" id="p-65">
+<em class="alert">Normality:</em> A vector is <dfn class="terminology">normal</dfn> if it has a length of <span class="process-math">\(1\text{.}\)</span> The length (sometimes also referred to as the norm) of a vector can be found be taking the square root of the sum of the squares of its entries, as shown below. This operation is represented by lines(<span class="process-math">\(\| \ \|\)</span>) on either side of the vector that is having its length found. A non-normal vector can be normalized by dividing each of its components by the vectors length. A normalized vector has the same direction as the original vector, but has a length of <span class="process-math">\(1\text{.}\)</span> A set of vectors is <dfn class="terminology">orthonormal</dfn> if each of the vectors are normal and each of the vectors are orthogonal to the rest.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/subsec-Eigenvectors-and-Eigenvalues.html">
+\begin{equation*}
+\| (\begin{pmatrix} a_1 \\ a_2 \\ \vdots \\ a_n \end{pmatrix}) \| = \sqrt{a_{1}^2 + a_{2}^2 + \ldots + a_{n}^2} 
+\end{equation*}
+</div>
+<article class="exercise exercise-like" id="exercise-3"><a href="" data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exercise-3"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">1.5.7</span><span class="period">.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-3"><article class="exercise exercise-like"><div class="para" id="p-66">What is the length of the following vector?</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{pmatrix} 7 \\ 2 \\ 3 \end{pmatrix}
+\end{equation*}
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-3" id="solution-3"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-3"><div class="solution solution-like"><div class="displaymath process-math">
+\begin{equation*}
+\sqrt{7^2 + 2^2 + 3^2} = \sqrt{62} \approx 7.874 
+\end{equation*}
+</div></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="exercise-4"><a href="" data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exercise-4"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">1.5.8</span><span class="period">.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-4"><article class="exercise exercise-like"><div class="para" id="p-67">Normalize the following vector</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{pmatrix} 7 \\ 2 \\ 3 \end{pmatrix}
+\end{equation*}
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-4" id="solution-4"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-4"><div class="solution solution-like">
+<div class="para" id="p-68">In the previous exercise, we found that this vector has a length of <span class="process-math">\(\sqrt{62}\approx7.874\text{.}\)</span> To normalize the vector, we will divide each of its components by its length.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{pmatrix} \frac{7}{\sqrt{62}} \\ \frac{2}{\sqrt{62}} \\ \frac{3}{\sqrt{62}} \end{pmatrix} \approx \begin{pmatrix} 0.889 \\ 0.254 \\ 0.381 \end{pmatrix}
+\end{equation*}
+</div>
+</div></div>
+</div></article></div>
+<div class="para" id="p-69">
+<em class="alert">Matrices:</em> Whereas a vector is a single column of elements, a <dfn class="terminology">matrix</dfn> is a table of elements organized in rows and columns. Technically speaking, a vector can be thought of a matrix with only one column. The dimension of a matrix is described by first listing the number of rows and then listing the number of columns. Thus, a <span class="process-math">\(2 \times 3\)</span> matrix (read "two by three") would have two rows and three columns. A <dfn class="terminology">square matrix</dfn> is any matrix with the same number of rows and columns. One of the most important matrices is the <dfn class="terminology">identity matrix</dfn>, a square matrix in which all of the entries along the diagonal are <span class="process-math">\(1\)</span> and all other entries are <span class="process-math">\(0\text{.}\)</span> Examples of the <span class="process-math">\(2\times2\)</span> and <span class="process-math">\(5\times5\)</span> identity matrices are shown below, which can be generalized to any <span class="process-math">\(n \times n\)</span> matrix.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/subsec-Eigenvectors-and-Eigenvalues.html">
+\begin{equation*}
+I_{2\times2} = \begin{pmatrix} 1 &amp; 0 \\ 0 &amp; 1 \end{pmatrix}, I_{5\times5} = \begin{pmatrix} 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1   \end{pmatrix}
+\end{equation*}
+</div>
+<div class="para" id="p-70">A matrix can be multiplied by a scalar in the same way that a vector can, by multiplying each entry in the matrix by the scalar, as shown below.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/subsec-Eigenvectors-and-Eigenvalues.html">
+\begin{equation*}
+c \times \begin{pmatrix} a_1 &amp; a_2 &amp; a_3 \\ a_4 &amp; a_5 &amp; a_6 \\ a_7 &amp; a_8 &amp; a_9 \end{pmatrix} = \begin{pmatrix} c \times a_1 &amp; c \times a_2 &amp; c \times a_3 \\ c \times a_4 &amp; c \times a_5 &amp; c \times a_6 \\ c \times a_7 &amp; c \times a_8 &amp; c \times a_9 \end{pmatrix} 
+\end{equation*}
+</div>
+<div class="para" id="p-71">The concept of a transpose can be extended from vectors to matrices as well. A matrix’s transpose is found by turning each of its rows into a column, or, equivalently, by turning each of its columns into a row. This means the transpose of an <span class="process-math">\(m \times n\)</span> matrix is an <span class="process-math">\(n \times m\)</span> matrix. The matrix transpose is also represented by a superscript <span class="process-math">\(T\text{.}\)</span> An example of transposing a <span class="process-math">\(3 \times 3\)</span> matrix is shown below.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/subsec-Eigenvectors-and-Eigenvalues.html">
+\begin{equation*}
+\begin{pmatrix} a_1 &amp; a_2 &amp; a_3 \\ a_4 &amp; a_5 &amp; a_6 \\ a_7 &amp; a_8 &amp; a_9 \end{pmatrix} ^{T} = \begin{pmatrix} a_1 &amp; a_4 &amp; a_7 \\ a_2 &amp; a_5 &amp; a_8 \\ a_3 &amp; a_6 &amp; a_9 \end{pmatrix} 
+\end{equation*}
+</div>
+<div class="para" id="p-72">
+<em class="alert">Matrix Addition:</em> Two matrices can be added together only if they each have the same number of rows and columns. The sum of two matrices is found by adding together the corresponding entries of each matrix, as shown below with an example of two <span class="process-math">\(3\times3\)</span> matrices.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/subsec-Eigenvectors-and-Eigenvalues.html">
+\begin{equation*}
+\begin{pmatrix} a_1 &amp; a_2 &amp; a_3 \\ a_4 &amp; a_5 &amp; a_6 \\ a_7 &amp; a_8 &amp; a_9 \end{pmatrix} + \begin{pmatrix} b_1 &amp; b_2 &amp; b_3 \\ b_4 &amp; b_5 &amp; b_6 \\ b_7 &amp; b_8 &amp; b_9 \end{pmatrix} = \begin{pmatrix} a_1 + b_1 &amp; a_2 + b_2 &amp; a_3 + b_3 \\ a_4 + b_4 &amp; a_5 + b_5 &amp; a_6 + b_6 \\ a_7 + b_7 &amp; a_8 + b_8 &amp; a_9 + b_9 \end{pmatrix} 
+\end{equation*}
+</div>
+<article class="exercise exercise-like" id="exercise-5"><a href="" data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exercise-5"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">1.5.9</span><span class="period">.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-5"><article class="exercise exercise-like"><div class="para" id="p-73">Compute the following sum:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{pmatrix} 4 &amp; 7 &amp; 9 \\ 1 &amp; 0 &amp; 6 \\ 2 &amp; 5 &amp; 3 \end{pmatrix} + \begin{pmatrix} 0 &amp; 4 &amp; 6 \\ 2 &amp; 2 &amp; 2 \\ 5 &amp; 3 &amp; 8 \end{pmatrix}
+\end{equation*}
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-5" id="solution-5"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-5"><div class="solution solution-like"><div class="displaymath process-math">
+\begin{equation*}
+= \begin{pmatrix} 4 &amp; 11 &amp; 15 \\ 3 &amp; 2 &amp; 8 \\ 7 &amp; 8 &amp; 11 \end{pmatrix} 
+\end{equation*}
+</div></div></div>
+</div></article></div>
+<div class="para" id="p-74">
+<em class="alert">Matrix Multiplication:</em> Two matrices can be multiplied together only if the number of columns of the left matrix is equal to the number of rows of the right matrix. The resulting product will be a matrix with the same number of rows as the left matrix and the same number of columns as the right. Thus an <span class="process-math">\(m /times n\)</span> matrix multiplied by a <span class="process-math">\(n \times q\)</span> matrix would produce an <span class="process-math">\(m \times q\)</span> matrix. Notably, matrix multiplication is non-commutative, which means for two matrices <span class="process-math">\(A\)</span> and <span class="process-math">\(B\text{,}\)</span> <span class="process-math">\(AB \neq BA\text{.}\)</span> The entries of a product matrix are determined by taking the dot product between the corresponding row of the left matrix and the corresponding column of the right matrix, as shown below with an example of multiplication between a <span class="process-math">\(3\times3\)</span> and a <span class="process-math">\(3\times2\)</span> matrix.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/subsec-Eigenvectors-and-Eigenvalues.html">
+\begin{equation*}
+\begin{pmatrix} a_1 &amp; a_2 &amp; a_3 \\ a_4 &amp; a_5 &amp; a_6 \\ a_7 &amp; a_8 &amp; a_9 \end{pmatrix} \times \begin{pmatrix} b_1 &amp; b_2 \\ b_3 &amp; b_4 \\ b_5 &amp; b_6 \end{pmatrix} = \begin{pmatrix} a_1b_1 + a_2b_3+a_3b_5 &amp; a_1b_2 + a_2b_4 + a_3b_6 \\ a_4b_1 + a_5b_3 + a_6b_5 &amp; a_4b_2 + a_5b_4 + a_6b_6 \\ a_7b_1 + a_8b_3 + a_9b_5 &amp; a_7b_2 + a_8b_4 + a_9b_6 \end{pmatrix} 
+\end{equation*}
+</div>
+<div class="para" id="p-75">Now that we know matrix multiplication, we can redefine the dot product / inner product as the transpose of a vector multiplied by the original vector. Since vectors are <span class="process-math">\(n \times 1\)</span> dimensional, the transpose will be <span class="process-math">\(1 \times n\)</span> dimensional, so multiplying the transpose on the left and the original on the right will produce a <span class="process-math">\(1 \times 1\)</span> matrix, which is functionally the same as a scalar.</div>
+<div class="para" id="p-76">Multiplying an <span class="process-math">\(m \times n\)</span> matrix by a <span class="process-math">\(n \times 1\)</span> vector produces an <span class="process-math">\(m \times 1\)</span> vector. This operation is known as a <dfn class="terminology">linear transformation</dfn> and it an be used to move vectors from one vector space to another.</div>
+<article class="exercise exercise-like" id="exercise-6"><a href="" data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exercise-6"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">1.5.10</span><span class="period">.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-6"><article class="exercise exercise-like"><div class="para" id="p-77">Compute the following product:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{pmatrix} 2 &amp; 4 \\ 3 &amp; 0 \end{pmatrix} \times \begin{pmatrix} 5 &amp; 1 &amp; 2 \\ 0 &amp; 7 &amp; 2 \end{pmatrix} 
+\end{equation*}
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1" id="hint-1"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1"><div class="hint solution-like"><div class="para" id="p-78">The resulting matrix should be <span class="process-math">\(2 \times 3\)</span>
+</div></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-6" id="solution-6"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-6"><div class="solution solution-like"><div class="displaymath process-math">
+\begin{equation*}
+= \begin{pmatrix} 2 \times 5 + 4 \times 0 &amp; 2 \times 1 + 4 \times 7 &amp; 2 \times 2 + 4 \times 2 \\ 3 \times 5 + 0 \times 0 &amp; 3 \times 1 + 0 \times 7 &amp; 3 \times 2 + 0 \times 2 \end{pmatrix} = \begin{pmatrix} 10 &amp; 30 &amp; 12 \\ 15 &amp; 3 &amp; 6 \end{pmatrix} 
+\end{equation*}
+</div></div></div>
+</div></article></div>
+<div class="para" id="p-79">
+<em class="alert">Determinant:</em> The <dfn class="terminology">determinant</dfn> is a scalar associated with a square matrix that can be used to find the eigenvalues (see <a href="Vectors-and-Vector-Spaces.html#subsec-Eigenvectors-and-Eigenvalues" class="internal" title="Subsection 1.5.5: Eigenvectors and Eigenvalues">Subsection 1.5.5</a>) of the matrix. For <span class="process-math">\(2 \times 2\)</span> and <span class="process-math">\(3 \times 3\)</span> matrices, their determinants are defined as follows:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/subsec-Eigenvectors-and-Eigenvalues.html">
+\begin{equation*}
+det(\begin{pmatrix} a &amp; b \\ c &amp; d \end{pmatrix}) = a \cdot d - b \cdot c 
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/subsec-Eigenvectors-and-Eigenvalues.html">
+\begin{equation*}
+det(\begin{pmatrix} a &amp; b &amp; c \\ d &amp; e &amp; f \\ g &amp; h &amp; i \end{pmatrix}) = a \cdot e \cdot i +  b \cdot f \cdot g + c \cdot d \cdot h - c \cdot e \cdot g - b \cdot d \cdot i - a \cdot f \cdot h 
+\end{equation*}
+</div></section><section class="subsection" id="subsec-Eigenvectors-and-Eigenvalues"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.5.5</span> <span class="title">Eigenvectors and Eigenvalues</span>
+</h3>
+<div class="para" id="p-80">Here we will provide a brief overview of eigenvectors and eigenvalues, but readers wishing to learn more should go to this link <a class="external" href="https://tinyurl.com/mhtupbk6" target="_blank"><code class="code-inline tex2jax_ignore">https://tinyurl.com/mhtupbk6</code></a>. An eigenvector of a matrix <span class="process-math">\(A\)</span> is a non-zero vector <span class="process-math">\(\vec{v}\)</span> such that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A \vec{v} = v\vec{v} 
+\end{equation*}
+</div>
+<div class="para" id="p-81">where <span class="process-math">\(v\)</span> is a scalar known as the eigenvalue of <span class="process-math">\(A\)</span> corresponding to <span class="process-math">\(\vec{v}\text{.}\)</span> It will often be convenient to use the variable <span class="process-math">\(v\)</span> both as a label for the eigenvector, and to represent the eigenvalue. The eigenvalues of a matrix can be found by solving the equation</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\text{det}(A-\lambda I) = 0 
+\end{equation*}
+</div>
+<div class="para" id="p-82">In this equation, <span class="process-math">\(\lambda\)</span> is an unknown variable whose values we want to find. These values will be the eigenvalues of the matrix <span class="process-math">\(A\text{.}\)</span> Each eigenvalue <span class="process-math">\(\lambda_i\)</span> will have a corresponding eigenvector <span class="process-math">\(\vec{v_i}\)</span> such that <span class="process-math">\(A\vec{v_i} = \lambda_i \vec{v_i}\text{.}\)</span> The corresponding eigenvectors can then be found by solving</div>
+<div class="displaymath process-math">
+\begin{equation*}
+(A-\lambda_i I)\vec{v_i} = \vec{0} 
+\end{equation*}
+</div>
+<div class="para" id="p-83">The eigenspace corresponding to an eigenvalue <span class="process-math">\(v\)</span> is the set of vectors which have eigenvalue <span class="process-math">\(v\text{.}\)</span> It is a vector subspace of the vector space on which <span class="process-math">\(A\)</span> acts. The eigenspace corresponding to the matrix <span class="process-math">\(A\)</span> would be all vectors that have an eigenvalue for that matrix.</div></section></section></div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="Classical-Computing.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="Linear-Algebra-in-Quantum-Computation.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+</div>
+</body>
+</html>

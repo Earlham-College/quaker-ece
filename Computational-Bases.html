@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Computational Bases and the Bloch Sphere</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Quantum Computing">
+<meta property="book:author" content="Levi Goldberg">
+<meta property="book:author" content="Shun Suzuki">
+<meta property="book:author" content="Javier Orduz">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "https://pretextbook.org/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.3/pretext_search.js"></script><link href="https://pretextbook.org/css/0.7/pretext_search.css" rel="stylesheet" type="text/css">
+<script>js_version = 0.3</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.3/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.3/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.3/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link href="https://pretextbook.org/css/0.7/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.7/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.7/shell_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.7/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.7/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.7/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.7/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.7/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.7/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.7/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body id="changeme" class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" class="logo-link" href="" target="_blank"><img src="external/earlhamlogo.png" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="my-great-book.html"><span class="title">Quantum Computing:</span> <span class="subtitle">A gentle introduction for Liberal Arts Institutions</span></a></h1>
+<p class="byline">Levi Goldberg, Shun Suzuki, Javier Orduz</p>
+</div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<button id="closesearchresults" class="closesearchresults" onclick="document.getElementById('searchresultsplaceholder').style.display = 'none'; return false;">x</button><h2>Search Results: <span id="searchterms" class="searchterms"></span>
+</h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" aria-label="Show or hide table of contents"><span class="icon">☰</span><span class="name">Contents</span></button><a class="index-button button" href="index-1.html" title="Index"><span class="name">Index</span></a><button id="user-preferences-button" class="user-preferences-button button" title="Modify user preferences"><span id="avatarbutton" class="avatarbutton name">You!</span><div id="preferences_menu_holder" class="preferences_menu_holder hidden"><ol id="preferences_menu" class="preferences_menu" style="font-family: 'Roboto Serif', serif;">
+<li data-env="avatar" tabindex="-1">Choose avatar<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden avatar">
+<li data-val="You!" tabindex="-1">
+<span id="theYou!" class="avatarcheck">✔️</span>You!</li>
+<li data-val="😺" tabindex="-1">
+<span id="the😺" class="avatarcheck"></span>😺</li>
+<li data-val="👤" tabindex="-1">
+<span id="the👤" class="avatarcheck"></span>👤</li>
+<li data-val="👽" tabindex="-1">
+<span id="the👽" class="avatarcheck"></span>👽</li>
+<li data-val="🐶" tabindex="-1">
+<span id="the🐶" class="avatarcheck"></span>🐶</li>
+<li data-val="🐼" tabindex="-1">
+<span id="the🐼" class="avatarcheck"></span>🐼</li>
+<li data-val="🌈" tabindex="-1">
+<span id="the🌈" class="avatarcheck"></span>🌈</li>
+</ol>
+</li>
+<li data-env="fontfamily" tabindex="-1">Font family<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden fontfamily">
+<li data-val="face" data-change="OS" tabindex="-1" style="font-family: 'Open Sans'">
+<span id="theOS" class="ffcheck">✔️</span><span class="name">Open Sans</span><span class="sample">AaBbCc 123 PreTeXt</span>
+</li>
+<li data-val="face" data-change="RS" tabindex="-1" style="font-family: 'Roboto Serif'">
+<span id="theRS" class="ffcheck"></span><span class="name">Roboto Serif</span><span class="sample">AaBbCc 123 PreTeXt</span>
+</li>
+</ol>
+</li>
+<li data-env="font" tabindex="-1">Adjust font<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden fonts">
+<li>Size</li>
+<li><span id="thesize">12</span></li>
+<li data-val="size" data-change="-1" tabindex="-1" style="font-size: 80%">Smaller</li>
+<li data-val="size" data-change="1" tabindex="-1" style="font-size: 110%">Larger</li>
+<li>Width</li>
+<li><span id="thewdth">100</span></li>
+<li data-val="wdth" data-change="-5" tabindex="-1" style="font-variation-settings: 'wdth' 60">narrower</li>
+<li data-val="wdth" data-change="5" tabindex="-1" style="font-variation-settings: 'wdth' 150">wider</li>
+<li>Weight</li>
+<li><span id="thewght">400</span></li>
+<li data-val="wght" data-change="-50" tabindex="-1" style="font-weight: 200">thinner</li>
+<li data-val="wght" data-change="50" tabindex="-1" style="font-weight: 700">heavier</li>
+<li>Letter spacing</li>
+<li>
+<span id="thelspace">0</span><span class="byunits">/200</span>
+</li>
+<li data-val="lspace" data-change="-1" tabindex="-1">closer</li>
+<li data-val="lspace" data-change="1" tabindex="-1">f a r t h e r</li>
+<li>Word spacing</li>
+<li>
+<span id="thewspace">0</span><span class="byunits">/50</span>
+</li>
+<li data-val="wspace" data-change="-1" tabindex="-1">smaller gap </li>
+<li data-val="wspace" data-change="1" tabindex="-1">larger gap</li>
+<li>Line Spacing</li>
+<li>
+<span id="theheight">135</span><span class="byunits">/100</span>
+</li>
+<li data-val="height" data-change="-5" tabindex="-1" style="line-height: 1">closer<br>together</li>
+<li data-val="height" data-change="5" tabindex="-1" style="line-height: 1.75">further<br>apart</li>
+</ol>
+</li>
+<li data-env="atmosphere" tabindex="-1">Light/dark mode<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden atmosphere">
+<li data-val="default" tabindex="-1">
+<span id="thedefault" class="atmospherecheck">✔️</span>default</li>
+<li data-val="pastel" tabindex="-1">
+<span id="thepastel" class="atmospherecheck"></span>pastel</li>
+<li data-val="darktwilight" tabindex="-1">
+<span id="thedarktwilight" class="atmospherecheck"></span>twilight</li>
+<li data-val="dark" tabindex="-1">
+<span id="thedark" class="atmospherecheck"></span>dark</li>
+<li data-val="darkmidnight" tabindex="-1">
+<span id="thedarkmidnight" class="atmospherecheck"></span>midnight</li>
+</ol>
+</li>
+<li data-env="ruler" tabindex="-1">Reading ruler<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden ruler">
+<li data-val="none" tabindex="-1">
+<span id="thenone" class="rulercheck">✔️</span>none</li>
+<li data-val="underline" tabindex="-1">
+<span id="theunderline" class="rulercheck"></span>underline</li>
+<li data-val="lunderline" tabindex="-1">
+<span id="thelunderline" class="rulercheck"></span>L-underline</li>
+<li data-val="greybar" tabindex="-1">
+<span id="thegreybar" class="rulercheck"></span>grey bar</li>
+<li data-val="lightbox" tabindex="-1">
+<span id="thelightbox" class="rulercheck"></span>light box</li>
+<li data-val="sunrise" tabindex="-1">
+<span id="thesunrise" class="rulercheck"></span>sunrise</li>
+<li data-val="sunriseunderline" tabindex="-1">
+<span id="thesunriseunderline" class="rulercheck"></span>sunrise underline</li>
+<li class="moveQ">Motion by:</li>
+<li data-val="mouse" tabindex="-1">
+<span id="themouse" class="motioncheck">✔️</span>follow the mouse</li>
+<li data-val="arrow" tabindex="-1">
+<span id="thearrow" class="motioncheck"></span>up/down arrows - not yet</li>
+<li data-val="eye" tabindex="-1">
+<span id="theeye" class="motioncheck"></span>eye tracking - not yet</li>
+</ol>
+</li>
+</ol></div></button><span class="treebuttons"><a class="previous-button button" href="Qubit-States.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="up-button button" href="chap1-chapter.html" title="Up"><span class="icon">^</span><span class="name">Up</span></a><a class="next-button button" href="Operators.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a></span><div class="searchbox"><div class="searchwidget">
+<input id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search" onchange="doSearch()"><button id="searchbutton" class="searchbutton" type="button" onclick="doSearch()">🔍</button>
+</div></div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} 
+\newcommand{\Z}{\mathbb Z} 
+\newcommand{\Q}{\mathbb Q} 
+\newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural">
+<li>
+<div class="toc-item"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="colophon-1.html" class="internal"><span class="title">Colophon</span></a></div></li>
+<li><div class="toc-item"><a href="author-bio-LG.html" class="internal"><span class="title">Author Biography</span></a></div></li>
+<li><div class="toc-item"><a href="dedication.html" class="internal"><span class="title">Dedication</span></a></div></li>
+<li><div class="toc-item"><a href="acknowledgement.html" class="internal"><span class="title">Acknowledgements</span></a></div></li>
+<li><div class="toc-item"><a href="frontmatter-intro.html" class="internal"><span class="codenumber">1</span> <span class="title">Overview</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="chap1-chapter.html" class="internal"><span class="codenumber">1</span> <span class="title">Basic Concepts of Quantum Computation</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="chap1-intro.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Introduction</span></a></div></li>
+<li><div class="toc-item"><a href="Classical-Physics.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Classical Physics</span></a></div></li>
+<li><div class="toc-item"><a href="Newtonian-Mechanics.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Newtonian Mechanics</span></a></div></li>
+<li><div class="toc-item"><a href="Classical-Computing.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Classical Computing</span></a></div></li>
+<li>
+<div class="toc-item"><a href="Vectors-and-Vector-Spaces.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Vectors and Vector Spaces</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="Vectors-and-Vector-Spaces.html#Vectors" class="internal"><span class="codenumber">1.5.1</span> <span class="title">Introduction to Vectors</span></a></div></li>
+<li><div class="toc-item"><a href="Vectors-and-Vector-Spaces.html#Vector-Spaces" class="internal"><span class="codenumber">1.5.2</span> <span class="title">Vector Spaces</span></a></div></li>
+<li><div class="toc-item"><a href="Vectors-and-Vector-Spaces.html#Bases" class="internal"><span class="codenumber">1.5.3</span> <span class="title">Bases</span></a></div></li>
+<li><div class="toc-item"><a href="Vectors-and-Vector-Spaces.html#linear-algebra" class="internal"><span class="codenumber">1.5.4</span> <span class="title">Linear Algebra</span></a></div></li>
+<li><div class="toc-item"><a href="Vectors-and-Vector-Spaces.html#subsec-Eigenvectors-and-Eigenvalues" class="internal"><span class="codenumber">1.5.5</span> <span class="title">Eigenvectors and Eigenvalues</span></a></div></li>
+</ul>
+</li>
+<li><div class="toc-item"><a href="Linear-Algebra-in-Quantum-Computation.html" class="internal"><span class="codenumber">1.6</span> <span class="title">Linear Algebra in Quantum Computation</span></a></div></li>
+<li>
+<div class="toc-item"><a href="Qubit-States.html" class="internal"><span class="codenumber">1.7</span> <span class="title">Qubit States</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="Qubit-States.html#subsec-Qubit" class="internal"><span class="codenumber">1.7.1</span> <span class="title">Qubits</span></a></div></li>
+<li><div class="toc-item"><a href="Qubit-States.html#subsec-Hilbert-Space" class="internal"><span class="codenumber">1.7.2</span> <span class="title">Hilbert Space</span></a></div></li>
+<li><div class="toc-item"><a href="Qubit-States.html#subsec-Bra-Vectors-and-the-Inner-Product" class="internal"><span class="codenumber">1.7.3</span> <span class="title">Bra Vectors and the Inner Product for Quantum Computation</span></a></div></li>
+<li><div class="toc-item"><a href="Qubit-States.html#subsec-Qubit-Measurements" class="internal"><span class="codenumber">1.7.4</span> <span class="title">Qubit Measurements</span></a></div></li>
+</ul>
+</li>
+<li class="active">
+<div class="toc-item"><a href="Computational-Bases.html" class="internal"><span class="codenumber">1.8</span> <span class="title">Computational Bases and the Bloch Sphere</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="Computational-Bases.html#subsec-Bloch-Sphere" class="internal"><span class="codenumber">1.8.1</span> <span class="title">The Bloch Sphere</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="Operators.html" class="internal"><span class="codenumber">1.9</span> <span class="title">Operators</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="Operators.html#subsec-Hermitian-Operators" class="internal"><span class="codenumber">1.9.1</span> <span class="title">Hermitian Operators</span></a></div></li>
+<li><div class="toc-item"><a href="Operators.html#subsec-Unitary-Operators" class="internal"><span class="codenumber">1.9.2</span> <span class="title">Unitary Operators</span></a></div></li>
+<li><div class="toc-item"><a href="Operators.html#subsec-Additional-Properties" class="internal"><span class="codenumber">1.9.3</span> <span class="title">Additional Properties and Other</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="sec-Systems-of-Multiple-Qubits.html" class="internal"><span class="codenumber">1.10</span> <span class="title">Systems of Multiple Qubits</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-Systems-of-Multiple-Qubits.html#subsec-Tensor-Product" class="internal"><span class="codenumber">1.10.1</span> <span class="title">Tensor Product</span></a></div></li>
+<li><div class="toc-item"><a href="sec-Systems-of-Multiple-Qubits.html#subsec-Systems-of-Multiple-Qubits" class="internal"><span class="codenumber">1.10.2</span> <span class="title">Systems of Multiple Qubits</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="sec-Operations.html" class="internal"><span class="codenumber">1.11</span> <span class="title">Operations in Quantum Computation</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-Operations.html#subsec-Outer-Product" class="internal"><span class="codenumber">1.11.1</span> <span class="title">Outer Product</span></a></div></li>
+<li><div class="toc-item"><a href="sec-Operations.html#subsec-Completeness-Relation" class="internal"><span class="codenumber">1.11.2</span> <span class="title">Completeness Relation</span></a></div></li>
+<li><div class="toc-item"><a href="sec-Operations.html#subsec-Inner-Product" class="internal"><span class="codenumber">1.11.3</span> <span class="title">Inner Product</span></a></div></li>
+<li><div class="toc-item"><a href="sec-Operations.html#subsec-Diagonalization" class="internal"><span class="codenumber">1.11.4</span> <span class="title">Diagonalization</span></a></div></li>
+<li><div class="toc-item"><a href="sec-Operations.html#subsec-Density-Operator" class="internal"><span class="codenumber">1.11.5</span> <span class="title">Density Operator</span></a></div></li>
+<li><div class="toc-item"><a href="sec-Operations.html#subsec-The-Commutator" class="internal"><span class="codenumber">1.11.6</span> <span class="title">The Commutator</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="chap2-chapter.html" class="internal"><span class="codenumber">2</span> <span class="title">Gates and Circuits</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec1-chap2.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Introduction</span></a></div></li>
+<li>
+<div class="toc-item"><a href="sec2-chap2.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Gates</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec2-chap2.html#subsec1-chap2" class="internal"><span class="codenumber">2.2.1</span> <span class="title">Hadamard gate</span></a></div></li>
+<li><div class="toc-item"><a href="sec2-chap2.html#subsec2-chap2" class="internal"><span class="codenumber">2.2.2</span> <span class="title">Pauli X gate</span></a></div></li>
+<li><div class="toc-item"><a href="sec2-chap2.html#subsec3-chap2" class="internal"><span class="codenumber">2.2.3</span> <span class="title">Pauli Y gate</span></a></div></li>
+<li><div class="toc-item"><a href="sec2-chap2.html#subsec4-chap2" class="internal"><span class="codenumber">2.2.4</span> <span class="title">Pauli Z</span></a></div></li>
+<li><div class="toc-item"><a href="sec2-chap2.html#subsec5-chap2" class="internal"><span class="codenumber">2.2.5</span> <span class="title">Pauli I gate</span></a></div></li>
+<li><div class="toc-item"><a href="sec2-chap2.html#subsec6-chap2" class="internal"><span class="codenumber">2.2.6</span> <span class="title">Phase gate</span></a></div></li>
+<li><div class="toc-item"><a href="sec2-chap2.html#subsec7-chap2" class="internal"><span class="codenumber">2.2.7</span> <span class="title"><span class="process-math">\(\pi\)</span>/8 gate</span></a></div></li>
+<li><div class="toc-item"><a href="sec2-chap2.html#subsec8-chap2" class="internal"><span class="codenumber">2.2.8</span> <span class="title">Controled-NOT</span></a></div></li>
+<li><div class="toc-item"><a href="sec2-chap2.html#subsec9-chap2" class="internal"><span class="codenumber">2.2.9</span> <span class="title">Contorolled-U</span></a></div></li>
+<li><div class="toc-item"><a href="sec2-chap2.html#subsec10-chap2" class="internal"><span class="codenumber">2.2.10</span> <span class="title">Contorolled-Z</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="sec3-chap2.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Circuits</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec3-chap2.html#subsec1-chap2" class="internal"><span class="codenumber">2.3.1</span> <span class="title">NOT gate</span></a></div></li>
+<li><div class="toc-item"><a href="sec3-chap2.html#subsec2-chap2" class="internal"><span class="codenumber">2.3.2</span> <span class="title">AND gate</span></a></div></li>
+<li><div class="toc-item"><a href="sec3-chap2.html#subsec3-chap2" class="internal"><span class="codenumber">2.3.3</span> <span class="title">Reversible and Nonreversible gate</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="chap3-chapter.html" class="internal"><span class="codenumber">3</span> <span class="title">Algorithm</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec1-chap3.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Introduction</span></a></div></li>
+<li><div class="toc-item"><a href="sec2-chap3.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Grover’s Algorithm</span></a></div></li>
+<li>
+<div class="toc-item"><a href="sec3-chap3.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Shor’s Algorithm</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec3-chap3.html#subsec-Building-Up-to-the-Algorithm" class="internal"><span class="codenumber">3.3.1</span> <span class="title">Building Up to the Algorithm</span></a></div></li>
+<li><div class="toc-item"><a href="sec3-chap3.html#subsec-An-Example" class="internal"><span class="codenumber">3.3.2</span> <span class="title">An Example</span></a></div></li>
+<li><div class="toc-item"><a href="sec3-chap3.html#subsec-Shors-Algorithm" class="internal"><span class="codenumber">3.3.3</span> <span class="title">Shor’s Algorithm</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="references.html" class="internal"><span class="title">References</span></a></div></li>
+<li><div class="toc-item"><a href="index-1.html" class="internal"><span class="title">Index</span></a></div></li>
+<li><div class="toc-item"><a href="colophon-2.html" class="internal"><span class="title">Colophon</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="Computational-Bases"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">1.8</span> <span class="title">Computational Bases and the Bloch Sphere</span>
+</h2>
+<div class="para" id="p-104">So far, the only basis we have looked at for measuring a qubit is <span class="process-math">\((\ket{0},\ket{1})\text{,}\)</span> but this is not the only one. In quantum computation, we define three orthogonal basis states. For now, we will call these the X-measurement, Y-measurement, and Z-measurement, which will make sense shortly.</div>
+<div class="para" id="p-105"><em class="alert">X-Measurement</em></div>
+<div class="para" id="p-106">
+<span class="process-math">\(\{\ket{+},\ket{-}\}\)</span> are eigenstates of the Pauli X Matrix, <span class="process-math">\(\sigma_x\)</span> (which is <span class="process-math">\(\begin{pmatrix} 0 &amp; 1 \\ 1 &amp; 0 \end{pmatrix}\text{,}\)</span> as we will see in <a href="sec2-chap2.html#subsec2-chap2" class="internal" title="Subsection 2.2.2: Pauli X gate">Subsection 2.2.2</a>). These are called the Hadamard (transversal) basis states</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/subsec2-chap2.html ./knowl/subsec3-chap2.html ./knowl/subsec4-chap2.html ./knowl/sec2-chap2.html">
+\begin{equation*}
+\Big\{\ket{+}:=\frac{1}{\sqrt{2}}\Big(\ket{0}+\ket{1}\Big), \ket{-}:=\frac{1}{\sqrt{2}}\Big(\ket{0}-\ket{1}\Big) \Big\} 
+\end{equation*}
+</div>
+<div class="para" id="p-107"><em class="alert">Y-Measurement</em></div>
+<div class="para" id="p-108">
+<span class="process-math">\(\{\ket{+i},\ket{-i}\}\)</span> are eigenstates of the Pauli Y Matrix, <span class="process-math">\(\sigma_y\)</span> (which is <span class="process-math">\(\begin{pmatrix} 0 &amp; -i \\ i &amp; 0 \end{pmatrix}\text{,}\)</span> as we will see in <a href="sec2-chap2.html#subsec3-chap2" class="internal" title="Subsection 2.2.3: Pauli Y gate">Subsection 2.2.3</a>).These are called the Longitudinal (Left-Right) basis states</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/subsec2-chap2.html ./knowl/subsec3-chap2.html ./knowl/subsec4-chap2.html ./knowl/sec2-chap2.html">
+\begin{equation*}
+\Big\{\ket{+i}:=\frac{1}{\sqrt{2}}\Big(\ket{0}+i\ket{1}\Big), \ket{-i}:=\frac{1}{\sqrt{2}}\Big(\ket{0}-i\ket{1}\Big) \Big\} 
+\end{equation*}
+</div>
+<div class="para" id="p-109"><em class="alert">Z-Measurement</em></div>
+<div class="para" id="p-110">
+<span class="process-math">\(\{\ket{0},\ket{1}\}\)</span> are eigenstates of the Pauli Z Matrix, <span class="process-math">\(\sigma_z\)</span> (which is <span class="process-math">\(\begin{pmatrix} 1 &amp; 0 \\ 0 &amp; -1 \end{pmatrix}\text{,}\)</span> as we will see in <a href="sec2-chap2.html#subsec4-chap2" class="internal" title="Subsection 2.2.4: Pauli Z">Subsection 2.2.4</a>). These are called the Computational basis states</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/subsec2-chap2.html ./knowl/subsec3-chap2.html ./knowl/subsec4-chap2.html ./knowl/sec2-chap2.html">
+\begin{equation*}
+\Big\{\ket{0}:=\begin{pmatrix}1\\0\end{pmatrix},\ket{1}:=\begin{pmatrix}0\\1\end{pmatrix},\Big\} 
+\end{equation*}
+</div>
+<article class="exercise exercise-like" id="exercise-10"><a href="" data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exercise-10"><h3 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">1.8.1</span><span class="period">.</span><span class="space"> </span><span class="title">A state in the Hadamard basis.</span>
+</h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-10"><article class="exercise exercise-like"><div class="para" id="p-111">
+<span class="process-math">\(\ket{\psi}=\frac{1}{\sqrt{2}}\Big(\ket{0}-\ket{1}\Big)\)</span> is measured in the basis <span class="process-math">\(\{\ket{+},\ket{-}\}.\)</span> Calculate <span class="process-math">\(P(+)\)</span> and <span class="process-math">\(P(-).\)</span>
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-10" id="solution-10"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-10"><div class="solution solution-like">
+<div class="displaymath process-math">
+\begin{equation*}
+P(+) = (\braket{+|\psi})^2 = (\frac{1}{\sqrt{2}}(\bra{0} + \bra{1}) \cdot \frac{1}{\sqrt{2}}(\ket{0}-\ket{1}))^2 = (\frac{1}{2}(\braket{0|0} - \braket{0|1} + \braket{1|0} - \braket{1|1}))^2 = (\frac{1}{2}(1 - 0 + 0 - 1))^2 = 0 
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+P(-) = (\braket{-|\psi})^2 = (\frac{1}{\sqrt{2}}(\bra{0} - \bra{1}) \cdot \frac{1}{\sqrt{2}}(\ket{0}-\ket{1}))^2 = (\frac{1}{2}(\braket{0|0} - \braket{0|1} - \braket{1|0} + \braket{1|1}))^2 = (\frac{1}{2}(1 - 0 - 0 + 1))^2 = 1 
+\end{equation*}
+</div>
+</div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="exercise-11"><a href="" data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exercise-11"><h3 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">1.8.2</span><span class="period">.</span><span class="space"> </span><span class="title">A state in the Computational basis.</span>
+</h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-11"><article class="exercise exercise-like"><div class="para" id="p-112">
+<span class="process-math">\(\ket{\psi}=\frac{1}{\sqrt{3}}\Big(\ket{0} +\sqrt{2}\ket{1}\Big)\)</span> is measured in the basis <span class="process-math">\(\{\ket{0},\ket{1}\}.\)</span> Calculate <span class="process-math">\(P(0)\)</span> and <span class="process-math">\(P(1)\text{.}\)</span>
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-11" id="solution-11"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-11"><div class="solution solution-like">
+<div class="displaymath process-math">
+\begin{equation*}
+P(0) = (\braket{0|\psi})^2 = (\bra{0} \cdot \frac{1}{\sqrt{3}} (\ket{0} + \sqrt{2}\ket{1}))^2 = (\frac{1}{\sqrt{3}} \braket{0|0} + \frac{\sqrt{2}}{\sqrt{3}} \braket{0|1})^2 = (\frac{1}{\sqrt{3}} + 0)^2 = \frac{1}{3} 
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+P(1) = (\braket{1|\psi})^2 = (\bra{1} \cdot \frac{1}{\sqrt{3}} (\ket{0} + \sqrt{2}\ket{1}))^2 = (\frac{1}{\sqrt{3}} \braket{1|0} + \frac{\sqrt{2}}{\sqrt{3}} \braket{1|1})^2 = (0 + \frac{\sqrt{2}}{\sqrt{3}})^2 = \frac{2}{3} 
+\end{equation*}
+</div>
+</div></div>
+</div></article></div>
+<section class="subsection" id="subsec-Bloch-Sphere"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.8.1</span> <span class="title">The Bloch Sphere</span>
+</h3>
+<div class="para" id="p-113">Recall that any qubit can be written as <span class="process-math">\(\ket{\psi} = \alpha \ket{0} + \beta \ket{1} \)</span> and <span class="process-math">\(\alpha^2 + \beta^2 = 1 \text{.}\)</span> Because of this bounding property, we can say there exist some real numbers <span class="process-math">\(\gamma, \theta, \text{ and } \phi\)</span> such that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/sec2-chap2.html">
+\begin{equation*}
+\ket{\psi} = e^{i\gamma}(\cos(\frac{\theta}{2})\ket{0} + e^{i\phi}\sin(\frac{\theta}{2})\ket{1}) 
+\end{equation*}
+</div>
+<div class="para" id="p-114">Since the <span class="process-math">\(e^{i\gamma}\)</span> is simply a scalar applied to the entire system, it will have no observable effect on the state of the system. This means we can ignore that term, leaving us with</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/sec2-chap2.html">
+\begin{equation*}
+\ket{\psi} = \cos(\frac{\theta}{2})\ket{0} + e^{i\phi}\sin(\frac{\theta}{2})\ket{1} 
+\end{equation*}
+</div>
+<div class="para" id="p-115">The numbers <span class="process-math">\(\theta\)</span> and <span class="process-math">\(\phi\)</span> define a point on the three-dimensional unit sphere, which we will here call the <dfn class="terminology">Bloch sphere</dfn>. The Bloch sphere exists within a Hilbert Space, <span class="process-math">\(\mathcal{H}\text{,}\)</span> and provides an intuitive method for depicting qubits as vectors and visualizing the operations we can perform on them.</div>
+<figure class="figure figure-like" id="fig-Bloch-Sphere"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/BlochSphere.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.8.3<span class="period">.</span></span><span class="space"> </span>The Bloch sphere and the representation of a qubit <span class="process-math">\(\ket{\psi}\)</span> with angle <span class="process-math">\(\phi\)</span> along the horizontal plane and angle <span class="process-math">\(\theta\)</span> along the vertical axis, as well as the computational basis vectors.</figcaption></figure><div class="para" id="p-116">One quirk of the Bloch sphere is that any two orthogonal state vectors (qubits) are represented on the sphere not as perpendicular, but as two vectors along the same line pointing in opposite directions. Thus the x-axis is defined by <span class="process-math">\(\ket{+}\)</span> in the positive direction and <span class="process-math">\(\ket{i}\)</span> in the negative direction, the y-axis is defined by <span class="process-math">\(\ket{+i}\)</span> in the positive and <span class="process-math">\(\ket{-i}\)</span> in the negative, and the z-axis is defined by <span class="process-math">\(\ket{0}\)</span> in the positive and <span class="process-math">\(\ket{1}\)</span> in the negative, hence the reason for the names of these states.</div>
+<div class="para" id="p-117">Those familiar with multivariate calculus will know that any point on the surface of the unit sphere can be described with the vector</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/sec2-chap2.html">
+\begin{equation*}
+\vec{r} = \begin{pmatrix} \sin \theta \cos \phi \\ \sin \theta \sin \phi \\ \cos \theta \end{pmatrix} 
+\end{equation*}
+</div>
+<div class="para" id="p-118">If we choose <span class="process-math">\(\theta = 0\text{,}\)</span> we obtain</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/sec2-chap2.html">
+\begin{equation*}
+\vec{r} = \begin{pmatrix}0\\0\\1\end{pmatrix} 
+\end{equation*}
+</div>
+<div class="para" id="p-119">which corresponds to <span class="process-math">\(\ket{0}\)</span> on the Block sphere.</div>
+<div class="para" id="p-120">If we choose <span class="process-math">\(\theta=\pi\text{.}\)</span> we obtain</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/sec2-chap2.html">
+\begin{equation*}
+\vec{r} = \begin{pmatrix}0\\0\\-1\end{pmatrix} 
+\end{equation*}
+</div>
+<div class="para" id="p-121">which corresponds to <span class="process-math">\(\ket{1}\)</span> on the Block sphere. This is our reason for choosing to use <span class="process-math">\(\frac{\theta}{2}\)</span> as an angle in our definition of the block instead of just using <span class="process-math">\(\theta\text{.}\)</span> When <span class="process-math">\(\theta=0\text{,}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/sec2-chap2.html">
+\begin{equation*}
+\ket{\psi} = \cos(0)\ket{0} + e^{i\phi}\sin(0)\ket{1} = \ket{0}
+\end{equation*}
+</div>
+<div class="para" id="p-122">and when <span class="process-math">\(\theta = \pi\)</span> and <span class="process-math">\(\phi = 0\text{,}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/sec2-chap2.html">
+\begin{equation*}
+\ket{\psi} = \cos(\frac{\pi}{2})\ket{0} + e^{0}\sin(\frac{\pi}{2})\ket{1} = \ket{1}
+\end{equation*}
+</div>
+<article class="exercise exercise-like" id="exercise-12"><a href="" data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exercise-12"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">1.8.4</span><span class="period">.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-12"><article class="exercise exercise-like"><div class="para" id="p-123">Using the vector equation for points on the surface of the unit sphere, consider the following values:</div> <div class="para" id="p-124">1. <span class="process-math">\(\theta = \frac{\pi}{2}\)</span> and <span class="process-math">\(\phi =0.\)</span> Obtain <span class="process-math">\(\vec{r}.\)</span>
+</div> <div class="para" id="p-125">2. <span class="process-math">\(\theta = \frac{\pi}{2}\)</span> and <span class="process-math">\(\phi =\pi.\)</span> Obtain <span class="process-math">\(\vec{r}.\)</span>
+</div> <div class="para" id="p-126">3. <span class="process-math">\(\theta = \frac{\pi}{2}\)</span> and <span class="process-math">\(\phi =\frac{\pi}{2}.\)</span> Obtain <span class="process-math">\(\vec{r}.\)</span>
+</div> <div class="para" id="p-127">4. <span class="process-math">\(\theta = \frac{\pi}{2}\)</span> and <span class="process-math">\(\phi =\frac{3\pi}{2}.\)</span> Obtain <span class="process-math">\(\vec{r}.\)</span>
+</div></article></div>
+<div class="para" id="p-128">The Bloch sphere is called a projective sphere because the states of our quantum system are rays in the Hilbert space<span class="process-math">\(\mathcal{H}\text{,}\)</span> and we would prefer to visualize vectors as points, not rays. Going back to the underlying <span class="process-math">\(\mathbb{C}^{n}\)</span> we collapse the ray that represents a quantum state onto the surface of an <span class="process-math">\(n\)</span>-dimensional sphere. We are projecting all those representatives onto a single point on the complex n-sphere. Notice that each point on that sphere still has infinitely many representations impossible to picture due to the potential scalar factor <span class="process-math">\(e^{i \gamma}\text{,}\)</span> that we left out of our equation.</div>
+<div class="para" id="p-129">The Pauli gates <span class="process-math">\(X, Y,\)</span> and <span class="process-math">\(Z\)</span> (which we will see in <a href="sec2-chap2.html" class="internal" title="Section 2.2: Gates">Section 2.2</a>) correspond to rotations about the <span class="process-math">\(x-, y-\)</span> and <span class="process-math">\(z-\)</span>axes of the Bloch sphere</div></section></section></div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="Qubit-States.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="Operators.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+</div>
+</body>
+</html>

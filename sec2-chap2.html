@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Gates</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Quantum Computing">
+<meta property="book:author" content="Levi Goldberg">
+<meta property="book:author" content="Shun Suzuki">
+<meta property="book:author" content="Javier Orduz">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "https://pretextbook.org/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.3/pretext_search.js"></script><link href="https://pretextbook.org/css/0.7/pretext_search.css" rel="stylesheet" type="text/css">
+<script>js_version = 0.3</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.3/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.3/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.3/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link href="https://pretextbook.org/css/0.7/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.7/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.7/shell_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.7/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.7/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.7/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.7/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.7/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.7/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.7/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body id="changeme" class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" class="logo-link" href="" target="_blank"><img src="external/earlhamlogo.png" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="my-great-book.html"><span class="title">Quantum Computing:</span> <span class="subtitle">A gentle introduction for Liberal Arts Institutions</span></a></h1>
+<p class="byline">Levi Goldberg, Shun Suzuki, Javier Orduz</p>
+</div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<button id="closesearchresults" class="closesearchresults" onclick="document.getElementById('searchresultsplaceholder').style.display = 'none'; return false;">x</button><h2>Search Results: <span id="searchterms" class="searchterms"></span>
+</h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" aria-label="Show or hide table of contents"><span class="icon">☰</span><span class="name">Contents</span></button><a class="index-button button" href="index-1.html" title="Index"><span class="name">Index</span></a><button id="user-preferences-button" class="user-preferences-button button" title="Modify user preferences"><span id="avatarbutton" class="avatarbutton name">You!</span><div id="preferences_menu_holder" class="preferences_menu_holder hidden"><ol id="preferences_menu" class="preferences_menu" style="font-family: 'Roboto Serif', serif;">
+<li data-env="avatar" tabindex="-1">Choose avatar<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden avatar">
+<li data-val="You!" tabindex="-1">
+<span id="theYou!" class="avatarcheck">✔️</span>You!</li>
+<li data-val="😺" tabindex="-1">
+<span id="the😺" class="avatarcheck"></span>😺</li>
+<li data-val="👤" tabindex="-1">
+<span id="the👤" class="avatarcheck"></span>👤</li>
+<li data-val="👽" tabindex="-1">
+<span id="the👽" class="avatarcheck"></span>👽</li>
+<li data-val="🐶" tabindex="-1">
+<span id="the🐶" class="avatarcheck"></span>🐶</li>
+<li data-val="🐼" tabindex="-1">
+<span id="the🐼" class="avatarcheck"></span>🐼</li>
+<li data-val="🌈" tabindex="-1">
+<span id="the🌈" class="avatarcheck"></span>🌈</li>
+</ol>
+</li>
+<li data-env="fontfamily" tabindex="-1">Font family<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden fontfamily">
+<li data-val="face" data-change="OS" tabindex="-1" style="font-family: 'Open Sans'">
+<span id="theOS" class="ffcheck">✔️</span><span class="name">Open Sans</span><span class="sample">AaBbCc 123 PreTeXt</span>
+</li>
+<li data-val="face" data-change="RS" tabindex="-1" style="font-family: 'Roboto Serif'">
+<span id="theRS" class="ffcheck"></span><span class="name">Roboto Serif</span><span class="sample">AaBbCc 123 PreTeXt</span>
+</li>
+</ol>
+</li>
+<li data-env="font" tabindex="-1">Adjust font<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden fonts">
+<li>Size</li>
+<li><span id="thesize">12</span></li>
+<li data-val="size" data-change="-1" tabindex="-1" style="font-size: 80%">Smaller</li>
+<li data-val="size" data-change="1" tabindex="-1" style="font-size: 110%">Larger</li>
+<li>Width</li>
+<li><span id="thewdth">100</span></li>
+<li data-val="wdth" data-change="-5" tabindex="-1" style="font-variation-settings: 'wdth' 60">narrower</li>
+<li data-val="wdth" data-change="5" tabindex="-1" style="font-variation-settings: 'wdth' 150">wider</li>
+<li>Weight</li>
+<li><span id="thewght">400</span></li>
+<li data-val="wght" data-change="-50" tabindex="-1" style="font-weight: 200">thinner</li>
+<li data-val="wght" data-change="50" tabindex="-1" style="font-weight: 700">heavier</li>
+<li>Letter spacing</li>
+<li>
+<span id="thelspace">0</span><span class="byunits">/200</span>
+</li>
+<li data-val="lspace" data-change="-1" tabindex="-1">closer</li>
+<li data-val="lspace" data-change="1" tabindex="-1">f a r t h e r</li>
+<li>Word spacing</li>
+<li>
+<span id="thewspace">0</span><span class="byunits">/50</span>
+</li>
+<li data-val="wspace" data-change="-1" tabindex="-1">smaller gap </li>
+<li data-val="wspace" data-change="1" tabindex="-1">larger gap</li>
+<li>Line Spacing</li>
+<li>
+<span id="theheight">135</span><span class="byunits">/100</span>
+</li>
+<li data-val="height" data-change="-5" tabindex="-1" style="line-height: 1">closer<br>together</li>
+<li data-val="height" data-change="5" tabindex="-1" style="line-height: 1.75">further<br>apart</li>
+</ol>
+</li>
+<li data-env="atmosphere" tabindex="-1">Light/dark mode<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden atmosphere">
+<li data-val="default" tabindex="-1">
+<span id="thedefault" class="atmospherecheck">✔️</span>default</li>
+<li data-val="pastel" tabindex="-1">
+<span id="thepastel" class="atmospherecheck"></span>pastel</li>
+<li data-val="darktwilight" tabindex="-1">
+<span id="thedarktwilight" class="atmospherecheck"></span>twilight</li>
+<li data-val="dark" tabindex="-1">
+<span id="thedark" class="atmospherecheck"></span>dark</li>
+<li data-val="darkmidnight" tabindex="-1">
+<span id="thedarkmidnight" class="atmospherecheck"></span>midnight</li>
+</ol>
+</li>
+<li data-env="ruler" tabindex="-1">Reading ruler<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden ruler">
+<li data-val="none" tabindex="-1">
+<span id="thenone" class="rulercheck">✔️</span>none</li>
+<li data-val="underline" tabindex="-1">
+<span id="theunderline" class="rulercheck"></span>underline</li>
+<li data-val="lunderline" tabindex="-1">
+<span id="thelunderline" class="rulercheck"></span>L-underline</li>
+<li data-val="greybar" tabindex="-1">
+<span id="thegreybar" class="rulercheck"></span>grey bar</li>
+<li data-val="lightbox" tabindex="-1">
+<span id="thelightbox" class="rulercheck"></span>light box</li>
+<li data-val="sunrise" tabindex="-1">
+<span id="thesunrise" class="rulercheck"></span>sunrise</li>
+<li data-val="sunriseunderline" tabindex="-1">
+<span id="thesunriseunderline" class="rulercheck"></span>sunrise underline</li>
+<li class="moveQ">Motion by:</li>
+<li data-val="mouse" tabindex="-1">
+<span id="themouse" class="motioncheck">✔️</span>follow the mouse</li>
+<li data-val="arrow" tabindex="-1">
+<span id="thearrow" class="motioncheck"></span>up/down arrows - not yet</li>
+<li data-val="eye" tabindex="-1">
+<span id="theeye" class="motioncheck"></span>eye tracking - not yet</li>
+</ol>
+</li>
+</ol></div></button><span class="treebuttons"><a class="previous-button button" href="sec1-chap2.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="up-button button" href="chap2-chapter.html" title="Up"><span class="icon">^</span><span class="name">Up</span></a><a class="next-button button" href="sec3-chap2.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a></span><div class="searchbox"><div class="searchwidget">
+<input id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search" onchange="doSearch()"><button id="searchbutton" class="searchbutton" type="button" onclick="doSearch()">🔍</button>
+</div></div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} 
+\newcommand{\Z}{\mathbb Z} 
+\newcommand{\Q}{\mathbb Q} 
+\newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural">
+<li>
+<div class="toc-item"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="colophon-1.html" class="internal"><span class="title">Colophon</span></a></div></li>
+<li><div class="toc-item"><a href="author-bio-LG.html" class="internal"><span class="title">Author Biography</span></a></div></li>
+<li><div class="toc-item"><a href="dedication.html" class="internal"><span class="title">Dedication</span></a></div></li>
+<li><div class="toc-item"><a href="acknowledgement.html" class="internal"><span class="title">Acknowledgements</span></a></div></li>
+<li><div class="toc-item"><a href="frontmatter-intro.html" class="internal"><span class="codenumber">1</span> <span class="title">Overview</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="chap1-chapter.html" class="internal"><span class="codenumber">1</span> <span class="title">Basic Concepts of Quantum Computation</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="chap1-intro.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Introduction</span></a></div></li>
+<li><div class="toc-item"><a href="Classical-Physics.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Classical Physics</span></a></div></li>
+<li><div class="toc-item"><a href="Newtonian-Mechanics.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Newtonian Mechanics</span></a></div></li>
+<li><div class="toc-item"><a href="Classical-Computing.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Classical Computing</span></a></div></li>
+<li>
+<div class="toc-item"><a href="Vectors-and-Vector-Spaces.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Vectors and Vector Spaces</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="Vectors-and-Vector-Spaces.html#Vectors" class="internal"><span class="codenumber">1.5.1</span> <span class="title">Introduction to Vectors</span></a></div></li>
+<li><div class="toc-item"><a href="Vectors-and-Vector-Spaces.html#Vector-Spaces" class="internal"><span class="codenumber">1.5.2</span> <span class="title">Vector Spaces</span></a></div></li>
+<li><div class="toc-item"><a href="Vectors-and-Vector-Spaces.html#Bases" class="internal"><span class="codenumber">1.5.3</span> <span class="title">Bases</span></a></div></li>
+<li><div class="toc-item"><a href="Vectors-and-Vector-Spaces.html#linear-algebra" class="internal"><span class="codenumber">1.5.4</span> <span class="title">Linear Algebra</span></a></div></li>
+<li><div class="toc-item"><a href="Vectors-and-Vector-Spaces.html#subsec-Eigenvectors-and-Eigenvalues" class="internal"><span class="codenumber">1.5.5</span> <span class="title">Eigenvectors and Eigenvalues</span></a></div></li>
+</ul>
+</li>
+<li><div class="toc-item"><a href="Linear-Algebra-in-Quantum-Computation.html" class="internal"><span class="codenumber">1.6</span> <span class="title">Linear Algebra in Quantum Computation</span></a></div></li>
+<li>
+<div class="toc-item"><a href="Qubit-States.html" class="internal"><span class="codenumber">1.7</span> <span class="title">Qubit States</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="Qubit-States.html#subsec-Qubit" class="internal"><span class="codenumber">1.7.1</span> <span class="title">Qubits</span></a></div></li>
+<li><div class="toc-item"><a href="Qubit-States.html#subsec-Hilbert-Space" class="internal"><span class="codenumber">1.7.2</span> <span class="title">Hilbert Space</span></a></div></li>
+<li><div class="toc-item"><a href="Qubit-States.html#subsec-Bra-Vectors-and-the-Inner-Product" class="internal"><span class="codenumber">1.7.3</span> <span class="title">Bra Vectors and the Inner Product for Quantum Computation</span></a></div></li>
+<li><div class="toc-item"><a href="Qubit-States.html#subsec-Qubit-Measurements" class="internal"><span class="codenumber">1.7.4</span> <span class="title">Qubit Measurements</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="Computational-Bases.html" class="internal"><span class="codenumber">1.8</span> <span class="title">Computational Bases and the Bloch Sphere</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="Computational-Bases.html#subsec-Bloch-Sphere" class="internal"><span class="codenumber">1.8.1</span> <span class="title">The Bloch Sphere</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="Operators.html" class="internal"><span class="codenumber">1.9</span> <span class="title">Operators</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="Operators.html#subsec-Hermitian-Operators" class="internal"><span class="codenumber">1.9.1</span> <span class="title">Hermitian Operators</span></a></div></li>
+<li><div class="toc-item"><a href="Operators.html#subsec-Unitary-Operators" class="internal"><span class="codenumber">1.9.2</span> <span class="title">Unitary Operators</span></a></div></li>
+<li><div class="toc-item"><a href="Operators.html#subsec-Additional-Properties" class="internal"><span class="codenumber">1.9.3</span> <span class="title">Additional Properties and Other</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="sec-Systems-of-Multiple-Qubits.html" class="internal"><span class="codenumber">1.10</span> <span class="title">Systems of Multiple Qubits</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-Systems-of-Multiple-Qubits.html#subsec-Tensor-Product" class="internal"><span class="codenumber">1.10.1</span> <span class="title">Tensor Product</span></a></div></li>
+<li><div class="toc-item"><a href="sec-Systems-of-Multiple-Qubits.html#subsec-Systems-of-Multiple-Qubits" class="internal"><span class="codenumber">1.10.2</span> <span class="title">Systems of Multiple Qubits</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="sec-Operations.html" class="internal"><span class="codenumber">1.11</span> <span class="title">Operations in Quantum Computation</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-Operations.html#subsec-Outer-Product" class="internal"><span class="codenumber">1.11.1</span> <span class="title">Outer Product</span></a></div></li>
+<li><div class="toc-item"><a href="sec-Operations.html#subsec-Completeness-Relation" class="internal"><span class="codenumber">1.11.2</span> <span class="title">Completeness Relation</span></a></div></li>
+<li><div class="toc-item"><a href="sec-Operations.html#subsec-Inner-Product" class="internal"><span class="codenumber">1.11.3</span> <span class="title">Inner Product</span></a></div></li>
+<li><div class="toc-item"><a href="sec-Operations.html#subsec-Diagonalization" class="internal"><span class="codenumber">1.11.4</span> <span class="title">Diagonalization</span></a></div></li>
+<li><div class="toc-item"><a href="sec-Operations.html#subsec-Density-Operator" class="internal"><span class="codenumber">1.11.5</span> <span class="title">Density Operator</span></a></div></li>
+<li><div class="toc-item"><a href="sec-Operations.html#subsec-The-Commutator" class="internal"><span class="codenumber">1.11.6</span> <span class="title">The Commutator</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="chap2-chapter.html" class="internal"><span class="codenumber">2</span> <span class="title">Gates and Circuits</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec1-chap2.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Introduction</span></a></div></li>
+<li class="active">
+<div class="toc-item"><a href="sec2-chap2.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Gates</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec2-chap2.html#subsec1-chap2" class="internal"><span class="codenumber">2.2.1</span> <span class="title">Hadamard gate</span></a></div></li>
+<li><div class="toc-item"><a href="sec2-chap2.html#subsec2-chap2" class="internal"><span class="codenumber">2.2.2</span> <span class="title">Pauli X gate</span></a></div></li>
+<li><div class="toc-item"><a href="sec2-chap2.html#subsec3-chap2" class="internal"><span class="codenumber">2.2.3</span> <span class="title">Pauli Y gate</span></a></div></li>
+<li><div class="toc-item"><a href="sec2-chap2.html#subsec4-chap2" class="internal"><span class="codenumber">2.2.4</span> <span class="title">Pauli Z</span></a></div></li>
+<li><div class="toc-item"><a href="sec2-chap2.html#subsec5-chap2" class="internal"><span class="codenumber">2.2.5</span> <span class="title">Pauli I gate</span></a></div></li>
+<li><div class="toc-item"><a href="sec2-chap2.html#subsec6-chap2" class="internal"><span class="codenumber">2.2.6</span> <span class="title">Phase gate</span></a></div></li>
+<li><div class="toc-item"><a href="sec2-chap2.html#subsec7-chap2" class="internal"><span class="codenumber">2.2.7</span> <span class="title"><span class="process-math">\(\pi\)</span>/8 gate</span></a></div></li>
+<li><div class="toc-item"><a href="sec2-chap2.html#subsec8-chap2" class="internal"><span class="codenumber">2.2.8</span> <span class="title">Controled-NOT</span></a></div></li>
+<li><div class="toc-item"><a href="sec2-chap2.html#subsec9-chap2" class="internal"><span class="codenumber">2.2.9</span> <span class="title">Contorolled-U</span></a></div></li>
+<li><div class="toc-item"><a href="sec2-chap2.html#subsec10-chap2" class="internal"><span class="codenumber">2.2.10</span> <span class="title">Contorolled-Z</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="sec3-chap2.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Circuits</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec3-chap2.html#subsec1-chap2" class="internal"><span class="codenumber">2.3.1</span> <span class="title">NOT gate</span></a></div></li>
+<li><div class="toc-item"><a href="sec3-chap2.html#subsec2-chap2" class="internal"><span class="codenumber">2.3.2</span> <span class="title">AND gate</span></a></div></li>
+<li><div class="toc-item"><a href="sec3-chap2.html#subsec3-chap2" class="internal"><span class="codenumber">2.3.3</span> <span class="title">Reversible and Nonreversible gate</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="chap3-chapter.html" class="internal"><span class="codenumber">3</span> <span class="title">Algorithm</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec1-chap3.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Introduction</span></a></div></li>
+<li><div class="toc-item"><a href="sec2-chap3.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Grover’s Algorithm</span></a></div></li>
+<li>
+<div class="toc-item"><a href="sec3-chap3.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Shor’s Algorithm</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec3-chap3.html#subsec-Building-Up-to-the-Algorithm" class="internal"><span class="codenumber">3.3.1</span> <span class="title">Building Up to the Algorithm</span></a></div></li>
+<li><div class="toc-item"><a href="sec3-chap3.html#subsec-An-Example" class="internal"><span class="codenumber">3.3.2</span> <span class="title">An Example</span></a></div></li>
+<li><div class="toc-item"><a href="sec3-chap3.html#subsec-Shors-Algorithm" class="internal"><span class="codenumber">3.3.3</span> <span class="title">Shor’s Algorithm</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="references.html" class="internal"><span class="title">References</span></a></div></li>
+<li><div class="toc-item"><a href="index-1.html" class="internal"><span class="title">Index</span></a></div></li>
+<li><div class="toc-item"><a href="colophon-2.html" class="internal"><span class="title">Colophon</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec2-chap2"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">2.2</span> <span class="title">Gates</span>
+</h2>
+<section class="subsection" id="subsec1-chap2"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.2.1</span> <span class="title">Hadamard gate</span>
+</h3>
+<div class="para" id="p-199">
+<dfn class="terminology">Hadamard gate</dfn> is one of the most popular gates in quantum computing.</div>
+<figure class="figure figure-like" id="fig-HgateSimple_1"><div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="external/HadamardGate.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.2.1<span class="period">.</span></span><span class="space"> </span>Hadamard gate representation in a circuit.</figcaption></figure><div class="displaymath process-math" id="mdn-1">
+\begin{align}
+H=\frac{1}{\sqrt{2}}
+\begin{pmatrix}
+1&amp;1\\
+1&amp;-1
+\end{pmatrix}\tag{2.2.1}
+\end{align}
+</div>
+<div class="para" id="p-200">The Hadamard operator on one qubit can be written as</div>
+<div class="displaymath process-math" id="mdn-2">
+\begin{gather}
+H =\frac{1}{\sqrt{2}}
+\bigg(
+\Big(\ket{0}+\ket{1}\Big)\bra{0}
++
+\Big(\ket{0}-\ket{1}\Big)\bra{1}
+\bigg)
+=
+\frac{1}{\sqrt{2}}
+\bigg(
+\ket{0}\bra{0}+\ket{1}\bra{0}
++
+\ket{0}\bra{1}-\ket{1}\bra{1}
+\bigg)\tag{2.2.2}
+\end{gather}
+</div>
+<div class="para" id="p-201">which is the Hadamard gate in Dirac notation. Hadamard operation is a rotation of the Block sphere about y axis by <span class="process-math">\(\frac{\pi}{2}\text{,}\)</span> followed by a rotation about <span class="process-math">\(x\)</span> axis by <span class="process-math">\(pi\text{.}\)</span>
+</div>
+<article class="exercise exercise-like" id="exe-HGapllicationQbits"><a href="" data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exe-HGapllicationQbits"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.2.2</span><span class="period">.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-exe-HGapllicationQbits"><article class="exercise exercise-like"><div class="para logical" id="p-202">
+<div class="para">Calculate</div>
+<ul class="disc">
+<li id="li-1"><div class="para" id="p-derived-li-1"><div class="displaymath process-math">
+\begin{equation*}
+H\ket{0}
+\end{equation*}
+</div></div></li>
+<li id="li-2"><div class="para" id="p-derived-li-2"><div class="displaymath process-math">
+\begin{equation*}
+H\ket{1}
+\end{equation*}
+</div></div></li>
+</ul>
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-17" id="solution-17"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-17"><div class="solution solution-like"><div class="para logical" id="p-203"><ul class="disc">
+<li id="li-3"><div class="para" id="p-derived-li-3"><div class="displaymath process-math">
+\begin{equation*}
+H\ket{0} =\frac{1}{\sqrt{2}}
+\Big(\ket{0}+\ket{1}\Big)
+\end{equation*}
+</div></div></li>
+<li id="li-4"><div class="para" id="p-derived-li-4"><div class="displaymath process-math">
+\begin{equation*}
+H\ket{1} =\frac{1}{\sqrt{2}}
+\Big(\ket{0}-\ket{1}\Big)
+\end{equation*}
+</div></div></li>
+</ul></div></div></div>
+</div></article></div></section><section class="subsection" id="subsec2-chap2"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.2.2</span> <span class="title">Pauli X gate</span>
+</h3>
+<div class="para" id="p-204">
+<dfn class="terminology">Pauli X gate</dfn> is also labeled as <span class="process-math">\(\sigma_1\text{,}\)</span> <span class="process-math">\(\sigma_x\)</span> or <em class="emphasis">X</em>
+</div>
+<figure class="figure figure-like" id="fig-XgateSimple_1"><div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="external/Xgate.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.2.3<span class="period">.</span></span><span class="space"> </span>X gate representation in a circuit.</figcaption></figure><div class="displaymath process-math" id="mdn-3">
+\begin{align}
+X= \text{NOT}=
+\begin{pmatrix}
+0&amp;1\\
+1&amp;0
+\end{pmatrix}\tag{2.2.3}
+\end{align}
+</div>
+<article class="exercise exercise-like" id="exe-XGapllicationQbits"><a href="" data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exe-XGapllicationQbits"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.2.4</span><span class="period">.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-exe-XGapllicationQbits"><article class="exercise exercise-like"><div class="para logical" id="p-205">
+<div class="para">Calculate</div>
+<ul class="disc">
+<li id="li-5"><div class="para" id="p-derived-li-5"><div class="displaymath process-math">
+\begin{equation*}
+X\ket{0}
+\end{equation*}
+</div></div></li>
+<li id="li-6"><div class="para" id="p-derived-li-6"><div class="displaymath process-math">
+\begin{equation*}
+X\ket{1}
+\end{equation*}
+</div></div></li>
+<li id="li-7"><div class="para" id="p-derived-li-7"><div class="displaymath process-math">
+\begin{equation*}
+X(X\ket{0})
+\end{equation*}
+</div></div></li>
+<li id="li-8"><div class="para" id="p-derived-li-8"><div class="displaymath process-math">
+\begin{equation*}
+X(X\ket{1})
+\end{equation*}
+</div></div></li>
+</ul>
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-18" id="solution-18"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-18"><div class="solution solution-like"><div class="para logical" id="p-206"><ul class="disc">
+<li id="li-9"><div class="para" id="p-derived-li-9"><div class="displaymath process-math">
+\begin{equation*}
+X\ket{0}=\ket{1}
+\end{equation*}
+</div></div></li>
+<li id="li-10"><div class="para" id="p-derived-li-10"><div class="displaymath process-math">
+\begin{equation*}
+X\ket{1}=\ket{0}
+\end{equation*}
+</div></div></li>
+<li id="li-11"><div class="para" id="p-derived-li-11"><div class="displaymath process-math">
+\begin{equation*}
+X(X\ket{0})=\ket{0}
+\end{equation*}
+</div></div></li>
+<li id="li-12"><div class="para" id="p-derived-li-12"><div class="displaymath process-math">
+\begin{equation*}
+X(X\ket{1})=\ket{1}
+\end{equation*}
+</div></div></li>
+</ul></div></div></div>
+</div></article></div></section><section class="subsection" id="subsec3-chap2"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.2.3</span> <span class="title">Pauli Y gate</span>
+</h3>
+<div class="para" id="p-207">
+<dfn class="terminology">Pauli Y gate</dfn> is also labeled as <span class="process-math">\(\sigma_2\text{,}\)</span> <span class="process-math">\(\sigma_y\)</span> or <em class="emphasis">Y</em>
+</div>
+<figure class="figure figure-like" id="fig-ygateSimple_1"><div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="external/ygate.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.2.5<span class="period">.</span></span><span class="space"> </span>Y gate representation in a circuit.</figcaption></figure><div class="displaymath process-math" id="mdn-4">
+\begin{align}
+Y=\begin{pmatrix}
+0&amp;-i\\
+i&amp;0
+\end{pmatrix}\tag{2.2.4}
+\end{align}
+</div>
+<article class="exercise exercise-like" id="exe-YGapllicationQbits"><a href="" data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exe-YGapllicationQbits"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.2.6</span><span class="period">.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-exe-YGapllicationQbits"><article class="exercise exercise-like"><div class="para logical" id="p-208">
+<div class="para">Calculate</div>
+<ul class="disc">
+<li id="li-13"><div class="para" id="p-derived-li-13"><div class="displaymath process-math">
+\begin{equation*}
+Y\ket{0}
+\end{equation*}
+</div></div></li>
+<li id="li-14"><div class="para" id="p-derived-li-14"><div class="displaymath process-math">
+\begin{equation*}
+Y\ket{1}
+\end{equation*}
+</div></div></li>
+<li id="li-15"><div class="para" id="p-derived-li-15"><div class="displaymath process-math">
+\begin{equation*}
+Y(Y\ket{0})
+\end{equation*}
+</div></div></li>
+<li id="li-16"><div class="para" id="p-derived-li-16"><div class="displaymath process-math">
+\begin{equation*}
+Y(Y\ket{1})
+\end{equation*}
+</div></div></li>
+</ul>
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-19" id="solution-19"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-19"><div class="solution solution-like"><div class="para" id="p-209">
+<div class="displaymath process-math">
+\begin{equation*}
+Y\ket{0}=i\ket{1}
+\end{equation*}
+</div> <div class="displaymath process-math">
+\begin{equation*}
+Y\ket{1}=-i\ket{0}
+\end{equation*}
+</div> <div class="displaymath process-math">
+\begin{equation*}
+Y(Y\ket{0})=\ket{0}
+\end{equation*}
+</div> <div class="displaymath process-math">
+\begin{equation*}
+Y(Y\ket{1})=\ket{1}
+\end{equation*}
+</div>
+</div></div></div>
+</div></article></div></section><section class="subsection" id="subsec4-chap2"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.2.4</span> <span class="title">Pauli Z</span>
+</h3>
+<div class="para" id="p-210">
+<dfn class="terminology">Pauli Z gate</dfn> is also labeled as <span class="process-math">\(\sigma_3\text{,}\)</span> <span class="process-math">\(\sigma_z\)</span> or <em class="emphasis">Z</em>
+</div>
+<figure class="figure figure-like" id="fig-zgateSimple_1"><div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="external/zgate.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.2.7<span class="period">.</span></span><span class="space"> </span>Z gate representation in a circuit.</figcaption></figure><div class="displaymath process-math" id="mdn-5">
+\begin{align}
+Z=\begin{pmatrix}
+1&amp;0\\
+0&amp;-1
+\end{pmatrix}\tag{2.2.5}
+\end{align}
+</div>
+<article class="exercise exercise-like" id="exe-ZGapllicationQbits"><a href="" data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exe-ZGapllicationQbits"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.2.8</span><span class="period">.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-exe-ZGapllicationQbits"><article class="exercise exercise-like"><div class="para logical" id="p-211">
+<div class="para">Calculate</div>
+<ul class="disc">
+<li id="li-21"><div class="para" id="p-derived-li-21"><div class="displaymath process-math">
+\begin{equation*}
+Z\ket{0}
+\end{equation*}
+</div></div></li>
+<li id="li-22"><div class="para" id="p-derived-li-22"><div class="displaymath process-math">
+\begin{equation*}
+Z\ket{1}
+\end{equation*}
+</div></div></li>
+<li id="li-23"><div class="para" id="p-derived-li-23"><div class="displaymath process-math">
+\begin{equation*}
+Z(Z\ket{0})
+\end{equation*}
+</div></div></li>
+<li id="li-24"><div class="para" id="p-derived-li-24"><div class="displaymath process-math">
+\begin{equation*}
+Z(Z\ket{1})
+\end{equation*}
+</div></div></li>
+</ul>
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-20" id="solution-20"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-20"><div class="solution solution-like"><div class="para logical" id="p-212"><ul class="disc">
+<li id="li-25"><div class="para" id="p-derived-li-25"><div class="displaymath process-math">
+\begin{equation*}
+Z\ket{0}=\ket{0}
+\end{equation*}
+</div></div></li>
+<li id="li-26"><div class="para" id="p-derived-li-26"><div class="displaymath process-math">
+\begin{equation*}
+Z\ket{1}=-\ket{1}
+\end{equation*}
+</div></div></li>
+<li id="li-27"><div class="para" id="p-derived-li-27"><div class="displaymath process-math">
+\begin{equation*}
+Z(Z\ket{0})=\ket{0}
+\end{equation*}
+</div></div></li>
+<li id="li-28"><div class="para" id="p-derived-li-28"><div class="displaymath process-math">
+\begin{equation*}
+Z(Z\ket{1})=\ket{1}
+\end{equation*}
+</div></div></li>
+</ul></div></div></div>
+</div></article></div></section><section class="subsection" id="subsec5-chap2"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.2.5</span> <span class="title">Pauli I gate</span>
+</h3>
+<div class="para" id="p-213">
+<dfn class="terminology">Pauli I gate</dfn> is also labeled as <span class="process-math">\(\sigma_0\)</span> or <em class="emphasis">I</em>
+</div>
+<figure class="figure figure-like" id="fig-IgateSimple_1"><div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="external/Igate.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.2.9<span class="period">.</span></span><span class="space"> </span>I gate representation in a circuit.</figcaption></figure><div class="displaymath process-math" id="mdn-6">
+\begin{align}
+I=\begin{pmatrix}
+1&amp;0\\
+0&amp;1
+\end{pmatrix}\tag{2.2.6}
+\end{align}
+</div>
+<article class="exercise exercise-like" id="exe-IGapllicationQbits"><a href="" data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exe-IGapllicationQbits"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.2.10</span><span class="period">.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-exe-IGapllicationQbits"><article class="exercise exercise-like"><div class="para logical" id="p-214">
+<div class="para">Calculate</div>
+<ul class="disc">
+<li id="li-29"><div class="para" id="p-derived-li-29"><div class="displaymath process-math">
+\begin{equation*}
+\sigma_0\ket{0}
+\end{equation*}
+</div></div></li>
+<li id="li-30"><div class="para" id="p-derived-li-30"><div class="displaymath process-math">
+\begin{equation*}
+\sigma_0\ket{1}
+\end{equation*}
+</div></div></li>
+</ul>
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-21" id="solution-21"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-21"><div class="solution solution-like"><div class="para logical" id="p-215"><ul class="disc">
+<li id="li-31"><div class="para" id="p-derived-li-31"><div class="displaymath process-math">
+\begin{equation*}
+\sigma_0\ket{0}=\ket{0}
+\end{equation*}
+</div></div></li>
+<li id="li-32"><div class="para" id="p-derived-li-32"><div class="displaymath process-math">
+\begin{equation*}
+\sigma_0\ket{1}=\ket{1}
+\end{equation*}
+</div></div></li>
+</ul></div></div></div>
+</div></article></div></section><section class="subsection" id="subsec6-chap2"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.2.6</span> <span class="title">Phase gate</span>
+</h3>
+<div class="para" id="p-216">
+<dfn class="terminology">Phase gate</dfn> is written as S.</div>
+<figure class="figure figure-like" id="fig-SgateSimple_1"><div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="external/Sgate.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.2.11<span class="period">.</span></span><span class="space"> </span>Phase gate representation in a circuit.</figcaption></figure><div class="displaymath process-math" id="mdn-7">
+\begin{align}
+S=\begin{pmatrix}
+1&amp;0\\
+0&amp;i
+\end{pmatrix}\tag{2.2.7}
+\end{align}
+</div>
+<article class="exercise exercise-like" id="exe-SGapllicationQbits"><a href="" data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exe-SGapllicationQbits"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.2.12</span><span class="period">.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-exe-SGapllicationQbits"><article class="exercise exercise-like"><div class="para logical" id="p-217">
+<div class="para">Calculate</div>
+<ul class="disc">
+<li id="li-33"><div class="para" id="p-derived-li-33"><div class="displaymath process-math">
+\begin{equation*}
+S\ket{0}
+\end{equation*}
+</div></div></li>
+<li id="li-34"><div class="para" id="p-derived-li-34"><div class="displaymath process-math">
+\begin{equation*}
+S\ket{1}
+\end{equation*}
+</div></div></li>
+<li id="li-35"><div class="para" id="p-derived-li-35"><div class="displaymath process-math">
+\begin{equation*}
+S(S\ket{0})
+\end{equation*}
+</div></div></li>
+<li id="li-36"><div class="para" id="p-derived-li-36"><div class="displaymath process-math">
+\begin{equation*}
+S(S\ket{1})
+\end{equation*}
+</div></div></li>
+</ul>
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-22" id="solution-22"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-22"><div class="solution solution-like"><div class="para logical" id="p-218"><ul class="disc">
+<li id="li-37"><div class="para" id="p-derived-li-37"><div class="displaymath process-math">
+\begin{equation*}
+S\ket{0}=i\ket{1}
+\end{equation*}
+</div></div></li>
+<li id="li-38"><div class="para" id="p-derived-li-38"><div class="displaymath process-math">
+\begin{equation*}
+S\ket{1}=-i\ket{0}
+\end{equation*}
+</div></div></li>
+<li id="li-39"><div class="para" id="p-derived-li-39"><div class="displaymath process-math">
+\begin{equation*}
+S(S\ket{0})=\ket{0}
+\end{equation*}
+</div></div></li>
+<li id="li-40"><div class="para" id="p-derived-li-40"><div class="displaymath process-math">
+\begin{equation*}
+S(S\ket{1})=-\ket{0}
+\end{equation*}
+</div></div></li>
+</ul></div></div></div>
+</div></article></div></section><section class="subsection" id="subsec7-chap2"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.2.7</span> <span class="title"><span class="process-math">\(\pi\)</span>/8 gate</span>
+</h3>
+<div class="para" id="p-219">
+<dfn class="terminology"><span class="process-math">\(\pi\)</span>/8 gate</dfn> is written as T.</div>
+<figure class="figure figure-like" id="fig-TgateSimple_1"><div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="external/Tgate.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.2.13<span class="period">.</span></span><span class="space"> </span><span class="process-math">\(\pi\)</span>/8 gate representation in a circuit.</figcaption></figure><div class="displaymath process-math" id="mdn-8">
+\begin{align}
+T=\begin{pmatrix}
+1&amp;0\\
+0&amp;e^{i\frac{\pi}{4}}
+\end{pmatrix}\tag{2.2.8}
+\end{align}
+</div>
+<article class="exercise exercise-like" id="exe-TGapllicationQbits"><a href="" data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exe-TGapllicationQbits"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.2.14</span><span class="period">.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-exe-TGapllicationQbits"><article class="exercise exercise-like"><div class="para logical" id="p-220">
+<div class="para">Calculate</div>
+<ul class="disc">
+<li id="li-41"><div class="para" id="p-derived-li-41"><div class="displaymath process-math">
+\begin{equation*}
+T\ket{0}
+\end{equation*}
+</div></div></li>
+<li id="li-42"><div class="para" id="p-derived-li-42"><div class="displaymath process-math">
+\begin{equation*}
+T\ket{1}
+\end{equation*}
+</div></div></li>
+</ul>
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-23" id="solution-23"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-23"><div class="solution solution-like"><div class="para logical" id="p-221"><ul class="disc">
+<li id="li-43"><div class="para" id="p-derived-li-43"><div class="displaymath process-math">
+\begin{equation*}
+T\ket{0}=e^{i\frac{\pi}{8}}\ket{0}
+\end{equation*}
+</div></div></li>
+<li id="li-44"><div class="para" id="p-derived-li-44"><div class="displaymath process-math">
+\begin{equation*}
+T\ket{1}=e^{i\frac{\pi}{8}}\ket{1}
+\end{equation*}
+</div></div></li>
+</ul></div></div></div>
+</div></article></div>
+<div class="para" id="p-222">Previous gates aplly on single qubit. The following subsections show the multiqubit gates.</div></section><section class="subsection" id="subsec8-chap2"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.2.8</span> <span class="title">Controled-NOT</span>
+</h3>
+<div class="para logical" id="p-223">
+<div class="para">CNOT gate in the quantum context has two input qubits:</div>
+<ul class="disc">
+<li id="li-45"><div class="para" id="p-derived-li-45">Control qbit<span class="process-math">\(\bullet\)</span>
+</div></li>
+<li id="li-46"><div class="para" id="p-derived-li-46">target qbit<span class="process-math">\(\oplus\)</span>
+</div></li>
+</ul>
+<div class="para">This gate acts as following</div>
+</div>
+<figure class="figure figure-like" id="fig-CNOTgateSimple_1"><div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="external/CNOT.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.2.15<span class="period">.</span></span><span class="space"> </span>CNOT gate representation in a circuit.</figcaption></figure><div class="displaymath process-math" id="mdn-9">
+\begin{gather}
+\label{eq:CTQbitCNOT}
+\ket{c}\ket{t}\to \ket{c}\ket{t\oplus c}\tag{2.2.9}
+\end{gather}
+</div>
+<div class="para" id="p-224">Check the XOR and notice this gate is for two qubits.</div>
+<article class="exercise exercise-like" id="exe-CNOTGapllicationQbits1"><a href="" data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exe-CNOTGapllicationQbits1"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.2.16</span><span class="period">.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-exe-CNOTGapllicationQbits1"><article class="exercise exercise-like"><div class="para logical" id="p-225">
+<div class="para">Obtain the Dirac notation</div>
+<ul class="disc">
+<li id="li-47"><div class="para" id="p-derived-li-47">
+<span class="process-math">\(c\to0\)</span> and <span class="process-math">\(t\to0\)</span>
+</div></li>
+<li id="li-48"><div class="para" id="p-derived-li-48">
+<span class="process-math">\(c\to0\)</span> and <span class="process-math">\(t\to1\)</span>
+</div></li>
+<li id="li-49"><div class="para" id="p-derived-li-49">
+<span class="process-math">\(c\to1\)</span> and <span class="process-math">\(t\to0\)</span>
+</div></li>
+<li id="li-50"><div class="para" id="p-derived-li-50">
+<span class="process-math">\(c\to1\)</span> and <span class="process-math">\(t\to1\)</span>
+</div></li>
+</ul>
+<div class="para">(<span class="process-math">\(\ket{00}\)</span> can be written as <span class="process-math">\(\ket{0,0}\)</span>)</div>
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-24" id="solution-24"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-24"><div class="solution solution-like"><div class="para logical" id="p-226"><ul class="disc">
+<li id="li-51"><div class="para" id="p-derived-li-51"><span class="process-math">\(\displaystyle \ket{00}\bra{00}\)</span></div></li>
+<li id="li-52"><div class="para" id="p-derived-li-52"><span class="process-math">\(\displaystyle \ket{01}\bra{01}\)</span></div></li>
+<li id="li-53"><div class="para" id="p-derived-li-53"><span class="process-math">\(\displaystyle \ket{10}\bra{11}\)</span></div></li>
+<li id="li-54"><div class="para" id="p-derived-li-54"><span class="process-math">\(\displaystyle \ket{11}\bra{11}\)</span></div></li>
+</ul></div></div></div>
+</div></article></div>
+<div class="para" id="p-227">The gate and matrix representation are,</div>
+<figure class="figure figure-like" id="fig-CNOTgateSimple_2"><div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="external/CNOT2.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.2.17<span class="period">.</span></span><span class="space"> </span>CNOT gate representation in a circuit.</figcaption></figure><div class="displaymath process-math" id="mdn-10">
+\begin{align}
+CNOT=\neg X=
+\begin{pmatrix}
+1 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 1 \\
+0 &amp; 0 &amp; 1 &amp; 0
+\end{pmatrix}\tag{2.2.10}
+\end{align}
+</div>
+<div class="para" id="p-228">Since</div>
+<div class="displaymath process-math" id="mdn-11">
+\begin{align}
+\begin{pmatrix}
+\ket{00}\bra{00} &amp; \ket{00}\bra{01} &amp; \ket{00}\bra{10} &amp; \ket{00}\bra{11} \\
+\ket{01}\bra{00} &amp; \ket{01}\bra{01} &amp; \ket{01}\bra{10} &amp; \ket{01}\bra{11} \\
+\ket{10}\bra{00} &amp; \ket{10}\bra{01} &amp; \ket{10}\bra{10} &amp; \ket{10}\bra{11} \\
+\ket{11}\bra{00} &amp; \ket{11}\bra{01} &amp; \ket{11}\bra{10} &amp; \ket{11}\bra{11}
+\end{pmatrix}\tag{2.2.11}
+\end{align}
+</div>
+<div class="para" id="p-229">and using CNOT matrix we can cancel out some terms and reduce others to 1, such as</div>
+<div class="displaymath process-math" id="mdn-12">
+\begin{align}
+\begin{pmatrix}
+\cancelto{1}{\ket{00}\bra{00}} &amp; \ket{00}\bra{01} &amp; \ket{00}\bra{10} &amp; \ket{00}\bra{11} \\
+\ket{01}\bra{00} &amp; \cancelto{1}{\ket{01}\bra{01}} &amp; \ket{01}\bra{10} &amp; \ket{01}\bra{11} \\
+\ket{10}\bra{00} &amp; \ket{10}\bra{01} &amp; \ket{10}\bra{10} &amp; \cancelto{1}{\ket{10}\bra{11}} \\
+\ket{11}\bra{00} &amp; \ket{11}\bra{01} &amp; \cancelto{1}{\ket{11}\bra{10}} &amp; \ket{11}\bra{11}
+\end{pmatrix}\tag{2.2.12}
+\end{align}
+</div>
+<div class="para" id="p-230">and we have</div>
+<div class="displaymath process-math" id="mdn-13">
+\begin{gather}
+CX = 
+\ket{00}\bra{00}
++\ket{01}\bra{01}
++\ket{10}\bra{11}
++\ket{11}\bra{10}.\tag{2.2.13}
+\end{gather}
+</div>
+<div class="para" id="p-231">which is the Dirac representation for the CNOT gate.</div>
+<figure class="figure figure-like" id="fig-CNOTgateSimple_3"><div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="external/CNOT3.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.2.18<span class="period">.</span></span><span class="space"> </span>CNOT gate representation in a circuit.</figcaption></figure><article class="exercise exercise-like" id="exe-CNOTGapllicationQbits4"><a href="" data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exe-CNOTGapllicationQbits4"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.2.19</span><span class="period">.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-exe-CNOTGapllicationQbits4"><article class="exercise exercise-like"><div class="para" id="p-232">Apply CNOT to the state <span class="process-math">\(\alpha\ket{10}+\beta\ket{11}\)</span>
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-25" id="solution-25"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-25"><div class="solution solution-like"><div class="para" id="p-233"><span class="process-math">\((\alpha+\beta)\ket{11}\)</span></div></div></div>
+</div></article></div></section><section class="subsection" id="subsec9-chap2"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.2.9</span> <span class="title">Contorolled-U</span>
+</h3>
+<div class="para" id="p-234">Let U be a two qbit operation with a control and target qbit. This operation sets the control qbit in order U is applied to the target qbit, otherwise the target qbit is left alone.</div>
+<div class="displaymath process-math" id="mdn-14">
+\begin{gather}
+\ket{c}\ket{t}\to \ket{c}U^{c}\ket{t\oplus c}\tag{2.2.14}
+\end{gather}
+</div>
+<div class="para" id="p-235">This operation is called controlled-U operation represented by</div>
+<figure class="figure figure-like" id="fig-CUgateSimple_1"><div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="external/CU1.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.2.20<span class="period">.</span></span><span class="space"> </span>CU representation in a circuit</figcaption></figure><div class="para" id="p-236">CU operator as Dirac notation</div>
+<div class="displaymath process-math" id="mdn-15">
+\begin{gather}
+CU\ket{\psi} = \bigg(\ket{0}\bra{0}\otimes I + \ket{1}\bra{1} \otimes U\bigg)
+\ket{\psi}\tag{2.2.15}
+\end{gather}
+</div></section><section class="subsection" id="subsec10-chap2"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.2.10</span> <span class="title">Contorolled-Z</span>
+</h3>
+<div class="para" id="p-237">The unitary matrix in the computational basis is,</div>
+<figure class="figure figure-like" id="fig-CZgateSimple_1"><div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="external/CZ.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.2.21<span class="period">.</span></span><span class="space"> </span>CZ representation in a circuit</figcaption></figure><div class="displaymath process-math" id="mdn-16">
+\begin{align}
+\text{CZ}=
+\begin{pmatrix}
+1 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; -1
+\end{pmatrix}\tag{2.2.16}
+\end{align}
+</div>
+<article class="exercise exercise-like" id="exe-CZGapllicationQbits"><a href="" data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exe-CZGapllicationQbits"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.2.22</span><span class="period">.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-exe-CZGapllicationQbits"><article class="exercise exercise-like"><div class="para" id="p-238">Obtain</div> <ul class="disc">
+<li id="li-55"><div class="para" id="p-derived-li-55"><div class="displaymath process-math">
+\begin{equation*}
+CZ\ket{00}
+\end{equation*}
+</div></div></li>
+<li id="li-56"><div class="para" id="p-derived-li-56"><div class="displaymath process-math">
+\begin{equation*}
+CZ\ket{01}
+\end{equation*}
+</div></div></li>
+<li id="li-57"><div class="para" id="p-derived-li-57"><div class="displaymath process-math">
+\begin{equation*}
+CZ\ket{10}
+\end{equation*}
+</div></div></li>
+<li id="li-58"><div class="para" id="p-derived-li-58"><div class="displaymath process-math">
+\begin{equation*}
+CZ\ket{11}
+\end{equation*}
+</div></div></li>
+</ul>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-26" id="solution-26"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-26"><div class="solution solution-like"><div class="para logical" id="p-239"><ul class="disc">
+<li id="li-59"><div class="para" id="p-derived-li-59"><div class="displaymath process-math">
+\begin{equation*}
+CZ\ket{00}=\ket{00}
+\end{equation*}
+</div></div></li>
+<li id="li-60"><div class="para" id="p-derived-li-60"><div class="displaymath process-math">
+\begin{equation*}
+CZ\ket{01}=\ket{01}
+\end{equation*}
+</div></div></li>
+<li id="li-61"><div class="para" id="p-derived-li-61"><div class="displaymath process-math">
+\begin{equation*}
+CZ\ket{10}=\ket{11}
+\end{equation*}
+</div></div></li>
+<li id="li-62"><div class="para" id="p-derived-li-62"><div class="displaymath process-math">
+\begin{equation*}
+CZ\ket{11}=\ket{11}
+\end{equation*}
+</div></div></li>
+</ul></div></div></div>
+</div></article></div></section></section></div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="sec1-chap2.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="sec3-chap2.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+</div>
+</body>
+</html>
