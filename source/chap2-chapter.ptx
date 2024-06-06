@@ -3,9 +3,7 @@
 <chapter xml:id="chap2-chapter" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Gates and Circuits</title>
 
-  <introduction>
-    <p> Text before the first section. </p>
-  </introduction>
+
 
   <!-- include sections -->
   <xi:include href="sec1-chap2.ptx" />

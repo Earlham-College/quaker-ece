@@ -649,9 +649,9 @@ var ptx_lunr_docs = [
   "body": " Gates    Hadamard gate   Hadamard gate Gate Hadamard is one of the most popular gates in quantum computing.   Hadamard gate representation in a circuit.      The Hadamard operator on one qubit can be written as   which is the Hadamard gate in Dirac notation. Hadamard operation is a rotation of the Block sphere about y axis by , followed by a rotation about axis by .   Calculate                 Pauli X gate   Pauli X gate Gate Pauli X is also labeled as , or X    X gate representation in a circuit.       Calculate                     Pauli Y gate   Pauli Y gate Gate Pauli Y is also labeled as , or Y    Y gate representation in a circuit.       Calculate                   Pauli Z   Pauli Z gate Gate Pauli Z is also labeled as , or Z    Z gate representation in a circuit.       Calculate                     Pauli I gate   Pauli I gate Gate Pauli I is also labeled as or I    I gate representation in a circuit.       Calculate                 Phase gate   Phase gate Gate Phase is written as S.   Phase gate representation in a circuit.       Calculate                     \/8 gate   \/8 gate Gate \/8 is written as T.   \/8 gate representation in a circuit.       Calculate              Previous gates aplly on single qubit. The following subsections show the multiqubit gates.     Controled-NOT  CNOT gate in the quantum context has two input qubits:  Control qbit  target qbit  This gate acts as following    CNOT gate representation in a circuit.      Check the XOR and notice this gate is for two qubits.   Obtain the Dirac notation  and   and  and  and  ( can be written as )             The gate and matrix representation are,   CNOT gate representation in a circuit.      Since   and using CNOT matrix we can cancel out some terms and reduce others to 1, such as   and we have   which is the Dirac representation for the CNOT gate.   CNOT gate representation in a circuit.      Apply CNOT to the state           Contorolled-U  Let U be a two qbit operation with a control and target qbit. This operation sets the control qbit in order U is applied to the target qbit, otherwise the target qbit is left alone.   This operation is called controlled-U operation represented by   CU representation in a circuit     CU operator as Dirac notation      Contorolled-Z  The unitary matrix in the computational basis is,   CZ representation in a circuit       Obtain                    "
 },
 {
-  "id": "p-197",
+  "id": "p-196",
   "level": "2",
-  "url": "sec2-chap2.html#p-197",
+  "url": "sec2-chap2.html#p-196",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -676,9 +676,9 @@ var ptx_lunr_docs = [
   "body": " Calculate             "
 },
 {
-  "id": "p-202",
+  "id": "p-201",
   "level": "2",
-  "url": "sec2-chap2.html#p-202",
+  "url": "sec2-chap2.html#p-201",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -703,9 +703,9 @@ var ptx_lunr_docs = [
   "body": " Calculate                 "
 },
 {
-  "id": "p-205",
+  "id": "p-204",
   "level": "2",
-  "url": "sec2-chap2.html#p-205",
+  "url": "sec2-chap2.html#p-204",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -730,9 +730,9 @@ var ptx_lunr_docs = [
   "body": " Calculate               "
 },
 {
-  "id": "p-208",
+  "id": "p-207",
   "level": "2",
-  "url": "sec2-chap2.html#p-208",
+  "url": "sec2-chap2.html#p-207",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -757,9 +757,9 @@ var ptx_lunr_docs = [
   "body": " Calculate                 "
 },
 {
-  "id": "p-211",
+  "id": "p-210",
   "level": "2",
-  "url": "sec2-chap2.html#p-211",
+  "url": "sec2-chap2.html#p-210",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -784,9 +784,9 @@ var ptx_lunr_docs = [
   "body": " Calculate             "
 },
 {
-  "id": "p-214",
+  "id": "p-213",
   "level": "2",
-  "url": "sec2-chap2.html#p-214",
+  "url": "sec2-chap2.html#p-213",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -811,9 +811,9 @@ var ptx_lunr_docs = [
   "body": " Calculate                 "
 },
 {
-  "id": "p-217",
+  "id": "p-216",
   "level": "2",
-  "url": "sec2-chap2.html#p-217",
+  "url": "sec2-chap2.html#p-216",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -960,8 +960,26 @@ var ptx_lunr_docs = [
   "url": "sec1-chap3.html",
   "type": "Section",
   "number": "3.1",
+  "title": "Introduction",
+  "body": " Introduction  Text of section.  "
+},
+{
+  "id": "sec1-chap3",
+  "level": "1",
+  "url": "sec1-chap3.html",
+  "type": "Section",
+  "number": "3.2",
   "title": "Grover’s Algorithm",
-  "body": " Grover's Algorithm    Classical search algorithms are fundamental techniques used in computer science to locate a specific item within a collection of items. Common approaches include linear search, where each item is checked sequentially until the target is found, and binary search, which efficiently narrows down the search range in a sorted array by repeatedly dividing it in half. These methods are crucial in various applications, from database retrieval to optimization problems, as they determine how quickly and efficiently data can be accessed and processed. However, classical search often requires significant time and resources, especially with large datasets. Quantum computing has the potential to revolutionize search algorithms through methods like Grover's algorithm, which can search an unsorted database quadratically faster than classical algorithms, offering a profound improvement in speed and efficiency for large-scale search problems.  To implement Grover's algorithm, we need unitary matrix , written as . This matrix works as a black box as following   The XOR operartion is    diffusion gate is an operator given by  Household transform is is a linear algebra technique often used to construct quantum operations that reflect a quantum state about a certain axis or state, which is a crucial step in many quantum algorithms, including Grover's algorithm. By applying a series of these transformations, one can systematically manipulate and amplify the amplitude of the desired state while diminishing the amplitudes of the undesired ones, ultimately leading to a more efficient search process. This method contributes to the algorithm's overall quadratic speedup compared to classical search methods.  Now, we implement Grover's algorithm for the following example    We prose a random vector , and tries to find the expected factor.   1. Consider you have the following data    Representation of values       2. Calculate the average   3. Invert each element aorund the average by defining   We calculate the units away, , from the average, , for each    4.a define   and calculate   The inversion about the average calculates the units away, , from the average, , for each .   4.b Plot the data      Representation of values      The last operation, has the following representation in terms of matrices, where where is the matrix for the average. It means . As follows, This is a state where each amplitude is the average of all the amplitudes.   5. Invert amplitudes about the average.    The item (4).b and eq. (3.1.11) show same results, the second report implies linear algebra operations.  This example emphasizes on invert amplitudes about the mean; however, Grover's algorithm requires phase inversion. The following example explains the step.      Consider the information from the example 3.1.1. We have the same vector.    To apply the phase inversion about the average, which requires the function,   and   which is usually shown such as   where is an $U_f$ aka oracle. This oracle shifts the phase of the solution, and highlights the solutions to the search problem.   We will take the vector   And suppose we are looking for the second input, it means x=x_2=w  is the winner, it is oul goal.    \\ Now we apply   Representation of the values. The horizontal line is the new average      and calculate    Representation of the values. The horizontal line is the new average      and calculate   We can see how the amplitude for the second element increases.   We showed how this search algorithm works, and it is clear that we will get the second element in the list as the most probable output.    This part shows the Grover's algorithm in bracket notation.  This algorithm enables this search method to be speed up to operations. With this algorithm \"searching an unsorted database\" with elements in time. Classical algorithm needs on average time. The goal is find , given an oracle with   "
+  "body": " Grover's Algorithm    Classical search algorithms are fundamental techniques used in computer science to locate a specific item within a collection of items. Common approaches include linear search, where each item is checked sequentially until the target is found, and binary search, which efficiently narrows down the search range in a sorted array by repeatedly dividing it in half. These methods are crucial in various applications, from database retrieval to optimization problems, as they determine how quickly and efficiently data can be accessed and processed. However, classical search often requires significant time and resources, especially with large datasets. Quantum computing has the potential to revolutionize search algorithms through methods like Grover's algorithm, which can search an unsorted database quadratically faster than classical algorithms, offering a profound improvement in speed and efficiency for large-scale search problems.  To implement Grover's algorithm, we need unitary matrix , written as . This matrix works as a black box as following   The XOR operartion is    diffusion gate is an operator given by  Household transform is is a linear algebra technique often used to construct quantum operations that reflect a quantum state about a certain axis or state, which is a crucial step in many quantum algorithms, including Grover's algorithm. By applying a series of these transformations, one can systematically manipulate and amplify the amplitude of the desired state while diminishing the amplitudes of the undesired ones, ultimately leading to a more efficient search process. This method contributes to the algorithm's overall quadratic speedup compared to classical search methods.  Now, we implement Grover's algorithm for the following example    We prose a random vector , and try to find the expected factor   1. Consider you have the following data    Representation of values       2. Calculate the average   3. Invert each element aorund the average by defining   We calculate the units away, , from the average, , for each    4.a define   and calculate   The inversion about the average calculates the units away, , from the average, , for each .   4.b Plot the data      Representation of values      The last operation, has the following representation in terms of matrices, where where is the matrix for the average. It means . As follows, This is a state where each amplitude is the average of all the amplitudes.   5. Invert amplitudes about the average.    The item (4).b and eq. (3.1.11) show same results, the second report implies linear algebra operations.  This example emphasizes on invert amplitudes about the mean; however, Grover's algorithm requires phase inversion. The following example explains the step.      Consider the information from the example 3.1.1. We have the same vector.    To apply the phase inversion about the average, which requires the function,   and   which is usually shown such as   where is an $U_f$ aka oracle. This oracle shifts the phase of the solution, and highlights the solutions to the search problem.   We will take the vector   And suppose we are looking for the second input, it means x=x_2=w  is the winner, it is oul goal.     Now we apply   Representation of the values. The horizontal line is the new average      and calculate    Representation of the values. The horizontal line is the new average      and calculate   We can see how the amplitude for the second element increases.   We showed how this search algorithm works, and it is clear that we will get the second element in the list as the most probable output.    This part shows the Grover's algorithm in bracket notation.  This algorithm enables this search method to be speed up to operations. With this algorithm \"searching an unsorted database\" with elements in time. Classical algorithm needs on average time. The goal is find , given an oracle with  and where the phase oracle is where then and then the Grover's iteration   The algorithm is shown below  The process of Grover's algorithm       Here is another explanation       Define a superposition state and (note the dashed line in the circuit) where we used eq.(3.1.24) and eq.(3.1.26)   This algorithm carries out the operation on the state   The representation of the Grover's algorithm using circuits is shown in fig(3.1.8.)  Quantum circuit for the Grover algorithm      "
+},
+{
+  "id": "p-242",
+  "level": "2",
+  "url": "sec1-chap3.html#p-242",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Classical search "
 },
 {
   "id": "p-243",
@@ -970,21 +988,12 @@ var ptx_lunr_docs = [
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
-  "body": "Classical search "
-},
-{
-  "id": "p-244",
-  "level": "2",
-  "url": "sec1-chap3.html#p-244",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
   "body": "unitary matrix "
 },
 {
-  "id": "p-246",
+  "id": "p-245",
   "level": "2",
-  "url": "sec1-chap3.html#p-246",
+  "url": "sec1-chap3.html#p-245",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -995,32 +1004,50 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec1-chap3.html#example-5",
   "type": "Example",
-  "number": "3.1.1",
+  "number": "3.2.1",
   "title": "",
-  "body": " We prose a random vector , and tries to find the expected factor.   1. Consider you have the following data    Representation of values       2. Calculate the average   3. Invert each element aorund the average by defining   We calculate the units away, , from the average, , for each    4.a define   and calculate   The inversion about the average calculates the units away, , from the average, , for each .   4.b Plot the data      Representation of values      The last operation, has the following representation in terms of matrices, where where is the matrix for the average. It means . As follows, This is a state where each amplitude is the average of all the amplitudes.   5. Invert amplitudes about the average.    The item (4).b and eq. (3.1.11) show same results, the second report implies linear algebra operations.  This example emphasizes on invert amplitudes about the mean; however, Grover's algorithm requires phase inversion. The following example explains the step.  "
+  "body": " We prose a random vector , and try to find the expected factor   1. Consider you have the following data    Representation of values       2. Calculate the average   3. Invert each element aorund the average by defining   We calculate the units away, , from the average, , for each    4.a define   and calculate   The inversion about the average calculates the units away, , from the average, , for each .   4.b Plot the data      Representation of values      The last operation, has the following representation in terms of matrices, where where is the matrix for the average. It means . As follows, This is a state where each amplitude is the average of all the amplitudes.   5. Invert amplitudes about the average.    The item (4).b and eq. (3.1.11) show same results, the second report implies linear algebra operations.  This example emphasizes on invert amplitudes about the mean; however, Grover's algorithm requires phase inversion. The following example explains the step.  "
 },
 {
-  "id": "example-5",
+  "id": "example-6",
   "level": "2",
-  "url": "sec1-chap3.html#example-5",
+  "url": "sec1-chap3.html#example-6",
   "type": "Example",
-  "number": "3.1.4",
+  "number": "3.2.4",
   "title": "",
-  "body": "  Consider the information from the example 3.1.1. We have the same vector.    To apply the phase inversion about the average, which requires the function,   and   which is usually shown such as   where is an $U_f$ aka oracle. This oracle shifts the phase of the solution, and highlights the solutions to the search problem.   We will take the vector   And suppose we are looking for the second input, it means x=x_2=w  is the winner, it is oul goal.    \\ Now we apply   Representation of the values. The horizontal line is the new average      and calculate    Representation of the values. The horizontal line is the new average      and calculate   We can see how the amplitude for the second element increases.   We showed how this search algorithm works, and it is clear that we will get the second element in the list as the most probable output.  "
+  "body": "  Consider the information from the example 3.1.1. We have the same vector.    To apply the phase inversion about the average, which requires the function,   and   which is usually shown such as   where is an $U_f$ aka oracle. This oracle shifts the phase of the solution, and highlights the solutions to the search problem.   We will take the vector   And suppose we are looking for the second input, it means x=x_2=w  is the winner, it is oul goal.     Now we apply   Representation of the values. The horizontal line is the new average      and calculate    Representation of the values. The horizontal line is the new average      and calculate   We can see how the amplitude for the second element increases.   We showed how this search algorithm works, and it is clear that we will get the second element in the list as the most probable output.  "
+},
+{
+  "id": "fig-grover_5",
+  "level": "2",
+  "url": "sec1-chap3.html#fig-grover_5",
+  "type": "Figure",
+  "number": "3.2.7",
+  "title": "",
+  "body": " The process of Grover's algorithm    "
+},
+{
+  "id": "fig-grover_6",
+  "level": "2",
+  "url": "sec1-chap3.html#fig-grover_6",
+  "type": "Figure",
+  "number": "3.2.8",
+  "title": "",
+  "body": " Quantum circuit for the Grover algorithm    "
 },
 {
   "id": "sec2-chap3",
   "level": "1",
   "url": "sec2-chap3.html",
   "type": "Section",
-  "number": "3.2",
+  "number": "3.3",
   "title": "Shor’s Algorithm",
   "body": " Shor's Algorithm   Building Up to the Algorithm  In the field of cryptography, quantum computers could be used to improve the security of our information systems. However, quantum computations can also be used to break through our modern crypto-systems much faster than is possible through classical computing. One method through which quantum computation could be used to break through our modern cybersecurity is with an algorithm created by American mathematician Peter Shor in 1994.  The security behind our modern cryptographic methods lies in the fact that it is very computationally difficult to find the prime factors of large numbers. It takes years of computing time on a classical computer to find the factors of numbers with hundreds of digits. The algorithm designed by Peter Shor takes advantage of quantum concepts to find the prime factors of large numbers much quicker. If a powerful enough quantum computer is ever built it could be used to break most modern encryptions jarringly quickly. Before describing the algorithm, we must first define some terms.  Prime Numbers: A number is prime if the only positive integers that divide it are itself and the number one  Coprime Numbers: Two numbers are coprime (also known as relatively prime or mutually prime) if the only positive integer that is a divisor of both of them is the number one. In other words, two numbers are coprime if their greatest common divisor is one and they share no prime factors  Period of a function: Suppose and are two binary strings. The period of a function would be a binary string such that   where and represents the XOR operation.  Congruence Relation: The congruence relation comes from the field of modular arithmetic. This relation deals with numbers that have the same remained when divided by a specific value, which is called a modulus Modulus .   This equation reads \" is congruent to modulo .\" Congruence relations have the following properties:   Suppose and . Congruence relations have the following operations defined:     An Example  We will start the discussion of this algorithm with an example. Suppose we have two prime numbers, We can multiply them togehter to get which a positive number and the result of two prime numbers. Now, think about this   where is either prime or the product of primes. We can calculate this number fairly easily. However, if you have   where and are either prime or the product of primes. We can still calculate this fairly easily and find that 315 actually has more than two factors   Instead of trying to solve for and , it makes more sense to solve for and where each is a prime number and each is an exponent that represents how many times appears as a factor. This means we want to express the number we are looking to factor as    "
 },
 {
-  "id": "p-262",
+  "id": "p-275",
   "level": "2",
-  "url": "sec2-chap3.html#p-262",
+  "url": "sec2-chap3.html#p-275",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",

@@ -319,12 +319,13 @@ window.MathJax = {
 <li>
 <div class="toc-item"><a href="chap3-chapter.html" class="internal"><span class="codenumber">3</span> <span class="title">Algorithm</span></a></div>
 <ul class="structural">
-<li><div class="toc-item"><a href="sec1-chap3.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Grover’s Algorithm</span></a></div></li>
+<li><div class="toc-item"><a href="sec1-chap3.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Introduction</span></a></div></li>
+<li><div class="toc-item"><a href="sec1-chap3.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Grover’s Algorithm</span></a></div></li>
 <li class="active">
-<div class="toc-item"><a href="sec2-chap3.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Shor’s Algorithm</span></a></div>
+<div class="toc-item"><a href="sec2-chap3.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Shor’s Algorithm</span></a></div>
 <ul class="structural">
-<li><div class="toc-item"><a href="sec2-chap3.html#subsec-Building-Up-to-the-Algorithm" class="internal"><span class="codenumber">3.2.1</span> <span class="title">Building Up to the Algorithm</span></a></div></li>
-<li><div class="toc-item"><a href="sec2-chap3.html#subsec-An-Example" class="internal"><span class="codenumber">3.2.2</span> <span class="title">An Example</span></a></div></li>
+<li><div class="toc-item"><a href="sec2-chap3.html#subsec-Building-Up-to-the-Algorithm" class="internal"><span class="codenumber">3.3.1</span> <span class="title">Building Up to the Algorithm</span></a></div></li>
+<li><div class="toc-item"><a href="sec2-chap3.html#subsec-An-Example" class="internal"><span class="codenumber">3.3.2</span> <span class="title">An Example</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -338,34 +339,33 @@ window.MathJax = {
 </li>
 </ul></nav></div>
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec2-chap3"><h2 class="heading hide-type">
-<span class="type">Section</span> <span class="codenumber">3.2</span> <span class="title">Shor’s Algorithm</span>
+<span class="type">Section</span> <span class="codenumber">3.3</span> <span class="title">Shor’s Algorithm</span>
 </h2>
-<<<<<<< HEAD
 <section class="subsection" id="subsec-Building-Up-to-the-Algorithm"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">3.2.1</span> <span class="title">Building Up to the Algorithm</span>
+<span class="type">Subsection</span> <span class="codenumber">3.3.1</span> <span class="title">Building Up to the Algorithm</span>
 </h3>
-<div class="para" id="p-256">In the field of cryptography, quantum computers could be used to improve the security of our information systems. However, quantum computations can also be used to break through our modern crypto-systems much faster than is possible through classical computing. One method through which quantum computation could be used to break through our modern cybersecurity is with an algorithm created by American mathematician Peter Shor in 1994.</div>
-<div class="para" id="p-257">The security behind our modern cryptographic methods lies in the fact that it is very computationally difficult to find the prime factors of large numbers. It takes years of computing time on a classical computer to find the factors of numbers with hundreds of digits. The algorithm designed by Peter Shor takes advantage of quantum concepts to find the prime factors of large numbers much quicker. If a powerful enough quantum computer is ever built it could be used to break most modern encryptions jarringly quickly. Before describing the algorithm, we must first define some terms.</div>
-<div class="para" id="p-258">
+<div class="para" id="p-269">In the field of cryptography, quantum computers could be used to improve the security of our information systems. However, quantum computations can also be used to break through our modern crypto-systems much faster than is possible through classical computing. One method through which quantum computation could be used to break through our modern cybersecurity is with an algorithm created by American mathematician Peter Shor in 1994.</div>
+<div class="para" id="p-270">The security behind our modern cryptographic methods lies in the fact that it is very computationally difficult to find the prime factors of large numbers. It takes years of computing time on a classical computer to find the factors of numbers with hundreds of digits. The algorithm designed by Peter Shor takes advantage of quantum concepts to find the prime factors of large numbers much quicker. If a powerful enough quantum computer is ever built it could be used to break most modern encryptions jarringly quickly. Before describing the algorithm, we must first define some terms.</div>
+<div class="para" id="p-271">
 <em class="alert">Prime Numbers:</em> A number is prime if the only positive integers that divide it are itself and the number one</div>
-<div class="para" id="p-259">
+<div class="para" id="p-272">
 <em class="alert">Coprime Numbers:</em> Two numbers are coprime (also known as relatively prime or mutually prime) if the only positive integer that is a divisor of both of them is the number one. In other words, two numbers are coprime if their greatest common divisor is one and they share no prime factors</div>
-<div class="para" id="p-260">
+<div class="para" id="p-273">
 <em class="alert">Period of a function:</em> Suppose <span class="process-math">\(\textbf{x}\)</span> and <span class="process-math">\(\textbf{y}\)</span> are two binary strings. The period of a function <span class="process-math">\(f\)</span> would be a binary string <span class="process-math">\(\textbf{c}\)</span> such that</div>
 <div class="displaymath process-math">
 \begin{equation*}
 f(\textbf{x}) = f(\textbf{y}) \text{ if and only if } \textbf{x} = \textbf{y} \oplus \textbf{c} 
 \end{equation*}
 </div>
-<div class="para" id="p-261">where <span class="process-math">\(\textbf{x},\textbf{y},\textbf{c} \in \{0,1\}^n\)</span> and <span class="process-math">\(\oplus\)</span> represents the XOR operation.</div>
-<div class="para" id="p-262">
+<div class="para" id="p-274">where <span class="process-math">\(\textbf{x},\textbf{y},\textbf{c} \in \{0,1\}^n\)</span> and <span class="process-math">\(\oplus\)</span> represents the XOR operation.</div>
+<div class="para" id="p-275">
 <em class="alert">Congruence Relation:</em> The congruence relation comes from the field of modular arithmetic. This relation deals with numbers that have the same remained when divided by a specific value, which is called a <dfn class="terminology">modulus</dfn>.</div>
 <div class="displaymath process-math">
 \begin{equation*}
 a \equiv b \text{ mod } m
 \end{equation*}
 </div>
-<div class="para" id="p-263">This equation reads "<span class="process-math">\(a\)</span> is congruent to <span class="process-math">\(b\)</span> modulo <span class="process-math">\(m\text{.}\)</span>" Congruence relations have the following properties:</div>
+<div class="para" id="p-276">This equation reads "<span class="process-math">\(a\)</span> is congruent to <span class="process-math">\(b\)</span> modulo <span class="process-math">\(m\text{.}\)</span>" Congruence relations have the following properties:</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \begin{split} &amp; \text{Reflexive:  } a \equiv a \text{ mod } m
@@ -373,7 +373,7 @@ a \equiv b \text{ mod } m
 \\&amp; \text{Reflexive:  }  \text{if } a \equiv b \text{ mod } m \text{  and  } b \equiv c \text{ mod } m \text{  then  } a \equiv c \text{ mod } m  \end{split}
 \end{equation*}
 </div>
-<div class="para" id="p-264">Suppose <span class="process-math">\(a \equiv b \text{ mod } m \)</span> and <span class="process-math">\(c \equiv d \text{ mod } m \text{.}\)</span> Congruence relations have the following operations defined:</div>
+<div class="para" id="p-277">Suppose <span class="process-math">\(a \equiv b \text{ mod } m \)</span> and <span class="process-math">\(c \equiv d \text{ mod } m \text{.}\)</span> Congruence relations have the following operations defined:</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \begin{split} &amp; \text{Addition: }  a + c \equiv b + d \text{ mod } m
@@ -382,35 +382,32 @@ a \equiv b \text{ mod } m
 \\&amp; \text{Exponentiation:  } a^n \equiv b^n \text{ mod } m \ \ \ \ \ \ \ \ \text{   }\end{split} 
 \end{equation*}
 </div></section><section class="subsection" id="subsec-An-Example"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">3.2.2</span> <span class="title">An Example</span>
+<span class="type">Subsection</span> <span class="codenumber">3.3.2</span> <span class="title">An Example</span>
 </h3>
-<div class="para" id="p-265">We will start the discussion of this algorithm with an example. Suppose we have two prime numbers, <span class="process-math">\(3, 7.\)</span> We can multiply them togehter to get <span class="process-math">\((3\times 7 = ) 21\)</span> which a positive number and the result of two prime numbers. Now, think about this</div>
+<div class="para" id="p-278">We will start the discussion of this algorithm with an example. Suppose we have two prime numbers, <span class="process-math">\(3, 7.\)</span> We can multiply them togehter to get <span class="process-math">\((3\times 7 = ) 21\)</span> which a positive number and the result of two prime numbers. Now, think about this</div>
 <div class="displaymath process-math">
 \begin{equation*}
 p \times 7 = 21 
 \end{equation*}
 </div>
-<div class="para" id="p-266">where <span class="process-math">\(p\)</span> is either prime or the product of primes. We can calculate this number fairly easily. However, if you have</div>
+<div class="para" id="p-279">where <span class="process-math">\(p\)</span> is either prime or the product of primes. We can calculate this number fairly easily. However, if you have</div>
 <div class="displaymath process-math">
 \begin{equation*}
 p \times q = 315 
 \end{equation*}
 </div>
-<div class="para" id="p-267">where <span class="process-math">\(p\)</span> and <span class="process-math">\(q\)</span> are either prime or the product of primes. We can still calculate this fairly easily and find that 315 actually has more than two factors</div>
+<div class="para" id="p-280">where <span class="process-math">\(p\)</span> and <span class="process-math">\(q\)</span> are either prime or the product of primes. We can still calculate this fairly easily and find that 315 actually has more than two factors</div>
 <div class="displaymath process-math">
 \begin{equation*}
 315 = 3 \times 3 \times 5 \times 7 = 3^2 \times 5 \times 7
 \end{equation*}
 </div>
-<div class="para" id="p-268">Instead of trying to solve for <span class="process-math">\(p\)</span> and <span class="process-math">\(q\text{,}\)</span> it makes more sense to solve for <span class="process-math">\(p_1,p_2,\ldots,p_n\)</span> and <span class="process-math">\(r_1,r_2,\ldots,r_n\)</span> where each <span class="process-math">\(p_i\)</span> is a prime number and each <span class="process-math">\(r_i\)</span> is an exponent that represents how many times <span class="process-math">\(p_i\)</span> appears as a factor. This means we want to express the number we are looking to factor as</div>
+<div class="para" id="p-281">Instead of trying to solve for <span class="process-math">\(p\)</span> and <span class="process-math">\(q\text{,}\)</span> it makes more sense to solve for <span class="process-math">\(p_1,p_2,\ldots,p_n\)</span> and <span class="process-math">\(r_1,r_2,\ldots,r_n\)</span> where each <span class="process-math">\(p_i\)</span> is a prime number and each <span class="process-math">\(r_i\)</span> is an exponent that represents how many times <span class="process-math">\(p_i\)</span> appears as a factor. This means we want to express the number we are looking to factor as</div>
 <div class="displaymath process-math">
 \begin{equation*}
 p_1^{r_1} \times p_2^{r_2} \times \ldots \times p_n^{r_n}
 \end{equation*}
 </div></section></section></div>
-=======
-<div class="para" id="p-233">Text of section.</div></section></div>
->>>>>>> 1d1d38aa2fdee921ccd3636f13fad3019c7331b0
 <div class="ptx-content-footer">
 <a class="previous-button button" href="sec1-chap3.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>
 </div></main>

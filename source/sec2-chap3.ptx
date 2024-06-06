@@ -1,39 +1,556 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<section xml:id="sec2-chap3" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Shor's Algorithm</title>
-  <subsection xml:id="subsec-Building-Up-to-the-Algorithm">
-    <title>Building Up to the Algorithm</title>
-  <p> In the field of cryptography, quantum computers could be used to improve the security of our information systems. However, quantum computations can also be used to break through our modern crypto-systems much faster than is possible through classical computing. One method through which quantum computation could be used to break through our modern cybersecurity is with an algorithm created by American mathematician Peter Shor in 1994.  </p>
-  <p> The security behind our modern cryptographic methods lies in the fact that it is very computationally difficult to find the prime factors of large numbers. It takes years of computing time on a classical computer to find the factors of numbers with hundreds of digits. The algorithm designed by Peter Shor takes advantage of quantum concepts to find the prime factors of large numbers much quicker. If a powerful enough quantum computer is ever built it could be used to break most modern encryptions jarringly quickly. Before describing the algorithm, we must first define some terms. </p>
-<p><alert>Prime Numbers:</alert> A number is prime if the only positive integers that divide it are itself and the number one </p>
-<p><alert> Coprime Numbers:</alert> Two numbers are coprime (also known as relatively prime or mutually prime) if the only positive integer that is a divisor of both of them is the number one. In other words, two numbers are coprime if their greatest common divisor is one and they share no prime factors </p>
-<p><alert> Period of a function:</alert> Suppose <m>\textbf{x}</m> and <m>\textbf{y}</m> are two binary strings. The period of a function <m>f</m> would be a binary string <m>\textbf{c}</m> such that </p>
-<me> f(\textbf{x}) = f(\textbf{y}) \text{ if and only if } \textbf{x} = \textbf{y} \oplus \textbf{c} </me>  
-<p> where <m>\textbf{x},\textbf{y},\textbf{c} \in \{0,1\}^n</m> and <m>\oplus</m> represents the XOR operation. </p> 
-<p><alert> Congruence Relation:</alert> The congruence relation comes from the field of modular arithmetic. This relation deals with numbers that have the same remained when divided by a specific value, which is called a <term>modulus</term><idx><h>Modulus</h></idx>.</p>
-<me> a \equiv b \text{ mod } m</me> 
-<p> This equation reads "<m>a</m> is congruent to <m>b</m> modulo <m>m</m>." Congruence relations have the following properties:  </p>
-<me> \begin{split} &amp; \text{Reflexive:  } a \equiv a \text{ mod } m
-  \\&amp; \text{Symmetric:  } \text{if } a \equiv b \text{ mod } m \text{  then  } b \equiv a \text{ mod } m
-  \\&amp; \text{Reflexive:  }  \text{if } a \equiv b \text{ mod } m \text{  and  } b \equiv c \text{ mod } m \text{  then  } a \equiv c \text{ mod } m  \end{split}</me>
-<p> Suppose <m> a \equiv b \text{ mod } m </m> and <m> c \equiv d \text{ mod } m </m>. Congruence relations have the following operations defined: </p> 
-<me> \begin{split} &amp; \text{Addition: }  a + c \equiv b + d \text{ mod } m
-  \\&amp; \text{Subtraction:  } a - c \equiv b - d \text{ mod } m
-  \\&amp; \text{Multiplication:  } ac \equiv bd \text{ mod } m
-  \\&amp; \text{Exponentiation:  } a^n \equiv b^n \text{ mod } m \ \ \ \ \ \ \ \ \text{   }\end{split} </me>
-</subsection>
-<subsection xml:id="subsec-An-Example">
-  <title>An Example</title>
-  <p> We will start the discussion of this algorithm with an example. Suppose we have two prime numbers, <m>3, 7.</m> We can multiply them togehter to get <m>(3\times 7 = ) 21</m> which a positive number and the result of two prime numbers. Now, think about this </p> 
-<me> p \times 7 = 21 </me> 
-<p> where <m>p</m> is either prime or the product of primes. We can calculate this number fairly easily. However, if you have </p>
-<me> p \times q = 315 </me> 
-<p> where <m>p</m> and <m>q</m> are either prime or the product of primes. We can still calculate this fairly easily and find that 315 actually has more than two factors </p> 
-<me> 315 = 3 \times 3 \times 5 \times 7 = 3^2 \times 5 \times 7</me>
-<p> Instead of trying to solve for <m>p</m> and <m>q</m>, it makes more sense to solve for <m>p_1,p_2,\ldots,p_n</m> and <m>r_1,r_2,\ldots,r_n</m> where each <m>p_i</m> is a prime number and each <m>r_i</m> is an exponent that represents how many times <m>p_i</m> appears as a factor. This means we want to express the number we are looking to factor as </p> 
-<me>p_1^{r_1} \times p_2^{r_2} \times \ldots \times p_n^{r_n}</me>
+<section xml:id="sec1-chap3" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Grover's Algorithm</title>
 
-</subsection>
+<!--general explanation-->
+
+  <p> 
+    <term>Classical search</term>
+    algorithms are fundamental techniques used in computer science to locate a specific item within a collection of items. 
+    Common approaches include linear search, where each item is checked sequentially until the target is found, and binary search, which efficiently narrows down the search range in a sorted array by repeatedly dividing it in half. 
+    These methods are crucial in various applications, from database retrieval to optimization problems, as they determine how quickly and efficiently data can be accessed and processed. 
+    However, classical search often requires significant time and resources, especially with large datasets. Quantum computing has the potential to revolutionize search algorithms through methods like Grover's algorithm, which can search an unsorted database quadratically faster than classical algorithms, offering a profound improvement in speed and efficiency for large-scale search problems.
+</p>
+<p>
+    To implement Grover's algorithm, we need 
+    <term>unitary matrix</term>, written as <m>U_f</m>.
+    This matrix works as a black box as following
+</p>
+<mdn>
+    <mrow xml:id="unitarymatrix">
+        \ket{x,y} \stackrel{U_f}{\rightarrow} \ket{x, y\oplus f(x)}
+      
+    </mrow>
+</mdn>
+<p>
+    The XOR operartion is 
+    <me>\boldsymbol{x}\oplus \boldsymbol{y} = x_1\oplus y_1, x_2\oplus y_2, x_3\oplus y_3, \ldots, x_n\oplus y_n.</me>
+</p>
+<p>
+    <term>diffusion gate</term> is an operator given by
+    <mdn>
+        <mrow xml:id="diffusiongate">
+            O = - I + 2\ket{\phi}\bra{\phi}
+           
+         </mrow>
+    </mdn>
+
+    <term>Household transform</term> is
+    is a linear algebra technique often used to construct quantum operations that reflect a quantum state about a certain axis or state, which is a crucial step in many quantum algorithms, including Grover's algorithm. By applying a series of these transformations, one can systematically manipulate and amplify the amplitude of the desired state while diminishing the amplitudes of the undesired ones, ultimately leading to a more efficient search process. This method contributes to the algorithm's overall quadratic speedup compared to classical search methods.
+</p>
+<p>
+    Now, we implement Grover's algorithm for the following example
+</p>
+
+
+
+<!--example 1-->
+
+<example>
+
+    <p>
+        We prose a random vector <m>x</m>, and try to find the expected factor
+    </p>
+    <p>
+        <em>1. Consider you have the following data</em> 
+        <mdn>
+            <mrow xml:id="initialdata">
+                \boldsymbol{x}^T=(x_1,x_2,x_3,x_4,x_5)=(19,12,3,10,1)\label{eq:randomVector_a}
+              
+            </mrow>
+        </mdn>
+        <figure xml:id="fig-grover_1">
+            <caption>Representation of <m>x_i</m>values</caption>
+            <image source="grover1.png" width="70%"> </image>
+          </figure>
+        </p>
+
+        <p>
+        
+          <em>2. Calculate the average</em> 
+          <mdn>
+            <mrow xml:id="averagecalculation">
+                \overline{x}=\sum_i^N\frac{x_i}{N} = \frac{19+12+3+10+1}{5} = \frac{45}{5} = 9
+                
+              
+            </mrow>
+        </mdn>
+
+          <em>3. Invert each element aorund the average by defining </em> <m> \overline{x} - x_i = \delta_i</m> 
+         
+          <mdn>
+            <mrow xml:id="subtractbyave">
+               
+           
+            \overline{x}&amp;-&amp;x_i &amp; =&amp;\delta\\
+                 9&amp;-&amp;19 &amp;=&amp;-10\\
+                 9&amp;-&amp;12 &amp;=&amp;3\\
+                 9&amp;-&amp;3  &amp;=&amp;6\\
+                 9&amp;-&amp;10 &amp;=&amp;-1\\
+                 9&amp;-&amp;1 &amp;=&amp;8    
+  
+              
+            </mrow>
+        </mdn>
+        We calculate the units away, <m>δ</m> , from the average,<m>x</m> , for each <m>xi</m> 
+
+
+          
+    </p>
+<p>
+    <em>4.a define </em> <m> 2x-x_i =x^\prime_i</m> <em>and calculate</em>
+
+    <mdn>
+        <mrow xml:id="inversionaboutave">
+
+            2\overline{x}&amp;
+            -&amp;
+            x_i&amp;
+            =&amp;
+            x_i^\prime\\
+             18 &amp; - &amp; 19 &amp; = &amp; -1\\
+             18&amp; -&amp;12 &amp;=&amp;6\\
+             18&amp; -&amp;3 &amp;=&amp;15\\
+             18&amp; -&amp;10 &amp;=&amp;8\\
+             18&amp; -&amp;1 &amp;=&amp;17     
+                  
+                </mrow>
+            </mdn>
+        <!--How to move - notattion-->
+        The inversion about the average calculates the units away, <m>δ</m>, from the average, <m>x</m>, for each
+<m>x_i</m> .
+       
+</p>
+
+<p>
+    <em>4.b Plot the data</em>
+    <mdn>
+        <mrow xml:id="plotthedata">
+
+            \begin{pmatrix} x_1^\prime&amp;x_2^\prime&amp;x_3^\prime&amp;x_4^\prime&amp;x_2^\prime
+            \end{pmatrix}
+      =       \begin{pmatrix} 
+      -1&amp; 6&amp; 15&amp; 8 &amp;17
+            \end{pmatrix}
+                  
+                </mrow>
+            </mdn>
+
+
+</p>
+<p>
+    <figure xml:id="fig-grover_2">
+        <caption>Representation of <m>x^\prime_i</m>values</caption>
+        <image source="grover2.png" width="70%"> </image>
+      </figure>
+</p>
+
+<p>
+    The last operation,<m>-x_i +2\overline{x}=x_i^\prime</m>  has the following representation in terms of matrices,
+    <mdn>
+        <mrow xml:id="grpverequation1">
+
+            (- I + 2 A) \boldsymbol{x} = \boldsymbol{x}^\prime
+                  
+                </mrow>
+            </mdn>
+
+            where <m>\overline{x} \to A \boldsymbol{x},</m>  where
+
+        <mdn>
+                <mrow xml:id="grpverequation2">
+        
+                    A = \frac{1}{5}
+                    \begin{pmatrix}
+                        1&amp;1&amp;1&amp;1&amp;1\\
+                        1&amp;1&amp;1&amp;1&amp;1\\
+                        1&amp;1&amp;1&amp;1&amp;1\\
+                        1&amp;1&amp;1&amp;1&amp;1\\
+                        1&amp;1&amp;1&amp;1&amp;1
+                    \end{pmatrix}
+                          
+                        </mrow>
+                    </mdn>
+                    is the matrix for the average.
+     It means <m>\boldsymbol{\overline{x}} = A\boldsymbol{x}</m>.  As follows,
+     <mdn>
+        <mrow xml:id="grpverequation3">
+
+            \boldsymbol{\overline{x}} = A \boldsymbol{x}= \frac{1}{5}
+            \begin{pmatrix}
+                1&amp;1&amp;1&amp;1&amp;1\\
+                1&amp;1&amp;1&amp;1&amp;1\\
+                1&amp;1&amp;1&amp;1&amp;1\\
+                1&amp;1&amp;1&amp;1&amp;1\\
+                1&amp;1&amp;1&amp;1&amp;1
+            \end{pmatrix}
+             \begin{pmatrix}
+            19\\12\\3\\10\\1
+                 \end{pmatrix}
+           =
+           \begin{pmatrix}
+            9\\9\\9\\9\\9
+                 \end{pmatrix}
+                  
+                </mrow>
+            </mdn>
+     This is a state where each amplitude is the average of all the amplitudes.
+</p>
+
+<p>
+    <em>5. Invert amplitudes about the average. </em>
+
+    <mdn>
+        <mrow xml:id="groverequation4">
+
+            (-I+2A)\boldsymbol{x}&amp;=&amp;\boldsymbol{x}^\prime\\
+     \left[-
+     \begin{pmatrix}
+    1&amp;0&amp;0&amp;0&amp;0\\
+    0&amp;1&amp;0&amp;0&amp;0\\    
+    0&amp;0&amp;1&amp;0&amp;0\\
+    0&amp;0&amp;0&amp;1&amp;0\\
+    0&amp;0&amp;0&amp;0&amp;1
+     \end{pmatrix}
+     + \frac{2}{5}
+     \begin{pmatrix}
+         1&amp;1&amp;1&amp;1&amp;1\\
+         1&amp;1&amp;1&amp;1&amp;1\\
+         1&amp;1&amp;1&amp;1&amp;1\\
+         1&amp;1&amp;1&amp;1&amp;1\\
+         1&amp;1&amp;1&amp;1&amp;1\\
+     \end{pmatrix}
+     \right]
+          \begin{pmatrix}
+     19\\12\\3\\10\\1
+          \end{pmatrix}
+          &amp;=&amp;\\
+          %
+\frac{1}{5}
+     \begin{pmatrix}
+         -3&amp;2&amp;2&amp;2&amp;2\\
+         2&amp;-3&amp;2&amp;2&amp;2\\
+         2&amp;2&amp;-3&amp;2&amp;2\\
+         2&amp;2&amp;2&amp;-3&amp;2\\
+         2&amp;2&amp;2&amp;2&amp;-3\\
+     \end{pmatrix}
+          \begin{pmatrix}
+     19\\12\\3\\10\\1
+          \end{pmatrix}
+          &amp;=&amp;
+          \begin{pmatrix}
+    -1\\ 6\\ 15\\ 8\\17\\          
+          \end{pmatrix}
+                  
+                </mrow>
+            </mdn>
+      </p>
+            <p>
+    The item (4).b and eq. (3.1.11) show same results, the second report implies linear algebra operations.
+</p>
+  <p>
+            This example emphasizes on invert amplitudes about the mean; however, Grover's algorithm
+            requires phase inversion. The following example explains the step.
+   </p>  
+
+
+
+</example>
+
+<!--example 2-->
+
+<example>
+
+
+<p>  
+   <em>Consider the information from the example 3.1.1. We have the same vector.</em> 
+</p>
+
+<mdn>
+    <mrow xml:id="groverequation5">
+
+        \boldsymbol{x}^T=(x_1,x_2,x_3,x_4,x_5)=(19,12,3,10,1)\label{eq:randomVector_b}
+              
+            </mrow>
+        </mdn>
+        <em>To apply the phase inversion about the average, which requires the function,</em> <me> %f(x), 
+        f:\{0,1\}^n \to \{0,1\}</me>
+        <em>and </em>
+        <mdn>
+            <mrow xml:id="groverequation6">
+        
+                f(x)=
+                \begin{cases}
+                 1&amp; \text{if } x=w\\
+                 0&amp;\text{else if}
+                \end{cases}
+                      
+                    </mrow>
+                </mdn>
+    <em> which is usually shown such as </em>
+    <mdn>
+        <mrow xml:id="groverequation7">
+    
+            \ket{x} \stackrel{U_f}{\rightarrow} (-1)^{f(x)}\ket{x}
+                  
+                </mrow>
+            </mdn>
+        
+    <em>where is an $U_f$ aka oracle. This oracle shifts the phase of the solution, and highlights the solutions to the search problem.</em>
+    
+    <p>
+       <em>We will take the vector</em> 
+        <mdn>
+            <mrow xml:id="groverequation8">
+        
+                \boldsymbol{\overline{x}}^T=
+    \begin{pmatrix}
+     9&amp;9&amp;9&amp;9&amp;9
+          \end{pmatrix}
+                      
+                    </mrow>
+                </mdn>
+
+         <em>And suppose we are looking for the second input, it means</em>x=x_2=w<m></m> <em>is the winner, it is oul goal.</em> 
+<m>\boldsymbol{\overline{x}}^T=\begin{pmatrix}
+     9&amp;-9&amp;9&amp;9&amp;9
+          \end{pmatrix}.</m> 
+
+</p>
+<p>
+       <em>Now we apply </em> 
+
+       <figure xml:id="fig-grover_3">
+        <caption>Representation of the <m> \overline{x}_i</m> values. The horizontal line is the new average<m>\frac{9-9+9+9+9}{5} = 5.4</m> </caption>
+        <image source="grover3.png" width="70%"> </image>
+      </figure>
+      <em>and calculate</em>
+
+      <mdn>
+        <mrow xml:id="groverequation9">
+    
+            (-I+2A)\boldsymbol{x}&amp;=&amp;\boldsymbol{x}^\prime\\
+\frac{1}{5}
+     \begin{pmatrix}
+         -3&amp;2&amp;2&amp;2&amp;2\\
+         2&amp;-3&amp;2&amp;2&amp;2\\
+         2&amp;2&amp;-3&amp;2&amp;2\\
+         2&amp;2&amp;2&amp;-3&amp;2\\
+         2&amp;2&amp;2&amp;2&amp;-3\\
+     \end{pmatrix}
+          \begin{pmatrix}
+     9\\-9\\9\\9\\9
+          \end{pmatrix}
+          &amp;=&amp;\begin{pmatrix}
+          9\\ 99\\ 9\\ 9\\9\\
+          \end{pmatrix}
+                  
+                </mrow>
+            </mdn>
+
+    <figure xml:id="fig-grover_4">
+                <caption>Representation of the <m>\overline{x}_i</m> values. The horizontal line is the new average<m>\frac{9-99+9+9+9}{5} = 12.6</m>  </caption>
+                <image source="grover4.png" width="70%"> </image>
+              </figure>
+<em>and calculate</em>
+
+<mdn>
+    <mrow xml:id="groverequation10">
+
+        (-I+2A)\boldsymbol{x}&amp;=&amp;\boldsymbol{x}^\prime\\
+\frac{1}{5}
+     \begin{pmatrix}
+         -3&amp;2&amp;2&amp;2&amp;2\\
+         2&amp;-3&amp;2&amp;2&amp;2\\
+         2&amp;2&amp;-3&amp;2&amp;2\\
+         2&amp;2&amp;2&amp;-3&amp;2\\
+         2&amp;2&amp;2&amp;2&amp;-3\\
+     \end{pmatrix}
+          \begin{pmatrix}
+     9\\-99\\9\\9\\9
+          \end{pmatrix}
+          &amp;=&amp;\begin{pmatrix}
+          -171\\ 369\\ -171\\ -171\\-171\\
+          \end{pmatrix}
+            </mrow>
+        </mdn>
+
+        <em>We can see how the amplitude for the second element increases.</em>
+
+
+    </p>
+
+    <p>
+        We showed how this search algorithm works, and it is clear that we will get the second element in the list as the most probable output.
+</p>
+
+
+
+
+</example>
+
+<!--Grover in braket notation-->
+<p>
+    This part shows the Grover's algorithm in bracket notation.
+        </p>
+<p>
+    This algorithm enables this search method to be speed up to<m>\mathcal{O}(\sqrt{N})</m> operations.
+
+With this algorithm 
+"searching an unsorted database" with <m>N=2^n</m>  elements 
+ in <m>\mathcal{O}(\sqrt{N})</m> time. 
+ Classical algorithm needs on average <m>N/2 =\mathcal{O}(\sqrt{N})</m>  time.
+ The goal is find <m>w</m>, given an oracle <m>U_f</m> with 
+
+ <me> f:\{0,1\}^n \to \{0,1\}
+ </me>
+
+<mdn>
+    <mrow xml:id="groverequation11">
+f(x)=
+\begin{cases}
+ 1&amp; \text{if } x=w\\
+ 0&amp;\text{else if}
+\end{cases}
+       
+            </mrow>
+        </mdn>
+and 
+<mdn>
+    <mrow xml:id="groverequation12">
+        f_0(x)=
+        \begin{cases}
+         0&amp; \text{if } x=0000\\
+         1&amp;\text{else}
+        \end{cases}
+       
+            </mrow>
+        </mdn>
+
+where the phase oracle is
+
+
+        <mdn>
+            <mrow xml:id="groverequation13">
+                U_f\ket{x} = (-1)^{f(x)}\ket{x}
+               
+                    </mrow>
+                </mdn>
+
+where
+        <mdn>
+            <mrow xml:id="groverequation14">
+            U_f:
+        \begin{cases}
+        \ket{w} \to -\ket{w} &amp;\\
+        \ket{x} \to \ket{x} &amp; \forall x\neq w
+        \end{cases}
+                       
+            </mrow>
+        </mdn>
+    
+    then
+
+
+     <mdn>
+     <mrow xml:id="groverequation15">
+        U_f = 1 - 2 \ket{w}\bra{w}
+                               
+        </mrow>
+        </mdn>
+
+        and
+
+        <mdn>
+        <mrow xml:id="groverequation16">
+            {U_f}_0:
+\begin{cases}
+ \ket{0} \to \ket{0}^{\otimes n} &amp;\\
+\ket{x} \to -\ket{x} &amp; \forall x\neq 00...000
+\end{cases}
+                                       
+                     </mrow>
+                        </mdn>
+                then
+
+          <mdn>
+            <mrow xml:id="groverequation17">             
+            {U_f}_0 = 2 (\ket{0}\bra{0})^{\otimes n} - I                 
+                                               
+                    </mrow>
+            </mdn>
+                
+        the Grover's iteration
+        <mdn>
+            <mrow xml:id="groverequation18">
+                G=(2|\psi\rangle\langle\psi|-I) O
+               
+                    </mrow>
+                </mdn>
+</p>
+
+
+<p>
+    The algorithm is shown below
+
+    <figure xml:id="fig-grover_5">
+        <caption>The process of Grover's algorithm </caption>
+        <image source="grover5.png" width="80%" height="150%"> </image>
+      </figure>
+
+</p>
+
+<!--another explanation-->
+
+<p>
+    Here is another explanation    
+</p>
+<p>
+ <m>\textbf{Claim:}</m>  <m>y=w</m>
+</p>
+<p>
+    <m>\textbf{Proof:}</m> Define a superposition state
+    <mdn>
+        <mrow xml:id="groverequation19">
+            \ket{\psi_1} = H^{\otimes n}\ket{0}^{\otimes n} = 2^{-\frac{n}{2}}\sum_{x\in \{0,1\}}^{2^n-1}\ket{x}
+           
+                </mrow>
+            </mdn>
+            and (note the dashed line in the circuit)
+
+            <mdn>
+                <mrow xml:id="groverequation20">
+                    V = H^{\otimes n} {U_f}_0H^{\otimes n} &amp;= 
+                    H^{\otimes n}\big(
+                    2 \ket{0}\bra{0}^{\otimes n} - I
+                    \big)
+                    H^{\otimes n}\\=
+                    &amp;
+                    2 H^{\otimes n}\ket{0}\bra{0}^{\otimes n}H^{\otimes n} - H^{\otimes n}IH^{\otimes n}\\
+                    &amp;=
+                    2 \ket{\psi_1}\bra{\psi_1} - I
+                   
+                        </mrow>
+                    </mdn>
+
+                    where we used eq.(3.1.24) and eq.(3.1.26)
+</p>
+
+<p>
+    <m>\textbf{Process:}</m>
+    This algorithm carries out the operation<m>(V U_f)^r</m>  on the state <m> \ket{\psi_1}.</m>
+</p>
+<p>
+    The representation of the Grover's algorithm using circuits is shown in 
+fig(3.1.8.) 
+
+<figure xml:id="fig-grover_6">
+    <caption>Quantum circuit for the Grover algorithm</caption>
+    <image source="grover6.png" width="80%" height="150%"> </image>
+  </figure>
+</p>
+
+
 
 </section>
