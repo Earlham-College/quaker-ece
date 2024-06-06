@@ -10,15 +10,94 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body class="ignore-math"><article class="example example-like"> <div class="para">This example will show what will happen when  <span class="process-math">\(a\)</span> and <span class="process-math">\(N\)</span> are not coprimes. Consider <span class="process-math">\(a=2, \ N=24 \text{,}\)</span> and <span class="process-math">\(r\)</span> running from <span class="process-math">\(0\)</span> to <span class="process-math">\(n\text{.}\)</span> <span class="process-math">\(2\)</span> and <span class="process-math">\(24\)</span> share the prime factor <span class="process-math">\(2\)</span> so they are not coprime.</div>
+<body class="ignore-math"><article class="example example-like"><div class="para"><em class="emphasis">Consider the information from the example 3.1.1. We have the same vector.</em></div>
 <div class="displaymath process-math">
+\begin{gather}
+\boldsymbol{x}^T=(x_1,x_2,x_3,x_4,x_5)=(19,12,3,10,1)\label{eq:randomVector_b}\tag{3.2.12}
+\end{gather}
+</div>
+<em class="emphasis">To apply the phase inversion about the average, which requires the function,</em><div class="displaymath process-math">
 \begin{equation*}
-\begin{array}{r r r r r r r r r r r r r r r}
-r&amp;0&amp;1&amp;2&amp;3&amp;4&amp;5&amp;6&amp;7&amp;8&amp;9&amp;10&amp;11&amp;12&amp;\ldots\\
-a^r&amp;1&amp;2&amp;4&amp;8&amp;16&amp;32&amp;64&amp;128&amp;256&amp;512&amp;1024&amp;2048&amp;4096&amp;\ldots\\
-g_{2, 24}(r)&amp;1&amp;2&amp;4&amp;8&amp;16&amp;8&amp;16&amp;8&amp;16&amp;8&amp;16&amp;8&amp;16&amp;\ldots\end{array} 
+%f(x), 
+f:\{0,1\}^n \to \{0,1\}
 \end{equation*}
 </div>
-<div class="para">As we can see, the function <span class="process-math">\(g_{2,24}(r)\)</span> does begin to repeat, but it does not repeat the entire sequence. Thus this function is not periodic, which is why we must choose coprimes for <span class="process-math">\(a\)</span> and <span class="process-math">\(N\text{.}\)</span>
-</div></article></body>
+<em class="emphasis">and</em><div class="displaymath process-math">
+\begin{align}
+f(x)=
+\begin{cases}
+1&amp; \text{if } x=w\\
+0&amp;\text{else if}
+\end{cases}\tag{3.2.13}
+\end{align}
+</div>
+<em class="emphasis">which is usually shown such as</em><div class="displaymath process-math">
+\begin{gather}
+\ket{x} \stackrel{U_f}{\rightarrow} (-1)^{f(x)}\ket{x}\tag{3.2.14}
+\end{gather}
+</div>
+<em class="emphasis">where</em> <span class="process-math">\(U_f\)</span><em class="emphasis">is an oracle. This oracle shifts the phase of the solution, and highlights the solutions to the search problem.</em> <div class="para logical">
+<div class="para"><em class="emphasis">We will take the vector</em></div>
+<div class="displaymath process-math">
+\begin{align}
+\boldsymbol{\overline{x}}^T=
+\begin{pmatrix}
+9&amp;9&amp;9&amp;9&amp;9
+\end{pmatrix}\tag{3.2.15}
+\end{align}
+</div>
+<div class="para">
+<em class="emphasis">And suppose we are looking for the second input, it means</em>x=x_2=w<span class="process-math">\(\)</span> <em class="emphasis">is the winner, it is oul goal.</em> <span class="process-math">\(\boldsymbol{\overline{x}}^T=\begin{pmatrix}
+9&amp;-9&amp;9&amp;9&amp;9
+\end{pmatrix}.\)</span>
+</div>
+</div> <div class="para logical">
+<div class="para">
+<em class="emphasis">Now we apply</em> <figure class="figure figure-like"><div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="external/grover3.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.2.5<span class="period">.</span></span><span class="space"> </span>Representation of the <span class="process-math">\(\overline{x}_i\)</span> values. The horizontal line is the new average<span class="process-math">\(\frac{9-9+9+9+9}{5} = 5.4\)</span></figcaption></figure> <em class="emphasis">and calculate</em>
+</div>
+<div class="displaymath process-math">
+\begin{align}
+(-I+2A)\boldsymbol{x}&amp;=&amp;\boldsymbol{x}^\prime\\
+\frac{1}{5}
+\begin{pmatrix}
+-3&amp;2&amp;2&amp;2&amp;2\\
+2&amp;-3&amp;2&amp;2&amp;2\\
+2&amp;2&amp;-3&amp;2&amp;2\\
+2&amp;2&amp;2&amp;-3&amp;2\\
+2&amp;2&amp;2&amp;2&amp;-3\\
+\end{pmatrix}
+\begin{pmatrix}
+9\\-9\\9\\9\\9
+\end{pmatrix}
+&amp;=&amp;\begin{pmatrix}
+9\\ 99\\ 9\\ 9\\9\\
+\end{pmatrix}\tag{3.2.16}
+\end{align}
+</div>
+<div class="para">
+<figure class="figure figure-like"><div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="external/grover4.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.2.6<span class="period">.</span></span><span class="space"> </span>Representation of the <span class="process-math">\(\overline{x}_i\)</span> values. The horizontal line is the new average<span class="process-math">\(\frac{9-99+9+9+9}{5} = 12.6\)</span></figcaption></figure> <em class="emphasis">and calculate</em>
+</div>
+<div class="displaymath process-math">
+\begin{align}
+(-I+2A)\boldsymbol{x}&amp;=&amp;\boldsymbol{x}^\prime\\
+\frac{1}{5}
+\begin{pmatrix}
+-3&amp;2&amp;2&amp;2&amp;2\\
+2&amp;-3&amp;2&amp;2&amp;2\\
+2&amp;2&amp;-3&amp;2&amp;2\\
+2&amp;2&amp;2&amp;-3&amp;2\\
+2&amp;2&amp;2&amp;2&amp;-3\\
+\end{pmatrix}
+\begin{pmatrix}
+9\\-99\\9\\9\\9
+\end{pmatrix}
+&amp;=&amp;\begin{pmatrix}
+-171\\ 369\\ -171\\ -171\\-171\\
+\end{pmatrix}\tag{3.2.17}
+\end{align}
+</div>
+<div class="para"><em class="emphasis">We can see how the amplitude for the second element increases.</em></div>
+</div> <div class="para">We showed how this search algorithm works, and it is clear that we will get the second element in the list as the most probable output.</div></article></body>
 </html>
