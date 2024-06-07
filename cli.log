@@ -1,19 +1,8 @@
-INFO    : PreTeXt project found in `/Users/JO/github/quaker-ece`.
-INFO    : Using latest build located in `/Users/JO/github/quaker-ece/output/web`.
+INFO    : PreTeXt project found in `/eccs/users/lsgoldb22/SummerResearch/quaker-ece`.
+INFO    : Using latest build located in `/eccs/users/lsgoldb22/SummerResearch/quaker-ece/output/web`.
 INFO    : 
 INFO    : Preparing to deploy from active `main` git branch.
 INFO    : 
 INFO    : Changes to project source since last commit detected.
 INFO    : Add/committing these changes to local Git repository.
 INFO    : 
-<<<<<<< HEAD
-WARNING : Port 8000 could not be used.
-WARNING : Trying port 62502 instead.
-
-INFO    : Success! The most recent build of your project can be viewed in a web browser at the following url:
-INFO    :     http://localhost:62502
-INFO    : This page should open in a new tab automatically.
-INFO    : Use [Ctrl]+[C] to halt the server.
-
-=======
->>>>>>> 88f89cad09a3d1f6693b899c75fbed9ff51a670a
