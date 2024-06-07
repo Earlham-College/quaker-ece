@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--   This file is part of the documentation of PreTeXt      -->
+<!--                                                          -->
+<!--      PreTeXt Author's Guide                              -->
+<!--                                                          -->
+<!-- Copyright (C) 2013-2020  Robert A. Beezer                -->
+<!-- See the file COPYING for copying conditions.             -->
+
+<references xml:id="references">
+    <!-- Let title internationalize itself -->
+
+    <biblio type="raw" xml:id="bibK">
+        Mary L Boas.  <title>Mathematical methods in the physical sciences</title>,  John Wiley &amp;  
+        Sons, 2006.  </biblio>
+        
+        
+        <biblio type="raw" xml:id="bibJ">
+        Phillip Kaye,  Raymond Laflamme,  and Michelle Mosca.         
+                <title>An introduction to quantum computing</title>, 
+                Oxford Univ.  Press,  2007.
+            </biblio>
+        
+        
+        <biblio type="raw" xml:id="bibI">
+        Loceff,  M.         
+                <title>A course in quantum computing (for the community college)</title>, 
+         Foothill College, 2015.        
+            </biblio>
+        
+         
+        
+        
+        <biblio type="raw" xml:id="bibH">
+        David McMahon.         
+                <title>Quantum computing explained. </title>, 
+        John Wiley &amp; Sons, 2007.        
+            </biblio>
+        
+        
+        
+        
+        
+        <biblio type="raw" xml:id="bibG">
+        N. David Mermin.         
+                <title>Quantum Computer Science: An Introduction</title>, 
+        Cambridge University Press,
+        2007.
+            </biblio>
+        
+        
+        <biblio type="raw" xml:id="bibF">
+        Isaac Newton and NW Chittenden. 
+                <title>Newton’s principia: The mathematical principles of natural philosophy</title>, 
+                 Geo.  P.  Putnam,  1850.
+            </biblio>
+        
+        <biblio type="raw" xml:id="bibE">
+                Michael A Nielsen and Isaac Chuang. 
+                <title>Quantum computation and quantum information</title>, 
+                2002.
+            </biblio>
+        
+        <biblio type="raw" xml:id="bibD">
+         Eleanor Rieffel and Wolfgang Polak.
+         <title> An introduction to quantum computing for non-physicists</title>,
+        ACM Comput.  Surv.,  32(3):300–335, September 2000.        
+            </biblio>
+        
+        
+        <biblio type="raw" xml:id="bibC">
+        Hans J Weber and George B Arfken.
+         <title>Essential mathematical methods for physicists, ISE</title>,
+         Elsevier,  2003.
+            </biblio>
+        
+        
+        <biblio type="raw" xml:id="bibB">
+        Peter Wittek. 
+         <title>Quantum machine learning: what quantum computing means to data mining.</title>,
+        Academic Press,  2014.
+            </biblio>
+        
+        
+        <biblio type="raw" xml:id="bibA">
+        Noson S Yanofsky and Mirco A Mannucci.
+          <title>Quantum computing for computer scientists</title>, 
+          Cambridge University Press,  2008.        
+        
+                
+            </biblio>
+        
+
+    <!-- <biblio type="raw" xml:id="knuth-literate-programming">
+        Knuth, Donald E., <title>Literate Programming</title>.  
+        <journal>The Computer Journal</journal>, 
+        1983, 
+        <url href="http://www.literateprogramming.com/knuthweb.pdf"><c>www.literateprogramming.com/knuthweb.pdf</c></url>.
+    </biblio> -->
+
+    <!-- <biblio type="raw" xml:id="indexing-guide">
+        Fred Leise, Kate Mertes, Nan Badgett, 
+        <title>Indexing for Editors and Authors: 
+            A Practical Guide to Understanding Indexes</title>, 
+        American Society of Indexers, 2008
+    </biblio> -->
+
+</references>

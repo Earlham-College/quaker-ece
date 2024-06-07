@@ -14,6 +14,8 @@
 
   <!-- <appendix> <title>List of Symbols</title> <notation-list/> </appendix> -->
 
+  <xi:include href="references.ptx"/>
+
   <index> 
     <title>Index</title> 
     <index-list/> 

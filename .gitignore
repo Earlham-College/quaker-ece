@@ -97,3 +97,11 @@ GitHub.sublime-settings
 
 # Don't track codechat config (will be generated automatically)
 codechat_config.yaml
+
+# JO section
+# Group files
+DOCS/
+*_group.txt
+
+.gitignore-*
+.project-*.ptx

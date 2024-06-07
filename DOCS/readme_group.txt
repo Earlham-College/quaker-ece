@@ -115,9 +115,12 @@ You should change the requirements.txt file.
 
 Commands
 Kill a port:
-a) lsof -i tcp:XXXX
-b) kill -9 PID-XXXX
+a) lsof -i tcp:[XXXX]
+b) kill -9 [PID-XXXX]
 c) sudo kill -9 $(sudo lsof -t -i:8000)
+d) To know which ports are open on MAC
+    lsof -i -P | grep -i "listen"
+
 
 3) to push a change from local to remote repository:
 - git init
@@ -132,8 +135,15 @@ to to pull a change from remote repository to local:
 - git pull
 - git push (if you made changes)
 
+
+
 -----------------------
 
 Here are the hex color codes for our pretext website
 Dark Red: #671d12
 Blue: #3572A0
+
+-----------------------
+
+
+
