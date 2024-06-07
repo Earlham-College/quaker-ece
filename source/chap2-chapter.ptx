@@ -9,5 +9,6 @@
   <xi:include href="sec1-chap2.ptx" />
   <xi:include href="sec2-chap2.ptx" />
   <xi:include href="sec3-chap2.ptx" />
+  <xi:include href="sec4-chap2.ptx" />
 
 </chapter>

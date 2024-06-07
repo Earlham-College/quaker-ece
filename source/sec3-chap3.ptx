@@ -98,8 +98,6 @@
 <p> In order to verify it is not the case that <m>N | a^{r/2}+1</m> we should first compute </p> 
 <me> d = \text{GCD}(N,a^{r/2}-1) </me>
 <p> using the Euclidean Algorithm (we do not describe the Euclidean Algorithm in this webbook, but readers unfamiliar with it may be interested in this link <url href="https://tinyurl.com/4twaxsrf" />). If we calculate that <m>d=1</m> then we know that <m>N | a^{r/2}+1</m>, which means we will not be able to factor <m>N</m> using this value of <m>a</m> and we will need to restart the algorithm with a new value of <m>a</m>. If we calculate that <m>d\neq 1</m> then <m>d</m> is a factor of <m>N</m> and <m>\frac{N}{d}</m> is another factor. If either of these factors are not prime then we can perform the entire algorithm on them again in order to find their factors. We keep repeating this process until we can fully factor <m>N</m> and represent it as a product of primes.</p>
-
-
 <example>
   <p> Suppose we want to find the period of the function <m>f</m> for <m>a=5, \ N=44 </m>. We could use the same method we did in examples 3.2.1, 3.2.2, and 3.3.3</p> 
   <me> \begin{array}{r r r r r r r r r r r r r}
@@ -108,6 +106,14 @@
     g_{5, 44}(r)&amp;1&amp;5&amp;25&amp;37&amp;9&amp;1&amp;5&amp;25&amp;37&amp;9&amp;1&amp;\ldots\end{array} </me>
   <p> This method tells us that the period of the function is 5, but it is extremely time consuming. If our values of <m>a</m> or <m>N</m> were larger it would be very difficult to perform these operations, even on a powerful computer. This problem can be solved much more efficiently by using a quantum algorithm based on <term>phase estimation</term><idx><h>Phase Estimation</h></idx> . </p>
 </example>
-
+</subsection>
+<subsection xml:id="subsec-Shors-Algorithm-Restated">
+  <title>Shor's Algorithm Restated</title>
+  <p><ol><li>Randomly choose an integer <m>a</m> such that <m>0&lt; a &lt; N</m>. Use the Euclidean algorithm to determine whether <m>a</m> and <m>N</m> are relatively prime. If not, we have found a factor of <m>N</m>. Otherwise, apply the rest of the algorithm.</li> 
+    <li> Use quantum parallelism to compute <m>f(r)=a^{r} \mod N</m> on the superposition of inputs, and apply a quantum Fourier transform to the result. </li>
+    <li> Measure the results. With high probability, a value of <m>r</m> close to a multiple of <m>\frac{2^{n}}{r}</m> will be obtained. </li>
+  <li> Use classical methods to obtain the period <m>r</m> of <m>f(r)</m>. </li> 
+  <li> Try different values of <m>a</m> until we calculate an even <m>r</m>. Then use the Euclidean algorithm to check efficiently whether <m>a^{r / 2}-1</m> (or <m>a^{r / 2}+1</m>) has a nontrivial common factor with <m>N</m>. </li> 
+  <li> Repeat all steps if necessary </li> </ol></p>
 </subsection>
 </section>

@@ -52,7 +52,7 @@
 
 
 <biography xml:id="author-bio-TWJ">
-  <p>Dr. Javier Orduz holds the distinguished position of 
+  <p><alert>Dr. Javier Orduz</alert> holds the distinguished position of 
     Visiting Assistant Professor at Earlham College and 
     also serves as an Instructor at Baylor University. 
     In his academic course, he embodies an all-rounder 
@@ -88,15 +88,22 @@
     (in multiple ways) the representation of underrepresented 
     cohorts in AI.
   </p>
+
+  <p> <alert>Shun Suzuki</alert> is a sophomore student from Japan currently studying at Earlham College. He is majoring in Computer Science with a strong interest in artificial intelligence. His research aims to deepen his knowledge and expertise in this field. He enjoys watching anime in his free time.</p> 
+  <p> <alert>Levi Goldberg</alert> is a junior at Earlham College who is double majoring in Mathematics and Accounting with a minor in Computer Science. His research for this project focused on quantum teleportation and its applications in quantum cryptography. After graduation, he plans to do something, but has no idea what that may be. In his spare time, he enjoys playing tabletop RPGs and going on runs with his dog. </p> 
+
+  <image source="authorbiopic2.jpg" width="80%"> </image> 
+ 
 </biography>
 
 <dedication xml:id="dedication">
   <p>
-      <line>My family in Colombia, Mexico, and USA.</line>
-      <line>To people who loves Science.</line>
+      <line>To our families in Colombia, Mexico, Japan, and the USA.</line>
+      <line>To our friends all around the world.  </line>
+      <line>To people who love Science.</line>
   </p>
   <p>To all of you.</p>
-  <p>This is a greate opportunity to encourage to study and learn sciences. In general any field in STEM areas is beatiful! 
+  <p>This is a great opportunity to encourage to study and learn sciences. In general any field in STEM areas is beautiful! 
 </p>
 </dedication>   
 <acknowledgement xml:id="acknowledgement">
