@@ -75,13 +75,7 @@
       his free time.
     </p>
 
-
-<<<<<<< HEAD
-<biography xml:id="author-bio-TWJ">
-  <p><alert>Dr. Javier Orduz</alert> holds the distinguished position of 
-=======
   <p>Dr. Javier Orduz holds the distinguished position of 
->>>>>>> 88f89cad09a3d1f6693b899c75fbed9ff51a670a
     Visiting Assistant Professor at Earlham College and 
     also serves as an Instructor at Baylor University. 
     In his academic course, he embodies an all-rounder 
@@ -117,10 +111,6 @@
     (in multiple ways) the representation of underrepresented 
     cohorts in AI.
   </p>
-
-  <p> <alert>Shun Suzuki</alert> is a sophomore student from Japan currently studying at Earlham College. He is majoring in Computer Science with a strong interest in artificial intelligence. His research aims to deepen his knowledge and expertise in this field. He enjoys watching anime in his free time.</p> 
-  <p> <alert>Levi Goldberg</alert> is a junior at Earlham College who is double majoring in Mathematics and Accounting with a minor in Computer Science. His research for this project focused on quantum teleportation and its applications in quantum cryptography. After graduation, he plans to do something, but has no idea what that may be. In his spare time, he enjoys playing tabletop RPGs and going on runs with his dog. </p> 
-
   <image source="authorbiopic2.jpg" width="80%"> </image> 
  
 </biography>
