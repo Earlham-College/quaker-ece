@@ -961,7 +961,34 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "2.4",
   "title": "Coding Quantum Circuits",
-  "body": " Coding Quantum Circuits  "
+  "body": " Coding Quantum Circuits  One extremely valuable tool for creating and visualizing quantum circuits is the Qiskit package for python that was created by IBM. A full overview of Qiskit from its creators is available at , but we will provide a basic introduction here as well.  The package can be added to a python codespace with the import qiskit command or by using from qiskit import [],[],... . A quantum circuit is composed of both a quantum register and a classical register. These can be defined with the QuantumRegister(n) and ClassicalRegister(n) methods where n is the number of bits in the register. Putting these together, we can create a quantum circuit with QuantumCircuit(QuantumRegister(n),ClassicalRegister(n)) . Once we have created a quantum circuit, we can visualize it with the .draw() method. The following code shows an example of a quantum circuit with two quantum bits and one classical bit.   Here we define the variables qreg as the quantum register, creg as the classical register, and qcircuit as the quantum circuit. We can see that the two quantum bits we created are indexed 0 and 1 and the classical bit we created has index 0 .   Gates in Qiskit   One Qubit Gates  In each of the following we will use the same variable names as above and i represents the index of the bit we wish to apply the gate to.     To apply this gate to a qubit, use qcircuit.x(qreg[i])      To apply this gate to a qubit, use qcircuit.z(qreg[i])      To apply this gate to a qubit, use qcircuit.h(qreg[i])     Two Qubit Gates  For two qubit gates, we will use i to represent the index of the control qubit and j to represent the index of the target qubit     To apply this gate to a pair of qubits, use qcircuit.cx(qreg[i],qreg[j])     This example shows the code to create a quantum circuit with three quantum bits and one classical bit. All three qubits have a Hadamard gate applied to them, the 0th qubit has an X gate applied to it, and the 1st qubit is used as a control for a Controlled Not gate targeting the 2nd qubit.   With the version of Qiskit we are using here, we must use slices instead of integers to specify the indexes of the qbits we want to measure.    In the space below, write code to create a quantum circuit with two qubits and one classical bit. Apply a hadamard gate to the 0th qubit and an X gate to the 1st qubit       In the space below, write code to create a quantum circuit with three qubits and one classical bit. Apply an X-gate to the 0th qubit, a hadamard gate to the 1st qubit, and a Controlled X gate using the 2nd qubit as a control and the 0th qubit as a target.       This is only a very brief introduction to Qiskit, and there is much more you can do, including running code on a quantum computer simulator to measure a quantum circuit, and connecting to one of IBM's real quantum computers to run code.  "
+},
+{
+  "id": "example-5",
+  "level": "2",
+  "url": "sec4-chap2.html#example-5",
+  "type": "Example",
+  "number": "2.4.1",
+  "title": "",
+  "body": " This example shows the code to create a quantum circuit with three quantum bits and one classical bit. All three qubits have a Hadamard gate applied to them, the 0th qubit has an X gate applied to it, and the 1st qubit is used as a control for a Controlled Not gate targeting the 2nd qubit.   With the version of Qiskit we are using here, we must use slices instead of integers to specify the indexes of the qbits we want to measure.  "
+},
+{
+  "id": "exercise-28",
+  "level": "2",
+  "url": "sec4-chap2.html#exercise-28",
+  "type": "Checkpoint",
+  "number": "2.4.2",
+  "title": "",
+  "body": " In the space below, write code to create a quantum circuit with two qubits and one classical bit. Apply a hadamard gate to the 0th qubit and an X gate to the 1st qubit     "
+},
+{
+  "id": "exercise-29",
+  "level": "2",
+  "url": "sec4-chap2.html#exercise-29",
+  "type": "Checkpoint",
+  "number": "2.4.3",
+  "title": "",
+  "body": " In the space below, write code to create a quantum circuit with three qubits and one classical bit. Apply an X-gate to the 0th qubit, a hadamard gate to the 1st qubit, and a Controlled X gate using the 2nd qubit as a control and the 0th qubit as a target.     "
 },
 {
   "id": "sec1-chap3",
@@ -982,45 +1009,45 @@ var ptx_lunr_docs = [
   "body": " Grover's Algorithm    Classical search algorithms are fundamental techniques used in computer science to locate a specific item within a collection of items. Common approaches include linear search, where each item is checked sequentially until the target is found, and binary search, which efficiently narrows down the search range in a sorted array by repeatedly dividing it in half. These methods are crucial in various applications, from database retrieval to optimization problems, as they determine how quickly and efficiently data can be accessed and processed. However, classical search often requires significant time and resources, especially with large datasets. Quantum computing has the potential to revolutionize search algorithms through methods like Grover's algorithm, which can search an unsorted database quadratically faster than classical algorithms, offering a profound improvement in speed and efficiency for large-scale search problems.  To implement Grover's algorithm, we need unitary matrix , written as . This matrix works as a black box as following   The XOR operartion is    diffusion gate is an operator given by  Household transform is is a linear algebra technique often used to construct quantum operations that reflect a quantum state about a certain axis or state, which is a crucial step in many quantum algorithms, including Grover's algorithm. By applying a series of these transformations, one can systematically manipulate and amplify the amplitude of the desired state while diminishing the amplitudes of the undesired ones, ultimately leading to a more efficient search process. This method contributes to the algorithm's overall quadratic speedup compared to classical search methods.  Now, we implement Grover's algorithm for the following example    We prose a random vector , and try to find the expected factor   1. Consider you have the following data    Representation of values       2. Calculate the average   3. Invert each element aorund the average by defining   We calculate the units away, , from the average, , for each    4.a define   and calculate   The inversion about the average calculates the units away, , from the average, , for each .   4.b Plot the data      Representation of values      The last operation, has the following representation in terms of matrices, where where is the matrix for the average. It means . As follows, This is a state where each amplitude is the average of all the amplitudes.   5. Invert amplitudes about the average.    The item (4).b and eq. (3.1.11) show same results, the second report implies linear algebra operations.  This example emphasizes on invert amplitudes about the mean; however, Grover's algorithm requires phase inversion. The following example explains the step.      Consider the information from the example 3.1.1. We have the same vector.    To apply the phase inversion about the average, which requires the function,   and   which is usually shown such as   where  is an oracle. This oracle shifts the phase of the solution, and highlights the solutions to the search problem.   We will take the vector   And suppose we are looking for the second input, it means x=x_2=w  is the winner, it is oul goal.     Now we apply   Representation of the values. The horizontal line is the new average      and calculate    Representation of the values. The horizontal line is the new average      and calculate   We can see how the amplitude for the second element increases.   We showed how this search algorithm works, and it is clear that we will get the second element in the list as the most probable output.    This part shows the Grover's algorithm in bracket notation.  This algorithm enables this search method to be speed up to operations. With this algorithm \"searching an unsorted database\" with elements in time. Classical algorithm needs on average time. The goal is find , given an oracle with  and where the phase oracle is where then and then the Grover's iteration   The algorithm is shown below  The process of Grover's algorithm       Here is another explanation       Define a superposition state and (note the dashed line in the circuit) where we used eq.(3.1.24) and eq.(3.1.26)   This algorithm carries out the operation on the state   The representation of the Grover's algorithm using circuits is shown in fig(3.1.8.)  Quantum circuit for the Grover algorithm      "
 },
 {
-  "id": "p-248",
+  "id": "p-270",
   "level": "2",
-  "url": "sec2-chap3.html#p-248",
+  "url": "sec2-chap3.html#p-270",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "Classical search "
 },
 {
-  "id": "p-249",
+  "id": "p-271",
   "level": "2",
-  "url": "sec2-chap3.html#p-249",
+  "url": "sec2-chap3.html#p-271",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "unitary matrix "
 },
 {
-  "id": "p-251",
+  "id": "p-273",
   "level": "2",
-  "url": "sec2-chap3.html#p-251",
+  "url": "sec2-chap3.html#p-273",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "diffusion gate Household transform "
 },
 {
-  "id": "example-5",
+  "id": "example-6",
   "level": "2",
-  "url": "sec2-chap3.html#example-5",
+  "url": "sec2-chap3.html#example-6",
   "type": "Example",
   "number": "3.2.1",
   "title": "",
   "body": " We prose a random vector , and try to find the expected factor   1. Consider you have the following data    Representation of values       2. Calculate the average   3. Invert each element aorund the average by defining   We calculate the units away, , from the average, , for each    4.a define   and calculate   The inversion about the average calculates the units away, , from the average, , for each .   4.b Plot the data      Representation of values      The last operation, has the following representation in terms of matrices, where where is the matrix for the average. It means . As follows, This is a state where each amplitude is the average of all the amplitudes.   5. Invert amplitudes about the average.    The item (4).b and eq. (3.1.11) show same results, the second report implies linear algebra operations.  This example emphasizes on invert amplitudes about the mean; however, Grover's algorithm requires phase inversion. The following example explains the step.  "
 },
 {
-  "id": "example-6",
+  "id": "example-7",
   "level": "2",
-  "url": "sec2-chap3.html#example-6",
+  "url": "sec2-chap3.html#example-7",
   "type": "Example",
   "number": "3.2.4",
   "title": "",
@@ -1054,36 +1081,36 @@ var ptx_lunr_docs = [
   "body": " Shor's Algorithm   Building Up to the Algorithm  In the field of cryptography, quantum computers could be used to improve the security of our information systems. However, quantum computations can also be used to break through our modern crypto-systems much faster than is possible through classical computing. One method through which quantum computation could be used to break through our modern cybersecurity is with an algorithm created by American mathematician Peter Shor in 1994.  The security behind our modern cryptographic methods lies in the fact that it is very computationally difficult to find the prime factors of large numbers. It takes years of computing time on a classical computer to find the factors of numbers with hundreds of digits. The algorithm designed by Peter Shor takes advantage of quantum concepts to find the prime factors of large numbers much quicker. If a powerful enough quantum computer is ever built it could be used to break most modern encryptions jarringly quickly. Before describing the algorithm, we must first define some terms.  Prime Numbers: A number is prime if the only positive integers that divide it are itself and the number one  Coprime Numbers: Two numbers are coprime (also known as relatively prime or mutually prime) if the only positive integer that is a divisor of both of them is the number one. In other words, two numbers are coprime if their greatest common divisor is one and they share no prime factors  Period of a function: Suppose and are two binary strings. The period of a function would be a binary string such that   where and represents the XOR operation.  A periodic function is any function with a series of outputs that repeat as the inputs continue to increase. The period of a function is the length of the sequence of repeating outputs.  Congruence Relation: The congruence relation comes from the field of modular arithmetic. This relation deals with numbers that have the same remained when divided by a specific value, which is called a modulus Modulus .   This equation reads \" is congruent to modulo .\" Congruence relations have the following properties:   Suppose and . Congruence relations have the following operations defined:   An alternate form for the equation is   Here is called the remainder and is what we want to solve for to find the value of .  For two coprimes and (where ) we propose the sequence   The terms of this sequence are defined by the periodic function    The following examples will show the period of this function for different values of and .   Consider , and running from 0 to    Notice that after 11 values of the function begins to repeat itself. If we continued to write out this sequence as continues to increase, we would find that every 11 integers, the sequence repeats again. This means that has a period of 11, which means .    A counterexample  This example will show what will happen when and are not coprimes. Consider , and running from to . and share the prime factor so they are not coprime.   As we can see, the function does begin to repeat, but it does not repeat the entire sequence. Thus this function is not periodic, which is why we must choose coprimes for and .    Consider , and running from 0 to    Notice that after 4 values of the function begins to repeat itself. If we continued to write out this sequence as continues to increase, we would find that every 4 integers, the sequence repeats again. This means that has a period of 4, which means .     An Example  Before fully diving into Shor's algorithm, we will have another example. Suppose we have two prime numbers, We can multiply them togehter to get which a positive number and the result of two prime numbers. Now, think about this   where is either prime or the product of primes. We can calculate this number fairly easily. However, if you have   where and are either prime or the product of primes. We can still calculate this fairly easily and find that 315 actually has more than two factors   Instead of trying to solve for and , it makes more sense to solve for and where each is a prime factor and each is an exponent that represents how many times appears as a factor. This means we want to express the number we are looking to factor as     Shor's Algorithm   Integer Factorization Problem   An integer    Output positive integers and where the are distinct primes and   The complexity to calculate the prime factors increases rapidly as increases.   In 1994, while Peter Shor was working for Bell Labs, his proposed algorithm to quickly factor large numbers sent ripples across the fields of computer science, number theory, quantum computation, and cryptography. While it has not been proven that factoring large numbers can not be achieved on a classical computer in polynomial time, as of 2015 the fastest algorithm publicly available for factoring large number runs in   operations where is the number of bits used to represent the number; this runtime exceeds polynomial time. In contrast Shor's algorithm runs in   operations on a quantum computer, and then must perform steps of post processing on a classical computer. Overall this time is polynomial. This discovery propelled the study of quantum computing forward, as such an algorithm has been highly sought after.    Shor's algorithm uses quantum parallelism to produce a superposition of all values of this function in one step.  The Quantum Fourier Transform The Quantum Fourier Transform is a highly advanced topic which we will not delve into here, but readers wishing to expand their knowledge on it should go to this link is used to create a state in which most of the amplitudes are close to multiples of the reciprocals of the functions period. With high probability, measuring the state yields information from which, by classical means, the period can be extracted. The period is then used to factor N  The function   is a periodic function where is an integer coprime to and is the integer we want to factor. Calculating this function for an exponential number of inputs would take an exponential amount of time on a classical computer, but an a quantum computer Shor's algorithm can take advantage of quantum parallelism to perform this exponential number of operations in one step.  The first thing we need to know in order to do Shor's algorithm is order finding Order Finding . Let and be positive integers with no common factors such that . The order of for the function is the smallest positive integer such that   which means   This equation can be expanded   This tells us that the period of the function will be the smallest nonzero value of that satisfies the equation . If is even, then and are guaranteed to be integers. Since we are looking to find integer factors, if we want to factor , then we must keep choosing values of until is an even number.  When is even, we know that . It cannot be the case that because this would imply that which cannot be true since is the smallest value that satisfies that equation. If we can show that it is also not the case that , then we will know that is a multiple of but that is not a multiple of nor of . This means that must share common factors with and .  In order to verify it is not the case that we should first compute   using the Euclidean Algorithm (we do not describe the Euclidean Algorithm in this webbook, but readers unfamiliar with it may be interested in this link ). If we calculate that then we know that , which means we will not be able to factor using this value of and we will need to restart the algorithm with a new value of . If we calculate that then is a factor of and is another factor. If either of these factors are not prime then we can perform the entire algorithm on them again in order to find their factors. We keep repeating this process until we can fully factor and represent it as a product of primes.   Suppose we want to find the period of the function for . We could use the same method we did in examples 3.2.1, 3.2.2, and 3.3.3   This method tells us that the period of the function is 5, but it is extremely time consuming. If our values of or were larger it would be very difficult to perform these operations, even on a powerful computer. This problem can be solved much more efficiently by using a quantum algorithm based on phase estimation Phase Estimation .     Shor's Algorithm Restated  Randomly choose an integer such that . Use the Euclidean algorithm to determine whether and are relatively prime. If not, we have found a factor of . Otherwise, apply the rest of the algorithm.  Use quantum parallelism to compute on the superposition of inputs, and apply a quantum Fourier transform to the result.  Measure the results. With high probability, a value of close to a multiple of will be obtained.  Use classical methods to obtain the period of .  Try different values of until we calculate an even . Then use the Euclidean algorithm to check efficiently whether (or ) has a nontrivial common factor with .  Repeat all steps if necessary    "
 },
 {
-  "id": "p-282",
+  "id": "p-304",
   "level": "2",
-  "url": "sec3-chap3.html#p-282",
+  "url": "sec3-chap3.html#p-304",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "modulus "
 },
 {
-  "id": "example-7",
+  "id": "example-8",
   "level": "2",
-  "url": "sec3-chap3.html#example-7",
+  "url": "sec3-chap3.html#example-8",
   "type": "Example",
   "number": "3.3.1",
   "title": "",
   "body": " Consider , and running from 0 to    Notice that after 11 values of the function begins to repeat itself. If we continued to write out this sequence as continues to increase, we would find that every 11 integers, the sequence repeats again. This means that has a period of 11, which means .  "
 },
 {
-  "id": "example-8",
+  "id": "example-9",
   "level": "2",
-  "url": "sec3-chap3.html#example-8",
+  "url": "sec3-chap3.html#example-9",
   "type": "Example",
   "number": "3.3.2",
   "title": "A counterexample.",
   "body": " A counterexample  This example will show what will happen when and are not coprimes. Consider , and running from to . and share the prime factor so they are not coprime.   As we can see, the function does begin to repeat, but it does not repeat the entire sequence. Thus this function is not periodic, which is why we must choose coprimes for and .  "
 },
 {
-  "id": "example-9",
+  "id": "example-10",
   "level": "2",
-  "url": "sec3-chap3.html#example-9",
+  "url": "sec3-chap3.html#example-10",
   "type": "Example",
   "number": "3.3.3",
   "title": "",
@@ -1099,18 +1126,18 @@ var ptx_lunr_docs = [
   "body": " Integer Factorization Problem   An integer    Output positive integers and where the are distinct primes and   The complexity to calculate the prime factors increases rapidly as increases.  "
 },
 {
-  "id": "p-309",
+  "id": "p-331",
   "level": "2",
-  "url": "sec3-chap3.html#p-309",
+  "url": "sec3-chap3.html#p-331",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "order finding "
 },
 {
-  "id": "example-10",
+  "id": "example-11",
   "level": "2",
-  "url": "sec3-chap3.html#example-10",
+  "url": "sec3-chap3.html#example-11",
   "type": "Example",
   "number": "3.3.5",
   "title": "",

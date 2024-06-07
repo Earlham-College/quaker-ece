@@ -10,14 +10,17 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body class="ignore-math"><article class="example example-like"><div class="para">Suppose we want to find the period of the function <span class="process-math">\(f\)</span> for <span class="process-math">\(a=5, \ N=44 \text{.}\)</span> We could use the same method we did in examples 3.2.1, 3.2.2, and 3.3.3</div>
+<body class="ignore-math"><article class="example example-like"><div class="para">Consider <span class="process-math">\(a=229, / N=247\text{,}\)</span> and <span class="process-math">\(r\)</span> running from 0 to <span class="process-math">\(n\)</span>
+</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\begin{array}{r r r r r r r r r r r r r}
-r&amp;0&amp;1&amp;2&amp;3&amp;4&amp;5&amp;6&amp;7&amp;8&amp;9&amp;10&amp;\ldots\\
-a^r&amp;1&amp;5&amp;25&amp;125&amp;625&amp;3,125&amp;15,625&amp;78,125&amp;390,625&amp;1,953,125&amp;9,765,625&amp;\ldots\\
-g_{5, 44}(r)&amp;1&amp;5&amp;25&amp;37&amp;9&amp;1&amp;5&amp;25&amp;37&amp;9&amp;1&amp;\ldots\end{array} 
+\begin{array}{r r r r r r r r r}
+r&amp;0&amp;1&amp;2&amp;3&amp;4&amp;5&amp;6&amp;\ldots\\
+a^r&amp;1&amp;229&amp;52441&amp;12008989&amp;2750058481&amp;629763392149&amp;144215816802121&amp;\ldots\\
+g_{229, 247}(r)&amp;1&amp;229&amp;77&amp;96&amp;1&amp;229&amp;77&amp;\ldots\\
+\end{array} 
 \end{equation*}
 </div>
-<div class="para">This method tells us that the period of the function is 5, but it is extremely time consuming. If our values of <span class="process-math">\(a\)</span> or <span class="process-math">\(N\)</span> were larger it would be very difficult to perform these operations, even on a powerful computer. This problem can be solved much more efficiently by using a quantum algorithm based on <dfn class="terminology">phase estimation</dfn> .</div></article></body>
+<div class="para">Notice that after 4 values of <span class="process-math">\(r\)</span> the function <span class="process-math">\(g_{229,247}(r)\)</span> begins to repeat itself. If we continued to write out this sequence as <span class="process-math">\(r\)</span> continues to increase, we would find that every 4 integers, the sequence repeats again. This means that <span class="process-math">\(g_{229,247}(r)\)</span> has a period of 4, which means <span class="process-math">\(g_{229,247}(r) = g_{229,247}(r+4)\text{.}\)</span>
+</div></article></body>
 </html>

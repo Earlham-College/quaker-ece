@@ -16,7 +16,7 @@
 <meta property="book:author" content="Levi Goldberg">
 <meta property="book:author" content="Shun Suzuki">
 <meta property="book:author" content="Javier Orduz">
-<script>
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>
 var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
 window.MathJax = {
   "tex": {
@@ -43,7 +43,24 @@ window.MathJax = {
   },
   "options": {
     "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
-    "processHtmlClass": "process-math"
+    "processHtmlClass": "process-math",
+    "renderActions": {
+      "findScript": [
+        10,
+        function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        },
+        ""
+      ]
+    }
   },
   "chtml": {
     "scale": 0.98,
@@ -71,7 +88,17 @@ window.MathJax = {
     )}
   }
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.3/pretext_search.js"></script><link href="https://pretextbook.org/css/0.7/pretext_search.css" rel="stylesheet" type="text/css">
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({
+  "inputLocation": "pre.sagecell-sage",
+  "linked": true,
+  "languages": [
+    "sage"
+  ],
+  "evalButtonText": "Evaluate (Sage)"
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.3/pretext_search.js"></script><link href="https://pretextbook.org/css/0.7/pretext_search.css" rel="stylesheet" type="text/css">
 <script>js_version = 0.3</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.3/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.3/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.3/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script><link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
@@ -314,7 +341,16 @@ window.MathJax = {
 <li><div class="toc-item"><a href="sec3-chap2.html#subsec3-chap2" class="internal"><span class="codenumber">2.3.3</span> <span class="title">Reversible and Nonreversible gate</span></a></div></li>
 </ul>
 </li>
-<li class="active"><div class="toc-item"><a href="sec4-chap2.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Coding Quantum Circuits</span></a></div></li>
+<li class="active">
+<div class="toc-item"><a href="sec4-chap2.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Coding Quantum Circuits</span></a></div>
+<ul class="structural"><li>
+<div class="toc-item"><a href="sec4-chap2.html#subsec-Gates-in-Qiskit" class="internal"><span class="codenumber">2.4.1</span> <span class="title">Gates in Qiskit</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec4-chap2.html#subsubsec-One-Qubit-Gates" class="internal"><span class="codenumber">2.4.1.1</span> <span class="title">One Qubit Gates</span></a></div></li>
+<li><div class="toc-item"><a href="sec4-chap2.html#subsubsec-Two-Qubit-Gates" class="internal"><span class="codenumber">2.4.1.2</span> <span class="title">Two Qubit Gates</span></a></div></li>
+</ul>
+</li></ul>
+</li>
 </ul>
 </li>
 <li>
@@ -344,7 +380,83 @@ window.MathJax = {
 </ul></nav></div>
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec4-chap2"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">2.4</span> <span class="title">Coding Quantum Circuits</span>
-</h2></section></div>
+</h2>
+<div class="para" id="p-244">One extremely valuable tool for creating and visualizing quantum circuits is the Qiskit package for python that was created by IBM. A full overview of Qiskit from its creators is available at <a class="external" href="https://www.ibm.com/quantum/qiskit" target="_blank"><code class="code-inline tex2jax_ignore">https://www.ibm.com/quantum/qiskit</code></a>, but we will provide a basic introduction here as well.</div>
+<div class="para" id="p-245">The package can be added to a python codespace with the <code class="code-inline tex2jax_ignore">import qiskit</code> command or by using <code class="code-inline tex2jax_ignore">from qiskit import [],[],...</code>. A quantum circuit is composed of both a quantum register and a classical register. These can be defined with the <code class="code-inline tex2jax_ignore">QuantumRegister(n)</code> and <code class="code-inline tex2jax_ignore">ClassicalRegister(n)</code> methods where <code class="code-inline tex2jax_ignore">n</code> is the number of bits in the register. Putting these together, we can create a quantum circuit with <code class="code-inline tex2jax_ignore">QuantumCircuit(QuantumRegister(n),ClassicalRegister(n))</code>. Once we have created a quantum circuit, we can visualize it with the <code class="code-inline tex2jax_ignore">.draw()</code> method. The following code shows an example of a quantum circuit with two quantum bits and one classical bit.</div>
+<pre class="ptx-sagecell sagecell-sage" id="sage-1"><script type="text/x-sage">import qiskit 
+qreg = qiskit.QuantumRegister(2)
+creg = qiskit.ClassicalRegister(1)
+qcircuit = qiskit.QuantumCircuit(qreg,creg)
+qcircuit.draw()
+</script></pre>
+<div class="para" id="p-246">Here we define the variables <code class="code-inline tex2jax_ignore">qreg</code> as the quantum register, <code class="code-inline tex2jax_ignore">creg</code> as the classical register, and <code class="code-inline tex2jax_ignore">qcircuit</code> as the quantum circuit. We can see that the two quantum bits we created are indexed <code class="code-inline tex2jax_ignore">0</code> and <code class="code-inline tex2jax_ignore">1</code> and the classical bit we created has index <code class="code-inline tex2jax_ignore">0</code>.</div>
+<section class="subsection" id="subsec-Gates-in-Qiskit"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.4.1</span> <span class="title">Gates in Qiskit</span>
+</h3>
+<section class="subsubsection" id="subsubsec-One-Qubit-Gates"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span> <span class="codenumber">2.4.1.1</span> <span class="title">One Qubit Gates</span>
+</h4>
+<div class="para" id="p-247">In each of the following we will use the same variable names as above and <code class="code-inline tex2jax_ignore">i</code> represents the index of the bit we wish to apply the gate to.</div>
+<div class="para" id="p-248"><span class="process-math">\(\textbf{X-Gate (NOT operator)}\)</span></div>
+<div class="para" id="p-249"><span class="process-math">\(X = \begin{pmatrix} 0 &amp; 1 \\ 1 &amp; 0 \end{pmatrix} \)</span></div>
+<div class="para" id="p-250">To apply this gate to a qubit, use <code class="code-inline tex2jax_ignore">qcircuit.x(qreg[i])</code>
+</div>
+<div class="para" id="p-251"><span class="process-math">\(\textbf{Z-Gate (Z operator)}\)</span></div>
+<div class="para" id="p-252"><span class="process-math">\(Z = \begin{pmatrix} 1 &amp; 0 \\ 0 &amp; -1 \end{pmatrix} \)</span></div>
+<div class="para" id="p-253">To apply this gate to a qubit, use <code class="code-inline tex2jax_ignore">qcircuit.z(qreg[i])</code>
+</div>
+<div class="para" id="p-254"><span class="process-math">\(\textbf{H-Gate (Hadamard operator)}\)</span></div>
+<div class="para" id="p-255"><span class="process-math">\(X = \begin{pmatrix} \frac{1}{\sqrt{2}} &amp; \frac{1}{\sqrt{2}} \\ \frac{1}{\sqrt{2}} &amp; \frac{1}{\sqrt{2}} \end{pmatrix} \)</span></div>
+<div class="para" id="p-256">To apply this gate to a qubit, use <code class="code-inline tex2jax_ignore">qcircuit.h(qreg[i])</code>
+</div></section><section class="subsubsection" id="subsubsec-Two-Qubit-Gates"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span> <span class="codenumber">2.4.1.2</span> <span class="title">Two Qubit Gates</span>
+</h4>
+<div class="para" id="p-257">For two qubit gates, we will use <code class="code-inline tex2jax_ignore">i</code> to represent the index of the control qubit and <code class="code-inline tex2jax_ignore">j</code> to represent the index of the target qubit</div>
+<div class="para" id="p-258"><span class="process-math">\(\textbf{CX-Gate (Controlled NOT operator)}\)</span></div>
+<div class="para" id="p-259"><span class="process-math">\(CX = \begin{pmatrix} 1 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 1 \\ 0 &amp; 0 &amp; 1 &amp; 0 \end{pmatrix} \)</span></div>
+<div class="para" id="p-260">To apply this gate to a pair of qubits, use <code class="code-inline tex2jax_ignore">qcircuit.cx(qreg[i],qreg[j])</code>
+</div></section><article class="example example-like" id="example-5"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-5"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.4.1</span><span class="period">.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-5"><article class="example example-like"><div class="para" id="p-261">This example shows the code to create a quantum circuit with three quantum bits and one classical bit. All three qubits have a Hadamard gate applied to them, the 0th qubit has an X gate applied to it, and the 1st qubit is used as a control for a Controlled Not gate targeting the 2nd qubit.</div> <pre class="ptx-sagecell hidden-sagecell-sage" id="sage-2"><script type="text/x-sage">from qiskit import QuantumRegister, ClassicalRegister, QuantumCircuit
+qreg = QuantumRegister(3)
+creg = ClassicalRegister(1)
+qcircuit = QuantumCircuit(qreg,creg)
+qcircuit.h(qreg[0:1])
+qcircuit.h(qreg[1:2])
+qcircuit.h(qreg[2:])
+qcircuit.x(qreg[0:1])
+qcircuit.cx(qreg[1:2],qreg[2:])
+qcircuit.draw()
+</script></pre> <div class="para" id="p-262">With the version of Qiskit we are using here, we must use slices instead of integers to specify the indexes of the qbits we want to measure.</div></article></div>
+<article class="exercise exercise-like" id="exercise-28"><a href="" data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exercise-28"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.4.2</span><span class="period">.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-28"><article class="exercise exercise-like"><div class="para" id="p-263">In the space below, write code to create a quantum circuit with two qubits and one classical bit. Apply a hadamard gate to the 0th qubit and an X gate to the 1st qubit</div> <pre class="ptx-sagecell hidden-sagecell-sage" id="sage-3"><script type="text/x-sage">from qiskit import QuantumRegister, ClassicalRegister, QuantumCircuit
+</script></pre>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-27" id="solution-27"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-27"><div class="solution solution-like"><pre class="ptx-sagecell hidden-sagecell-sage" id="sage-4"><script type="text/x-sage">from qiskit import QuantumRegister, ClassicalRegister, QuantumCircuit
+qreg = QuantumRegister(2)
+creg = ClassicalRegister(1)
+qcircuit = QuantumCircuit(qreg,creg)
+qcircuit.h(qreg[0:1])
+qcircuit.x(qreg[1:])
+qcircuit.draw()
+</script></pre></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="exercise-29"><a href="" data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exercise-29"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.4.3</span><span class="period">.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-29"><article class="exercise exercise-like"><div class="para" id="p-264">In the space below, write code to create a quantum circuit with three qubits and one classical bit. Apply an X-gate to the 0th qubit, a hadamard gate to the 1st qubit, and a Controlled X gate using the 2nd qubit as a control and the 0th qubit as a target.</div> <pre class="ptx-sagecell hidden-sagecell-sage" id="sage-5"><script type="text/x-sage">from qiskit import QuantumRegister, ClassicalRegister, QuantumCircuit
+</script></pre>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-28" id="solution-28"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-28"><div class="solution solution-like"><pre class="ptx-sagecell hidden-sagecell-sage" id="sage-6"><script type="text/x-sage">from qiskit import QuantumRegister, ClassicalRegister, QuantumCircuit
+qreg = QuantumRegister(3)
+creg = ClassicalRegister(1)
+qcircuit = QuantumCircuit(qreg,creg)
+qcircuit.x(qreg[0:1])
+qcircuit.h(qreg[1:2])
+qcircuit.cx(qreg[2:],qreg[0:1])
+qcircuit.draw()
+</script></pre></div></div>
+</div></article></div></section><div class="para" id="p-265">This is only a very brief introduction to Qiskit, and there is much more you can do, including running code on a quantum computer simulator to measure a quantum circuit, and connecting to one of IBM’s real quantum computers to run code.</div></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="sec3-chap2.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="chap3-chapter.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>
 </div></main>
