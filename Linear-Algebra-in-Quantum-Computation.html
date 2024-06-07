@@ -314,10 +314,11 @@ window.MathJax = {
 <li><div class="toc-item"><a href="sec3-chap2.html#subsec3-chap2" class="internal"><span class="codenumber">2.3.3</span> <span class="title">Reversible and Nonreversible gate</span></a></div></li>
 </ul>
 </li>
+<li><div class="toc-item"><a href="sec4-chap2.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Coding Quantum Circuits</span></a></div></li>
 </ul>
 </li>
 <li>
-<div class="toc-item"><a href="chap3-chapter.html" class="internal"><span class="codenumber">3</span> <span class="title">Algorithm</span></a></div>
+<div class="toc-item"><a href="chap3-chapter.html" class="internal"><span class="codenumber">3</span> <span class="title">Quantum Algorithms</span></a></div>
 <ul class="structural">
 <li><div class="toc-item"><a href="sec1-chap3.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Introduction</span></a></div></li>
 <li><div class="toc-item"><a href="sec2-chap3.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Grover’s Algorithm</span></a></div></li>
@@ -327,6 +328,7 @@ window.MathJax = {
 <li><div class="toc-item"><a href="sec3-chap3.html#subsec-Building-Up-to-the-Algorithm" class="internal"><span class="codenumber">3.3.1</span> <span class="title">Building Up to the Algorithm</span></a></div></li>
 <li><div class="toc-item"><a href="sec3-chap3.html#subsec-An-Example" class="internal"><span class="codenumber">3.3.2</span> <span class="title">An Example</span></a></div></li>
 <li><div class="toc-item"><a href="sec3-chap3.html#subsec-Shors-Algorithm" class="internal"><span class="codenumber">3.3.3</span> <span class="title">Shor’s Algorithm</span></a></div></li>
+<li><div class="toc-item"><a href="sec3-chap3.html#subsec-Shors-Algorithm-Restated" class="internal"><span class="codenumber">3.3.4</span> <span class="title">Shor’s Algorithm Restated</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -343,20 +345,33 @@ window.MathJax = {
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="Linear-Algebra-in-Quantum-Computation"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">1.6</span> <span class="title">Linear Algebra in Quantum Computation</span>
 </h2>
+<<<<<<< HEAD
+<div class="para" id="p-83">As mentioned in the section on Classical Computing <a href="Classical-Computing.html" class="internal" title="Section 1.4: Classical Computing">Section 1.4</a>, qubits can be in the state <span class="process-math">\(\ket{0}\)</span> or <span class="process-math">\(\ket{1}\text{.}\)</span> What’s more, these states can be represented with vectors.</div>
+=======
 <div class="para" id="p-84">As mentioned in the section on Classical Computing <a href="Classical-Computing.html" class="internal" title="Section 1.4: Classical Computing">Section 1.4</a>, qubits can be in the state <span class="process-math">\(\ket{0}\)</span> or <span class="process-math">\(\ket{1}\text{.}\)</span> What’s more, these states can be represented with vectors.</div>
+>>>>>>> 88f89cad09a3d1f6693b899c75fbed9ff51a670a
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/Classical-Computing.html">
 \begin{equation*}
 \ket{0} = \begin{pmatrix} 1 \\ 0 \end{pmatrix} 
 \end{equation*}
 </div>
+<<<<<<< HEAD
+<div class="para" id="p-84">and</div>
+=======
 <div class="para" id="p-85">and</div>
+>>>>>>> 88f89cad09a3d1f6693b899c75fbed9ff51a670a
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/Classical-Computing.html">
 \begin{equation*}
 \ket{1} = \begin{pmatrix} 0 \\ 1 \end{pmatrix} 
 \end{equation*}
 </div>
+<<<<<<< HEAD
+<div class="para" id="p-85">This notation was first introduced by mathematician Paul Dirac and is known as "Dirac Notation" or "<dfn class="terminology">Bra-Ket Notation</dfn>." In this notation, the <span class="process-math">\(\ket{}\)</span> symbol represents a qubit state and is referred to as a "<dfn class="terminology">ket</dfn>." At a glance, it can be seen that the vectors <span class="process-math">\(\ket{0}\)</span> and <span class="process-math">\(\ket{1}\)</span> are each normal and are orthogonal to each other. Additionally, any point in two dimensional space could be described with a linear combination of these two vectors, meaning they form a basis (we will discuss exactly which space they form a basis for in the following section). Put together, this means <span class="process-math">\(\ket{0}\)</span> and <span class="process-math">\(\ket{1}\)</span> form an orthonormal basis. All qubits must be normalized in order to be expressed properly.</div>
+<div class="para" id="p-86">Systems with multiple qubits are described by vectors in higher dimensions, which will be discussed later.</div></section></div>
+=======
 <div class="para" id="p-86">This notation was first introduced by mathematician Paul Dirac and is known as "Dirac Notation" or "<dfn class="terminology">Bra-Ket Notation</dfn>." In this notation, the <span class="process-math">\(\ket{}\)</span> symbol represents a qubit state and is referred to as a "<dfn class="terminology">ket</dfn>." At a glance, it can be seen that the vectors <span class="process-math">\(\ket{0}\)</span> and <span class="process-math">\(\ket{1}\)</span> are each normal and are orthogonal to each other. Additionally, any point in two dimensional space could be described with a linear combination of these two vectors, meaning they form a basis (we will discuss exactly which space they form a basis for in the following section). Put together, this means <span class="process-math">\(\ket{0}\)</span> and <span class="process-math">\(\ket{1}\)</span> form an orthonormal basis. All qubits must be normalized in order to be expressed properly.</div>
 <div class="para" id="p-87">Systems with multiple qubits are described by vectors in higher dimensions, which will be discussed later.</div></section></div>
+>>>>>>> 88f89cad09a3d1f6693b899c75fbed9ff51a670a
 <div class="ptx-content-footer">
 <a class="previous-button button" href="Vectors-and-Vector-Spaces.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="Qubit-States.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>
 </div></main>

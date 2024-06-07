@@ -314,10 +314,11 @@ window.MathJax = {
 <li><div class="toc-item"><a href="sec3-chap2.html#subsec3-chap2" class="internal"><span class="codenumber">2.3.3</span> <span class="title">Reversible and Nonreversible gate</span></a></div></li>
 </ul>
 </li>
+<li><div class="toc-item"><a href="sec4-chap2.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Coding Quantum Circuits</span></a></div></li>
 </ul>
 </li>
 <li>
-<div class="toc-item"><a href="chap3-chapter.html" class="internal"><span class="codenumber">3</span> <span class="title">Algorithm</span></a></div>
+<div class="toc-item"><a href="chap3-chapter.html" class="internal"><span class="codenumber">3</span> <span class="title">Quantum Algorithms</span></a></div>
 <ul class="structural">
 <li><div class="toc-item"><a href="sec1-chap3.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Introduction</span></a></div></li>
 <li><div class="toc-item"><a href="sec2-chap3.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Grover’s Algorithm</span></a></div></li>
@@ -327,6 +328,7 @@ window.MathJax = {
 <li><div class="toc-item"><a href="sec3-chap3.html#subsec-Building-Up-to-the-Algorithm" class="internal"><span class="codenumber">3.3.1</span> <span class="title">Building Up to the Algorithm</span></a></div></li>
 <li><div class="toc-item"><a href="sec3-chap3.html#subsec-An-Example" class="internal"><span class="codenumber">3.3.2</span> <span class="title">An Example</span></a></div></li>
 <li><div class="toc-item"><a href="sec3-chap3.html#subsec-Shors-Algorithm" class="internal"><span class="codenumber">3.3.3</span> <span class="title">Shor’s Algorithm</span></a></div></li>
+<li><div class="toc-item"><a href="sec3-chap3.html#subsec-Shors-Algorithm-Restated" class="internal"><span class="codenumber">3.3.4</span> <span class="title">Shor’s Algorithm Restated</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -346,12 +348,25 @@ window.MathJax = {
 <section class="subsection" id="subsec-Qubit"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">1.7.1</span> <span class="title">Qubits</span>
 </h3>
+<<<<<<< HEAD
+<div class="para" id="p-87">As a reminder, a qubit exists in a superposition between the states <span class="process-math">\(\ket{0}\)</span> and <span class="process-math">\(\ket{1}\text{,}\)</span> which means that they can be expressed as a linear combination of the vectors <span class="process-math">\(\begin{pmatrix} 1 \\ 0 \end{pmatrix}\)</span> and <span class="process-math">\(\begin{pmatrix} 0 \\ 1 \end{pmatrix} \text{.}\)</span> This means a qubit <span class="process-math">\(\psi \)</span> can be expressed</div>
+=======
 <div class="para" id="p-88">As a reminder, a qubit exists in a superposition between the states <span class="process-math">\(\ket{0}\)</span> and <span class="process-math">\(\ket{1}\text{,}\)</span> which means that they can be expressed as a linear combination of the vectors <span class="process-math">\(\begin{pmatrix} 1 \\ 0 \end{pmatrix}\)</span> and <span class="process-math">\(\begin{pmatrix} 0 \\ 1 \end{pmatrix} \text{.}\)</span> This means a qubit <span class="process-math">\(\psi \)</span> can be expressed</div>
+>>>>>>> 88f89cad09a3d1f6693b899c75fbed9ff51a670a
 <div class="displaymath process-math">
 \begin{equation*}
 \ket{\psi} = \alpha \ket{0} + \beta \ket{1} 
 \end{equation*}
 </div>
+<<<<<<< HEAD
+<div class="para" id="p-88">Where <span class="process-math">\(\alpha \)</span> and <span class="process-math">\(\beta \)</span> are complex coefficiants that relate to the probability that a qubit is in the states <span class="process-math">\(\ket{0}\)</span> and <span class="process-math">\(\ket{1} \)</span> respectively. This means that qubits exist within a complex vector space. The exact space that qubits exist within is known as a <dfn class="terminology">hilbert Space</dfn>.</div></section><section class="subsection" id="subsec-Hilbert-Space"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.7.2</span> <span class="title">Hilbert Space</span>
+</h3>
+<div class="para" id="p-89">A hilbert space is a complex vector space in which the inner product is defined as an operation. A single qubit exists within the hilbert space <span class="process-math">\(\mathbb{C}^2\text{,}\)</span> which is the set of all two dimensional vectors with complex entries.</div></section><section class="subsection" id="subsec-Bra-Vectors-and-the-Inner-Product"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.7.3</span> <span class="title">Bra Vectors and the Inner Product for Quantum Computation</span>
+</h3>
+<div class="para" id="p-90">We now introduce the bra in Bra-Ket Notation. Each vector representation of a qubit has a corresponding <dfn class="terminology">bra</dfn> vector (sometimes also referred to as the "Dual Vector") that is equal to the complex conjugate of the transpose of the ket. This operation of taking the transpose and complex conjugating is known as the <dfn class="terminology">adjoint</dfn> and is represented by the <span class="process-math">\(\dagger\)</span> symbol. Bra vectors are represented by the symbol <span class="process-math">\(\bra{}\text{.}\)</span> An example of finding the bra vector for the ket <span class="process-math">\(\psi\)</span> is shown below (where the <span class="process-math">\(*\)</span> symbol represents complex conjugating).</div>
+=======
 <div class="para" id="p-89">Where <span class="process-math">\(\alpha \)</span> and <span class="process-math">\(\beta \)</span> are complex coefficiants that relate to the probability that a qubit is in the states <span class="process-math">\(\ket{0}\)</span> and <span class="process-math">\(\ket{1} \)</span> respectively. This means that qubits exist within a complex vector space. The exact space that qubits exist within is known as a <dfn class="terminology">hilbert Space</dfn>.</div></section><section class="subsection" id="subsec-Hilbert-Space"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">1.7.2</span> <span class="title">Hilbert Space</span>
 </h3>
@@ -359,16 +374,25 @@ window.MathJax = {
 <span class="type">Subsection</span> <span class="codenumber">1.7.3</span> <span class="title">Bra Vectors and the Inner Product for Quantum Computation</span>
 </h3>
 <div class="para" id="p-91">We now introduce the bra in Bra-Ket Notation. Each vector representation of a qubit has a corresponding <dfn class="terminology">bra</dfn> vector (sometimes also referred to as the "Dual Vector") that is equal to the complex conjugate of the transpose of the ket. This operation of taking the transpose and complex conjugating is known as the <dfn class="terminology">adjoint</dfn> and is represented by the <span class="process-math">\(\dagger\)</span> symbol. Bra vectors are represented by the symbol <span class="process-math">\(\bra{}\text{.}\)</span> An example of finding the bra vector for the ket <span class="process-math">\(\psi\)</span> is shown below (where the <span class="process-math">\(*\)</span> symbol represents complex conjugating).</div>
+>>>>>>> 88f89cad09a3d1f6693b899c75fbed9ff51a670a
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/linear-algebra.html">
 \begin{equation*}
 \ket{\psi}^{\dagger} = (\alpha \ket{0} + \beta \ket{1})^{\dagger} = (\alpha \begin{pmatrix} 1 \\ 0 \end{pmatrix} + \beta \begin{pmatrix} 0 \\ 1 \end{pmatrix})^{\dagger} = \alpha^{*} \begin{pmatrix} 1 &amp; 0 \end{pmatrix} + \beta^{*} \begin{pmatrix} 0 &amp; 1 \end{pmatrix} = \bra{\psi} 
 \end{equation*}
 </div>
+<<<<<<< HEAD
+<div class="para" id="p-91">Bra vectors allow us to use a new notation for the inner product. We write the inner product between two vectors, <span class="process-math">\(\ket{\psi}\)</span> and <span class="process-math">\(\ket{\phi}\text{,}\)</span> as <span class="process-math">\(\braket{\psi | \phi}\)</span> and perform the calculation as matrix multiplication, as described in <a href="Vectors-and-Vector-Spaces.html#linear-algebra" class="internal" title="Subsection 1.5.4: Linear Algebra">Subsection 1.5.4</a>
+</div>
+<article class="exercise exercise-like" id="exercise-7"><a href="" data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exercise-7"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">1.7.1</span><span class="period">.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-7"><article class="exercise exercise-like"><div class="para" id="p-92">Find the inner product between the following two qubits.</div>
+=======
 <div class="para" id="p-92">Bra vectors allow us to use a new notation for the inner product. We write the inner product between two vectors, <span class="process-math">\(\ket{\psi}\)</span> and <span class="process-math">\(\ket{\phi}\text{,}\)</span> as <span class="process-math">\(\braket{\psi | \phi}\)</span> and perform the calculation as matrix multiplication, as described in <a href="Vectors-and-Vector-Spaces.html#linear-algebra" class="internal" title="Subsection 1.5.4: Linear Algebra">Subsection 1.5.4</a>
 </div>
 <article class="exercise exercise-like" id="exercise-7"><a href="" data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exercise-7"><h4 class="heading">
 <span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">1.7.1</span><span class="period">.</span>
 </h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-7"><article class="exercise exercise-like"><div class="para" id="p-93">Find the inner product between the following two qubits.</div>
+>>>>>>> 88f89cad09a3d1f6693b899c75fbed9ff51a670a
 <div class="displaymath process-math">
 \begin{equation*}
 \ket{\psi} = \frac{1}{2} \ket{0} + \frac{\sqrt{3}}{2} \ket{1} = \begin{pmatrix} \frac{1}{2} \\ \frac{\sqrt{3}}{2} \end{pmatrix} 
@@ -388,16 +412,26 @@ window.MathJax = {
 </div></article></div></section><section class="subsection" id="subsec-Qubit-Measurements"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">1.7.4</span> <span class="title">Qubit Measurements</span>
 </h3>
+<<<<<<< HEAD
+<div class="para" id="p-93">When a qubit is measured, it collapses from being a superposition of the states <span class="process-math">\(\ket{0}\)</span> and <span class="process-math">\(\ket{1}\)</span> to being in one state or the other. The probability that the qubit will be in either state is related to the coefficient on that state. Consider a qubit <span class="process-math">\(\psi \text{,}\)</span>
+=======
 <div class="para" id="p-94">When a qubit is measured, it collapses from being a superposition of the states <span class="process-math">\(\ket{0}\)</span> and <span class="process-math">\(\ket{1}\)</span> to being in one state or the other. The probability that the qubit will be in either state is related to the coefficient on that state. Consider a qubit <span class="process-math">\(\psi \text{,}\)</span>
+>>>>>>> 88f89cad09a3d1f6693b899c75fbed9ff51a670a
 </div>
 <div class="displaymath process-math">
 \begin{equation*}
 \ket{\psi} = \alpha \ket{0} + \beta \ket{1} = \alpha \begin{pmatrix} 1 \\ 0 \end{pmatrix} + \beta \begin{pmatrix} 0 \\ 1 \end{pmatrix} = \begin{pmatrix} \alpha \\ \beta \end{pmatrix} 
 \end{equation*}
 </div>
+<<<<<<< HEAD
+<div class="para" id="p-94">Since all qubits are normalized, <span class="process-math">\(\psi\)</span> has a length of <span class="process-math">\(1\text{,}\)</span> so <span class="process-math">\(\sqrt{\alpha^2 + \beta^2}=1\text{,}\)</span> which means <span class="process-math">\(\alpha^2 + \beta^2=1\text{.}\)</span>  Since the combined probability that the qubit will be in the state <span class="process-math">\(\ket{0}\)</span> or <span class="process-math">\(\ket{1}\)</span> is equal to <span class="process-math">\(1\text{,}\)</span> we use the normal property of qubits as a method to determine the probability that the qubit will be in either state. For the qubit <span class="process-math">\(\psi\)</span> the probability that it will be in the state <span class="process-math">\(\ket{0}\)</span> after it is measured is <span class="process-math">\(\alpha^2\)</span> and the probability that it will be in the state <span class="process-math">\(\ket{1}\)</span> is <span class="process-math">\(\beta^2\text{.}\)</span>
+</div>
+<div class="para" id="p-95">
+=======
 <div class="para" id="p-95">Since all qubits are normalized, <span class="process-math">\(\psi\)</span> has a length of <span class="process-math">\(1\text{,}\)</span> so <span class="process-math">\(\sqrt{\alpha^2 + \beta^2}=1\text{,}\)</span> which means <span class="process-math">\(\alpha^2 + \beta^2=1\text{.}\)</span>  Since the combined probability that the qubit will be in the state <span class="process-math">\(\ket{0}\)</span> or <span class="process-math">\(\ket{1}\)</span> is equal to <span class="process-math">\(1\text{,}\)</span> we use the normal property of qubits as a method to determine the probability that the qubit will be in either state. For the qubit <span class="process-math">\(\psi\)</span> the probability that it will be in the state <span class="process-math">\(\ket{0}\)</span> after it is measured is <span class="process-math">\(\alpha^2\)</span> and the probability that it will be in the state <span class="process-math">\(\ket{1}\)</span> is <span class="process-math">\(\beta^2\text{.}\)</span>
 </div>
 <div class="para" id="p-96">
+>>>>>>> 88f89cad09a3d1f6693b899c75fbed9ff51a670a
 <em class="alert">Born Rule:</em> The Born Rule tells us that if we express a qubit as a linear combination of basis states, then upon measurement, the probability that the qubit collapses into any given basis state is equal to the square of the coefficient for that basis state. A qubit <span class="process-math">\(\ket{\psi}\)</span> in a vector space defined by the basis <span class="process-math">\(\{ \ket{\beta_1},\ket{\beta_2},\ldots,\ket{\beta_n} \} \)</span>
 </div>
 <div class="displaymath process-math">
@@ -405,7 +439,11 @@ window.MathJax = {
 \ket{\psi} = \alpha_1 \ket{\beta_1} + \alpha_2 \ket{\beta_2} + \ldots + \alpha_n \ket{\beta_n} 
 \end{equation*}
 </div>
+<<<<<<< HEAD
+<div class="para" id="p-96">The probability that <span class="process-math">\(\ket{\psi}\)</span> will collapse into the basis state <span class="process-math">\(\ket{\beta_i}\)</span> is given by <span class="process-math">\(\alpha_i^2\text{.}\)</span> Furthermore, since qubits are normalized</div>
+=======
 <div class="para" id="p-97">The probability that <span class="process-math">\(\ket{\psi}\)</span> will collapse into the basis state <span class="process-math">\(\ket{\beta_i}\)</span> is given by <span class="process-math">\(\alpha_i^2\text{.}\)</span> Furthermore, since qubits are normalized</div>
+>>>>>>> 88f89cad09a3d1f6693b899c75fbed9ff51a670a
 <div class="displaymath process-math">
 \begin{equation*}
 \sum_{i=1}^n P(\beta_i) = \sum_{i=1}^n \alpha_i^2 = 1
@@ -413,13 +451,27 @@ window.MathJax = {
 </div>
 <article class="exercise exercise-like" id="exercise-8"><a href="" data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exercise-8"><h4 class="heading">
 <span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">1.7.2</span><span class="period">.</span>
+<<<<<<< HEAD
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-8"><article class="exercise exercise-like"><div class="para" id="p-97">For the following qubit, find the probability that it will be in the state <span class="process-math">\(\ket{0}\)</span> and the probability that it will be in the state <span class="process-math">\(\ket{1}\)</span> after measurement</div>
+=======
 </h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-8"><article class="exercise exercise-like"><div class="para" id="p-98">For the following qubit, find the probability that it will be in the state <span class="process-math">\(\ket{0}\)</span> and the probability that it will be in the state <span class="process-math">\(\ket{1}\)</span> after measurement</div>
+>>>>>>> 88f89cad09a3d1f6693b899c75fbed9ff51a670a
 <div class="displaymath process-math">
 \begin{equation*}
 \ket{\psi} = \frac{1}{2} \ket{0} + \frac{\sqrt{3}}{2} \ket{1} 
 \end{equation*}
 </div>
 <div class="solutions">
+<<<<<<< HEAD
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-8" id="solution-8"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-8"><div class="solution solution-like"><div class="para" id="p-98">The probability that <span class="process-math">\(\ket{\psi}\)</span> will be in the state <span class="process-math">\(\ket{0}\)</span> after measurement is 25% because <span class="process-math">\((\frac{1}{2})^2 = 1/4 = 0.25\text{.}\)</span> The probability that <span class="process-math">\(\ket{\psi}\)</span> will be in the state <span class="process-math">\(\ket{1}\)</span> after measurement is 75% because <span class="process-math">\((\frac{\sqrt{3}}{2})^2 = 3/4 = 0.75\text{.}\)</span>
+</div></div></div>
+</div></article></div>
+<div class="para" id="p-99">Another way to find the probability that a qubit is in any given state is to take the square of the inner product of the outcome state and the qubit. For a qubit <span class="process-math">\(\ket{\psi}\text{,}\)</span> the probability that it is in the state <span class="process-math">\(\ket{0}\)</span> after measurement would be <span class="process-math">\((\braket{0|\psi})^2\text{,}\)</span> the probability that it is in the state <span class="process-math">\(\ket{1}\)</span> would be <span class="process-math">\((\braket{1|\psi})^2\text{,}\)</span> and the probability that it is in some mixed state <span class="process-math">\(\ket{x}\)</span> would be <span class="process-math">\((\braket{x|\psi})^2\text{.}\)</span>
+</div>
+<article class="exercise exercise-like" id="exercise-9"><a href="" data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exercise-9"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">1.7.3</span><span class="period">.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-9"><article class="exercise exercise-like"><div class="para" id="p-100">Using an inner product, calculate the probability that the following system is in the state <span class="process-math">\(\ket{0}\)</span> and <span class="process-math">\(\ket{1}\text{.}\)</span>
+=======
 <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-8" id="solution-8"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-8"><div class="solution solution-like"><div class="para" id="p-99">The probability that <span class="process-math">\(\ket{\psi}\)</span> will be in the state <span class="process-math">\(\ket{0}\)</span> after measurement is 25% because <span class="process-math">\((\frac{1}{2})^2 = 1/4 = 0.25\text{.}\)</span> The probability that <span class="process-math">\(\ket{\psi}\)</span> will be in the state <span class="process-math">\(\ket{1}\)</span> after measurement is 75% because <span class="process-math">\((\frac{\sqrt{3}}{2})^2 = 3/4 = 0.75\text{.}\)</span>
 </div></div></div>
 </div></article></div>
@@ -428,6 +480,7 @@ window.MathJax = {
 <article class="exercise exercise-like" id="exercise-9"><a href="" data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exercise-9"><h4 class="heading">
 <span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">1.7.3</span><span class="period">.</span>
 </h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-9"><article class="exercise exercise-like"><div class="para" id="p-101">Using an inner product, calculate the probability that the following system is in the state <span class="process-math">\(\ket{0}\)</span> and <span class="process-math">\(\ket{1}\text{.}\)</span>
+>>>>>>> 88f89cad09a3d1f6693b899c75fbed9ff51a670a
 </div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -441,13 +494,21 @@ window.MathJax = {
 P(0) = (\braket{0|\psi})^2 = (\begin{pmatrix} 1 &amp; 0 \end{pmatrix} \begin{pmatrix} \frac{\sqrt{7}}{\sqrt{8}} \\ \frac{1}{\sqrt{8}} \end{pmatrix}+0)^2 = (\frac{\sqrt{7}}{\sqrt{8}})^2 = 7/8 = 0.875 
 \end{equation*}
 </div>
+<<<<<<< HEAD
+<div class="para" id="p-101">The probability that <span class="process-math">\(\ket{\psi}\)</span> will collapse into the state <span class="process-math">\(\ket{0}\)</span> is 87.5%.</div>
+=======
 <div class="para" id="p-102">The probability that <span class="process-math">\(\ket{\psi}\)</span> will collapse into the state <span class="process-math">\(\ket{0}\)</span> is 87.5%.</div>
+>>>>>>> 88f89cad09a3d1f6693b899c75fbed9ff51a670a
 <div class="displaymath process-math">
 \begin{equation*}
 P(1) = (\braket{1|\psi})^2 = (\begin{pmatrix} 0 &amp; 1 \end{pmatrix} \begin{pmatrix} \frac{\sqrt{7}}{\sqrt{8}} \\ \frac{1}{\sqrt{8}} \end{pmatrix})^2 = (0+\frac{1}{\sqrt{8}})^2 = 1/8 = 0.125 
 \end{equation*}
 </div>
+<<<<<<< HEAD
+<div class="para" id="p-102">The probability that <span class="process-math">\(\ket{\psi}\)</span> will collapse into the state <span class="process-math">\(\ket{1}\)</span> is 12.5%.</div>
+=======
 <div class="para" id="p-103">The probability that <span class="process-math">\(\ket{\psi}\)</span> will collapse into the state <span class="process-math">\(\ket{1}\)</span> is 12.5%.</div>
+>>>>>>> 88f89cad09a3d1f6693b899c75fbed9ff51a670a
 </div></div>
 </div></article></div></section></section></div>
 <div class="ptx-content-footer">
