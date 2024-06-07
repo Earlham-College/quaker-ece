@@ -13,28 +13,12 @@
 <body class="ignore-math">
 <h3 class="heading"><span class="type">Paragraph</span></h3>
 <div class="para logical">
-<div class="para">
-<span class="process-math">\(\textbf{Proof:}\)</span> Define a superposition state</div>
+<div class="para">The XOR operartion is</div>
 <div class="displaymath process-math">
-\begin{gather}
-\ket{\psi_1} = H^{\otimes n}\ket{0}^{\otimes n} = 2^{-\frac{n}{2}}\sum_{x\in \{0,1\}}^{2^n-1}\ket{x}\tag{3.2.26}
-\end{gather}
+\begin{equation*}
+\boldsymbol{x}\oplus \boldsymbol{y} = x_1\oplus y_1, x_2\oplus y_2, x_3\oplus y_3, \ldots, x_n\oplus y_n.
+\end{equation*}
 </div>
-<div class="para">and (note the dashed line in the circuit)</div>
-<div class="displaymath process-math">
-\begin{align}
-V = H^{\otimes n} {U_f}_0H^{\otimes n} &amp;= 
-H^{\otimes n}\big(
-2 \ket{0}\bra{0}^{\otimes n} - I
-\big)
-H^{\otimes n}\\=
-&amp;
-2 H^{\otimes n}\ket{0}\bra{0}^{\otimes n}H^{\otimes n} - H^{\otimes n}IH^{\otimes n}\\
-&amp;=
-2 \ket{\psi_1}\bra{\psi_1} - I\tag{3.2.27}
-\end{align}
-</div>
-<div class="para">where we used eq.(3.1.24) and eq.(3.1.26)</div>
 </div>
 <span class="incontext"><a href="sec2-chap3.html#p-272" class="internal">in-context</a></span>
 </body>

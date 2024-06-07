@@ -16,7 +16,7 @@
 <meta property="book:author" content="Levi Goldberg">
 <meta property="book:author" content="Shun Suzuki">
 <meta property="book:author" content="Javier Orduz">
-<script>
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>
 var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
 window.MathJax = {
   "tex": {
@@ -43,7 +43,24 @@ window.MathJax = {
   },
   "options": {
     "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
-    "processHtmlClass": "process-math"
+    "processHtmlClass": "process-math",
+    "renderActions": {
+      "findScript": [
+        10,
+        function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        },
+        ""
+      ]
+    }
   },
   "chtml": {
     "scale": 0.98,
@@ -314,7 +331,16 @@ window.MathJax = {
 <li><div class="toc-item"><a href="sec3-chap2.html#subsec3-chap2" class="internal"><span class="codenumber">2.3.3</span> <span class="title">Reversible and Nonreversible gate</span></a></div></li>
 </ul>
 </li>
-<li><div class="toc-item"><a href="sec4-chap2.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Coding Quantum Circuits</span></a></div></li>
+<li>
+<div class="toc-item"><a href="sec4-chap2.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Coding Quantum Circuits</span></a></div>
+<ul class="structural"><li>
+<div class="toc-item"><a href="sec4-chap2.html#subsec-Gates-in-Qiskit" class="internal"><span class="codenumber">2.4.1</span> <span class="title">Gates in Qiskit</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec4-chap2.html#subsubsec-One-Qubit-Gates" class="internal"><span class="codenumber">2.4.1.1</span> <span class="title">One Qubit Gates</span></a></div></li>
+<li><div class="toc-item"><a href="sec4-chap2.html#subsubsec-Two-Qubit-Gates" class="internal"><span class="codenumber">2.4.1.2</span> <span class="title">Two Qubit Gates</span></a></div></li>
+</ul>
+</li></ul>
+</li>
 </ul>
 </li>
 <li class="active">

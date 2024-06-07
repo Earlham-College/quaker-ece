@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({
+  "inputLocation": "pre.sagecell-sage",
+  "linked": true,
+  "languages": [
+    "sage"
+  ],
+  "evalButtonText": "Evaluate (Sage)"
+});
+</script>
+</head>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h4 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">2.4.2.1</span><span class="period">.</span>
+</h4>
+<pre class="ptx-sagecell sagecell-sage" id="sage-4"><script type="text/x-sage">from qiskit import QuantumRegister, ClassicalRegister, QuantumCircuit
+qreg = QuantumRegister(2)
+creg = ClassicalRegister(1)
+qcircuit = QuantumCircuit(qreg,creg)
+qcircuit.h(qreg[0:1])
+qcircuit.x(qreg[1:])
+qcircuit.draw()
+</script></pre>
+</div>
+<span class="incontext"><a href="sec4-chap2.html#solution-27" class="internal">in-context</a></span>
+</body>
+</html>
