@@ -16,7 +16,7 @@
 <meta property="book:author" content="Levi Goldberg">
 <meta property="book:author" content="Shun Suzuki">
 <meta property="book:author" content="Javier Orduz">
-<script>
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>
 var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
 window.MathJax = {
   "tex": {
@@ -43,7 +43,24 @@ window.MathJax = {
   },
   "options": {
     "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
-    "processHtmlClass": "process-math"
+    "processHtmlClass": "process-math",
+    "renderActions": {
+      "findScript": [
+        10,
+        function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        },
+        ""
+      ]
+    }
   },
   "chtml": {
     "scale": 0.98,
@@ -314,10 +331,20 @@ window.MathJax = {
 <li><div class="toc-item"><a href="sec3-chap2.html#subsec3-chap2" class="internal"><span class="codenumber">2.3.3</span> <span class="title">Reversible and Nonreversible gate</span></a></div></li>
 </ul>
 </li>
+<li>
+<div class="toc-item"><a href="sec4-chap2.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Coding Quantum Circuits</span></a></div>
+<ul class="structural"><li>
+<div class="toc-item"><a href="sec4-chap2.html#subsec-Gates-in-Qiskit" class="internal"><span class="codenumber">2.4.1</span> <span class="title">Gates in Qiskit</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec4-chap2.html#subsubsec-One-Qubit-Gates" class="internal"><span class="codenumber">2.4.1.1</span> <span class="title">One Qubit Gates</span></a></div></li>
+<li><div class="toc-item"><a href="sec4-chap2.html#subsubsec-Two-Qubit-Gates" class="internal"><span class="codenumber">2.4.1.2</span> <span class="title">Two Qubit Gates</span></a></div></li>
+</ul>
+</li></ul>
+</li>
 </ul>
 </li>
 <li>
-<div class="toc-item"><a href="chap3-chapter.html" class="internal"><span class="codenumber">3</span> <span class="title">Algorithm</span></a></div>
+<div class="toc-item"><a href="chap3-chapter.html" class="internal"><span class="codenumber">3</span> <span class="title">Quantum Algorithms</span></a></div>
 <ul class="structural">
 <li><div class="toc-item"><a href="sec1-chap3.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Introduction</span></a></div></li>
 <li><div class="toc-item"><a href="sec2-chap3.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Grover’s Algorithm</span></a></div></li>
@@ -327,6 +354,7 @@ window.MathJax = {
 <li><div class="toc-item"><a href="sec3-chap3.html#subsec-Building-Up-to-the-Algorithm" class="internal"><span class="codenumber">3.3.1</span> <span class="title">Building Up to the Algorithm</span></a></div></li>
 <li><div class="toc-item"><a href="sec3-chap3.html#subsec-An-Example" class="internal"><span class="codenumber">3.3.2</span> <span class="title">An Example</span></a></div></li>
 <li><div class="toc-item"><a href="sec3-chap3.html#subsec-Shors-Algorithm" class="internal"><span class="codenumber">3.3.3</span> <span class="title">Shor’s Algorithm</span></a></div></li>
+<li><div class="toc-item"><a href="sec3-chap3.html#subsec-Shors-Algorithm-Restated" class="internal"><span class="codenumber">3.3.4</span> <span class="title">Shor’s Algorithm Restated</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -438,7 +466,7 @@ window.MathJax = {
 <em class="alert">Dot Product / Inner Product:</em> The dot product (more generally known as the <dfn class="terminology">inner product</dfn> in the context of quantum computation) is an operation between two vectors of the same dimension that produces a scalar. This product is typically referred to with a <span class="process-math">\(\cdot\text{,}\)</span> but has an alternate notation in quantum computation that we will see in the next section. In <span class="process-math">\(\mathbb{R}^n\)</span> and In <span class="process-math">\(\mathbb{C}^n\)</span> this operation is performed by taking the sum of the products of the corresponding entries in each vector, as shown below.</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/subsec-Eigenvectors-and-Eigenvalues.html">
 \begin{equation*}
-\begin{pmatrix} a_1 \\ a_2 \\ \vdots \\ a_n \end{pmatrix} \cdot \begin{pmatrix} b_1 \\ b_2 \\ \vdots \\ b_n \end{pmatrix} = a_1 \cdot b_1 + a_2 \cdot b_2 + \ldots + a_n \cdot b_n 
+\vec{a} = \begin{pmatrix} a_1 \\ a_2 \\ \vdots \\ a_n \end{pmatrix},  \ \vec{b} = \begin{pmatrix} b_1 \\ b_2 \\ \vdots \\ b_n \end{pmatrix}, \ \vec{a} \cdot \vec{b} = a_1 \cdot b_1 + a_2 \cdot b_2 + \ldots + a_n \cdot b_n 
 \end{equation*}
 </div>
 <article class="example example-like" id="example-3"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-3"><h4 class="heading">
@@ -490,7 +518,7 @@ window.MathJax = {
 <em class="alert">Normality:</em> A vector is <dfn class="terminology">normal</dfn> if it has a length of <span class="process-math">\(1\text{.}\)</span> The length (sometimes also referred to as the norm) of a vector can be found be taking the square root of the sum of the squares of its entries, as shown below. This operation is represented by lines(<span class="process-math">\(\| \ \|\)</span>) on either side of the vector that is having its length found. A non-normal vector can be normalized by dividing each of its components by the vectors length. A normalized vector has the same direction as the original vector, but has a length of <span class="process-math">\(1\text{.}\)</span> A set of vectors is <dfn class="terminology">orthonormal</dfn> if each of the vectors are normal and each of the vectors are orthogonal to the rest.</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/subsec-Eigenvectors-and-Eigenvalues.html">
 \begin{equation*}
-\| (\begin{pmatrix} a_1 \\ a_2 \\ \vdots \\ a_n \end{pmatrix}) \| = \sqrt{a_{1}^2 + a_{2}^2 + \ldots + a_{n}^2} 
+\vec{a} =  \begin{pmatrix} a_1 \\ a_2 \\ \vdots \\ a_n \end{pmatrix}, \ \| \vec{a} \| = \sqrt{a_{1}^2 + a_{2}^2 + \ldots + a_{n}^2} 
 \end{equation*}
 </div>
 <article class="exercise exercise-like" id="exercise-3"><a href="" data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exercise-3"><h4 class="heading">
@@ -575,6 +603,16 @@ c \times \begin{pmatrix} a_1 &amp; a_2 &amp; a_3 \\ a_4 &amp; a_5 &amp; a_6 \\ a
 \end{equation*}
 </div>
 <div class="para" id="p-75">Now that we know matrix multiplication, we can redefine the dot product / inner product as the transpose of a vector multiplied by the original vector. Since vectors are <span class="process-math">\(n \times 1\)</span> dimensional, the transpose will be <span class="process-math">\(1 \times n\)</span> dimensional, so multiplying the transpose on the left and the original on the right will produce a <span class="process-math">\(1 \times 1\)</span> matrix, which is functionally the same as a scalar.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/subsec-Eigenvectors-and-Eigenvalues.html">
+\begin{equation*}
+\vec{a} = \begin{pmatrix} a_1 \\ a_2 \\ \vdots \\ a_n \end{pmatrix}, \ \vec{b} = \begin{pmatrix} b_1 \\ b_2 \\ \vdots \\ b_n \end{pmatrix} 
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/subsec-Eigenvectors-and-Eigenvalues.html">
+\begin{equation*}
+\vec{a} \cdot \vec{b} = \begin{pmatrix} a_1 &amp; a_2 &amp; \ldots &amp; a_n \end{pmatrix} \begin{pmatrix} b_1 \\ b_2 \\ \vdots \\ b_n \end{pmatrix} = a_1 \cdot b_1 + a_2 \cdot b_2 + \ldots + a_n \cdot b_n 
+\end{equation*}
+</div>
 <div class="para" id="p-76">Multiplying an <span class="process-math">\(m \times n\)</span> matrix by a <span class="process-math">\(n \times 1\)</span> vector produces an <span class="process-math">\(m \times 1\)</span> vector. This operation is known as a <dfn class="terminology">linear transformation</dfn> and it an be used to move vectors from one vector space to another.</div>
 <article class="exercise exercise-like" id="exercise-6"><a href="" data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exercise-6"><h4 class="heading">
 <span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">1.5.10</span><span class="period">.</span>

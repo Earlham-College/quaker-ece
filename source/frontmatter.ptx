@@ -75,7 +75,6 @@
       his free time.
     </p>
 
-
   <p>Dr. Javier Orduz holds the distinguished position of 
     Visiting Assistant Professor at Earlham College and 
     also serves as an Instructor at Baylor University. 
@@ -112,16 +111,19 @@
     (in multiple ways) the representation of underrepresented 
     cohorts in AI.
   </p>
+  <image source="authorbiopic2.jpg" width="80%"> </image> 
+ 
 </biography>
 
 
 <dedication xml:id="dedication">
   <p>
-      <line>My family in Colombia, Mexico, and USA.</line>
-      <line>To people who loves Science.</line>
+      <line>To our families in Colombia, Mexico, Japan, and the USA.</line>
+      <line>To our friends all around the world.  </line>
+      <line>To people who love Science.</line>
   </p>
   <p>To all of you.</p>
-  <p>This is a greate opportunity to encourage to study and learn sciences. In general any field in STEM areas is beatiful! 
+  <p>This is a great opportunity to encourage to study and learn sciences. In general any field in STEM areas is beautiful! 
 </p>
 </dedication>   
 <acknowledgement xml:id="acknowledgement">

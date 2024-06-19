@@ -14,7 +14,7 @@ classical gates with their truth table.
   </p>
 
   <figure xml:id="fig-NOTcgategateSimple_1">
-    <caption>NOT logicall classical gate representation</caption>
+    <caption>NOT logical classical gate representation</caption>
     <image source="NOTcgate.png" width="45%"> </image>
   </figure>
 
@@ -41,7 +41,7 @@ x &amp;  y \\
   </p>
 
   <figure xml:id="fig-ANDcgatecgategateSimple_1">
-    <caption>AND logicall classical gate logicall classical gate representation</caption>
+    <caption>AND logical classical gate logical classical gate representation</caption>
     <image source="ANDcgate.png" width="45%"> </image>
   </figure>
 

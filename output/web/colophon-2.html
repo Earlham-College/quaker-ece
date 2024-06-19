@@ -16,7 +16,7 @@
 <meta property="book:author" content="Levi Goldberg">
 <meta property="book:author" content="Shun Suzuki">
 <meta property="book:author" content="Javier Orduz">
-<script>
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>
 var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
 window.MathJax = {
   "tex": {
@@ -43,7 +43,24 @@ window.MathJax = {
   },
   "options": {
     "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
-    "processHtmlClass": "process-math"
+    "processHtmlClass": "process-math",
+    "renderActions": {
+      "findScript": [
+        10,
+        function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        },
+        ""
+      ]
+    }
   },
   "chtml": {
     "scale": 0.98,
@@ -314,10 +331,20 @@ window.MathJax = {
 <li><div class="toc-item"><a href="sec3-chap2.html#subsec3-chap2" class="internal"><span class="codenumber">2.3.3</span> <span class="title">Reversible and Nonreversible gate</span></a></div></li>
 </ul>
 </li>
+<li>
+<div class="toc-item"><a href="sec4-chap2.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Coding Quantum Circuits</span></a></div>
+<ul class="structural"><li>
+<div class="toc-item"><a href="sec4-chap2.html#subsec-Gates-in-Qiskit" class="internal"><span class="codenumber">2.4.1</span> <span class="title">Gates in Qiskit</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec4-chap2.html#subsubsec-One-Qubit-Gates" class="internal"><span class="codenumber">2.4.1.1</span> <span class="title">One Qubit Gates</span></a></div></li>
+<li><div class="toc-item"><a href="sec4-chap2.html#subsubsec-Two-Qubit-Gates" class="internal"><span class="codenumber">2.4.1.2</span> <span class="title">Two Qubit Gates</span></a></div></li>
+</ul>
+</li></ul>
+</li>
 </ul>
 </li>
 <li>
-<div class="toc-item"><a href="chap3-chapter.html" class="internal"><span class="codenumber">3</span> <span class="title">Algorithm</span></a></div>
+<div class="toc-item"><a href="chap3-chapter.html" class="internal"><span class="codenumber">3</span> <span class="title">Quantum Algorithms</span></a></div>
 <ul class="structural">
 <li><div class="toc-item"><a href="sec1-chap3.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Introduction</span></a></div></li>
 <li><div class="toc-item"><a href="sec2-chap3.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Grover’s Algorithm</span></a></div></li>
@@ -327,6 +354,7 @@ window.MathJax = {
 <li><div class="toc-item"><a href="sec3-chap3.html#subsec-Building-Up-to-the-Algorithm" class="internal"><span class="codenumber">3.3.1</span> <span class="title">Building Up to the Algorithm</span></a></div></li>
 <li><div class="toc-item"><a href="sec3-chap3.html#subsec-An-Example" class="internal"><span class="codenumber">3.3.2</span> <span class="title">An Example</span></a></div></li>
 <li><div class="toc-item"><a href="sec3-chap3.html#subsec-Shors-Algorithm" class="internal"><span class="codenumber">3.3.3</span> <span class="title">Shor’s Algorithm</span></a></div></li>
+<li><div class="toc-item"><a href="sec3-chap3.html#subsec-Shors-Algorithm-Restated" class="internal"><span class="codenumber">3.3.4</span> <span class="title">Shor’s Algorithm Restated</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -343,7 +371,7 @@ window.MathJax = {
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="colophon" id="colophon-2"><h2 class="heading hide-type">
 <span class="type">Colophon</span> <span class="codenumber"></span> <span class="title">Colophon</span>
 </h2>
-<div class="para" id="p-318">This book was authored in PreTeXt.</div></section></div>
+<div class="para" id="p-341">This book was authored in PreTeXt.</div></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="index-1.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><span class="next-button button disabled"><span class="name">Next</span><span class="icon">&gt;</span></span>
 </div></main>

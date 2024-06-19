@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="sec4-chap2">
+    <title>Coding Quantum Circuits</title>
+    <p> One extremely valuable tool for creating and visualizing quantum circuits is the Qiskit package for python that was created by IBM. A full overview of Qiskit from its creators is available at <url href="https://www.ibm.com/quantum/qiskit" />, but we will provide a basic introduction here as well. </p>
+<p>The package can be added to a python codespace with the <c>import qiskit</c> command or by using <c>from qiskit import [],[],...</c>. A quantum circuit is composed of both a quantum register and a classical register. These can be defined with the <c>QuantumRegister(n)</c> and <c>ClassicalRegister(n)</c> methods where <c>n</c> is the number of bits in the register. Putting these together, we can create a quantum circuit with <c>QuantumCircuit(QuantumRegister(n),ClassicalRegister(n))</c>. Once we have created a quantum circuit, we can visualize it with the <c>.draw()</c> method. The following code shows an example of a quantum circuit with two quantum bits and one classical bit.  </p>
+<sage>
+    <input>
+        import qiskit 
+        qreg = qiskit.QuantumRegister(2)
+        creg = qiskit.ClassicalRegister(1)
+        qcircuit = qiskit.QuantumCircuit(qreg,creg)
+        qcircuit.draw()
+    </input>
+</sage> 
+<p> Here we define the variables <c>qreg</c> as the quantum register, <c>creg</c> as the classical register, and <c>qcircuit</c> as the quantum circuit. We can see that the two quantum bits we created are indexed <c>0</c> and <c>1</c> and the classical bit we created has index <c>0</c>. </p>
+<subsection xml:id="subsec-Gates-in-Qiskit">
+    <title>Gates in Qiskit</title>
+
+<subsubsection xml:id="subsubsec-One-Qubit-Gates">
+    <title>One Qubit Gates</title>
+    <p> In each of the following we will use the same variable names as above and <c>i</c> represents the index of the bit we wish to apply the gate to. </p>
+    <p><m>\textbf{X-Gate (NOT operator)}</m> </p> 
+    <p><m> X = \begin{pmatrix} 0 &amp; 1 \\ 1 &amp; 0 \end{pmatrix} </m></p> 
+    <p> To apply this gate to a qubit, use <c>qcircuit.x(qreg[i])</c> </p> 
+    <p><m>\textbf{Z-Gate (Z operator)}</m> </p> 
+    <p><m> Z = \begin{pmatrix} 1 &amp; 0 \\ 0 &amp; -1 \end{pmatrix} </m></p> 
+    <p> To apply this gate to a qubit, use <c>qcircuit.z(qreg[i])</c> </p> 
+    <p><m>\textbf{H-Gate (Hadamard operator)}</m> </p> 
+    <p><m> X = \begin{pmatrix} \frac{1}{\sqrt{2}} &amp; \frac{1}{\sqrt{2}} \\ \frac{1}{\sqrt{2}} &amp; \frac{1}{\sqrt{2}} \end{pmatrix} </m></p> 
+    <p> To apply this gate to a qubit, use <c>qcircuit.h(qreg[i])</c> </p> 
+</subsubsection>
+<subsubsection xml:id="subsubsec-Two-Qubit-Gates">
+    <title>Two Qubit Gates</title>
+    <p> For two qubit gates, we will use <c>i</c> to represent the index of the control qubit and <c>j</c> to represent the index of the target qubit </p> 
+    <p><m>\textbf{CX-Gate (Controlled NOT operator)}</m> </p> 
+    <p><m> CX = \begin{pmatrix} 1 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 1 \\ 0 &amp; 0 &amp; 1 &amp; 0 \end{pmatrix} </m></p> 
+    <p> To apply this gate to a pair of qubits, use <c>qcircuit.cx(qreg[i],qreg[j])</c> </p>
+    </subsubsection>
+<example>
+    <p>This example shows the code to create a quantum circuit with three quantum bits and one classical bit. All three qubits have a Hadamard gate applied to them, the 0th qubit has an X gate applied to it, and the 1st qubit is used as a control for a Controlled Not gate targeting the 2nd qubit. </p> 
+    <sage>
+        <input>
+            from qiskit import QuantumRegister, ClassicalRegister, QuantumCircuit
+            qreg = QuantumRegister(3)
+            creg = ClassicalRegister(1)
+            qcircuit = QuantumCircuit(qreg,creg)
+            qcircuit.h(qreg[0:1])
+            qcircuit.h(qreg[1:2])
+            qcircuit.h(qreg[2:])
+            qcircuit.x(qreg[0:1])
+            qcircuit.cx(qreg[1:2],qreg[2:])
+            qcircuit.draw()
+        </input>
+    </sage> 
+    <p> With the version of Qiskit we are using here, we must use slices instead of integers to specify the indexes of the qbits we want to measure. </p> 
+</example>
+
+<exercise>
+   <statement> <p> In the space below, write code to create a quantum circuit with two qubits and one classical bit. Apply a hadamard gate to the 0th qubit and an X gate to the 1st qubit </p> 
+    <sage>
+        <input>
+            from qiskit import QuantumRegister, ClassicalRegister, QuantumCircuit 
+            
+        </input>
+    </sage> </statement> 
+    <solution>
+        <sage>
+            <input>
+            from qiskit import QuantumRegister, ClassicalRegister, QuantumCircuit
+            qreg = QuantumRegister(2)
+            creg = ClassicalRegister(1)
+            qcircuit = QuantumCircuit(qreg,creg)
+            qcircuit.h(qreg[0:1])
+            qcircuit.x(qreg[1:])
+            qcircuit.draw()
+            </input>
+        </sage>
+    </solution>
+</exercise>
+<exercise>
+    <statement> <p> In the space below, write code to create a quantum circuit with three qubits and one classical bit. Apply an X-gate to the 0th qubit, a hadamard gate to the 1st qubit, and a Controlled X gate using the 2nd qubit as a control and the 0th qubit as a target.  </p> 
+        <sage>
+            <input>
+                from qiskit import QuantumRegister, ClassicalRegister, QuantumCircuit 
+                
+            </input>
+        </sage> </statement> 
+        <solution>
+            <sage>
+                <input>
+                from qiskit import QuantumRegister, ClassicalRegister, QuantumCircuit
+                qreg = QuantumRegister(3)
+                creg = ClassicalRegister(1)
+                qcircuit = QuantumCircuit(qreg,creg)
+                qcircuit.x(qreg[0:1])
+                qcircuit.h(qreg[1:2])
+                qcircuit.cx(qreg[2:],qreg[0:1])
+                qcircuit.draw()
+                </input>
+            </sage>
+        </solution>
+</exercise>
+</subsection>
+<p> This is only a very brief introduction to Qiskit, and there is much more you can do, including running code on a quantum computer simulator to measure a quantum circuit, and connecting to one of IBM's real quantum computers to run code. </p> 
+</section>
